@@ -9,3 +9,4 @@ C:\Randika\Project_App\EmployeeManagementSystem\ClientLibrary\obj\Debug\net9.0\C
 C:\Randika\Project_App\EmployeeManagementSystem\ClientLibrary\obj\Debug\net9.0\refint\ClientLibrary.dll
 C:\Randika\Project_App\EmployeeManagementSystem\ClientLibrary\obj\Debug\net9.0\ClientLibrary.pdb
 C:\Randika\Project_App\EmployeeManagementSystem\ClientLibrary\obj\Debug\net9.0\ref\ClientLibrary.dll
+C:\Randika\Project_App\EmployeeManagementSystem\ClientLibrary\obj\Debug\net9.0\ClientLibrary.sourcelink.json

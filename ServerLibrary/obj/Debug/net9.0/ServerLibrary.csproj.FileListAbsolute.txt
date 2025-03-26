@@ -9,3 +9,10 @@ C:\Randika\Project_App\EmployeeManagementSystem\ServerLibrary\obj\Debug\net9.0\S
 C:\Randika\Project_App\EmployeeManagementSystem\ServerLibrary\obj\Debug\net9.0\refint\ServerLibrary.dll
 C:\Randika\Project_App\EmployeeManagementSystem\ServerLibrary\obj\Debug\net9.0\ServerLibrary.pdb
 C:\Randika\Project_App\EmployeeManagementSystem\ServerLibrary\obj\Debug\net9.0\ref\ServerLibrary.dll
+C:\Randika\Project_App\EmployeeManagementSystem\ServerLibrary\bin\Debug\net9.0\ServerLibrary.runtimeconfig.json
+C:\Randika\Project_App\EmployeeManagementSystem\ServerLibrary\bin\Debug\net9.0\BaseLibrary.dll
+C:\Randika\Project_App\EmployeeManagementSystem\ServerLibrary\bin\Debug\net9.0\BaseLibrary.pdb
+C:\Randika\Project_App\EmployeeManagementSystem\ServerLibrary\obj\Debug\net9.0\ServerLibrary.csproj.AssemblyReference.cache
+C:\Randika\Project_App\EmployeeManagementSystem\ServerLibrary\obj\Debug\net9.0\ServerLibrary.sourcelink.json
+C:\Randika\Project_App\EmployeeManagementSystem\ServerLibrary\obj\Debug\net9.0\ServerLi.AF94C59E.Up2Date
+C:\Randika\Project_App\EmployeeManagementSystem\ServerLibrary\obj\Debug\net9.0\ServerLibrary.genruntimeconfig.cache
