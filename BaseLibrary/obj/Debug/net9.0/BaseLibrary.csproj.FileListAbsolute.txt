@@ -1,0 +1,11 @@
+C:\Randika\Project_App\EmployeeManagementSystem\BaseLibrary\bin\Debug\net9.0\BaseLibrary.deps.json
+C:\Randika\Project_App\EmployeeManagementSystem\BaseLibrary\bin\Debug\net9.0\BaseLibrary.dll
+C:\Randika\Project_App\EmployeeManagementSystem\BaseLibrary\bin\Debug\net9.0\BaseLibrary.pdb
+C:\Randika\Project_App\EmployeeManagementSystem\BaseLibrary\obj\Debug\net9.0\BaseLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Randika\Project_App\EmployeeManagementSystem\BaseLibrary\obj\Debug\net9.0\BaseLibrary.AssemblyInfoInputs.cache
+C:\Randika\Project_App\EmployeeManagementSystem\BaseLibrary\obj\Debug\net9.0\BaseLibrary.AssemblyInfo.cs
+C:\Randika\Project_App\EmployeeManagementSystem\BaseLibrary\obj\Debug\net9.0\BaseLibrary.csproj.CoreCompileInputs.cache
+C:\Randika\Project_App\EmployeeManagementSystem\BaseLibrary\obj\Debug\net9.0\BaseLibrary.dll
+C:\Randika\Project_App\EmployeeManagementSystem\BaseLibrary\obj\Debug\net9.0\refint\BaseLibrary.dll
+C:\Randika\Project_App\EmployeeManagementSystem\BaseLibrary\obj\Debug\net9.0\BaseLibrary.pdb
+C:\Randika\Project_App\EmployeeManagementSystem\BaseLibrary\obj\Debug\net9.0\ref\BaseLibrary.dll
