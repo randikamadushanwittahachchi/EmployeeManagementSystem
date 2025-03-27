@@ -1,5 +1,10 @@
 using Microsoft.EntityFrameworkCore;
 using ServerLibrary.Data;
+using ServerLibrary.Helpers;
+using ServerLibrary.Repositores.Contracts;
+using ServerLibrary.Repositores.Implementations;
+using ServerLibrary.Services.Contracts;
+using ServerLibrary.Services.Implementations;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,6 +23,16 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 builder.Services.AddControllers();
 //// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 //builder.Services.AddOpenApi();
+
+//Configer
+builder.Services.Configure<JWTSection>(builder.Configuration.GetSection("JWTSection"));
+//Service
+builder.Services.AddScoped<IAccountService,AccountService>();
+builder.Services.AddScoped<IUserAccountService,UserAccountService>();
+builder.Services.AddScoped<ISystemRoleService,ISystemRoleService>();
+
+//Repositores
+builder.Services.AddScoped<IUserAccount, UserAccountRepositore>();
 
 var app = builder.Build();
 

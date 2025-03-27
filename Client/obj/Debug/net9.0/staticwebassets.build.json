@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "CsA6JBJEoVRWuVR4LwKifx+9xwt2fh/tMj90ABLRlAQ=",
+  "Hash": "Otk/RxVV5dkQA0hxdwNokKncipEdmRKE/X2LirqZJw4=",
   "Source": "Client",
   "BasePath": "/",
   "Mode": "Root",
@@ -31,8 +31,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "WasmResource",
       "AssetTraitValue": "symbol",
-      "Fingerprint": "44mgfukuzc",
-      "Integrity": "DMW4apB59Y7NwyDQR/uXmdUUXPa3UNfetrKEom2UhCk=",
+      "Fingerprint": "vwu70vaa5r",
+      "Integrity": "P5SlonCIuhN7FAGzyxNHIAyTuprt4QN41XUFw4OdYI8=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\BaseLibrary\\bin\\Debug\\net9.0\\BaseLibrary.pdb"
@@ -52,8 +52,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "WasmResource",
       "AssetTraitValue": "runtime",
-      "Fingerprint": "txz416z5rf",
-      "Integrity": "8XdKdOlBPI9tyv0JASLBnR9mRkEFkrjgzs16bGfBufY=",
+      "Fingerprint": "u2cgcw3r2r",
+      "Integrity": "2mLwUZDS/Obrk2YxoiRk5SgYsaSiDauaNk10Wosa5wA=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\obj\\Debug\\net9.0\\webcil\\BaseLibrary.wasm"
@@ -73,8 +73,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "WasmResource",
       "AssetTraitValue": "manifest",
-      "Fingerprint": "wq5l9l5445",
-      "Integrity": "WH0hn+1N5sdgZvlwejDpWwGIpPqYOmLnWTbgSCzB1vw=",
+      "Fingerprint": "m0th26rjl4",
+      "Integrity": "2sgl/QXZxxH8UHgsQCNeHdO2hiTVStFTIW1tlX92S6g=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "obj\\Debug\\net9.0\\blazor.boot.json"
@@ -115,8 +115,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "WasmResource",
       "AssetTraitValue": "symbol",
-      "Fingerprint": "ju38xc7djd",
-      "Integrity": "e+bM/gabwyJL0QhiH+TQYw62EzNqYx75naCSnq+8Td4=",
+      "Fingerprint": "czye03sx6l",
+      "Integrity": "aGsfM+B3qrvHNTrlAHnpIRhFpAhxrnmwgYv5xisEOlA=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "obj\\Debug\\net9.0\\Client.pdb"
@@ -136,8 +136,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "WasmResource",
       "AssetTraitValue": "runtime",
-      "Fingerprint": "3pdsnrq2fb",
-      "Integrity": "qejPvXwST87WRVTvSBu4pgWMhYP81kUH6Z1JIFKQEOs=",
+      "Fingerprint": "p8lov10t8g",
+      "Integrity": "dxtUEtHUvrfawP0BFoO/w+zQywWFHR0L7FLRp1+p1Mw=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\obj\\Debug\\net9.0\\webcil\\Client.wasm"
@@ -4448,7 +4448,7 @@
       "OriginalItemSpec": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\bin\\Debug\\net9.0\\wwwroot\\_framework\\System.Net.Mail.wasm"
     },
     {
-      "Identity": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\obj\\Debug\\net9.0\\compressed\\0kih5qk3hm-wq5l9l5445.gz",
+      "Identity": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\obj\\Debug\\net9.0\\compressed\\0kih5qk3hm-m0th26rjl4.gz",
       "SourceId": "Client",
       "SourceType": "Computed",
       "ContentRoot": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\obj\\Debug\\net9.0\\compressed\\",
@@ -4462,8 +4462,8 @@
       "RelatedAsset": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\bin\\Debug\\net9.0\\wwwroot\\_framework\\blazor.boot.json",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "aqn0rtfsn9",
-      "Integrity": "Ivd0qH/7ko4GS/PlErZwMi9AqlULxeW3F78s3W2yVoQ=",
+      "Fingerprint": "h08ww6j45i",
+      "Integrity": "kRif+M9VPqUUFkeuoblEiGIW31eYmEvqQ3rU1CO22ts=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\bin\\Debug\\net9.0\\wwwroot\\_framework\\blazor.boot.json"
@@ -6212,12 +6212,12 @@
       "OriginalItemSpec": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\bin\\Debug\\net9.0\\wwwroot\\_framework\\System.Net.Primitives.wasm"
     },
     {
-      "Identity": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\obj\\Debug\\net9.0\\compressed\\cpjbyt2peh-3pdsnrq2fb.gz",
+      "Identity": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\obj\\Debug\\net9.0\\compressed\\cpjbyt2peh-p8lov10t8g.gz",
       "SourceId": "Client",
       "SourceType": "Computed",
       "ContentRoot": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "/",
-      "RelativePath": "_framework/Client#[.{fingerprint=3pdsnrq2fb}]!.wasm.gz",
+      "RelativePath": "_framework/Client#[.{fingerprint=p8lov10t8g}]!.wasm.gz",
       "AssetKind": "Build",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -6226,8 +6226,8 @@
       "RelatedAsset": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\bin\\Debug\\net9.0\\wwwroot\\_framework\\Client.wasm",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "rqqg7rl1nd",
-      "Integrity": "Yy6EsCcKQ6VqMZ8sALZD0x74Z5BUUZy5oLeXdaFjtr4=",
+      "Fingerprint": "39xcl2q8pz",
+      "Integrity": "V1CHqaVuU5xxbLGrD6Jv8j4YYYIKFxJ3Z1R8bSSFXz8=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\bin\\Debug\\net9.0\\wwwroot\\_framework\\Client.wasm"
@@ -6989,12 +6989,12 @@
       "OriginalItemSpec": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Identity": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\obj\\Debug\\net9.0\\compressed\\hws93em0fl-txz416z5rf.gz",
+      "Identity": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\obj\\Debug\\net9.0\\compressed\\hws93em0fl-u2cgcw3r2r.gz",
       "SourceId": "Client",
       "SourceType": "Computed",
       "ContentRoot": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "/",
-      "RelativePath": "_framework/BaseLibrary#[.{fingerprint=txz416z5rf}]!.wasm.gz",
+      "RelativePath": "_framework/BaseLibrary#[.{fingerprint=u2cgcw3r2r}]!.wasm.gz",
       "AssetKind": "Build",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -7003,8 +7003,8 @@
       "RelatedAsset": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\bin\\Debug\\net9.0\\wwwroot\\_framework\\BaseLibrary.wasm",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "tcsxgip1jy",
-      "Integrity": "M4oMreiiVMyh+2AeyZ8UmJ8vnATc7Ke2lU0aR0lTPZs=",
+      "Fingerprint": "536ewa6qbo",
+      "Integrity": "UX4gJ5E4tbI66owKNfz/NzVZnlJ1nG4cdMZBr2OFZMw=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\bin\\Debug\\net9.0\\wwwroot\\_framework\\BaseLibrary.wasm"
@@ -8711,12 +8711,12 @@
       "OriginalItemSpec": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\bin\\Debug\\net9.0\\wwwroot\\_framework\\Microsoft.CSharp.wasm"
     },
     {
-      "Identity": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\obj\\Debug\\net9.0\\compressed\\szw8f7d29a-44mgfukuzc.gz",
+      "Identity": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\obj\\Debug\\net9.0\\compressed\\szw8f7d29a-vwu70vaa5r.gz",
       "SourceId": "Client",
       "SourceType": "Computed",
       "ContentRoot": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "/",
-      "RelativePath": "_framework/BaseLibrary#[.{fingerprint=44mgfukuzc}]!.pdb.gz",
+      "RelativePath": "_framework/BaseLibrary#[.{fingerprint=vwu70vaa5r}]!.pdb.gz",
       "AssetKind": "Build",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -8725,8 +8725,8 @@
       "RelatedAsset": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\bin\\Debug\\net9.0\\wwwroot\\_framework\\BaseLibrary.pdb",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "zdmmbknla7",
-      "Integrity": "KXqVHbkIDIXW7rAUBzj9bzTs77BO97TtYCUi4VGUCF0=",
+      "Fingerprint": "yfw4gqrui7",
+      "Integrity": "PmXSmVX6mBsd/S+wo5rrxXuTWHusBKdoBbs7Ahjt46s=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\bin\\Debug\\net9.0\\wwwroot\\_framework\\BaseLibrary.pdb"
@@ -9383,12 +9383,12 @@
       "OriginalItemSpec": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\bin\\Debug\\net9.0\\wwwroot\\_framework\\icudt_no_CJK.dat"
     },
     {
-      "Identity": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\obj\\Debug\\net9.0\\compressed\\xbmipl6i3z-ju38xc7djd.gz",
+      "Identity": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\obj\\Debug\\net9.0\\compressed\\xbmipl6i3z-czye03sx6l.gz",
       "SourceId": "Client",
       "SourceType": "Computed",
       "ContentRoot": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "/",
-      "RelativePath": "_framework/Client#[.{fingerprint=ju38xc7djd}]!.pdb.gz",
+      "RelativePath": "_framework/Client#[.{fingerprint=czye03sx6l}]!.pdb.gz",
       "AssetKind": "Build",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -9397,8 +9397,8 @@
       "RelatedAsset": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\bin\\Debug\\net9.0\\wwwroot\\_framework\\Client.pdb",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "rmhzamjzpz",
-      "Integrity": "/WkG2SgUmhjfNGhXIc2cCppXm7k/qpQdBy4BNuaIVY4=",
+      "Fingerprint": "cnxqsvnbw1",
+      "Integrity": "KCvqq8d1D6LcIYqzHIntRJeSSGNmt//AshxzNmUkf3E=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\bin\\Debug\\net9.0\\wwwroot\\_framework\\Client.pdb"
@@ -10855,167 +10855,6 @@
   ],
   "Endpoints": [
     {
-      "Route": "_framework/BaseLibrary.44mgfukuzc.pdb",
-      "AssetFile": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\bin\\Debug\\net9.0\\wwwroot\\_framework\\BaseLibrary.pdb",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "13376"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/octet-stream"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"DMW4apB59Y7NwyDQR/uXmdUUXPa3UNfetrKEom2UhCk=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 26 Mar 2025 19:30:19 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "44mgfukuzc"
-        },
-        {
-          "Name": "label",
-          "Value": "_framework/BaseLibrary.pdb"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-DMW4apB59Y7NwyDQR/uXmdUUXPa3UNfetrKEom2UhCk="
-        }
-      ]
-    },
-    {
-      "Route": "_framework/BaseLibrary.44mgfukuzc.pdb",
-      "AssetFile": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\obj\\Debug\\net9.0\\compressed\\szw8f7d29a-44mgfukuzc.gz",
-      "Selectors": [
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip",
-          "Quality": "0.000133280021"
-        }
-      ],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "7502"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"KXqVHbkIDIXW7rAUBzj9bzTs77BO97TtYCUi4VGUCF0=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 26 Mar 2025 19:30:22 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/octet-stream"
-        },
-        {
-          "Name": "ETag",
-          "Value": "W/\"DMW4apB59Y7NwyDQR/uXmdUUXPa3UNfetrKEom2UhCk=\""
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "44mgfukuzc"
-        },
-        {
-          "Name": "label",
-          "Value": "_framework/BaseLibrary.pdb"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-DMW4apB59Y7NwyDQR/uXmdUUXPa3UNfetrKEom2UhCk="
-        }
-      ]
-    },
-    {
-      "Route": "_framework/BaseLibrary.44mgfukuzc.pdb.gz",
-      "AssetFile": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\obj\\Debug\\net9.0\\compressed\\szw8f7d29a-44mgfukuzc.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "7502"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/octet-stream"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"KXqVHbkIDIXW7rAUBzj9bzTs77BO97TtYCUi4VGUCF0=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 26 Mar 2025 19:30:22 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "44mgfukuzc"
-        },
-        {
-          "Name": "label",
-          "Value": "_framework/BaseLibrary.pdb.gz"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-KXqVHbkIDIXW7rAUBzj9bzTs77BO97TtYCUi4VGUCF0="
-        }
-      ]
-    },
-    {
       "Route": "_framework/BaseLibrary.pdb",
       "AssetFile": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\bin\\Debug\\net9.0\\wwwroot\\_framework\\BaseLibrary.pdb",
       "Selectors": [],
@@ -11026,7 +10865,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "13376"
+          "Value": "14432"
         },
         {
           "Name": "Content-Type",
@@ -11034,11 +10873,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"DMW4apB59Y7NwyDQR/uXmdUUXPa3UNfetrKEom2UhCk=\""
+          "Value": "\"P5SlonCIuhN7FAGzyxNHIAyTuprt4QN41XUFw4OdYI8=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 26 Mar 2025 19:30:19 GMT"
+          "Value": "Thu, 27 Mar 2025 11:49:36 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -11048,18 +10887,18 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-DMW4apB59Y7NwyDQR/uXmdUUXPa3UNfetrKEom2UhCk="
+          "Value": "sha256-P5SlonCIuhN7FAGzyxNHIAyTuprt4QN41XUFw4OdYI8="
         }
       ]
     },
     {
       "Route": "_framework/BaseLibrary.pdb",
-      "AssetFile": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\obj\\Debug\\net9.0\\compressed\\szw8f7d29a-44mgfukuzc.gz",
+      "AssetFile": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\obj\\Debug\\net9.0\\compressed\\szw8f7d29a-vwu70vaa5r.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000133280021"
+          "Quality": "0.000125707102"
         }
       ],
       "ResponseHeaders": [
@@ -11069,15 +10908,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "7502"
+          "Value": "7954"
         },
         {
           "Name": "ETag",
-          "Value": "\"KXqVHbkIDIXW7rAUBzj9bzTs77BO97TtYCUi4VGUCF0=\""
+          "Value": "\"PmXSmVX6mBsd/S+wo5rrxXuTWHusBKdoBbs7Ahjt46s=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 26 Mar 2025 19:30:22 GMT"
+          "Value": "Thu, 27 Mar 2025 11:49:40 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -11097,19 +10936,19 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"DMW4apB59Y7NwyDQR/uXmdUUXPa3UNfetrKEom2UhCk=\""
+          "Value": "W/\"P5SlonCIuhN7FAGzyxNHIAyTuprt4QN41XUFw4OdYI8=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-DMW4apB59Y7NwyDQR/uXmdUUXPa3UNfetrKEom2UhCk="
+          "Value": "sha256-P5SlonCIuhN7FAGzyxNHIAyTuprt4QN41XUFw4OdYI8="
         }
       ]
     },
     {
       "Route": "_framework/BaseLibrary.pdb.gz",
-      "AssetFile": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\obj\\Debug\\net9.0\\compressed\\szw8f7d29a-44mgfukuzc.gz",
+      "AssetFile": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\obj\\Debug\\net9.0\\compressed\\szw8f7d29a-vwu70vaa5r.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -11118,7 +10957,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "7502"
+          "Value": "7954"
         },
         {
           "Name": "Content-Type",
@@ -11126,11 +10965,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"KXqVHbkIDIXW7rAUBzj9bzTs77BO97TtYCUi4VGUCF0=\""
+          "Value": "\"PmXSmVX6mBsd/S+wo5rrxXuTWHusBKdoBbs7Ahjt46s=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 26 Mar 2025 19:30:22 GMT"
+          "Value": "Thu, 27 Mar 2025 11:49:40 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -11148,12 +10987,12 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-KXqVHbkIDIXW7rAUBzj9bzTs77BO97TtYCUi4VGUCF0="
+          "Value": "sha256-PmXSmVX6mBsd/S+wo5rrxXuTWHusBKdoBbs7Ahjt46s="
         }
       ]
     },
     {
-      "Route": "_framework/BaseLibrary.txz416z5rf.wasm",
+      "Route": "_framework/BaseLibrary.u2cgcw3r2r.wasm",
       "AssetFile": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\bin\\Debug\\net9.0\\wwwroot\\_framework\\BaseLibrary.wasm",
       "Selectors": [],
       "ResponseHeaders": [
@@ -11163,7 +11002,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "9493"
+          "Value": "14101"
         },
         {
           "Name": "Content-Type",
@@ -11171,11 +11010,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"8XdKdOlBPI9tyv0JASLBnR9mRkEFkrjgzs16bGfBufY=\""
+          "Value": "\"2mLwUZDS/Obrk2YxoiRk5SgYsaSiDauaNk10Wosa5wA=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 26 Mar 2025 19:30:21 GMT"
+          "Value": "Thu, 27 Mar 2025 11:49:40 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -11185,7 +11024,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "txz416z5rf"
+          "Value": "u2cgcw3r2r"
         },
         {
           "Name": "label",
@@ -11193,18 +11032,18 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-8XdKdOlBPI9tyv0JASLBnR9mRkEFkrjgzs16bGfBufY="
+          "Value": "sha256-2mLwUZDS/Obrk2YxoiRk5SgYsaSiDauaNk10Wosa5wA="
         }
       ]
     },
     {
-      "Route": "_framework/BaseLibrary.txz416z5rf.wasm",
-      "AssetFile": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\obj\\Debug\\net9.0\\compressed\\hws93em0fl-txz416z5rf.gz",
+      "Route": "_framework/BaseLibrary.u2cgcw3r2r.wasm",
+      "AssetFile": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\obj\\Debug\\net9.0\\compressed\\hws93em0fl-u2cgcw3r2r.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000266240682"
+          "Quality": "0.000174855744"
         }
       ],
       "ResponseHeaders": [
@@ -11214,15 +11053,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "3755"
+          "Value": "5718"
         },
         {
           "Name": "ETag",
-          "Value": "\"M4oMreiiVMyh+2AeyZ8UmJ8vnATc7Ke2lU0aR0lTPZs=\""
+          "Value": "\"UX4gJ5E4tbI66owKNfz/NzVZnlJ1nG4cdMZBr2OFZMw=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 26 Mar 2025 19:30:22 GMT"
+          "Value": "Thu, 27 Mar 2025 11:49:40 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -11242,13 +11081,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"8XdKdOlBPI9tyv0JASLBnR9mRkEFkrjgzs16bGfBufY=\""
+          "Value": "W/\"2mLwUZDS/Obrk2YxoiRk5SgYsaSiDauaNk10Wosa5wA=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "txz416z5rf"
+          "Value": "u2cgcw3r2r"
         },
         {
           "Name": "label",
@@ -11256,13 +11095,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-8XdKdOlBPI9tyv0JASLBnR9mRkEFkrjgzs16bGfBufY="
+          "Value": "sha256-2mLwUZDS/Obrk2YxoiRk5SgYsaSiDauaNk10Wosa5wA="
         }
       ]
     },
     {
-      "Route": "_framework/BaseLibrary.txz416z5rf.wasm.gz",
-      "AssetFile": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\obj\\Debug\\net9.0\\compressed\\hws93em0fl-txz416z5rf.gz",
+      "Route": "_framework/BaseLibrary.u2cgcw3r2r.wasm.gz",
+      "AssetFile": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\obj\\Debug\\net9.0\\compressed\\hws93em0fl-u2cgcw3r2r.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -11271,7 +11110,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "3755"
+          "Value": "5718"
         },
         {
           "Name": "Content-Type",
@@ -11279,11 +11118,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"M4oMreiiVMyh+2AeyZ8UmJ8vnATc7Ke2lU0aR0lTPZs=\""
+          "Value": "\"UX4gJ5E4tbI66owKNfz/NzVZnlJ1nG4cdMZBr2OFZMw=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 26 Mar 2025 19:30:22 GMT"
+          "Value": "Thu, 27 Mar 2025 11:49:40 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -11301,7 +11140,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "txz416z5rf"
+          "Value": "u2cgcw3r2r"
         },
         {
           "Name": "label",
@@ -11309,7 +11148,168 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-M4oMreiiVMyh+2AeyZ8UmJ8vnATc7Ke2lU0aR0lTPZs="
+          "Value": "sha256-UX4gJ5E4tbI66owKNfz/NzVZnlJ1nG4cdMZBr2OFZMw="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/BaseLibrary.vwu70vaa5r.pdb",
+      "AssetFile": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\bin\\Debug\\net9.0\\wwwroot\\_framework\\BaseLibrary.pdb",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "14432"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"P5SlonCIuhN7FAGzyxNHIAyTuprt4QN41XUFw4OdYI8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Mar 2025 11:49:36 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "vwu70vaa5r"
+        },
+        {
+          "Name": "label",
+          "Value": "_framework/BaseLibrary.pdb"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-P5SlonCIuhN7FAGzyxNHIAyTuprt4QN41XUFw4OdYI8="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/BaseLibrary.vwu70vaa5r.pdb",
+      "AssetFile": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\obj\\Debug\\net9.0\\compressed\\szw8f7d29a-vwu70vaa5r.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000125707102"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "7954"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"PmXSmVX6mBsd/S+wo5rrxXuTWHusBKdoBbs7Ahjt46s=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Mar 2025 11:49:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"P5SlonCIuhN7FAGzyxNHIAyTuprt4QN41XUFw4OdYI8=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "vwu70vaa5r"
+        },
+        {
+          "Name": "label",
+          "Value": "_framework/BaseLibrary.pdb"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-P5SlonCIuhN7FAGzyxNHIAyTuprt4QN41XUFw4OdYI8="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/BaseLibrary.vwu70vaa5r.pdb.gz",
+      "AssetFile": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\obj\\Debug\\net9.0\\compressed\\szw8f7d29a-vwu70vaa5r.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "7954"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"PmXSmVX6mBsd/S+wo5rrxXuTWHusBKdoBbs7Ahjt46s=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Mar 2025 11:49:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "vwu70vaa5r"
+        },
+        {
+          "Name": "label",
+          "Value": "_framework/BaseLibrary.pdb.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-PmXSmVX6mBsd/S+wo5rrxXuTWHusBKdoBbs7Ahjt46s="
         }
       ]
     },
@@ -11324,7 +11324,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "9493"
+          "Value": "14101"
         },
         {
           "Name": "Content-Type",
@@ -11332,11 +11332,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"8XdKdOlBPI9tyv0JASLBnR9mRkEFkrjgzs16bGfBufY=\""
+          "Value": "\"2mLwUZDS/Obrk2YxoiRk5SgYsaSiDauaNk10Wosa5wA=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 26 Mar 2025 19:30:21 GMT"
+          "Value": "Thu, 27 Mar 2025 11:49:40 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -11346,18 +11346,18 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-8XdKdOlBPI9tyv0JASLBnR9mRkEFkrjgzs16bGfBufY="
+          "Value": "sha256-2mLwUZDS/Obrk2YxoiRk5SgYsaSiDauaNk10Wosa5wA="
         }
       ]
     },
     {
       "Route": "_framework/BaseLibrary.wasm",
-      "AssetFile": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\obj\\Debug\\net9.0\\compressed\\hws93em0fl-txz416z5rf.gz",
+      "AssetFile": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\obj\\Debug\\net9.0\\compressed\\hws93em0fl-u2cgcw3r2r.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000266240682"
+          "Quality": "0.000174855744"
         }
       ],
       "ResponseHeaders": [
@@ -11367,15 +11367,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "3755"
+          "Value": "5718"
         },
         {
           "Name": "ETag",
-          "Value": "\"M4oMreiiVMyh+2AeyZ8UmJ8vnATc7Ke2lU0aR0lTPZs=\""
+          "Value": "\"UX4gJ5E4tbI66owKNfz/NzVZnlJ1nG4cdMZBr2OFZMw=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 26 Mar 2025 19:30:22 GMT"
+          "Value": "Thu, 27 Mar 2025 11:49:40 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -11395,19 +11395,19 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"8XdKdOlBPI9tyv0JASLBnR9mRkEFkrjgzs16bGfBufY=\""
+          "Value": "W/\"2mLwUZDS/Obrk2YxoiRk5SgYsaSiDauaNk10Wosa5wA=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-8XdKdOlBPI9tyv0JASLBnR9mRkEFkrjgzs16bGfBufY="
+          "Value": "sha256-2mLwUZDS/Obrk2YxoiRk5SgYsaSiDauaNk10Wosa5wA="
         }
       ]
     },
     {
       "Route": "_framework/BaseLibrary.wasm.gz",
-      "AssetFile": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\obj\\Debug\\net9.0\\compressed\\hws93em0fl-txz416z5rf.gz",
+      "AssetFile": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\obj\\Debug\\net9.0\\compressed\\hws93em0fl-u2cgcw3r2r.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -11416,7 +11416,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "3755"
+          "Value": "5718"
         },
         {
           "Name": "Content-Type",
@@ -11424,11 +11424,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"M4oMreiiVMyh+2AeyZ8UmJ8vnATc7Ke2lU0aR0lTPZs=\""
+          "Value": "\"UX4gJ5E4tbI66owKNfz/NzVZnlJ1nG4cdMZBr2OFZMw=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 26 Mar 2025 19:30:22 GMT"
+          "Value": "Thu, 27 Mar 2025 11:49:40 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -11446,7 +11446,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-M4oMreiiVMyh+2AeyZ8UmJ8vnATc7Ke2lU0aR0lTPZs="
+          "Value": "sha256-UX4gJ5E4tbI66owKNfz/NzVZnlJ1nG4cdMZBr2OFZMw="
         }
       ]
     },
@@ -11469,7 +11469,46 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"WH0hn+1N5sdgZvlwejDpWwGIpPqYOmLnWTbgSCzB1vw=\""
+          "Value": "\"2sgl/QXZxxH8UHgsQCNeHdO2hiTVStFTIW1tlX92S6g=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Mar 2025 11:49:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-2sgl/QXZxxH8UHgsQCNeHdO2hiTVStFTIW1tlX92S6g="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/blazor.boot.json",
+      "AssetFile": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\obj\\Debug\\net9.0\\compressed\\0kih5qk3hm-m0th26rjl4.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000079522863"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "12574"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"kRif+M9VPqUUFkeuoblEiGIW31eYmEvqQ3rU1CO22ts=\""
         },
         {
           "Name": "Last-Modified",
@@ -11478,45 +11517,6 @@
         {
           "Name": "Cache-Control",
           "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-WH0hn+1N5sdgZvlwejDpWwGIpPqYOmLnWTbgSCzB1vw="
-        }
-      ]
-    },
-    {
-      "Route": "_framework/blazor.boot.json",
-      "AssetFile": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\obj\\Debug\\net9.0\\compressed\\0kih5qk3hm-wq5l9l5445.gz",
-      "Selectors": [
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip",
-          "Quality": "0.000079529187"
-        }
-      ],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "12573"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"Ivd0qH/7ko4GS/PlErZwMi9AqlULxeW3F78s3W2yVoQ=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 26 Mar 2025 16:43:34 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
         },
         {
           "Name": "Content-Encoding",
@@ -11532,19 +11532,19 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"WH0hn+1N5sdgZvlwejDpWwGIpPqYOmLnWTbgSCzB1vw=\""
+          "Value": "W/\"2sgl/QXZxxH8UHgsQCNeHdO2hiTVStFTIW1tlX92S6g=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-WH0hn+1N5sdgZvlwejDpWwGIpPqYOmLnWTbgSCzB1vw="
+          "Value": "sha256-2sgl/QXZxxH8UHgsQCNeHdO2hiTVStFTIW1tlX92S6g="
         }
       ]
     },
     {
       "Route": "_framework/blazor.boot.json.gz",
-      "AssetFile": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\obj\\Debug\\net9.0\\compressed\\0kih5qk3hm-wq5l9l5445.gz",
+      "AssetFile": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\obj\\Debug\\net9.0\\compressed\\0kih5qk3hm-m0th26rjl4.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -11553,7 +11553,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "12573"
+          "Value": "12574"
         },
         {
           "Name": "Content-Type",
@@ -11561,11 +11561,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"Ivd0qH/7ko4GS/PlErZwMi9AqlULxeW3F78s3W2yVoQ=\""
+          "Value": "\"kRif+M9VPqUUFkeuoblEiGIW31eYmEvqQ3rU1CO22ts=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 26 Mar 2025 16:43:34 GMT"
+          "Value": "Wed, 26 Mar 2025 19:30:22 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -11583,7 +11583,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-Ivd0qH/7ko4GS/PlErZwMi9AqlULxeW3F78s3W2yVoQ="
+          "Value": "sha256-kRif+M9VPqUUFkeuoblEiGIW31eYmEvqQ3rU1CO22ts="
         }
       ]
     },
@@ -11725,168 +11725,7 @@
       ]
     },
     {
-      "Route": "_framework/Client.3pdsnrq2fb.wasm",
-      "AssetFile": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\bin\\Debug\\net9.0\\wwwroot\\_framework\\Client.wasm",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "17685"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/wasm"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"qejPvXwST87WRVTvSBu4pgWMhYP81kUH6Z1JIFKQEOs=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 26 Mar 2025 19:30:21 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "3pdsnrq2fb"
-        },
-        {
-          "Name": "label",
-          "Value": "_framework/Client.wasm"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-qejPvXwST87WRVTvSBu4pgWMhYP81kUH6Z1JIFKQEOs="
-        }
-      ]
-    },
-    {
-      "Route": "_framework/Client.3pdsnrq2fb.wasm",
-      "AssetFile": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\obj\\Debug\\net9.0\\compressed\\cpjbyt2peh-3pdsnrq2fb.gz",
-      "Selectors": [
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip",
-          "Quality": "0.000130616510"
-        }
-      ],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "7655"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"Yy6EsCcKQ6VqMZ8sALZD0x74Z5BUUZy5oLeXdaFjtr4=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 26 Mar 2025 19:30:22 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/wasm"
-        },
-        {
-          "Name": "ETag",
-          "Value": "W/\"qejPvXwST87WRVTvSBu4pgWMhYP81kUH6Z1JIFKQEOs=\""
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "3pdsnrq2fb"
-        },
-        {
-          "Name": "label",
-          "Value": "_framework/Client.wasm"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-qejPvXwST87WRVTvSBu4pgWMhYP81kUH6Z1JIFKQEOs="
-        }
-      ]
-    },
-    {
-      "Route": "_framework/Client.3pdsnrq2fb.wasm.gz",
-      "AssetFile": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\obj\\Debug\\net9.0\\compressed\\cpjbyt2peh-3pdsnrq2fb.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "7655"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/wasm"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"Yy6EsCcKQ6VqMZ8sALZD0x74Z5BUUZy5oLeXdaFjtr4=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 26 Mar 2025 19:30:22 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "3pdsnrq2fb"
-        },
-        {
-          "Name": "label",
-          "Value": "_framework/Client.wasm.gz"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-Yy6EsCcKQ6VqMZ8sALZD0x74Z5BUUZy5oLeXdaFjtr4="
-        }
-      ]
-    },
-    {
-      "Route": "_framework/Client.ju38xc7djd.pdb",
+      "Route": "_framework/Client.czye03sx6l.pdb",
       "AssetFile": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\bin\\Debug\\net9.0\\wwwroot\\_framework\\Client.pdb",
       "Selectors": [],
       "ResponseHeaders": [
@@ -11904,11 +11743,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"e+bM/gabwyJL0QhiH+TQYw62EzNqYx75naCSnq+8Td4=\""
+          "Value": "\"aGsfM+B3qrvHNTrlAHnpIRhFpAhxrnmwgYv5xisEOlA=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 26 Mar 2025 19:30:21 GMT"
+          "Value": "Thu, 27 Mar 2025 11:49:39 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -11918,7 +11757,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "ju38xc7djd"
+          "Value": "czye03sx6l"
         },
         {
           "Name": "label",
@@ -11926,18 +11765,18 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-e+bM/gabwyJL0QhiH+TQYw62EzNqYx75naCSnq+8Td4="
+          "Value": "sha256-aGsfM+B3qrvHNTrlAHnpIRhFpAhxrnmwgYv5xisEOlA="
         }
       ]
     },
     {
-      "Route": "_framework/Client.ju38xc7djd.pdb",
-      "AssetFile": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\obj\\Debug\\net9.0\\compressed\\xbmipl6i3z-ju38xc7djd.gz",
+      "Route": "_framework/Client.czye03sx6l.pdb",
+      "AssetFile": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\obj\\Debug\\net9.0\\compressed\\xbmipl6i3z-czye03sx6l.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000058281851"
+          "Quality": "0.000058285248"
         }
       ],
       "ResponseHeaders": [
@@ -11947,15 +11786,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "17157"
+          "Value": "17156"
         },
         {
           "Name": "ETag",
-          "Value": "\"/WkG2SgUmhjfNGhXIc2cCppXm7k/qpQdBy4BNuaIVY4=\""
+          "Value": "\"KCvqq8d1D6LcIYqzHIntRJeSSGNmt//AshxzNmUkf3E=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 26 Mar 2025 19:30:22 GMT"
+          "Value": "Thu, 27 Mar 2025 11:49:40 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -11975,13 +11814,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"e+bM/gabwyJL0QhiH+TQYw62EzNqYx75naCSnq+8Td4=\""
+          "Value": "W/\"aGsfM+B3qrvHNTrlAHnpIRhFpAhxrnmwgYv5xisEOlA=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "ju38xc7djd"
+          "Value": "czye03sx6l"
         },
         {
           "Name": "label",
@@ -11989,13 +11828,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-e+bM/gabwyJL0QhiH+TQYw62EzNqYx75naCSnq+8Td4="
+          "Value": "sha256-aGsfM+B3qrvHNTrlAHnpIRhFpAhxrnmwgYv5xisEOlA="
         }
       ]
     },
     {
-      "Route": "_framework/Client.ju38xc7djd.pdb.gz",
-      "AssetFile": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\obj\\Debug\\net9.0\\compressed\\xbmipl6i3z-ju38xc7djd.gz",
+      "Route": "_framework/Client.czye03sx6l.pdb.gz",
+      "AssetFile": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\obj\\Debug\\net9.0\\compressed\\xbmipl6i3z-czye03sx6l.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -12004,7 +11843,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "17157"
+          "Value": "17156"
         },
         {
           "Name": "Content-Type",
@@ -12012,11 +11851,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"/WkG2SgUmhjfNGhXIc2cCppXm7k/qpQdBy4BNuaIVY4=\""
+          "Value": "\"KCvqq8d1D6LcIYqzHIntRJeSSGNmt//AshxzNmUkf3E=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 26 Mar 2025 19:30:22 GMT"
+          "Value": "Thu, 27 Mar 2025 11:49:40 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -12034,7 +11873,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "ju38xc7djd"
+          "Value": "czye03sx6l"
         },
         {
           "Name": "label",
@@ -12042,7 +11881,168 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-/WkG2SgUmhjfNGhXIc2cCppXm7k/qpQdBy4BNuaIVY4="
+          "Value": "sha256-KCvqq8d1D6LcIYqzHIntRJeSSGNmt//AshxzNmUkf3E="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/Client.p8lov10t8g.wasm",
+      "AssetFile": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\bin\\Debug\\net9.0\\wwwroot\\_framework\\Client.wasm",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "17685"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"dxtUEtHUvrfawP0BFoO/w+zQywWFHR0L7FLRp1+p1Mw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Mar 2025 11:49:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "p8lov10t8g"
+        },
+        {
+          "Name": "label",
+          "Value": "_framework/Client.wasm"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-dxtUEtHUvrfawP0BFoO/w+zQywWFHR0L7FLRp1+p1Mw="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/Client.p8lov10t8g.wasm",
+      "AssetFile": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\obj\\Debug\\net9.0\\compressed\\cpjbyt2peh-p8lov10t8g.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000130736044"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "7648"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"V1CHqaVuU5xxbLGrD6Jv8j4YYYIKFxJ3Z1R8bSSFXz8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Mar 2025 11:49:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"dxtUEtHUvrfawP0BFoO/w+zQywWFHR0L7FLRp1+p1Mw=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "p8lov10t8g"
+        },
+        {
+          "Name": "label",
+          "Value": "_framework/Client.wasm"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-dxtUEtHUvrfawP0BFoO/w+zQywWFHR0L7FLRp1+p1Mw="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/Client.p8lov10t8g.wasm.gz",
+      "AssetFile": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\obj\\Debug\\net9.0\\compressed\\cpjbyt2peh-p8lov10t8g.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "7648"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"V1CHqaVuU5xxbLGrD6Jv8j4YYYIKFxJ3Z1R8bSSFXz8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Mar 2025 11:49:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "p8lov10t8g"
+        },
+        {
+          "Name": "label",
+          "Value": "_framework/Client.wasm.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-V1CHqaVuU5xxbLGrD6Jv8j4YYYIKFxJ3Z1R8bSSFXz8="
         }
       ]
     },
@@ -12065,11 +12065,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"e+bM/gabwyJL0QhiH+TQYw62EzNqYx75naCSnq+8Td4=\""
+          "Value": "\"aGsfM+B3qrvHNTrlAHnpIRhFpAhxrnmwgYv5xisEOlA=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 26 Mar 2025 19:30:21 GMT"
+          "Value": "Thu, 27 Mar 2025 11:49:39 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -12079,18 +12079,18 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-e+bM/gabwyJL0QhiH+TQYw62EzNqYx75naCSnq+8Td4="
+          "Value": "sha256-aGsfM+B3qrvHNTrlAHnpIRhFpAhxrnmwgYv5xisEOlA="
         }
       ]
     },
     {
       "Route": "_framework/Client.pdb",
-      "AssetFile": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\obj\\Debug\\net9.0\\compressed\\xbmipl6i3z-ju38xc7djd.gz",
+      "AssetFile": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\obj\\Debug\\net9.0\\compressed\\xbmipl6i3z-czye03sx6l.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000058281851"
+          "Quality": "0.000058285248"
         }
       ],
       "ResponseHeaders": [
@@ -12100,15 +12100,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "17157"
+          "Value": "17156"
         },
         {
           "Name": "ETag",
-          "Value": "\"/WkG2SgUmhjfNGhXIc2cCppXm7k/qpQdBy4BNuaIVY4=\""
+          "Value": "\"KCvqq8d1D6LcIYqzHIntRJeSSGNmt//AshxzNmUkf3E=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 26 Mar 2025 19:30:22 GMT"
+          "Value": "Thu, 27 Mar 2025 11:49:40 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -12128,19 +12128,19 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"e+bM/gabwyJL0QhiH+TQYw62EzNqYx75naCSnq+8Td4=\""
+          "Value": "W/\"aGsfM+B3qrvHNTrlAHnpIRhFpAhxrnmwgYv5xisEOlA=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-e+bM/gabwyJL0QhiH+TQYw62EzNqYx75naCSnq+8Td4="
+          "Value": "sha256-aGsfM+B3qrvHNTrlAHnpIRhFpAhxrnmwgYv5xisEOlA="
         }
       ]
     },
     {
       "Route": "_framework/Client.pdb.gz",
-      "AssetFile": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\obj\\Debug\\net9.0\\compressed\\xbmipl6i3z-ju38xc7djd.gz",
+      "AssetFile": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\obj\\Debug\\net9.0\\compressed\\xbmipl6i3z-czye03sx6l.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -12149,7 +12149,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "17157"
+          "Value": "17156"
         },
         {
           "Name": "Content-Type",
@@ -12157,11 +12157,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"/WkG2SgUmhjfNGhXIc2cCppXm7k/qpQdBy4BNuaIVY4=\""
+          "Value": "\"KCvqq8d1D6LcIYqzHIntRJeSSGNmt//AshxzNmUkf3E=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 26 Mar 2025 19:30:22 GMT"
+          "Value": "Thu, 27 Mar 2025 11:49:40 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -12179,7 +12179,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-/WkG2SgUmhjfNGhXIc2cCppXm7k/qpQdBy4BNuaIVY4="
+          "Value": "sha256-KCvqq8d1D6LcIYqzHIntRJeSSGNmt//AshxzNmUkf3E="
         }
       ]
     },
@@ -12202,11 +12202,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"qejPvXwST87WRVTvSBu4pgWMhYP81kUH6Z1JIFKQEOs=\""
+          "Value": "\"dxtUEtHUvrfawP0BFoO/w+zQywWFHR0L7FLRp1+p1Mw=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 26 Mar 2025 19:30:21 GMT"
+          "Value": "Thu, 27 Mar 2025 11:49:40 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -12216,18 +12216,18 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-qejPvXwST87WRVTvSBu4pgWMhYP81kUH6Z1JIFKQEOs="
+          "Value": "sha256-dxtUEtHUvrfawP0BFoO/w+zQywWFHR0L7FLRp1+p1Mw="
         }
       ]
     },
     {
       "Route": "_framework/Client.wasm",
-      "AssetFile": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\obj\\Debug\\net9.0\\compressed\\cpjbyt2peh-3pdsnrq2fb.gz",
+      "AssetFile": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\obj\\Debug\\net9.0\\compressed\\cpjbyt2peh-p8lov10t8g.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000130616510"
+          "Quality": "0.000130736044"
         }
       ],
       "ResponseHeaders": [
@@ -12237,15 +12237,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "7655"
+          "Value": "7648"
         },
         {
           "Name": "ETag",
-          "Value": "\"Yy6EsCcKQ6VqMZ8sALZD0x74Z5BUUZy5oLeXdaFjtr4=\""
+          "Value": "\"V1CHqaVuU5xxbLGrD6Jv8j4YYYIKFxJ3Z1R8bSSFXz8=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 26 Mar 2025 19:30:22 GMT"
+          "Value": "Thu, 27 Mar 2025 11:49:40 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -12265,19 +12265,19 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"qejPvXwST87WRVTvSBu4pgWMhYP81kUH6Z1JIFKQEOs=\""
+          "Value": "W/\"dxtUEtHUvrfawP0BFoO/w+zQywWFHR0L7FLRp1+p1Mw=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-qejPvXwST87WRVTvSBu4pgWMhYP81kUH6Z1JIFKQEOs="
+          "Value": "sha256-dxtUEtHUvrfawP0BFoO/w+zQywWFHR0L7FLRp1+p1Mw="
         }
       ]
     },
     {
       "Route": "_framework/Client.wasm.gz",
-      "AssetFile": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\obj\\Debug\\net9.0\\compressed\\cpjbyt2peh-3pdsnrq2fb.gz",
+      "AssetFile": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\obj\\Debug\\net9.0\\compressed\\cpjbyt2peh-p8lov10t8g.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -12286,7 +12286,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "7655"
+          "Value": "7648"
         },
         {
           "Name": "Content-Type",
@@ -12294,11 +12294,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"Yy6EsCcKQ6VqMZ8sALZD0x74Z5BUUZy5oLeXdaFjtr4=\""
+          "Value": "\"V1CHqaVuU5xxbLGrD6Jv8j4YYYIKFxJ3Z1R8bSSFXz8=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 26 Mar 2025 19:30:22 GMT"
+          "Value": "Thu, 27 Mar 2025 11:49:40 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -12316,7 +12316,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-Yy6EsCcKQ6VqMZ8sALZD0x74Z5BUUZy5oLeXdaFjtr4="
+          "Value": "sha256-V1CHqaVuU5xxbLGrD6Jv8j4YYYIKFxJ3Z1R8bSSFXz8="
         }
       ]
     },
