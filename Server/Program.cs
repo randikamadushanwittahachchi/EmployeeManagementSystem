@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using ServerLibrary.Authentication;
 using ServerLibrary.Data;
 using ServerLibrary.Helpers;
 using ServerLibrary.Repositores.Contracts;
@@ -26,10 +27,14 @@ builder.Services.AddControllers();
 
 //Configer
 builder.Services.Configure<JWTSection>(builder.Configuration.GetSection("JWTSection"));
-//Service
+//Service 
 builder.Services.AddScoped<IAccountService,AccountService>();
 builder.Services.AddScoped<IUserAccountService,UserAccountService>();
-builder.Services.AddScoped<ISystemRoleService,ISystemRoleService>();
+builder.Services.AddScoped<ISystemRoleService,SystemRoleService>();
+builder.Services.AddScoped<IUserRoleService,UserRoleService>();
+
+//Authentication
+builder.Services.AddScoped<TokenService>();
 
 //Repositores
 builder.Services.AddScoped<IUserAccount, UserAccountRepositore>();

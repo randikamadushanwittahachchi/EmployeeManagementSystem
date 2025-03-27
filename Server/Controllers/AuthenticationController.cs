@@ -12,8 +12,15 @@ namespace Server.Controllers
         [HttpPost("register")]
         public async Task<IActionResult> CreateAsync(Register user)
         {
-            if(user == null) return BadRequest("Model is Empty");
+            if(user == null) return BadRequest("model is Empty");
             var result = await userAccountInterface.CreateAsync(user);
+            return Ok(result);
+        }
+        [HttpPost("login")]
+        public async Task<IActionResult> SignInAsync(Login user)
+        {
+            if(user == null) return BadRequest("model is empty");
+            var result = await userAccountInterface.SigninAsync(user);
             return Ok(result);
         }
     }

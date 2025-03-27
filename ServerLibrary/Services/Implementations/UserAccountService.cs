@@ -17,13 +17,12 @@ public class UserAccountService : IUserAccountService
     {
         if(string.IsNullOrWhiteSpace(email))throw new ArgumentNullException("Email can't be empty");
 
-        return await _context.AppUsers.FirstOrDefaultAsync(_ => string.Equals(_.Email, email, StringComparison.OrdinalIgnoreCase));
+        return await _context.AppUsers.FirstOrDefaultAsync(_ => _.Email!.ToLower() == email!.ToLower());
     }
-
-    public async Task<AppUser?> Register(AppUser appUser)
+    public async Task<AppUser?> FindUserById(int? id)
     {
-        var newUser = await _context.AppUsers.AddAsync(appUser);
-        await _context.SaveChangesAsync();
-        return newUser.Entity;
+        if (id == null) throw new ArgumentNullException("user id cannot be null");
+
+        return await _context.AppUsers.FirstOrDefaultAsync(_ => _.Id!.Equals(id));
     }
 }
