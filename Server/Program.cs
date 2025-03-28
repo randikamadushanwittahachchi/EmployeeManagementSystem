@@ -32,6 +32,7 @@ builder.Services.AddScoped<IAccountService,AccountService>();
 builder.Services.AddScoped<IUserAccountService,UserAccountService>();
 builder.Services.AddScoped<ISystemRoleService,SystemRoleService>();
 builder.Services.AddScoped<IUserRoleService,UserRoleService>();
+builder.Services.AddScoped<IRefreshTokenInfoService , RefreshTokenInfoService>();
 
 //Authentication
 builder.Services.AddScoped<TokenService>();

@@ -5,7 +5,7 @@ using ServerLibrary.Services.Contracts;
 
 namespace ServerLibrary.Services.Implementations;
 
-class RefreshTokenInfoService : IRefreshTokenInfoService
+public class RefreshTokenInfoService : IRefreshTokenInfoService
 {
     private readonly AppDbContext _context;
     public RefreshTokenInfoService(AppDbContext context)

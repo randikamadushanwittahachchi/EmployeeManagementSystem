@@ -88,8 +88,17 @@ public class UserAccountRepositore : IUserAccount
         if (roleName is null) return new LoginResponse(false, "Role is not valid");
 
         string jwtToken = _tokenService.GetToken(appUser, roleName.Name!);
-        string refreshToken = RefreshTokenService.GetToken();
         if (jwtToken == null) return new LoginResponse(false, "Token is fails");
+
+        string refreshToken = RefreshTokenService.GetToken();
+
+        var refreshTokenInfo = _dbContext.AddToDatabase(new RefreshTokenInfo
+        {
+            UserId = appUser.Id,
+            Token = refreshToken,
+        });
+        if (refreshTokenInfo is null) return new LoginResponse(false ,"Refresh Token is fail");
+
         return new LoginResponse(true, "Login is success", jwtToken, refreshToken);
     }
 
