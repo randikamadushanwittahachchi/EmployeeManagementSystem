@@ -1,5 +1,5 @@
 html, body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 h1:focus {
@@ -112,3 +112,49 @@ code {
 .form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
     text-align: start;
 }
+.form-group {
+    margin-bottom: 12px; /* Reduce spacing between form elements */
+    display: flex;
+    flex-direction: column;
+}
+html, body {
+    overflow: hidden;
+}
+
+.card-account {
+    background-color: burlywood;
+    opacity: 0.5;
+    font-weight: bold;
+    border-radius: 10px;
+    padding-left:4rem;
+    padding-right:4rem;
+}
+.card-header-account {
+    padding: 1rem;
+    padding-left:6rem;
+    padding-right:3rem;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap:1rem;
+}
+.card-body-account {
+    margin: 1rem;
+}
+.card-footer-account {
+    padding: 1rem;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.form-group{
+    margin-top:0.5rem;
+}
+.logo{
+    height: 50px;
+    border-radius: 10px;
+    opacity: 0.8;
+}
+

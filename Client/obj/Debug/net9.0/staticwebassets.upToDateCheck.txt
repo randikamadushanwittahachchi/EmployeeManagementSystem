@@ -48,6 +48,8 @@ C:\Randika\Project_App\EmployeeManagementSystem\Client\wwwroot\lib\bootstrap\dis
 wwwroot\css\app.css
 wwwroot\favicon.png
 wwwroot\icon-192.png
+wwwroot\images\backGround\backGroundImage.jpg
+wwwroot\images\logo\logo.jpeg
 wwwroot\index.html
 wwwroot\lib\bootstrap\dist\css\bootstrap.css
 wwwroot\lib\bootstrap\dist\css\bootstrap.css.map

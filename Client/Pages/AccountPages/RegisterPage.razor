@@ -1,29 +1,74 @@
 ﻿@page "/identity/account/register";
+@layout AuthenticationLayout
 
-<div class=" container h-auto">
-    <div class=" row mt-5 justify-content-center align-items-center">
-        <div class=" col-sm-4 col-lg-6">
-            <EditForm Enhance Model="User">
-                <DataAnnotationsValidator/>
-                <ValidationSummary/>
-                <div class=" card mt-2">
-                    <div class=" card-header "> File the Form to register</div>
-                    <div class=" card-body mt-3">
-                        <div class=" form-group">
-                            <label class=" form-label">Enter Your Full Name</label>
-                            <input @bind="User.FullName"/>
+<div class="container" style=" margin-top:2%; z-index:2">
+    <div class="row justify-content-center">
+        <div class="col-6">
+            <EditForm Enhance Model="User" OnValidSubmit="RegisterHandler">
+                <DataAnnotationsValidator />
+                <div class="card-account">
+                    <div class="card-header-account">
+                        Register
+                        <div class=" d-flex justify-content-center">
+                            <img src="../images/logo/logo.jpeg" class="logo" />
                         </div>
+                    </div>
+                    <div class="card-body-account">
+                        <div class=" form-group">
+                            <label class="form-label">Full Name</label>
+                            <input type="text" class=" form-control" @bind="User.FullName" />
+                        </div>
+                        <div class=" form-group">
+                            <label class="form-label">Email</label>
+                            <input type="email" class=" form-control" @bind="User.Email" />
+                        </div>
+                        <div class=" form-group">
+                            <label class=" form-label">Password</label>
+                            <input type="password" class=" form-control" @bind="User.Password" />
+                        </div>
+                        <div class=" form-group">
+                            <label class=" form-label">Password</label>
+                            <input type="password" class=" form-control" @bind="User.ConfimPassword" />
+                        </div>
+                            <div class="mt-5 form-group">
+                                @if (ButtonStates)
+                                {
+                                    <Client.Pages.OtherPages.ButtonLoadingSpinerPage></Client.Pages.OtherPages.ButtonLoadingSpinerPage>
+                                }
+                                else
+                                {
+                                    <button class=" btn btn-outline-primary float-end" type="submit">Register</button>
+                                }
+                            </div>
+                    </div>
+                    <div class="card-footer-account">
+                        <span>
+                            don't have account
+                            <a class=" btn-link" href="/identity/account/login">Login</a>
+                            <ValidationSummary />
+                        </span>
                     </div>
                 </div>
             </EditForm>
         </div>
-
     </div>
 </div>
 
 
 @code{
+    private bool ButtonStates { get; set; } = false;
     private Register User = new();
-    
+    async Task RegisterHandler()
+    {
+        ButtonStates = true;
+        var result = await accountService.CreateAsync(User);
+        if (result!.Flag) 
+        { 
+            NavManager.NavigateTo("/", forceLoad: true);
+            User = new();
+        };
+        ButtonStates = false;
+    }
+
     
 }

@@ -30,7 +30,7 @@ public class TokenService
             issuer:_config.Value.Issuer,
             audience:_config.Value.Audience,
             claims: userClaims,
-            expires:DateTime.Now.AddDays(1),
+            expires:DateTime.Now.AddMinutes(1),
             signingCredentials:credential
             );
         return new JwtSecurityTokenHandler().WriteToken(token);

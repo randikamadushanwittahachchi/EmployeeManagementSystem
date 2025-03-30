@@ -21,6 +21,14 @@
       "PackagePath": "staticwebassets\\icon-192.png"
     },
     {
+      "Id": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\wwwroot\\images\\backGround\\backGroundImage.jpg",
+      "PackagePath": "staticwebassets\\images\\backGround\\backGroundImage.jpg"
+    },
+    {
+      "Id": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\wwwroot\\images\\logo\\logo.jpeg",
+      "PackagePath": "staticwebassets\\images\\logo\\logo.jpeg"
+    },
+    {
       "Id": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\wwwroot\\index.html",
       "PackagePath": "staticwebassets\\index.html"
     },
