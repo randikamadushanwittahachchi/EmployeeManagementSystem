@@ -1,0 +1,29 @@
+﻿@page "/identity/account/register";
+
+<div class=" container h-auto">
+    <div class=" row mt-5 justify-content-center align-items-center">
+        <div class=" col-sm-4 col-lg-6">
+            <EditForm Enhance Model="User">
+                <DataAnnotationsValidator/>
+                <ValidationSummary/>
+                <div class=" card mt-2">
+                    <div class=" card-header "> File the Form to register</div>
+                    <div class=" card-body mt-3">
+                        <div class=" form-group">
+                            <label class=" form-label">Enter Your Full Name</label>
+                            <input @bind="User.FullName"/>
+                        </div>
+                    </div>
+                </div>
+            </EditForm>
+        </div>
+
+    </div>
+</div>
+
+
+@code{
+    private Register User = new();
+    
+    
+}

@@ -3,5 +3,5 @@
 public interface IGetHttpClient
 {
     Task<HttpClient?> GetPrivateHttpClientAsync();
-    HttpClient GetPublicHttpClientAsync();
+    HttpClient GetPublicHttpClient();
 }

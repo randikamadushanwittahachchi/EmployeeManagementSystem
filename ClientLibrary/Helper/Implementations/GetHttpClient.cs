@@ -9,10 +9,10 @@ public class GetHttpClient(ILocalStorage localStorage,IHttpClientFactory httpCli
     private readonly IHttpClientFactory _httpClientFactory = httpClientFactory;
     private readonly ISerialization _serialization = serialization;
     private const string HeaderKey = "Authorization";
-    private const string ClientType = "SystemApiClinet";
+    private const string BaseUrl = "SystemApiClinet";
     public async Task<HttpClient?> GetPrivateHttpClientAsync()
     {
-        HttpClient client = _httpClientFactory.CreateClient(ClientType);
+        HttpClient client = _httpClientFactory.CreateClient(BaseUrl);
         var stringToken = await _localStorage.GetTokenAsync();
         if (string.IsNullOrEmpty(stringToken)) return client;
 
@@ -23,9 +23,9 @@ public class GetHttpClient(ILocalStorage localStorage,IHttpClientFactory httpCli
         return client;
     }
 
-    public HttpClient GetPublicHttpClientAsync()
+    public HttpClient GetPublicHttpClient()
     {
-        HttpClient client = _httpClientFactory.CreateClient(ClientType);
+        HttpClient client = _httpClientFactory.CreateClient(BaseUrl);
         client.DefaultRequestHeaders.Remove(HeaderKey);
         return client;
 

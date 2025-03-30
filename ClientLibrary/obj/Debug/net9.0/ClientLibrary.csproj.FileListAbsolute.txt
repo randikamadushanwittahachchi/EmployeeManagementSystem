@@ -10,3 +10,7 @@ C:\Randika\Project_App\EmployeeManagementSystem\ClientLibrary\obj\Debug\net9.0\r
 C:\Randika\Project_App\EmployeeManagementSystem\ClientLibrary\obj\Debug\net9.0\ClientLibrary.pdb
 C:\Randika\Project_App\EmployeeManagementSystem\ClientLibrary\obj\Debug\net9.0\ref\ClientLibrary.dll
 C:\Randika\Project_App\EmployeeManagementSystem\ClientLibrary\obj\Debug\net9.0\ClientLibrary.sourcelink.json
+C:\Randika\Project_App\EmployeeManagementSystem\ClientLibrary\bin\Debug\net9.0\BaseLibrary.dll
+C:\Randika\Project_App\EmployeeManagementSystem\ClientLibrary\bin\Debug\net9.0\BaseLibrary.pdb
+C:\Randika\Project_App\EmployeeManagementSystem\ClientLibrary\obj\Debug\net9.0\ClientLibrary.csproj.AssemblyReference.cache
+C:\Randika\Project_App\EmployeeManagementSystem\ClientLibrary\obj\Debug\net9.0\ClientLi.3D08BA28.Up2Date

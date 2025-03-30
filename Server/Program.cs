@@ -1,4 +1,6 @@
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using ServerLibrary.Authentication;
 using ServerLibrary.Data;
 using ServerLibrary.Helpers;
@@ -6,6 +8,7 @@ using ServerLibrary.Repositores.Contracts;
 using ServerLibrary.Repositores.Implementations;
 using ServerLibrary.Services.Contracts;
 using ServerLibrary.Services.Implementations;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,10 +18,31 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+var jwtSection = builder.Configuration.GetSection(nameof(JWTSection)).Get<JWTSection>();
+
 //Database Register
 builder.Services.AddDbContext<AppDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Sorry, Your Connection is not found"));
+});
+
+builder.Services.AddAuthentication(option =>
+{
+    option.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    option.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+}).AddJwtBearer(options =>
+{
+    options.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuer = true,
+        ValidateAudience = true,
+        ValidateIssuerSigningKey = true,
+        ValidateLifetime = true,
+        ValidIssuer = jwtSection!.Issuer,
+        ValidAudience = jwtSection!.Audience,
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSection!.Key!))
+    };
+
 });
 
 builder.Services.AddControllers();
@@ -40,6 +64,16 @@ builder.Services.AddScoped<TokenService>();
 //Repositores
 builder.Services.AddScoped<IUserAccount, UserAccountRepositore>();
 
+// 
+builder.Services.AddCors(option => {
+    option.AddPolicy("AllowBlazorWasm", builder => builder.WithOrigins("http://localhost:5089","https://localhost:7230")
+    .AllowAnyMethod()
+    .AllowAnyHeader()
+    .AllowCredentials()
+    
+    );
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -57,7 +91,9 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseCors("AllowBlazorWasm");
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

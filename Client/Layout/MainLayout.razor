@@ -4,9 +4,19 @@
         <NavMenu />
     </div>
 
+
     <main>
         <div class="top-row px-4">
-            <a href="https://learn.microsoft.com/aspnet/core/" target="_blank">About</a>
+            <AuthorizeView>
+                <Authorized>
+                    <a class=" btn btn-success" @onclick="LogoutClicked"> Logout</a>
+                </Authorized>
+                <NotAuthorized>
+                    <a class=" btn btn-primary " style="appearance:none" href="/identity/account/login"> Lgin</a>
+                    <a class=" btn btn-none btn-danger" href="/identity/account/register">Register</a>
+
+                </NotAuthorized>
+            </AuthorizeView>
         </div>
 
         <article class="content px-4">
@@ -14,3 +24,13 @@
         </article>
     </main>
 </div>
+
+@code{
+    async Task LogoutClicked()
+    {
+        var logoutSession = new UserSession();
+        var customAuthStateProvider = (CustomAuthenticationStateProvider)AuthStateProvider;
+        await customAuthStateProvider.UpdateAuthenticationStateAsync(logoutSession);
+        NavManager.NavigateTo("/",forceLoad:true);
+    }
+};

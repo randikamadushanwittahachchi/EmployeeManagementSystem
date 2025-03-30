@@ -1,0 +1,44 @@
+﻿@page "/identity/account/login"
+
+<div class=" container mt-3">
+    <div class=" row justify-content-center">
+        <div class=" col-sm-2 col-md-4 col-lg-6">
+            <EditForm Enhance Model="User" OnValidSubmit="HadelLogin">
+                <DataAnnotationsValidator />
+                <ValidationSummary />
+                <div class=" card">
+                    <div class=" card-header"> Fill This Form to Login</div>
+                    <div class="card-body">
+                        <div class=" form-group mt-3">
+                            <label class=" form-label">Email</label>
+                            <input type="email" class=" form-control" @bind="User.Email" />
+                        </div>
+                        <div class=" form-group mt-3">
+                            <label class=" form-label">Password</label>
+                            <input type="password" class=" form-control" @bind="User.Password" />
+                        </div>
+                        <div class=" form-group mt-3">
+                            <button class=" btn btn-outline-primary float-end" type="submit">Login</button>
+                        </div>
+                    </div>
+                </div>
+            </EditForm>
+        </div>
+    </div>
+</div>
+
+@code{
+    private Login User = new();
+    async Task HadelLogin()
+    {
+        var result = await accountService.SignInAsync(User);
+        if (result!.Flag)
+        {
+            var customAuthStateProvider = (CustomAuthenticationStateProvider)AuthStateProvider;
+            await customAuthStateProvider.UpdateAuthenticationStateAsync(new UserSession { Token = result.Token, RefrshToken = result.RefreshToken });
+            NavManager.NavigateTo("/", forceLoad: true);
+        }
+
+
+    }
+}
