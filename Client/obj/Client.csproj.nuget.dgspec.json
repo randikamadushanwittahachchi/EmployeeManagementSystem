@@ -244,6 +244,14 @@
               "target": "Package",
               "version": "[9.0.3, )",
               "autoReferenced": true
+            },
+            "Syncfusion.Blazor.Popups": {
+              "target": "Package",
+              "version": "[29.1.35, )"
+            },
+            "Syncfusion.Blazor.Themes": {
+              "target": "Package",
+              "version": "[29.1.35, )"
             }
           },
           "imports": [

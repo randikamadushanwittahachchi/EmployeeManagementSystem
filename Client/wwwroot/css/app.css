@@ -157,4 +157,21 @@ html, body {
     border-radius: 10px;
     opacity: 0.8;
 }
+input{
+    border-radius:10px;
+}
+.cursor-pointer {
+    cursor: pointer;
+}
 
+.cursor-default {
+    cursor: default;
+}
+
+.cursor-wait {
+    cursor: wait;
+}
+
+.cursor-not-allowed {
+    cursor: not-allowed;
+}

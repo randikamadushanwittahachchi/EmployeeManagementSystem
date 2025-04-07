@@ -9,6 +9,8 @@ using Microsoft.IdentityModel.Tokens;
 using ClientLibrary.Authentication;
 using ClientLibrary.Services.Contracts;
 using ClientLibrary.Services.Implementations;
+using Syncfusion.Blazor;
+using Client.Service;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 
@@ -26,10 +28,14 @@ builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri("https:/
 builder.Services.AddTransient<ISerialization, Serialization>();
 builder.Services.AddScoped<ILocalStorage, LocalStorage>();
 builder.Services.AddScoped<IGetHttpClient, GetHttpClient>();
-//
+//Authuthorization service add
 builder.Services.AddAuthorizationCore();
 builder.Services.AddBlazoredLocalStorage();
 builder.Services.AddScoped<AuthenticationStateProvider, CustomAuthenticationStateProvider>();
 //
 builder.Services.AddScoped<IUserAccountService, UserAccounmService>();
+
+builder.Services.AddSyncfusionBlazor();
+builder.Services.AddScoped<MyDialogService>();
+
 await builder.Build().RunAsync();

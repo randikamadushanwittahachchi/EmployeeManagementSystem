@@ -47,20 +47,46 @@
 </div>
 
 @code{
+
     private Login User = new();
     private bool ButtonStates { get; set; } = false;
+
+    [CascadingParameter] public Task<AuthenticationState> AuthenticationState { get; set; }
+    protected async override Task OnInitializedAsync()
+    {
+        await CheckUserAuthenticadAsync();
+    }
+
     async Task HadelLogin()
     {
         ButtonStates = true;
         var result = await accountService.SignInAsync(User);
         if (result!.Flag)
         {
+            await DisplayDialog(result.Message, "Login Success");
             var customAuthStateProvider = (CustomAuthenticationStateProvider)AuthStateProvider;
             await customAuthStateProvider.UpdateAuthenticationStateAsync(new UserSession { Token = result.Token, RefrshToken = result.RefreshToken });
             NavManager.NavigateTo("/", forceLoad: true);
         }
+        else
+        {
+            await DisplayDialog(result.Message, "Alert");  
+        }
         ButtonStates = false;
-
-
     }
+
+    private async Task DisplayDialog(string message, string titel)
+    {
+        // await DialogService.AlertAsync(message, titel);
+    }
+
+    private async Task CheckUserAuthenticadAsync()
+    {
+        var user = (await AuthenticationState!).User;
+        if (user.Identity!.IsAuthenticated)
+        {
+            NavManager.NavigateTo("/home/dashboard", forceLoad: true);
+        }
+    }
+
 }
