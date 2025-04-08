@@ -60,6 +60,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcT3RoZXJQYWdlc1xEcm9wRG93blByb2ZpbGVQYWdlLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Randika/Project_App/EmployeeManagementSystem/Client/Pages/Shared/DialogShared.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXERpYWxvZ1NoYXJlZC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Randika/Project_App/EmployeeManagementSystem/Client/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 

@@ -1,6 +1,8 @@
 ﻿@page "/identity/account/login"
 @layout AuthenticationLayout
 
+<DialogShared @ref="DialogRef"></DialogShared>
+
 <div class="container" style=" margin-top:2%; z-index:2">
     <div class="row justify-content-center">
         <div class="col-6" >
@@ -51,7 +53,9 @@
     private Login User = new();
     private bool ButtonStates { get; set; } = false;
 
-    [CascadingParameter] public Task<AuthenticationState> AuthenticationState { get; set; }
+    private DialogShared? DialogRef;
+
+    [CascadingParameter] public Task<AuthenticationState>? AuthenticationState { get; set; }
     protected async override Task OnInitializedAsync()
     {
         await CheckUserAuthenticadAsync();
@@ -63,21 +67,15 @@
         var result = await accountService.SignInAsync(User);
         if (result!.Flag)
         {
-            await DisplayDialog(result.Message, "Login Success");
             var customAuthStateProvider = (CustomAuthenticationStateProvider)AuthStateProvider;
             await customAuthStateProvider.UpdateAuthenticationStateAsync(new UserSession { Token = result.Token, RefrshToken = result.RefreshToken });
-            NavManager.NavigateTo("/", forceLoad: true);
+            await DialogRef!.Show(result.Message, "Login Success", () => { NavManager.NavigateTo("/", forceLoad: true); });
         }
         else
         {
-            await DisplayDialog(result.Message, "Alert");  
+            await DialogRef!.Show(result.Message, "Login Failed");
         }
         ButtonStates = false;
-    }
-
-    private async Task DisplayDialog(string message, string titel)
-    {
-        // await DialogService.AlertAsync(message, titel);
     }
 
     private async Task CheckUserAuthenticadAsync()

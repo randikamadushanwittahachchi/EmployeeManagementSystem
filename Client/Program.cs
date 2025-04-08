@@ -10,7 +10,6 @@ using ClientLibrary.Authentication;
 using ClientLibrary.Services.Contracts;
 using ClientLibrary.Services.Implementations;
 using Syncfusion.Blazor;
-using Client.Service;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 
@@ -36,6 +35,5 @@ builder.Services.AddScoped<AuthenticationStateProvider, CustomAuthenticationStat
 builder.Services.AddScoped<IUserAccountService, UserAccounmService>();
 
 builder.Services.AddSyncfusionBlazor();
-builder.Services.AddScoped<MyDialogService>();
 
 await builder.Build().RunAsync();

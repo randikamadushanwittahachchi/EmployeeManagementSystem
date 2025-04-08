@@ -1,0 +1,41 @@
+﻿<SfDialog 
+@ref="DialogRef" 
+Width="300px" 
+IsModal="true" 
+ShowCloseIcon="true" 
+Visible="false">
+    <DialogTemplates>
+        <Header>@HeaderText</Header>
+        <Content>@BodyText</Content>
+    </DialogTemplates>
+    <DialogButtons>
+        <DialogButton Content="Ok" OnClick="@OkClick" IsPrimary="true"></DialogButton>
+    </DialogButtons>
+</SfDialog>
+
+@code{
+    private SfDialog? DialogRef;
+
+    private string? HeaderText { get; set; }
+    private string? BodyText { get; set; }
+
+    public async Task Show(string bodyText, string headerText,Action? okClick=null)
+    {
+        HeaderText = headerText;
+        BodyText = bodyText;
+        await DialogRef!.ShowAsync();
+        _okClick = okClick;
+    }
+
+    private Action? _okClick;
+
+    public async Task OkClick()
+    {
+        await DialogRef!.HideAsync();
+        if (_okClick is not null)
+        {
+            _okClick.Invoke();
+        }
+    }
+
+}
