@@ -75,8 +75,7 @@
         var result = await accountService.CreateAsync(User);
         if (result!.Flag) 
         {
-            await DialogRef!.Show(result.Message, "Register Success");
-            NavManager.NavigateTo("/", forceLoad: true);
+            await DialogRef!.Show(result.Message, "Register Success", () => NavManager.NavigateTo("/", forceLoad: true));
             User = new();
         }
         else
