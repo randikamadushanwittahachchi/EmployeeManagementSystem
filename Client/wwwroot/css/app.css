@@ -175,3 +175,15 @@ input{
 .cursor-not-allowed {
     cursor: not-allowed;
 }
+
+@media(max-width:767.98px) {
+    .table-header-width {
+        width: 50px;
+    }
+}
+@media(min-width:768px) and (max-width:1199.98px){
+    .table-header-width {
+        width: 150px;
+    }
+}
+

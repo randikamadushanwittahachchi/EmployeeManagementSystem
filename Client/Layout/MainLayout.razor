@@ -1,4 +1,6 @@
-﻿@inherits LayoutComponentBase
+﻿@using Client.Pages.OtherPages
+@inherits LayoutComponentBase
+
 <div class="page">
     <div class="sidebar">
         <NavMenu />
@@ -7,15 +9,7 @@
 
     <main>
         <div class="top-row px-4">
-            <AuthorizeView>
-                <Authorized>
-                    <a class=" btn btn-success" @onclick="LogoutClicked"> Logout</a>
-                </Authorized>
-                <NotAuthorized>
-                    <a class=" btn btn-primary " style="appearance:none" href="/identity/account/login"> Lgin</a>
-                    <a class=" btn btn-none btn-danger" href="/identity/account/register">Register</a>
-                </NotAuthorized>
-            </AuthorizeView>
+            <DropDownProfilePage />
         </div>
 
         <article class="content px-4">
