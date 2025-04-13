@@ -1,5 +1,7 @@
 ﻿@using Client.Pages.OtherPages
+@using Microsoft.AspNetCore.Authorization
 @inherits LayoutComponentBase
+@attribute [Authorize]
 
 <div class="page">
     <div class="sidebar">
@@ -17,13 +19,3 @@
         </article>
     </main>
 </div>
-
-@code{
-    async Task LogoutClicked()
-    {
-        var logoutSession = new UserSession();
-        var customAuthStateProvider = (CustomAuthenticationStateProvider)AuthStateProvider;
-        await customAuthStateProvider.UpdateAuthenticationStateAsync(logoutSession);
-        NavManager.NavigateTo("/",forceLoad:true);
-    }
-};

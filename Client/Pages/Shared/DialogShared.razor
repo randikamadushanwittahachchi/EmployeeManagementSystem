@@ -19,7 +19,7 @@ Visible="false">
     private string? HeaderText { get; set; }
     private string? BodyText { get; set; }
 
-    public async Task Show(string bodyText, string headerText,Action? okClick=null)
+    public async Task Show(string bodyText, string headerText,Func<Task>? okClick=null)
     {
         HeaderText = headerText;
         BodyText = bodyText;
@@ -27,14 +27,14 @@ Visible="false">
         _okClick = okClick;
     }
 
-    private Action? _okClick;
+    private Func<Task>? _okClick;
 
     public async Task OkClick()
     {
         await DialogRef!.HideAsync();
         if (_okClick is not null)
         {
-            _okClick.Invoke();
+            await _okClick();
         }
     }
 

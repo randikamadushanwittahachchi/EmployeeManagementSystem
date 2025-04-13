@@ -1,5 +1,7 @@
 html, body {
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    --border-main-color: rgb(115, 115, 115);
+    --border-second-color: rgb(60, 60, 59 , 0.15);
 }
 
 h1:focus {
@@ -176,6 +178,8 @@ input{
     cursor: not-allowed;
 }
 
+/* table banner  componnet */
+
 @media(max-width:767.98px) {
     .table-header-width {
         width: 50px;
@@ -187,3 +191,33 @@ input{
     }
 }
 
+
+
+/* drop down menu componnent */
+
+.dropdown-toggle::after{
+    display:none;
+}
+.dropdown-toggle {
+    border-style: none;
+    background-color: transparent;
+}
+.image-div{
+    border-radius: 50%;
+    display: inline-block;
+    transition: box-shadow 1s ease;
+
+}
+.profile-image {
+    transition: all 1s ease;
+}
+.image-div:hover {
+    box-shadow:0 0 3px 8px var(--border-second-color);
+}
+
+.dropdown-toggle:focus .image-div {
+    box-shadow:0 0 3px 8px var(--border-second-color);
+}
+.dropdown-toggle:active .profile-image {
+    box-shadow: 0 0 50px var(--border-main-color);
+}

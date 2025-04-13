@@ -1,12 +1,31 @@
-﻿<div class="dropdown">
-    <button class=" btn btn-link dropdown-toggle p-0" type="button" data-bs-toggle="dropdown">
-        <img src="@(string.IsNullOrEmpty(ProfileImage)? "../images/profile/profileImage.png":ProfileImage)" class="rounded-circle" width="50"/>
+﻿<DialogShared @ref="DialogRef"></DialogShared>
+<div class="dropdown">
+    <button class="dropdown-toggle p-0" type="button" data-bs-toggle="dropdown">
+        <div class="image-div">
+            <img src="@(string.IsNullOrEmpty(ProfileImage)? "../images/profile/profileImage.png":ProfileImage)" class="rounded-circle profile-image" width="40"/>
+        </div>
     </button>
-    <ul class=" dropdown-menu">
-        <li><a class=" dropdown-item">profile</a></li>
+    <ul style="min-width:130px;width:130px" class=" dropdown-menu">
+        <li><a class=" cursor-pointer bi-people-fill text-primary text-decoration-none m-0 dropdown-item"><span style=" margin-left:10px">profile</span></a></li>
+        <li><a onclick="@LogOutClick" class=" cursor-pointer bi-lock text-danger text-decoration-none m-0 dropdown-item"><span style=" margin-left:10px">LogOut</span></a></li>
     </ul>
 </div>
 
 @code{
+    private DialogShared? DialogRef;
+
     private string? ProfileImage { get; set; } 
+
+    private async Task LogOutClick()
+    {
+        await DialogRef!.Show("Are you sure you want to log out?", "LogOut",async () => { await LogOut(); });
+    }
+
+    private async Task LogOut()
+    {
+        UserSession userSesstion = new();
+        var customAuthStateProvider = (CustomAuthenticationStateProvider)AuthStateProvider;
+        await customAuthStateProvider.UpdateAuthenticationStateAsync(userSesstion);
+        NavManager.NavigateTo("/identity/account/login",replace:true ,forceLoad: true);
+    }
 }
