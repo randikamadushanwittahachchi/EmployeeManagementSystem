@@ -1,13 +1,18 @@
 ﻿@page "/home/dashboard"
 @inject NavigationManager NavManager
-@using Client.Pages.AdministriationPages
+@using Client.Pages.TablePages
 
 
 <TableBanner/>
 
+<button @onclick="Click">Click</button>
+<div>@Element</div>
+
 @code{
 
     [CascadingParameter] public Task<AuthenticationState> AuthenticationState { get; set; }
+    private string Element { get; set; } = string.Empty;
+
     protected async override Task OnInitializedAsync()
     {
         await CheckUserAuthenticadAsync();
@@ -20,5 +25,9 @@
         {
             NavManager.NavigateTo("/identity/account/login", forceLoad: true);
         }
+    }
+    private void Click()
+    {
+        Element = string.IsNullOrEmpty(Element) ? "<h1>Hello</h1>" : "";
     }
 }

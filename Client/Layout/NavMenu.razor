@@ -4,7 +4,7 @@
     <Authorized>
         <div class="top-row ps-3 navbar navbar-dark">
             <div class="container-fluid">
-                <a class="navbar-brand" href="">
+                <a class="navbar-brand" href="" >
                     Welcome,@context.User.Identity!.Name
                 </a>
                 <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
@@ -16,25 +16,65 @@
         <div class="@NavMenuCssClass nav-scrollable" @onclick="ToggleNavMenu">
             <nav class="nav flex-column">
                 <div class="nav-item px-3">
-                    <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+                    <NavLink class="nav-link" href="home/dashboard" Match="NavLinkMatch.All">
                         <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span> Home
                     </NavLink>
                 </div>
                 <div class="nav-item px-3">
-                    <NavLink class="nav-link" href="counter">
-                        <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Counter
+                    <NavLink class="nav-link" href="about">
+                        <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> About
                     </NavLink>
                 </div>
                 <div class=" nav-item px-3">
-                    <NavLink class=" nav-link cursor-pointer" href="#" onclick="ShowAdminMenuCOntainer">
+                    <NavLink class=" nav-link cursor-pointer" href="administration" @onclick="ShowAdminMenuContainer">
                         <div class=" hstack gap-1">
                             <span class=" bi bi-people-fill fs-5 text-center" style=" margin-top:-2rem;" aria-hidden="true" ></span>
                             <span>Administration</span>
                         </div>
                     </NavLink>
-                    <a>
-
+                    <a class=" nav-link text-white p-2 " style=" margin-left:5rem; visibility:@CssAdminVisibility;">
+                        <div class=" hstack">
+                            <span class=" bi bi-people fs-5 text-center " aria-hidden="true" style="margin-top:-2rem;"></span>
+                            <span>User</span>
+                        </div>
                     </a>
+                </div>
+                <div class=" nav-item px-3" style=" margin-top:@CssDepatmentMargin">
+                    <NavLink class=" nav-link cursor-pointer" href="deparment" @onclick="ShowDepartmentMenuContainer">
+                        <div class=" hstack gap-1">
+                            <span class=" bi bi-buildings-fill fs-5 text-center" aria-hidden="true" style="margin-top:-2rem"></span>
+                            <span class=" fs-6">Deparment</span>
+                        </div>
+                    </NavLink>
+                    <div class=" nav-link p-2 text-white" style=" margin-left:5rem; visibility:@CssDeparmentVisibility;">
+                        <ul class="list-group" style="list-style:none;" >
+                            <li style=" list-style:none"  class=" cursor-pointer" >
+                                <a class=" nav-link p-2" @onclick="GeneralClick">
+                                    <div class=" hstack text-wrap">
+                                        <span class=" bi bi-building fs-5 text-center" style="margin-top:-2rem;" aria-hidden="true"></span>
+                                        <span class=" fs-6">General</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li style="list-style:none" class=" cursor-pointer ">
+                                <a class=" nav-link p-2" @onclick="DepartmentClick">
+                                    <div class=" hstack text-wrap">
+                                        <span class="bi bi-house-door fs-5 text-center" style=" margin-top:-2rem" aria-hidden="true"></span>
+                                        <span class=" fs-6">Department</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li style=" list-style:none" class="cursor-pointer">
+                                <a class=" nav-link p-2" @onclick="BranchClick">
+                                    <div class=" text-wrap hstack">
+                                        <span class="bi bi-door-closed fs-5 text-center "  style=" margin-top:-2rem;" aria-hidden="true"></span>
+                                        <span class=" fs-6 ">Branch</span>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
                 </div>
             </nav>
         </div>
@@ -44,6 +84,10 @@
 @code {
 
     private bool collapseNavMenu = true;
+    private string CssAdminVisibility{ get; set; } = "hidden";
+    private string CssDeparmentVisibility{ get; set; } = "hidden";
+    private string CssDepatmentMargin{ get; set; } = "0rem";
+
 
     private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
 
@@ -51,4 +95,27 @@
     {
         collapseNavMenu = !collapseNavMenu;
     }
+    private void ShowAdminMenuContainer()
+    {
+        CssAdminVisibility = CssAdminVisibility == "hidden" ? "visible" : "hidden";
+    }
+    private void ShowDepartmentMenuContainer()
+    {
+        CssDeparmentVisibility = CssDeparmentVisibility == "hidden" ? "visible" : "hidden";
+        CssDepatmentMargin = CssDepatmentMargin == "0rem" ? "5rem" : "0rem";
+    }
+    private void GeneralClick()
+    {
+
+    }
+    private void DepartmentClick()
+    {
+
+    }
+    private void BranchClick()
+    {
+        
+    }
+
+
 }
