@@ -1,21 +1,29 @@
 ﻿@using Microsoft.AspNetCore.Components.Authorization
-@using Syncfusion.Blazor.Popups
+@using Blazored.Modal
 
+<style>
+    .custom-model{
+        width: 400px;
+        height: 200px;
+    }
+</style>
 <CascadingAuthenticationState>
-    <Router AppAssembly="@typeof(App).Assembly">
-        <Found Context="routeData">
-            <AuthorizeRouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" >
-                <Authorizing>
-                    Please wait....
-                </Authorizing>
-            </AuthorizeRouteView>
-            <FocusOnNavigate RouteData="@routeData" Selector="h1" />
-        </Found>
-        <NotFound>
-            <PageTitle>Not found</PageTitle>
-            <LayoutView Layout="@typeof(MainLayout)">
-                <p role="alert">Sorry, there's nothing at this address.</p>
-            </LayoutView>
-        </NotFound>
-    </Router>
+    <CascadingBlazoredModal  HideCloseButton="true" HideHeader="true" Size="ModalSize.Custom" SizeCustomClass="custom-model" Position="ModalPosition.Middle" DisableBackgroundCancel="true">
+        <Router AppAssembly="@typeof(App).Assembly">
+            <Found Context="routeData">
+                <AuthorizeRouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" >
+                    <Authorizing>
+                        Please wait....
+                    </Authorizing>
+                </AuthorizeRouteView>
+                <FocusOnNavigate RouteData="@routeData" Selector="h1" />
+            </Found>
+            <NotFound>
+                <PageTitle>Not found</PageTitle>
+                <LayoutView Layout="@typeof(MainLayout)">
+                    <p role="alert">Sorry, there's nothing at this address.</p>
+                </LayoutView>
+            </NotFound>
+        </Router>
+    </CascadingBlazoredModal>
 </CascadingAuthenticationState>

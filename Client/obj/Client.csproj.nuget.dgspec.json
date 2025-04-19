@@ -216,6 +216,10 @@
               "target": "Package",
               "version": "[4.5.0, )"
             },
+            "Blazored.Modal": {
+              "target": "Package",
+              "version": "[7.3.1, )"
+            },
             "Microsoft.AspNetCore.Components.Authorization": {
               "target": "Package",
               "version": "[9.0.3, )"
@@ -244,14 +248,6 @@
               "target": "Package",
               "version": "[9.0.4, )",
               "autoReferenced": true
-            },
-            "Syncfusion.Blazor.Popups": {
-              "target": "Package",
-              "version": "[29.1.35, )"
-            },
-            "Syncfusion.Blazor.Themes": {
-              "target": "Package",
-              "version": "[29.1.35, )"
             }
           },
           "imports": [

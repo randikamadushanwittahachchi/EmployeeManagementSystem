@@ -14,13 +14,10 @@
     <SourceRoot Include="C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages\" />
   </ItemGroup>
   <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <Import Project="$(NuGetPackageRoot)syncfusion.blazor.themes\29.1.35\buildTransitive\Syncfusion.Blazor.Themes.props" Condition="Exists('$(NuGetPackageRoot)syncfusion.blazor.themes\29.1.35\buildTransitive\Syncfusion.Blazor.Themes.props')" />
-    <Import Project="$(NuGetPackageRoot)syncfusion.blazor.core\29.1.35\buildTransitive\Syncfusion.Blazor.Core.props" Condition="Exists('$(NuGetPackageRoot)syncfusion.blazor.core\29.1.35\buildTransitive\Syncfusion.Blazor.Core.props')" />
-    <Import Project="$(NuGetPackageRoot)syncfusion.blazor.buttons\29.1.35\buildTransitive\Syncfusion.Blazor.Buttons.props" Condition="Exists('$(NuGetPackageRoot)syncfusion.blazor.buttons\29.1.35\buildTransitive\Syncfusion.Blazor.Buttons.props')" />
-    <Import Project="$(NuGetPackageRoot)syncfusion.blazor.popups\29.1.35\buildTransitive\Syncfusion.Blazor.Popups.props" Condition="Exists('$(NuGetPackageRoot)syncfusion.blazor.popups\29.1.35\buildTransitive\Syncfusion.Blazor.Popups.props')" />
     <Import Project="$(NuGetPackageRoot)microsoft.net.sdk.webassembly.pack\9.0.4\build\Microsoft.NET.Sdk.WebAssembly.Pack.props" Condition="Exists('$(NuGetPackageRoot)microsoft.net.sdk.webassembly.pack\9.0.4\build\Microsoft.NET.Sdk.WebAssembly.Pack.props')" />
     <Import Project="$(NuGetPackageRoot)microsoft.net.illink.tasks\9.0.3\build\Microsoft.NET.ILLink.Tasks.props" Condition="Exists('$(NuGetPackageRoot)microsoft.net.illink.tasks\9.0.3\build\Microsoft.NET.ILLink.Tasks.props')" />
     <Import Project="$(NuGetPackageRoot)microsoft.aspnetcore.components.webassembly\9.0.3\build\net9.0\Microsoft.AspNetCore.Components.WebAssembly.props" Condition="Exists('$(NuGetPackageRoot)microsoft.aspnetcore.components.webassembly\9.0.3\build\net9.0\Microsoft.AspNetCore.Components.WebAssembly.props')" />
+    <Import Project="$(NuGetPackageRoot)blazored.modal\7.3.1\buildTransitive\Blazored.Modal.props" Condition="Exists('$(NuGetPackageRoot)blazored.modal\7.3.1\buildTransitive\Blazored.Modal.props')" />
   </ImportGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <PkgMicrosoft_NET_Sdk_WebAssembly_Pack Condition=" '$(PkgMicrosoft_NET_Sdk_WebAssembly_Pack)' == '' ">C:\Users\User\.nuget\packages\microsoft.net.sdk.webassembly.pack\9.0.4</PkgMicrosoft_NET_Sdk_WebAssembly_Pack>

@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "dDBzRbZhTCA=",
+  "dgSpecHash": "37rS0Mqf2ME=",
   "success": true,
   "projectFilePath": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\Client.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\User\\.nuget\\packages\\blazored.localstorage\\4.5.0\\blazored.localstorage.4.5.0.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\blazored.modal\\7.3.1\\blazored.modal.7.3.1.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\microsoft.aspnetcore.authorization\\9.0.3\\microsoft.aspnetcore.authorization.9.0.3.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\microsoft.aspnetcore.components\\9.0.3\\microsoft.aspnetcore.components.9.0.3.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\microsoft.aspnetcore.components.analyzers\\9.0.3\\microsoft.aspnetcore.components.analyzers.9.0.3.nupkg.sha512",
@@ -40,13 +41,7 @@
     "C:\\Users\\User\\.nuget\\packages\\microsoft.jsinterop.webassembly\\9.0.3\\microsoft.jsinterop.webassembly.9.0.3.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\microsoft.net.illink.tasks\\9.0.3\\microsoft.net.illink.tasks.9.0.3.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\microsoft.net.sdk.webassembly.pack\\9.0.4\\microsoft.net.sdk.webassembly.pack.9.0.4.nupkg.sha512",
-    "C:\\Users\\User\\.nuget\\packages\\syncfusion.blazor.buttons\\29.1.35\\syncfusion.blazor.buttons.29.1.35.nupkg.sha512",
-    "C:\\Users\\User\\.nuget\\packages\\syncfusion.blazor.core\\29.1.35\\syncfusion.blazor.core.29.1.35.nupkg.sha512",
-    "C:\\Users\\User\\.nuget\\packages\\syncfusion.blazor.popups\\29.1.35\\syncfusion.blazor.popups.29.1.35.nupkg.sha512",
-    "C:\\Users\\User\\.nuget\\packages\\syncfusion.blazor.themes\\29.1.35\\syncfusion.blazor.themes.29.1.35.nupkg.sha512",
-    "C:\\Users\\User\\.nuget\\packages\\syncfusion.licensing\\29.1.35\\syncfusion.licensing.29.1.35.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\system.identitymodel.tokens.jwt\\8.7.0\\system.identitymodel.tokens.jwt.8.7.0.nupkg.sha512",
-    "C:\\Users\\User\\.nuget\\packages\\system.text.json\\9.0.0\\system.text.json.9.0.0.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\9.0.4\\microsoft.netcore.app.runtime.mono.browser-wasm.9.0.4.nupkg.sha512"
   ],
   "logs": []

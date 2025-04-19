@@ -1,4 +1,5 @@
-﻿@* <DialogShared @ref="DialogRef"></DialogShared> *@
+﻿@using Blazored.Modal
+@using Blazored.Modal.Services
 <div class="dropdown">
     <button class="dropdown-toggle p-0" type="button" data-bs-toggle="dropdown">
         <div class="image-div">
@@ -7,19 +8,23 @@
     </button>
     <ul style="min-width:130px;width:130px" class=" dropdown-menu">
         <li><a class=" cursor-pointer bi-people-fill text-primary text-decoration-none m-0 dropdown-item"><span style=" margin-left:10px">profile</span></a></li>
-        <li><a @*@onclick="LogOutClick"*@ class=" cursor-pointer bi-lock text-danger text-decoration-none m-0 dropdown-item"><span style=" margin-left:10px">LogOut</span></a></li>
+        <li><a @onclick="LogOutClick" class=" cursor-pointer bi-lock text-danger text-decoration-none m-0 dropdown-item"><span style=" margin-left:10px">LogOut</span></a></li>
     </ul>
 </div>
 
 @code{
-    // private DialogShared? DialogRef;
 
+    [CascadingParameter] IModalService Modal { get; set; } = default!;
     private string? ProfileImage { get; set; } 
 
-    // private async Task LogOutClick()
-    // {
-    //     await DialogRef!.Show("Are you sure you want to log out?", "LogOut",async () => { await LogOut(); });
-    // }
+    private void LogOutClick()
+    {
+        var paramter = new ModalParameters()
+        .Add(nameof(DialogShared.Header), "Log Out")
+        .Add(nameof(DialogShared.Message), "Are you sure you want to log out?")
+        .Add(nameof(DialogShared.FuncTask), (Func<Task>)LogOut);
+        Modal.Show<DialogShared>(paramter);
+    }
 
     private async Task LogOut()
     {

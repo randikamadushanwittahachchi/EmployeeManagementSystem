@@ -1,4 +1,6 @@
-﻿@using Microsoft.AspNetCore.Components.Authorization
+﻿@using Client.ApplicationState
+@using Microsoft.AspNetCore.Components.Authorization
+@inject DepartmentState departmentState
 
 <AuthorizeView>
     <Authorized>
@@ -86,7 +88,7 @@
     private bool collapseNavMenu = true;
     private string CssAdminVisibility{ get; set; } = "hidden";
     private string CssDeparmentVisibility{ get; set; } = "hidden";
-    private string CssDepatmentMargin{ get; set; } = "0rem";
+    private string CssDepatmentMargin{ get; set; } = "-3.5rem";
 
 
     private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
@@ -97,16 +99,17 @@
     }
     private void ShowAdminMenuContainer()
     {
-        CssAdminVisibility = CssAdminVisibility == "hidden" ? "visible" : "hidden";
+        CssAdminVisibility = Toggel(CssAdminVisibility, "hidden", "visible");
+        CssDepatmentMargin = Toggel(CssDepatmentMargin, "-3.5rem", "0rem");
+        
     }
     private void ShowDepartmentMenuContainer()
     {
-        CssDeparmentVisibility = CssDeparmentVisibility == "hidden" ? "visible" : "hidden";
-        CssDepatmentMargin = CssDepatmentMargin == "0rem" ? "5rem" : "0rem";
+        CssDeparmentVisibility = Toggel(CssDeparmentVisibility, "hidden", "visible");
     }
     private void GeneralClick()
     {
-
+        departmentState.GeneralDepartmentClick();
     }
     private void DepartmentClick()
     {
@@ -114,7 +117,11 @@
     }
     private void BranchClick()
     {
-        
+
+    }
+    private string Toggel(string value1, string value2, string value3)
+    {
+        return value1 == value2 ? value3 : value2;
     }
 
 

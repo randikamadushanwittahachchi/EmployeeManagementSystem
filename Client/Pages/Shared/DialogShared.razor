@@ -1,41 +1,36 @@
-﻿<SfDialog 
-@ref="DialogRef" 
-Width="300px" 
-IsModal="true" 
-ShowCloseIcon="true" 
-Visible="false">
-    <DialogTemplates>
-        <Header>@HeaderText</Header>
-        <Content>@BodyText</Content>
-    </DialogTemplates>
-    <DialogButtons>
-        <DialogButton Content="Ok" @OnClick="OkClick" IsPrimary="true"></DialogButton>
-    </DialogButtons>
-</SfDialog>
+﻿@using Blazored.Modal
+@using Blazored.Modal.Services
 
-@code{
-    private SfDialog? DialogRef;
+<div>
+    <div class=" pb-3 px-1 d-flex justify-content-between">
+        <h4 class=" mb-0 text-center fs-5">@Header</h4>
+        <button @onclick="CancelClick" type="button" class="btn btn-close close-btn fs-6 "></button>
+    </div>
+    <div class="border-top py-3">
+        <p class="m-0">@Message</p>
+    </div>
+    <div class="border-top pt-3 d-flex g-3 ">
+        <button type="button" class=" btn btn-primary" @onclick="OkClick">ok</button>
+        <button type="button" class=" btn btn-secondary ms-2" @onclick="CancelClick">cancel</button>
+    </div>
+</div>
 
-    private string? HeaderText { get; set; }
-    private string? BodyText { get; set; }
+@code {
+    [CascadingParameter] BlazoredModalInstance BlazoredModal { get; set; } = default!;
+    [Parameter] public string? Header { get; set; }
+    [Parameter] public string? Message { get; set; }
+    [Parameter] public Func<Task>? FuncTask { get; set; }
+    [Parameter] public Action? Action { get; set; }
 
-    public async Task Show(string bodyText, string headerText,Func<Task>? okClick=null)
+    private async Task CancelClick()
     {
-        HeaderText = headerText;
-        BodyText = bodyText;
-        await DialogRef!.ShowAsync();
-        _okClick = okClick;
+        await BlazoredModal.CloseAsync(ModalResult.Ok(true));
     }
-
-    private Func<Task>? _okClick;
-
-    public async Task OkClick()
+    private async Task OkClick()
     {
-        await DialogRef!.HideAsync();
-        if (_okClick is not null)
-        {
-            await _okClick();
-        }
+        await BlazoredModal.CloseAsync(ModalResult.Ok(true));
+        await FuncTask!.Invoke();
+        Action!.Invoke();
     }
 
 }

@@ -9,7 +9,8 @@ using Microsoft.IdentityModel.Tokens;
 using ClientLibrary.Authentication;
 using ClientLibrary.Services.Contracts;
 using ClientLibrary.Services.Implementations;
-using Syncfusion.Blazor;
+using Blazored.Modal;
+using Client.ApplicationState;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 
@@ -34,6 +35,8 @@ builder.Services.AddScoped<AuthenticationStateProvider, CustomAuthenticationStat
 //
 builder.Services.AddScoped<IUserAccountService, UserAccounmService>();
 
-builder.Services.AddSyncfusionBlazor();
+builder.Services.AddScoped<DepartmentState>();
+
+builder.Services.AddBlazoredModal();
 
 await builder.Build().RunAsync();
