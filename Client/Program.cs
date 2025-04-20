@@ -11,6 +11,8 @@ using ClientLibrary.Services.Contracts;
 using ClientLibrary.Services.Implementations;
 using Blazored.Modal;
 using Client.ApplicationState;
+using Client.Helper.Constracts;
+using Client.Helper.Implementations;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 
@@ -38,5 +40,7 @@ builder.Services.AddScoped<IUserAccountService, UserAccounmService>();
 builder.Services.AddScoped<DepartmentState>();
 
 builder.Services.AddBlazoredModal();
+builder.Services.AddScoped<IModalDialog, ModalDialog>();
+builder.Services.AddScoped<IModalInputDialog, ModalInputDialog>();
 
 await builder.Build().RunAsync();

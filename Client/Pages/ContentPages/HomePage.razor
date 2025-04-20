@@ -1,12 +1,11 @@
 ﻿@page "/home/dashboard"
-@inject NavigationManager NavManager
 @using Client.Pages.TablePages
+@using Client.Pages.DepartmentPages
+@inject NavigationManager NavManager
 
 
 <TableBanner/>
-
-<button @onclick="Click">Click</button>
-<div>@Element</div>
+<DepartmentPage/>
 
 @code{
 
@@ -25,9 +24,5 @@
         {
             NavManager.NavigateTo("/identity/account/login", forceLoad: true);
         }
-    }
-    private void Click()
-    {
-        Element = string.IsNullOrEmpty(Element) ? "<h1>Hello</h1>" : "";
     }
 }

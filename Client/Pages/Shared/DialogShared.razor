@@ -1,17 +1,22 @@
 ﻿@using Blazored.Modal
-@using Blazored.Modal.Services
+@using Blazored.Modal.Services  
 
-<div>
-    <div class=" pb-3 px-1 d-flex justify-content-between">
-        <h4 class=" mb-0 text-center fs-5">@Header</h4>
-        <button @onclick="CancelClick" type="button" class="btn btn-close close-btn fs-6 "></button>
-    </div>
-    <div class="border-top py-3">
-        <p class="m-0">@Message</p>
-    </div>
-    <div class="border-top pt-3 d-flex g-3 ">
-        <button type="button" class=" btn btn-primary" @onclick="OkClick">ok</button>
-        <button type="button" class=" btn btn-secondary ms-2" @onclick="CancelClick">cancel</button>
+<div class=" modal fade show d-block " tabindex="-1" role="dialog">
+    <div class="modal-backdrop fade show"></div>
+    <div class="  modal-dialog " style="margin-top:6rem;z-index: 1050">
+        <div class="modal-content">
+            <div class=" modal-header ">
+                <h5 class=" modal-title ">@Header</h5>
+                <button @onclick="CancelClick" type="button" class="btn btn-close close-btn fs-6 "></button>
+            </div>
+            <div class="modal-body">
+                <p >@Message</p>
+            </div>
+            <div class=" modal-footer ">
+                <button style="visibility:@CssButtonVisibility" type="button" class=" btn btn-secondary ms-2" @onclick="CancelClick">cancel</button>
+                <button  type="button" class=" btn btn-primary" @onclick="OkClick">ok</button>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -19,8 +24,18 @@
     [CascadingParameter] BlazoredModalInstance BlazoredModal { get; set; } = default!;
     [Parameter] public string? Header { get; set; }
     [Parameter] public string? Message { get; set; }
-    [Parameter] public Func<Task>? FuncTask { get; set; }
-    [Parameter] public Action? Action { get; set; }
+    [Parameter] public Func<Task>? TaskCallBack { get; set; }
+    [Parameter] public Action? CallBack { get; set; }
+
+    private string? CssButtonVisibility { get; set; } = "visible";
+
+    protected override void OnInitialized()
+    {
+        if (TaskCallBack == null && CallBack == null )
+        {
+            CssButtonVisibility = "hidden";
+        }
+    }
 
     private async Task CancelClick()
     {
@@ -29,8 +44,14 @@
     private async Task OkClick()
     {
         await BlazoredModal.CloseAsync(ModalResult.Ok(true));
-        await FuncTask!.Invoke();
-        Action!.Invoke();
+        if (TaskCallBack != null)
+        {
+            await TaskCallBack!.Invoke();
+        }
+        if (CallBack != null)
+        {
+            CallBack!.Invoke();
+        }
     }
 
 }

@@ -1,14 +1,8 @@
 ﻿@using Microsoft.AspNetCore.Components.Authorization
 @using Blazored.Modal
 
-<style>
-    .custom-model{
-        width: 400px;
-        height: 200px;
-    }
-</style>
 <CascadingAuthenticationState>
-    <CascadingBlazoredModal  HideCloseButton="true" HideHeader="true" Size="ModalSize.Custom" SizeCustomClass="custom-model" Position="ModalPosition.Middle" DisableBackgroundCancel="true">
+    <CascadingBlazoredModal  >
         <Router AppAssembly="@typeof(App).Assembly">
             <Found Context="routeData">
                 <AuthorizeRouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" >

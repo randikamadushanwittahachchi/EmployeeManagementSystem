@@ -1,5 +1,6 @@
-﻿@using Blazored.Modal
-@using Blazored.Modal.Services
+﻿@using Client.Helper.Constracts
+@inject IModalDialog Dialog
+
 <div class="dropdown">
     <button class="dropdown-toggle p-0" type="button" data-bs-toggle="dropdown">
         <div class="image-div">
@@ -14,16 +15,11 @@
 
 @code{
 
-    [CascadingParameter] IModalService Modal { get; set; } = default!;
     private string? ProfileImage { get; set; } 
 
     private void LogOutClick()
     {
-        var paramter = new ModalParameters()
-        .Add(nameof(DialogShared.Header), "Log Out")
-        .Add(nameof(DialogShared.Message), "Are you sure you want to log out?")
-        .Add(nameof(DialogShared.FuncTask), (Func<Task>)LogOut);
-        Modal.Show<DialogShared>(paramter);
+        Dialog.ShowDialog("Log Out", "Are you sure you want to log out?", (Func<Task>)LogOut);
     }
 
     private async Task LogOut()

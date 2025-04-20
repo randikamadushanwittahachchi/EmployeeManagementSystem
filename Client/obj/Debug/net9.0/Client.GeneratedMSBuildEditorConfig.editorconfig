@@ -52,12 +52,12 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29udGVudFBhZ2VzXEFkbWluaXN0cmF0aW9uUGFnZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Randika/Project_App/EmployeeManagementSystem/Client/Pages/ContentPages/DeparmentPage.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29udGVudFBhZ2VzXERlcGFybWVudFBhZ2UucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Randika/Project_App/EmployeeManagementSystem/Client/Pages/ContentPages/HomePage.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29udGVudFBhZ2VzXEhvbWVQYWdlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Randika/Project_App/EmployeeManagementSystem/Client/Pages/DepartmentPages/DepartmentPage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGVwYXJ0bWVudFBhZ2VzXERlcGFydG1lbnRQYWdlLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Randika/Project_App/EmployeeManagementSystem/Client/Pages/OtherPages/ButtonLoadingSpinerPage.razor]
@@ -66,6 +66,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Randika/Project_App/EmployeeManagementSystem/Client/Pages/OtherPages/DropDownProfilePage.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcT3RoZXJQYWdlc1xEcm9wRG93blByb2ZpbGVQYWdlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Randika/Project_App/EmployeeManagementSystem/Client/Pages/Shared/DepartmentDialog.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXERlcGFydG1lbnREaWFsb2cucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Randika/Project_App/EmployeeManagementSystem/Client/Pages/Shared/DialogShared.razor]

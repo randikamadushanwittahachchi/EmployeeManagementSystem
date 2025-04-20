@@ -1,0 +1,67 @@
+﻿@using Client.Helper.Constracts
+@implements IDisposable
+@inject DepartmentState departmentState
+@inject IModalInputDialog Dialog
+
+@if (departmentState.ShowGeneralDepartment)
+{
+    <div class=" container mt-5">
+        <div class=" row">
+            <div class=" col-12">
+                <div class=" card">
+                    <div class=" card-header">
+                        <h4 class=" float-start fs-4 text-center m-0">General Department</h4>
+                        <button type="button" class=" btn btnbtn-outline-success float-end " @onclick=OpenDialog><i class=" fs-3 bi bi-plus-circle"></i></button>
+                    </div>
+                    <div class=" card-body ">
+                        <table class=" table table-striped">
+                            <thead>
+                                <tr >
+                                    <th scope="col">#</th>
+                                    <th scope="col">first</th>
+                                    <th scope="col">last</th>
+                                    <th scope="col">handel</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Randika</td>
+                                    <td>Madushan</td>
+                                    <td>Yse</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>Kasuni</td>
+                                    <td>Ranaweera</td>
+                                    <td>yse</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+}
+
+@code {
+    GeneralDepartmentDTO generalDepartmentDTO = new();
+
+    protected override void OnInitialized()
+    {
+        departmentState.GeneralDepartmentAction += StateHasChanged;
+    }
+    public void Dispose()
+    {
+        departmentState.GeneralDepartmentAction -= StateHasChanged;
+    }
+    private void OpenDialog()
+    {
+        Dialog.ShowDialog();
+    }
+}

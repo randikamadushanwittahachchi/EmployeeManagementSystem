@@ -20,8 +20,4 @@
     <ProjectReference Include="..\ClientLibrary\ClientLibrary.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="DeparmentPages\" />
-  </ItemGroup>
-
 </Project>

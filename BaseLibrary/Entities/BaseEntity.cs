@@ -8,5 +8,5 @@ public class BaseEntity
 
     //Relationship : One to Many
     [JsonIgnore]
-    public virtual List<Employee>? Employees { get; set; }
+    public List<Employee>? Employees { get; set; }
 }
