@@ -168,10 +168,10 @@ C:\Randika\Project_App\EmployeeManagementSystem\Server\obj\Debug\net9.0\staticwe
 C:\Randika\Project_App\EmployeeManagementSystem\Server\obj\Debug\net9.0\staticwebassets\msbuild.buildMultiTargeting.Server.props
 C:\Randika\Project_App\EmployeeManagementSystem\Server\obj\Debug\net9.0\staticwebassets\msbuild.buildTransitive.Server.props
 C:\Randika\Project_App\EmployeeManagementSystem\Server\obj\Debug\net9.0\staticwebassets.pack.json
+C:\Randika\Project_App\EmployeeManagementSystem\Server\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
 C:\Randika\Project_App\EmployeeManagementSystem\Server\obj\Debug\net9.0\Server.csproj.Up2Date
 C:\Randika\Project_App\EmployeeManagementSystem\Server\obj\Debug\net9.0\Server.dll
 C:\Randika\Project_App\EmployeeManagementSystem\Server\obj\Debug\net9.0\refint\Server.dll
 C:\Randika\Project_App\EmployeeManagementSystem\Server\obj\Debug\net9.0\Server.pdb
 C:\Randika\Project_App\EmployeeManagementSystem\Server\obj\Debug\net9.0\Server.genruntimeconfig.cache
 C:\Randika\Project_App\EmployeeManagementSystem\Server\obj\Debug\net9.0\ref\Server.dll
-C:\Randika\Project_App\EmployeeManagementSystem\Server\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
