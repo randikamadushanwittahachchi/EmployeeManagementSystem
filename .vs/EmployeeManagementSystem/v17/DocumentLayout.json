@@ -3,28 +3,20 @@
   "WorkspaceRootPath": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E3F8F5EC-B983-4CD9-A9AA-F4D0DC7B5481}|ServerLibrary\\ServerLibrary.csproj|c:\\randika\\project_app\\employeemanagementsystem\\serverlibrary\\repositores\\implementations\\genericrepositoryinterface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E3F8F5EC-B983-4CD9-A9AA-F4D0DC7B5481}|ServerLibrary\\ServerLibrary.csproj|solutionrelative:serverlibrary\\repositores\\implementations\\genericrepositoryinterface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E3F8F5EC-B983-4CD9-A9AA-F4D0DC7B5481}|ServerLibrary\\ServerLibrary.csproj|c:\\randika\\project_app\\employeemanagementsystem\\serverlibrary\\repositores\\implementations\\branchrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E3F8F5EC-B983-4CD9-A9AA-F4D0DC7B5481}|ServerLibrary\\ServerLibrary.csproj|solutionrelative:serverlibrary\\repositores\\implementations\\branchrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E3F8F5EC-B983-4CD9-A9AA-F4D0DC7B5481}|ServerLibrary\\ServerLibrary.csproj|c:\\randika\\project_app\\employeemanagementsystem\\serverlibrary\\services\\implementations\\accountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E3F8F5EC-B983-4CD9-A9AA-F4D0DC7B5481}|ServerLibrary\\ServerLibrary.csproj|solutionrelative:serverlibrary\\services\\implementations\\accountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E3F8F5EC-B983-4CD9-A9AA-F4D0DC7B5481}|ServerLibrary\\ServerLibrary.csproj|c:\\randika\\project_app\\employeemanagementsystem\\serverlibrary\\repositores\\implementations\\deparmentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E3F8F5EC-B983-4CD9-A9AA-F4D0DC7B5481}|ServerLibrary\\ServerLibrary.csproj|solutionrelative:serverlibrary\\repositores\\implementations\\deparmentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E3F8F5EC-B983-4CD9-A9AA-F4D0DC7B5481}|ServerLibrary\\ServerLibrary.csproj|c:\\randika\\project_app\\employeemanagementsystem\\serverlibrary\\services\\contracts\\iaccountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E3F8F5EC-B983-4CD9-A9AA-F4D0DC7B5481}|ServerLibrary\\ServerLibrary.csproj|solutionrelative:serverlibrary\\services\\contracts\\iaccountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E3F8F5EC-B983-4CD9-A9AA-F4D0DC7B5481}|ServerLibrary\\ServerLibrary.csproj|c:\\randika\\project_app\\employeemanagementsystem\\serverlibrary\\repositores\\implementations\\generaldepartmentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E3F8F5EC-B983-4CD9-A9AA-F4D0DC7B5481}|ServerLibrary\\ServerLibrary.csproj|solutionrelative:serverlibrary\\repositores\\implementations\\generaldepartmentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FB59BF71-674A-490D-8FD7-6CC6C4FE4AA6}|Server\\Server.csproj|c:\\randika\\project_app\\employeemanagementsystem\\server\\controllers\\authenticationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FB59BF71-674A-490D-8FD7-6CC6C4FE4AA6}|Server\\Server.csproj|solutionrelative:server\\controllers\\authenticationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E3F8F5EC-B983-4CD9-A9AA-F4D0DC7B5481}|ServerLibrary\\ServerLibrary.csproj|c:\\randika\\project_app\\employeemanagementsystem\\serverlibrary\\repositores\\implementations\\useraccountrepositore.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E3F8F5EC-B983-4CD9-A9AA-F4D0DC7B5481}|ServerLibrary\\ServerLibrary.csproj|solutionrelative:serverlibrary\\repositores\\implementations\\useraccountrepositore.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E3F8F5EC-B983-4CD9-A9AA-F4D0DC7B5481}|ServerLibrary\\ServerLibrary.csproj|c:\\randika\\project_app\\employeemanagementsystem\\serverlibrary\\repositores\\contracts\\igenericrepositoryinterface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E3F8F5EC-B983-4CD9-A9AA-F4D0DC7B5481}|ServerLibrary\\ServerLibrary.csproj|solutionrelative:serverlibrary\\repositores\\contracts\\igenericrepositoryinterface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FB59BF71-674A-490D-8FD7-6CC6C4FE4AA6}|Server\\Server.csproj|c:\\randika\\project_app\\employeemanagementsystem\\server\\controllers\\genericcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FB59BF71-674A-490D-8FD7-6CC6C4FE4AA6}|Server\\Server.csproj|solutionrelative:server\\controllers\\genericcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E3F8F5EC-B983-4CD9-A9AA-F4D0DC7B5481}|ServerLibrary\\ServerLibrary.csproj|c:\\randika\\project_app\\employeemanagementsystem\\serverlibrary\\services\\implementations\\useraccountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -35,16 +27,40 @@
       "RelativeMoniker": "D:0:0:{E3F8F5EC-B983-4CD9-A9AA-F4D0DC7B5481}|ServerLibrary\\ServerLibrary.csproj|solutionrelative:serverlibrary\\services\\implementations\\userroleservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{E3F8F5EC-B983-4CD9-A9AA-F4D0DC7B5481}|ServerLibrary\\ServerLibrary.csproj|c:\\randika\\project_app\\employeemanagementsystem\\serverlibrary\\services\\implementations\\systemroleservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E3F8F5EC-B983-4CD9-A9AA-F4D0DC7B5481}|ServerLibrary\\ServerLibrary.csproj|solutionrelative:serverlibrary\\services\\implementations\\systemroleservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{E3F8F5EC-B983-4CD9-A9AA-F4D0DC7B5481}|ServerLibrary\\ServerLibrary.csproj|c:\\randika\\project_app\\employeemanagementsystem\\serverlibrary\\services\\implementations\\refreshtokeninfoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E3F8F5EC-B983-4CD9-A9AA-F4D0DC7B5481}|ServerLibrary\\ServerLibrary.csproj|solutionrelative:serverlibrary\\services\\implementations\\refreshtokeninfoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E3F8F5EC-B983-4CD9-A9AA-F4D0DC7B5481}|ServerLibrary\\ServerLibrary.csproj|c:\\randika\\project_app\\employeemanagementsystem\\serverlibrary\\repositores\\contracts\\iuseraccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E3F8F5EC-B983-4CD9-A9AA-F4D0DC7B5481}|ServerLibrary\\ServerLibrary.csproj|solutionrelative:serverlibrary\\repositores\\contracts\\iuseraccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E3F8F5EC-B983-4CD9-A9AA-F4D0DC7B5481}|ServerLibrary\\ServerLibrary.csproj|c:\\randika\\project_app\\employeemanagementsystem\\serverlibrary\\repositores\\contracts\\igenericrepositoryinterface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E3F8F5EC-B983-4CD9-A9AA-F4D0DC7B5481}|ServerLibrary\\ServerLibrary.csproj|solutionrelative:serverlibrary\\repositores\\contracts\\igenericrepositoryinterface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FB59BF71-674A-490D-8FD7-6CC6C4FE4AA6}|Server\\Server.csproj|c:\\randika\\project_app\\employeemanagementsystem\\server\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FB59BF71-674A-490D-8FD7-6CC6C4FE4AA6}|Server\\Server.csproj|solutionrelative:server\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB59BF71-674A-490D-8FD7-6CC6C4FE4AA6}|Server\\Server.csproj|c:\\randika\\project_app\\employeemanagementsystem\\server\\controllers\\authenticationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FB59BF71-674A-490D-8FD7-6CC6C4FE4AA6}|Server\\Server.csproj|solutionrelative:server\\controllers\\authenticationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E3F8F5EC-B983-4CD9-A9AA-F4D0DC7B5481}|ServerLibrary\\ServerLibrary.csproj|c:\\randika\\project_app\\employeemanagementsystem\\serverlibrary\\services\\implementations\\accountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E3F8F5EC-B983-4CD9-A9AA-F4D0DC7B5481}|ServerLibrary\\ServerLibrary.csproj|solutionrelative:serverlibrary\\services\\implementations\\accountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E3F8F5EC-B983-4CD9-A9AA-F4D0DC7B5481}|ServerLibrary\\ServerLibrary.csproj|c:\\randika\\project_app\\employeemanagementsystem\\serverlibrary\\services\\contracts\\iaccountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E3F8F5EC-B983-4CD9-A9AA-F4D0DC7B5481}|ServerLibrary\\ServerLibrary.csproj|solutionrelative:serverlibrary\\services\\contracts\\iaccountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E3F8F5EC-B983-4CD9-A9AA-F4D0DC7B5481}|ServerLibrary\\ServerLibrary.csproj|c:\\randika\\project_app\\employeemanagementsystem\\serverlibrary\\repositores\\implementations\\useraccountrepositore.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E3F8F5EC-B983-4CD9-A9AA-F4D0DC7B5481}|ServerLibrary\\ServerLibrary.csproj|solutionrelative:serverlibrary\\repositores\\implementations\\useraccountrepositore.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E3F8F5EC-B983-4CD9-A9AA-F4D0DC7B5481}|ServerLibrary\\ServerLibrary.csproj|c:\\randika\\project_app\\employeemanagementsystem\\serverlibrary\\repositores\\contracts\\iuseraccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E3F8F5EC-B983-4CD9-A9AA-F4D0DC7B5481}|ServerLibrary\\ServerLibrary.csproj|solutionrelative:serverlibrary\\repositores\\contracts\\iuseraccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -54,121 +70,121 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "IAccountService.cs",
-              "DocumentMoniker": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\ServerLibrary\\Services\\Contracts\\IAccountService.cs",
-              "RelativeDocumentMoniker": "ServerLibrary\\Services\\Contracts\\IAccountService.cs",
-              "ToolTip": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\ServerLibrary\\Services\\Contracts\\IAccountService.cs",
-              "RelativeToolTip": "ServerLibrary\\Services\\Contracts\\IAccountService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "BranchRepository.cs",
+              "DocumentMoniker": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\ServerLibrary\\Repositores\\Implementations\\BranchRepository.cs",
+              "RelativeDocumentMoniker": "ServerLibrary\\Repositores\\Implementations\\BranchRepository.cs",
+              "ToolTip": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\ServerLibrary\\Repositores\\Implementations\\BranchRepository.cs",
+              "RelativeToolTip": "ServerLibrary\\Repositores\\Implementations\\BranchRepository.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAuwA8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-21T21:49:16.248Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "UserAccountRepositore.cs",
-              "DocumentMoniker": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\ServerLibrary\\Repositores\\Implementations\\UserAccountRepositore.cs",
-              "RelativeDocumentMoniker": "ServerLibrary\\Repositores\\Implementations\\UserAccountRepositore.cs",
-              "ToolTip": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\ServerLibrary\\Repositores\\Implementations\\UserAccountRepositore.cs",
-              "RelativeToolTip": "ServerLibrary\\Repositores\\Implementations\\UserAccountRepositore.cs",
-              "ViewState": "AgIAAEkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-21T21:25:53.11Z",
+              "WhenOpened": "2025-04-24T22:27:50.623Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "AccountService.cs",
-              "DocumentMoniker": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\ServerLibrary\\Services\\Implementations\\AccountService.cs",
-              "RelativeDocumentMoniker": "ServerLibrary\\Services\\Implementations\\AccountService.cs",
-              "ToolTip": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\ServerLibrary\\Services\\Implementations\\AccountService.cs",
-              "RelativeToolTip": "ServerLibrary\\Services\\Implementations\\AccountService.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "DeparmentRepository.cs",
+              "DocumentMoniker": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\ServerLibrary\\Repositores\\Implementations\\DeparmentRepository.cs",
+              "RelativeDocumentMoniker": "ServerLibrary\\Repositores\\Implementations\\DeparmentRepository.cs",
+              "ToolTip": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\ServerLibrary\\Repositores\\Implementations\\DeparmentRepository.cs",
+              "RelativeToolTip": "ServerLibrary\\Repositores\\Implementations\\DeparmentRepository.cs",
+              "ViewState": "AgIAADQAAAAAAAAAAAA+wDcAAACJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-21T21:40:21.471Z",
+              "WhenOpened": "2025-04-23T21:47:01.22Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "GenericRepositoryInterface.cs",
-              "DocumentMoniker": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\ServerLibrary\\Repositores\\Implementations\\GenericRepositoryInterface.cs",
-              "RelativeDocumentMoniker": "ServerLibrary\\Repositores\\Implementations\\GenericRepositoryInterface.cs",
-              "ToolTip": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\ServerLibrary\\Repositores\\Implementations\\GenericRepositoryInterface.cs",
-              "RelativeToolTip": "ServerLibrary\\Repositores\\Implementations\\GenericRepositoryInterface.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAuwC0AAAAXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-21T17:11:40.176Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "IGenericRepositoryInterface.cs",
-              "DocumentMoniker": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\ServerLibrary\\Repositores\\Contracts\\IGenericRepositoryInterface.cs",
-              "RelativeDocumentMoniker": "ServerLibrary\\Repositores\\Contracts\\IGenericRepositoryInterface.cs",
-              "ToolTip": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\ServerLibrary\\Repositores\\Contracts\\IGenericRepositoryInterface.cs",
-              "RelativeToolTip": "ServerLibrary\\Repositores\\Contracts\\IGenericRepositoryInterface.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-21T17:23:38.927Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 4,
               "Title": "UserAccountService.cs",
               "DocumentMoniker": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\ServerLibrary\\Services\\Implementations\\UserAccountService.cs",
               "RelativeDocumentMoniker": "ServerLibrary\\Services\\Implementations\\UserAccountService.cs",
               "ToolTip": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\ServerLibrary\\Services\\Implementations\\UserAccountService.cs",
               "RelativeToolTip": "ServerLibrary\\Services\\Implementations\\UserAccountService.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAAAwAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAuwBMAAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-21T21:40:35.23Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "AuthenticationController.cs",
-              "DocumentMoniker": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Server\\Controllers\\AuthenticationController.cs",
-              "RelativeDocumentMoniker": "Server\\Controllers\\AuthenticationController.cs",
-              "ToolTip": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Server\\Controllers\\AuthenticationController.cs",
-              "RelativeToolTip": "Server\\Controllers\\AuthenticationController.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-21T21:18:37.879Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 5,
               "Title": "UserRoleService.cs",
               "DocumentMoniker": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\ServerLibrary\\Services\\Implementations\\UserRoleService.cs",
               "RelativeDocumentMoniker": "ServerLibrary\\Services\\Implementations\\UserRoleService.cs",
               "ToolTip": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\ServerLibrary\\Services\\Implementations\\UserRoleService.cs",
               "RelativeToolTip": "ServerLibrary\\Services\\Implementations\\UserRoleService.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAAAAwAAAAfAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAqwAwAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-21T21:40:15.027Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "GeneralDepartmentRepository.cs",
+              "DocumentMoniker": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\ServerLibrary\\Repositores\\Implementations\\GeneralDepartmentRepository.cs",
+              "RelativeDocumentMoniker": "ServerLibrary\\Repositores\\Implementations\\GeneralDepartmentRepository.cs",
+              "ToolTip": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\ServerLibrary\\Repositores\\Implementations\\GeneralDepartmentRepository.cs",
+              "RelativeToolTip": "ServerLibrary\\Repositores\\Implementations\\GeneralDepartmentRepository.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAuwDkAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-22T18:29:28.889Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "GenericController.cs",
+              "DocumentMoniker": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Server\\Controllers\\GenericController.cs",
+              "RelativeDocumentMoniker": "Server\\Controllers\\GenericController.cs",
+              "ToolTip": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Server\\Controllers\\GenericController.cs",
+              "RelativeToolTip": "Server\\Controllers\\GenericController.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAYwCgAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-23T22:51:50.174Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "SystemRoleService.cs",
+              "DocumentMoniker": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\ServerLibrary\\Services\\Implementations\\SystemRoleService.cs",
+              "RelativeDocumentMoniker": "ServerLibrary\\Services\\Implementations\\SystemRoleService.cs",
+              "ToolTip": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\ServerLibrary\\Services\\Implementations\\SystemRoleService.cs",
+              "RelativeToolTip": "ServerLibrary\\Services\\Implementations\\SystemRoleService.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAuwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-24T21:05:02.201Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 8,
+              "Title": "IGenericRepositoryInterface.cs",
+              "DocumentMoniker": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\ServerLibrary\\Repositores\\Contracts\\IGenericRepositoryInterface.cs",
+              "RelativeDocumentMoniker": "ServerLibrary\\Repositores\\Contracts\\IGenericRepositoryInterface.cs",
+              "ToolTip": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\ServerLibrary\\Repositores\\Contracts\\IGenericRepositoryInterface.cs",
+              "RelativeToolTip": "ServerLibrary\\Repositores\\Contracts\\IGenericRepositoryInterface.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T17:23:38.927Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "RefreshTokenInfoService.cs",
               "DocumentMoniker": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\ServerLibrary\\Services\\Implementations\\RefreshTokenInfoService.cs",
               "RelativeDocumentMoniker": "ServerLibrary\\Services\\Implementations\\RefreshTokenInfoService.cs",
               "ToolTip": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\ServerLibrary\\Services\\Implementations\\RefreshTokenInfoService.cs",
               "RelativeToolTip": "ServerLibrary\\Services\\Implementations\\RefreshTokenInfoService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAuwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-21T21:40:29.515Z",
               "EditorCaption": ""
@@ -176,19 +192,6 @@
             {
               "$type": "Document",
               "DocumentIndex": 9,
-              "Title": "IUserAccount.cs",
-              "DocumentMoniker": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\ServerLibrary\\Repositores\\Contracts\\IUserAccount.cs",
-              "RelativeDocumentMoniker": "ServerLibrary\\Repositores\\Contracts\\IUserAccount.cs",
-              "ToolTip": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\ServerLibrary\\Repositores\\Contracts\\IUserAccount.cs",
-              "RelativeToolTip": "ServerLibrary\\Repositores\\Contracts\\IUserAccount.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-21T21:25:50.226Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
               "Title": "WeatherForecastController.cs",
               "DocumentMoniker": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Server\\Controllers\\WeatherForecastController.cs",
               "RelativeDocumentMoniker": "Server\\Controllers\\WeatherForecastController.cs",
@@ -196,8 +199,67 @@
               "RelativeToolTip": "Server\\Controllers\\WeatherForecastController.cs",
               "ViewState": "AgIAAA4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-21T21:18:31.964Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-21T21:18:31.964Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "AuthenticationController.cs",
+              "DocumentMoniker": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Server\\Controllers\\AuthenticationController.cs",
+              "RelativeDocumentMoniker": "Server\\Controllers\\AuthenticationController.cs",
+              "ToolTip": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Server\\Controllers\\AuthenticationController.cs",
+              "RelativeToolTip": "Server\\Controllers\\AuthenticationController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T21:18:37.879Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "AccountService.cs",
+              "DocumentMoniker": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\ServerLibrary\\Services\\Implementations\\AccountService.cs",
+              "RelativeDocumentMoniker": "ServerLibrary\\Services\\Implementations\\AccountService.cs",
+              "ToolTip": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\ServerLibrary\\Services\\Implementations\\AccountService.cs",
+              "RelativeToolTip": "ServerLibrary\\Services\\Implementations\\AccountService.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T21:40:21.471Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "UserAccountRepositore.cs",
+              "DocumentMoniker": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\ServerLibrary\\Repositores\\Implementations\\UserAccountRepositore.cs",
+              "RelativeDocumentMoniker": "ServerLibrary\\Repositores\\Implementations\\UserAccountRepositore.cs",
+              "ToolTip": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\ServerLibrary\\Repositores\\Implementations\\UserAccountRepositore.cs",
+              "RelativeToolTip": "ServerLibrary\\Repositores\\Implementations\\UserAccountRepositore.cs",
+              "ViewState": "AgIAAEkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T21:25:53.11Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "IAccountService.cs",
+              "DocumentMoniker": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\ServerLibrary\\Services\\Contracts\\IAccountService.cs",
+              "RelativeDocumentMoniker": "ServerLibrary\\Services\\Contracts\\IAccountService.cs",
+              "ToolTip": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\ServerLibrary\\Services\\Contracts\\IAccountService.cs",
+              "RelativeToolTip": "ServerLibrary\\Services\\Contracts\\IAccountService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T21:49:16.248Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "IUserAccount.cs",
+              "DocumentMoniker": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\ServerLibrary\\Repositores\\Contracts\\IUserAccount.cs",
+              "RelativeDocumentMoniker": "ServerLibrary\\Repositores\\Contracts\\IUserAccount.cs",
+              "ToolTip": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\ServerLibrary\\Repositores\\Contracts\\IUserAccount.cs",
+              "RelativeToolTip": "ServerLibrary\\Repositores\\Contracts\\IUserAccount.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T21:25:50.226Z"
             }
           ]
         }
