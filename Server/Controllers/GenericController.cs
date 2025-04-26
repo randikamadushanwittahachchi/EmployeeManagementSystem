@@ -11,12 +11,15 @@ namespace Server.Controllers;
 [ApiController]
 public class GenericController<T> : ControllerBase where T : class
 {
+    // Injected IGeneric Repository
     private readonly IGenericRepositoryInterface<T> _genericReposiroty;
     public GenericController(IGenericRepositoryInterface<T> genericReposiroty) 
     {
         _genericReposiroty = genericReposiroty;
     }
 
+
+    // CRUD Operation
     [HttpGet]
     public async Task<ActionResult<List<T>>> GetAll()
     {
@@ -42,13 +45,15 @@ public class GenericController<T> : ControllerBase where T : class
 
     }
 
-    [HttpPost("{id}")]
+    [HttpPut("{id}")]
     public async Task<ActionResult<GeneralResponse>> Update([FromBody] T model)
     {
         if (model is null) return BadRequestMessegae();
         var result = await _genericReposiroty.Update(model);
         return ResultResponseNotFound(result);
     }
+
+
     [HttpDelete("{id}")]
     public async Task<ActionResult<GeneralResponse>> Delete(int id)
     {

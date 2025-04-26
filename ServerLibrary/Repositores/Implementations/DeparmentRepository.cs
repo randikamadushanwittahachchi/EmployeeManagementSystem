@@ -3,12 +3,15 @@ using BaseLibrary.Responses;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.EntityFrameworkCore;
 using ServerLibrary.Data;
+using ServerLibrary.Helpers;
 using ServerLibrary.Repositores.Contracts;
 
 namespace ServerLibrary.Repositores.Implementations
 {
     public class DepartmentRepository : IGenericRepositoryInterface<Department>
     {
+
+        // Injecting the AppDbContext
         private readonly AppDbContext _context;
         public DepartmentRepository(AppDbContext? context)
         {
@@ -16,13 +19,15 @@ namespace ServerLibrary.Repositores.Implementations
         }
 
 
+        // CRUD Operations
+
         public async Task<List<Department>> GetAll() => await _context.Departments.ToListAsync();
 
         public async Task<Department?> GetById(int id) => await FindById(id);
 
         public async Task<GeneralResponse> Create(Department model)
         {
-            if (await CheckName(model.Name)) return new GeneralResponse(false, $"{nameof(Department)} is already exist");
+            if (await CheckName(model.Name)) return new GeneralResponse(false, nameof(Department) + ConstantsResponse.Exit);
             _context.Departments.Add(model);
             await Commite();
             return Success();
@@ -48,12 +53,12 @@ namespace ServerLibrary.Repositores.Implementations
 
         // reuseble propety and methode
         private  async Task<Department?> FindById(int id) => await _context.Departments.FindAsync(id);
-        private static GeneralResponse Success() => new GeneralResponse(true, "Process was successfull");
-        private static GeneralResponse NotFound() => new GeneralResponse(false, $"{nameof(Department)} not found");
+        private static GeneralResponse Success() => new GeneralResponse(true, ConstantsResponse.Success);
+        private static GeneralResponse NotFound() => new GeneralResponse(false, nameof(Department) + ConstantsResponse.NotFound);
         private async Task Commite() => await _context.SaveChangesAsync();
         private async Task<bool> CheckName(string name)
         {
-            var item = await _context.Departments.FirstOrDefaultAsync(_ => string.Equals(_.Name, name, StringComparison.OrdinalIgnoreCase));
+            var item = await _context.Departments.FirstOrDefaultAsync(_ => _.Name.ToLower() == name.ToLower());
             return item is null ? false : true;
         }
 

@@ -1,7 +1,9 @@
 ﻿using BaseLibrary.Entities;
 using BaseLibrary.Responses;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.EntityFrameworkCore;
 using ServerLibrary.Data;
+using ServerLibrary.Helpers;
 using ServerLibrary.Repositores.Contracts;
 
 namespace ServerLibrary.Repositores.Implementations;
@@ -15,32 +17,44 @@ public class BranchRepository : IGenericRepositoryInterface<Branch>
     }
 
 
-    public Task<GeneralResponse> DeleteById(int id)
+    // crud operation
+    public async Task<List<Branch>> GetAll() => await _context.Branches.ToListAsync();
+
+    public async Task<Branch?> GetById(int id) => await FindByIdAsync(id);
+
+    public async Task<GeneralResponse> Create(Branch model)
     {
-        throw new NotImplementedException();
+        if (!await CheckName(model.Name)) return new GeneralResponse(false, nameof(Branch) + ConstantsResponse.Exit);
+        _context.Add(model);
+        await Commit();
+        return Success();
     }
 
-    public Task<List<Branch>> GetAll()
+    public async Task<GeneralResponse> Update(Branch model)
     {
-        throw new NotImplementedException();
+        var item = await FindByIdAsync(model.Id);
+        if(item == null) return NotFound();
+        item.Name = model.Name;
+        await Commit();
+        return Success();
     }
-
-    public Task<Branch?> GetById(int id)
+    public async Task<GeneralResponse> DeleteById(int id)
     {
-        throw new NotImplementedException();
+        var item = await FindByIdAsync(id);
+        if (item == null) return NotFound();
+        _context.Remove(item);
+        await Commit();
+        return Success();
     }
-
-    public Task<GeneralResponse> Update(Branch model)
-    {
-        throw new NotImplementedException();
-    }
-
 
     // reusable propety and methode
-
+    private GeneralResponse NotFound() => new GeneralResponse(false, nameof(City) + ConstantsResponse.NotFound);
+    private GeneralResponse Success() => new GeneralResponse(true, ConstantsResponse.Success);
+    private async Task Commit() => await _context.SaveChangesAsync();
+    private async Task<Branch?> FindByIdAsync(int id) => await _context.Branches.FindAsync(id);
     private async Task<bool> CheckName(string name)
     {
-        var item = await _context.Branches.FirstOrDefaultAsync(_ => string.Equals(_.Name, name, StringComparison.OrdinalIgnoreCase));
+        var item = await _context.Branches.FirstOrDefaultAsync(_ => _.Name.ToLower() == name.ToLower());
         return item is null? false:true;
     }
 }

@@ -1,3 +1,4 @@
+using BaseLibrary.Entities;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -53,10 +54,22 @@ builder.Services.AddControllers();
 builder.Services.Configure<JWTSection>(builder.Configuration.GetSection("JWTSection"));
 //Service 
 builder.Services.AddScoped<IAccountService,AccountService>();
+
+// Serive Fro Account
 builder.Services.AddScoped<IUserAccountService,UserAccountService>();
 builder.Services.AddScoped<ISystemRoleService,SystemRoleService>();
 builder.Services.AddScoped<IUserRoleService,UserRoleService>();
 builder.Services.AddScoped<IRefreshTokenInfoService , RefreshTokenInfoService>();
+
+// Repositories 
+builder.Services.AddScoped<IGenericRepositoryInterface<Country>, CountryRepository>();
+builder.Services.AddScoped<IGenericRepositoryInterface<City>, CityRepository>();
+builder.Services.AddScoped<IGenericRepositoryInterface<Town>, TownRepository>();
+
+builder.Services.AddScoped<IGenericRepositoryInterface<GeneralDepartment>, GeneralDepartmentRepository>();
+builder.Services.AddScoped<IGenericRepositoryInterface<Department>, DepartmentRepository>();
+builder.Services.AddScoped<IGenericRepositoryInterface<Branch>, BranchRepository>();
+
 
 //Authentication
 builder.Services.AddScoped<TokenService>();
