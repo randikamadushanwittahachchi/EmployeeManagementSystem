@@ -2,6 +2,6 @@
 
 public class Constants
 {
-    public static string Admin { get; } = "Admin";
-    public static string User { get; } = "User";
+    public const string Admin = "Admin";
+    public const string User = "User";
 }

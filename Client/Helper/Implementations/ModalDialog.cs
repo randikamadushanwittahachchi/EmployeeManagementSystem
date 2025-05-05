@@ -4,6 +4,7 @@ using Client.Pages.Shared;
 using Client.Helper.Constracts;
 using System.Reflection;
 using Microsoft.AspNetCore.Components;
+using System.Threading.Tasks;
 
 namespace Client.Helper.Implementations;
 public class ModalDialog : IModalDialog
@@ -22,24 +23,24 @@ public class ModalDialog : IModalDialog
     public void ShowDialog(string? header, string? message)
     {
         var paramter = new ModalParameters()
-        .Add(nameof(DialogShared.Header), header)
-        .Add(nameof(DialogShared.Message), message);
-        _modal.Show<DialogShared>(paramter, _option);
+        .Add(nameof(Dialog.Header), header)
+        .Add(nameof(Dialog.Message), message);
+        _modal.Show<Dialog>(paramter, _option);
     }
-    public void ShowDialog(string? header, string? message, Func<Task>? taskCallBack = null)
+    public async Task ShowDialog(string? header, string? message, Func<Task>? taskCallBack = null)
     {
         var paramter = new ModalParameters()
-        .Add(nameof(DialogShared.Header), header)
-        .Add(nameof(DialogShared.Message), message)
-        .Add(nameof(DialogShared.TaskCallBack), taskCallBack);
-        _modal.Show<DialogShared>(paramter, _option);
-    }
-    public void ShowDialog(string? header, string? message,Action? callBack = null)
-    {
-        var paramter = new ModalParameters()
-        .Add(nameof(DialogShared.Header), header)
-        .Add(nameof(DialogShared.Message), message)
-        .Add(nameof(DialogShared.CallBack), callBack);
-        _modal.Show<DialogShared>(paramter, _option);
+        .Add(nameof(Dialog.Header), header)
+        .Add(nameof(Dialog.Message), message)
+        .Add(nameof(Dialog.TaskCallBack), taskCallBack);
+        var modalRef = _modal.Show<Dialog>(paramter, _option);
+
+        var result = await modalRef.Result;
+
+        if(!result.Cancelled && taskCallBack != null && result.Data is bool ok && ok)
+        {
+            await taskCallBack();
+        }
+
     }
 }

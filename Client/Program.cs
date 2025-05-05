@@ -13,6 +13,7 @@ using Blazored.Modal;
 using Client.ApplicationState;
 using Client.Helper.Constracts;
 using Client.Helper.Implementations;
+using BaseLibrary.Entities;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 
@@ -26,6 +27,19 @@ builder.Services.AddHttpClient("SystemApiClinet", Client => { Client.BaseAddress
 
 builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri("https://localhost:7293") });
 
+builder.Services.AddScoped<IGenericServiceInterface<GeneralDepartment>, GenericServic<GeneralDepartment>>();
+builder.Services.AddScoped<IGenericServiceInterface<Department>, GenericServic<Department>>();
+builder.Services.AddScoped<IGenericServiceInterface<Branch>, GenericServic<Branch>>();
+builder.Services.AddScoped<IGenericServiceInterface<Country>, GenericServic<Country>>();
+builder.Services.AddScoped<IGenericServiceInterface<City>, GenericServic<City>>();
+builder.Services.AddScoped<IGenericServiceInterface<Town>, GenericServic<Town>>();
+
+builder.Services.AddScoped<AllState>();
+
+builder.Services.AddBlazoredModal();
+builder.Services.AddScoped<IModalDialog, ModalDialog>();
+builder.Services.AddScoped<IModalInputDialog, ModalInputDialog>();
+
 //Add Herlper to Service
 builder.Services.AddTransient<ISerialization, Serialization>();
 builder.Services.AddScoped<ILocalStorage, LocalStorage>();
@@ -37,10 +51,5 @@ builder.Services.AddScoped<AuthenticationStateProvider, CustomAuthenticationStat
 //
 builder.Services.AddScoped<IUserAccountService, UserAccounmService>();
 
-builder.Services.AddScoped<DepartmentState>();
-
-builder.Services.AddBlazoredModal();
-builder.Services.AddScoped<IModalDialog, ModalDialog>();
-builder.Services.AddScoped<IModalInputDialog, ModalInputDialog>();
 
 await builder.Build().RunAsync();

@@ -2,6 +2,9 @@
 using Blazored.Modal.Services;
 using Client.Pages.Shared;
 using Client.Helper.Constracts;
+using BaseLibrary.Entities;
+using Microsoft.AspNetCore.Components;
+using BaseLibrary.Responses;
 
 namespace Client.Helper.Implementations;
 
@@ -18,8 +21,20 @@ public class ModalInputDialog : IModalInputDialog
         };
         _option = option;
     }
-    public void ShowDialog()
+
+
+    public void ShowDialog(Func<GeneralDepartment, Task> addGeneralDepartment)
     {
-        _modal.Show<DepartmentDialog>(_option);
+        var parameters = new ModalParameters()
+            .Add(nameof(InputDialog.SaveGeneralDepartment), addGeneralDepartment);
+        _modal.Show<InputDialog>(parameters,_option);
     }
+    public void ShowDialog(Func<GeneralDepartment, Task> editGeneralDepartment, GeneralDepartment generalDepartment)
+    {
+        var parameters = new ModalParameters()
+            .Add(nameof(InputDialog.SaveGeneralDepartment), editGeneralDepartment)
+            .Add(nameof(InputDialog.GeneralDepartment), generalDepartment);
+        _modal.Show<InputDialog>(parameters, _option);
+    }
+
 }

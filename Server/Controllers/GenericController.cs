@@ -24,7 +24,7 @@ public class GenericController<T> : ControllerBase where T : class
     public async Task<ActionResult<List<T>>> GetAll()
     {
         var result = await _genericReposiroty.GetAll();
-        return result.Any() ? Ok(result) : NoContent(); 
+        return result.Any() ? Ok(result) : Ok(new List<T>());
     }
 
     [HttpGet("{id}")]
@@ -50,7 +50,7 @@ public class GenericController<T> : ControllerBase where T : class
     {
         if (model is null) return BadRequestMessegae();
         var result = await _genericReposiroty.Update(model);
-        return ResultResponseNotFound(result);
+        return ResultResponseNotFoundOrSuccess(result);
     }
 
 
@@ -59,13 +59,13 @@ public class GenericController<T> : ControllerBase where T : class
     {
         if (id <= 0) return BadRequestMessegae();
         var result = await _genericReposiroty.DeleteById(id);
-        return ResultResponseNotFound(result);
+        return ResultResponseNotFoundOrSuccess(result);
     }
 
 
     // reusable propety and methode
     private BadRequestObjectResult BadRequestMessegae() => BadRequest(new GeneralResponse(false, "Invalid data provided"));
-    private ActionResult<GeneralResponse> ResultResponseNotFound(GeneralResponse result) => !result.Flag ? NotFound(result) : Ok(result);
-    private ActionResult<GeneralResponse> ResultResponseConflict(GeneralResponse result) => Conflict(result);
+    private ActionResult<GeneralResponse> ResultResponseNotFoundOrSuccess(GeneralResponse result) => !result.Flag ? NotFound(result) : Ok(result);
+    private ActionResult<GeneralResponse> ResultResponseConflict(GeneralResponse result) => !result.Flag ? Conflict(result) : Ok(result);
 
 }

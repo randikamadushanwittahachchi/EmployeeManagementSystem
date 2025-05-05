@@ -75,11 +75,11 @@
         if (result!.Flag) 
         {
             User = new();
-            Dialog.ShowDialog("Register", result.Message, (Action)(() => NavManager.NavigateTo("/identity/account/login", forceLoad: true)));
+            await Dialog.ShowDialog("Register", result.Message, async () => { NavManager.NavigateTo("/identity/account/login", forceLoad: true); await Task.CompletedTask; });
         }
         else
         {
-            Dialog.ShowDialog("Register", result.Message, (Action)(() => NavManager.NavigateTo("/identity/account/register", forceLoad: true)));
+            await Dialog.ShowDialog("Register", result.Message, async () => { NavManager.NavigateTo("/identity/account/register", forceLoad: true); await Task.CompletedTask; });
         }
             ;
         ButtonStates = false;

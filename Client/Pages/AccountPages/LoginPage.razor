@@ -68,11 +68,11 @@
         {
             var customAuthStateProvider = (CustomAuthenticationStateProvider)AuthStateProvider;
             await customAuthStateProvider.UpdateAuthenticationStateAsync(new UserSession { Token = result.Token, RefrshToken = result.RefreshToken });
-            Dialog.ShowDialog("Login", result.Message, (Action)(() => NavManager.NavigateTo("/home/dashboard", forceLoad: true)));
+            await Dialog.ShowDialog("Login", result.Message, async () => { NavManager.NavigateTo("/home/dashboard", forceLoad: true); await Task.CompletedTask; });
         }
         else
         {
-            Dialog.ShowDialog("Login", result.Message, (Action)(() => NavManager.NavigateTo("/identity/account/login", forceLoad: true)));
+            await Dialog.ShowDialog("Login", result.Message, async () => { NavManager.NavigateTo("/identity/account/login", forceLoad: true); await Task.CompletedTask; });
         }
         ButtonStates = false;
     }

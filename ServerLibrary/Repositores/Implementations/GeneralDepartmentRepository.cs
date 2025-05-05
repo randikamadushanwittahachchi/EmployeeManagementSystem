@@ -36,6 +36,7 @@ namespace ServerLibrary.Repositores.Implementations
         {
             var item = await FindById(model.Id);
             if (item is null) return NotFound();
+            if (await CheckName(model.Name)) return new GeneralResponse(false, nameof(GeneralDepartment) + ConstantsResponse.Exit);
             item.Name = model.Name;
             await Commit();
             return Success();

@@ -8,9 +8,9 @@ namespace ServerLibrary.Helpers
 {
     public class ConstantsResponse
     {
-        public static string Success { get; } = "Process completed successfully.";
-        public static string NotFound { get; } = " was not found.";
-        public static string Exit { get; } = " already exists";
+        public const string Success = "Process completed successfully.";
+        public const string NotFound = " was not found.";
+        public const string Exit = " already exists";
 
     }
 }
