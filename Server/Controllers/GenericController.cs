@@ -24,7 +24,7 @@ public class GenericController<T> : ControllerBase where T : class
     public async Task<ActionResult<List<T>>> GetAll()
     {
         var result = await _genericReposiroty.GetAll();
-        return result.Any() ? Ok(result) : Ok(new List<T>());
+        return Ok(result);
     }
 
     [HttpGet("{id}")]

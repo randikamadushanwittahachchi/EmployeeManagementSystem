@@ -23,17 +23,19 @@ public class ModalInputDialog : IModalInputDialog
     }
 
 
-    public void ShowDialog(Func<GeneralDepartment, Task> addGeneralDepartment)
+    public void ShowDialog(Func<GeneralDepartment,Task> addGeneralDepartment, String titel)
     {
         var parameters = new ModalParameters()
-            .Add(nameof(InputDialog.SaveGeneralDepartment), addGeneralDepartment);
+            .Add(nameof(InputDialog.FuncGeneralDepartment), addGeneralDepartment)
+            .Add(nameof(InputDialog.Titel), titel);
         _modal.Show<InputDialog>(parameters,_option);
     }
-    public void ShowDialog(Func<GeneralDepartment, Task> editGeneralDepartment, GeneralDepartment generalDepartment)
+    public void ShowDialog(Func<GeneralDepartment, Task> editGeneralDepartment, GeneralDepartment generalDepartment, String titel)
     {
         var parameters = new ModalParameters()
-            .Add(nameof(InputDialog.SaveGeneralDepartment), editGeneralDepartment)
-            .Add(nameof(InputDialog.GeneralDepartment), generalDepartment);
+            .Add(nameof(InputDialog.FuncGeneralDepartment), editGeneralDepartment)
+            .Add(nameof(InputDialog.GeneralDepartment), generalDepartment)
+            .Add(nameof(InputDialog.Titel), titel);
         _modal.Show<InputDialog>(parameters, _option);
     }
 

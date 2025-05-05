@@ -6,7 +6,7 @@ namespace Client.Helper.Constracts
 {
     public interface IModalInputDialog
     {
-        void ShowDialog(Func<GeneralDepartment, Task> saveGeneralDepartment);
-        void ShowDialog(Func<GeneralDepartment, Task> editGeneralDepartment, GeneralDepartment generalDepartment);
+        void ShowDialog(Func<GeneralDepartment , Task> saveGeneralDepartment, String titel);
+        void ShowDialog(Func<GeneralDepartment, Task> editGeneralDepartment, GeneralDepartment generalDepartment, String titel);
     }
 }

@@ -13,7 +13,7 @@
             <DataAnnotationsValidator/>
             <div class=" modal-content">
                 <div class=" modal-header py-4">
-                    <div class=" modal-title">Enter Deparment</div>
+                    <div class=" modal-title"> @Titel Deparment</div>
                     <button @onclick="CancelClick" type="button" class="btn btn-close close-btn fs-6 "></button>
                 </div>
                 <div class="modal-body">
@@ -37,8 +37,9 @@
 
 @code {
     [CascadingParameter] BlazoredModalInstance BlazoredModal { get; set; } = default!;
-    [Parameter] public Func<GeneralDepartment, Task>? SaveGeneralDepartment { get; set; }
+    [Parameter] public Func<GeneralDepartment, Task>? FuncGeneralDepartment { get; set; }
     [Parameter] public GeneralDepartment GeneralDepartment { get; set; } = new();
+    [Parameter] public string Titel { get; set; } = string.Empty;
 
     private async Task CancelClick()
     {
@@ -48,7 +49,7 @@
     private async Task SubmitDepartment()
     {
         if (string.IsNullOrWhiteSpace(GeneralDepartment.Name)) { await BlazoredModal.CloseAsync(); Dialog.ShowDialog("Error", "Please enter a valid department name."); }
-        else { await BlazoredModal.CloseAsync(); await SaveGeneralDepartment!.Invoke(GeneralDepartment); }
+        else { await BlazoredModal.CloseAsync(); await FuncGeneralDepartment!.Invoke(GeneralDepartment); }
         
     }
 

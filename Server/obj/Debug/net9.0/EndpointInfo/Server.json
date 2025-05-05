@@ -1525,6 +1525,16 @@
           "generalDeparmentId": {
             "type": "integer",
             "format": "int32"
+          },
+          "generalDepartment": {
+            "$ref": "#/components/schemas/GeneralDepartment"
+          },
+          "branches": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Branch"
+            },
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -1542,6 +1552,13 @@
           "name": {
             "minLength": 1,
             "type": "string"
+          },
+          "departments": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Department"
+            },
+            "nullable": true
           }
         },
         "additionalProperties": false

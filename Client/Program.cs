@@ -39,6 +39,7 @@ builder.Services.AddScoped<AllState>();
 builder.Services.AddBlazoredModal();
 builder.Services.AddScoped<IModalDialog, ModalDialog>();
 builder.Services.AddScoped<IModalInputDialog, ModalInputDialog>();
+builder.Services.AddScoped<IModalDropdwonDialog, ModalDropdwonDialog>();
 
 //Add Herlper to Service
 builder.Services.AddTransient<ISerialization, Serialization>();

@@ -4,31 +4,32 @@
 @using ClientLibrary.Constants
 @implements IDisposable
 @inject AllState allState
-@inject IModalInputDialog InputDialog
+@inject IModalDropdwonDialog DropdwonDialog
 @inject IModalDialog Dialog
 
-@if (allState.ShowGeneralDepartment)
+@if (allState.ShowDepartment)
 {
     <div class=" container mt-4">
         <div class=" row">
             <div class=" col-12">
                 <div class=" card">
                     <div class=" card-header">
-                        <h4 class=" float-start fs-4 text-center m-0">General Department</h4>
-                        <button type="button" class=" btn  btn-out float-end " @onclick="Add" ><i class=" fs-3 bi bi-plus-circle"></i></button>
+                        <h4 class=" float-start fs-4 text-center m-0">Department</h4>
+                        <button type="button" class=" btn  btn-out float-end " @onclick="Add"><i class=" fs-3 bi bi-plus-circle"></i></button>
                     </div>
-                    <div class=" card-body ">
+                    <div class=" card-body " style=" max-height:500px; overflow-x:hidden; overflow-y:scroll; max-height:390px">
                         <table class=" table table-striped">
                             <thead>
-                                <tr >
+                                <tr>
                                     <th scope="col">#</th>
-                                    <th scope="col">first</th>
+                                    <th scope="col">Depatment</th>
+                                    <th scope="col">General Department</th>
                                     <th scope="col">Edit</th>
                                     <th scope="col">Delete</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @if (GeneralDepartments.Count == 0)
+                                @if (Departments.Count == 0)
                                 {
                                     <tr>
                                         <td colspan="4" class="text-center">No data available</td>
@@ -36,11 +37,12 @@
                                 }
                                 else
                                 {
-                                    @foreach (var item in GeneralDepartments)
+                                    @foreach (var item in Departments)
                                     {
                                         <tr>
                                             <th scope="col">@item.Id</th>
                                             <td>@item.Name</td>
+                                            <td>@item.GeneralDepartment!.Name</td>
                                             <td>
                                                 <a type="button" class="text-primary text-decoration-none " @onclick="()=>Edit(item)">
                                                     <i class="bi bi-pencil-square"></i>
@@ -69,14 +71,13 @@
 
 }
 <style>
-    a.text-decoration-none:hover , a.text-decoration-none:focus {
+    a.text-decoration-none:hover, a.text-decoration-none:focus {
         text-decoration: underline;
-
     }
 </style>
 
 @code {
-    public List<GeneralDepartment> GeneralDepartments { get; set; } = null!;
+    public List<Department> Departments { get; set; } = null!;
 
     protected override async Task OnInitializedAsync()
     {
@@ -86,46 +87,46 @@
 
     }
 
-    // Get All general departments
+    // Get All departments
     private async Task GetAll()
     {
-        GeneralDepartments = await generalDepartmentService.GetAll(ContantsBaseUrl.GeneralDepartmentUrl);
+        Departments = await departmentService.GetAll(ContantsBaseUrl.DepartmentUrl);
         allState.Action?.Invoke();
     }
 
-    // Add general department
+    // Add department
     private void Add()
     {
-        InputDialog.ShowDialog(AddGeneralDepartment);
+        DropdwonDialog.ShowDialog(AddDepartment, "Add");
 
     }
-    private async Task AddGeneralDepartment(GeneralDepartment generalDepartment)
+    private async Task AddDepartment(Department department)
     {
-        var response = await generalDepartmentService.Create(generalDepartment, ContantsBaseUrl.GeneralDepartmentUrl);
-        if (response.Flag) await GetAll();
-        Dialog.ShowDialog(response.Flag ? "Success":"Error", response.Message);
-    }
-
-    // Edit general department
-    private void Edit(GeneralDepartment generalDepartment)
-    {
-        InputDialog.ShowDialog(EditGeneralDepartment, generalDepartment);
-    }
-    private async Task EditGeneralDepartment(GeneralDepartment generalDepartment)
-    {
-        var response = await generalDepartmentService.Update(generalDepartment, $"{ContantsBaseUrl.GeneralDepartmentUrl}/{generalDepartment.Id}");
+        var response = await departmentService.Create(department, ContantsBaseUrl.GeneralDepartmentUrl);
         if (response.Flag) await GetAll();
         Dialog.ShowDialog(response.Flag ? "Success" : "Error", response.Message);
     }
 
-    // Delete general department
-    private void Delete(GeneralDepartment generalDepartment)
+    // Edit department
+    private void Edit(Department department)
     {
-        Dialog.ShowDialog("Alert", $"Are you sure you want to delete {generalDepartment.Name} department?",async () => await DeleteGeneralDepartment(generalDepartment));
+        DropdwonDialog.ShowDialog(EditDepartment, department, "Edit");
     }
-    private async Task DeleteGeneralDepartment(GeneralDepartment generalDepartment)
+    private async Task EditDepartment(Department department)
     {
-        var response = await generalDepartmentService.DeleteById($"{ContantsBaseUrl.GeneralDepartmentUrl}/{generalDepartment.Id}");
+        var response = await departmentService.Update(department, $"{ContantsBaseUrl.DepartmentUrl}/{department.Id}");
+        if (response.Flag) await GetAll();
+        Dialog.ShowDialog(response.Flag ? "Success" : "Error", response.Message);
+    }
+
+    // Delete department
+    private void Delete(Department department)
+    {
+        Dialog.ShowDialog("Alert", $"Are you sure you want to delete {department.Name} department?", async () => await DeleteDepartment(department));
+    }
+    private async Task DeleteDepartment(Department department)
+    {
+        var response = await departmentService.DeleteById($"{ContantsBaseUrl.DepartmentUrl}/{department.Id}");
         if (response.Flag) await GetAll();
         Dialog.ShowDialog(response.Flag ? "Success" : "Error", response.Message);
     }
