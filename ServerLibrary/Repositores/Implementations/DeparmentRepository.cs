@@ -21,7 +21,10 @@ namespace ServerLibrary.Repositores.Implementations
 
         // CRUD Operations
 
-        public async Task<List<Department>> GetAll() => await _context.Departments.ToListAsync();
+        public async Task<List<Department>> GetAll() => await _context.Departments
+            .AsNoTracking()
+            .Include(d=>d.GeneralDepartment)
+            .ToListAsync();
 
         public async Task<Department?> GetById(int id) => await FindById(id);
 

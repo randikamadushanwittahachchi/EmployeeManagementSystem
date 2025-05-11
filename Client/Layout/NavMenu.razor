@@ -1,6 +1,5 @@
 ﻿@using Client.ApplicationState
 @using Microsoft.AspNetCore.Components.Authorization
-@inject AllState departmentState
 
 <AuthorizeView>
     <Authorized>
@@ -54,7 +53,7 @@
                                 <a class=" nav-link p-2" @onclick="GeneralClick">
                                     <div class=" hstack text-wrap">
                                         <span class=" bi bi-building fs-5 text-center" style="margin-top:-2rem;" aria-hidden="true"></span>
-                                        <span class=" fs-6">General</span>
+                                        <span class=" fs-6">General Department</span>
                                     </div>
                                 </a>
                             </li>
@@ -74,6 +73,31 @@
                                     </div>
                                 </a>
                             </li>
+                            <li style=" list-style:none" class="cursor-pointer">
+                                <a class=" nav-link p-2" @onclick="CountryClick">
+                                    <div class=" text-wrap hstack">
+                                        <span class="bi bi-door-closed fs-5 text-center " style=" margin-top:-2rem;" aria-hidden="true"></span>
+                                        <span class=" fs-6 ">County</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li style=" list-style:none" class="cursor-pointer">
+                                <a class=" nav-link p-2" @onclick="CityClick">
+                                    <div class=" text-wrap hstack">
+                                        <span class="bi bi-door-closed fs-5 text-center " style=" margin-top:-2rem;" aria-hidden="true"></span>
+                                        <span class=" fs-6 ">City</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li style=" list-style:none" class="cursor-pointer">
+                                <a class=" nav-link p-2" @onclick="TownClick">
+                                    <div class=" text-wrap hstack">
+                                        <span class="bi bi-door-closed fs-5 text-center " style=" margin-top:-2rem;" aria-hidden="true"></span>
+                                        <span class=" fs-6 ">Town</span>
+                                    </div>
+                                </a>
+                            </li>
+
                         </ul>
                     </div>
 
@@ -101,24 +125,28 @@
     {
         CssAdminVisibility = Toggel(CssAdminVisibility, "hidden", "visible");
         CssDepatmentMargin = Toggel(CssDepatmentMargin, "-3.5rem", "0rem");
-        
+
     }
     private void ShowDepartmentMenuContainer()
     {
         CssDeparmentVisibility = Toggel(CssDeparmentVisibility, "hidden", "visible");
     }
-    private void GeneralClick()
-    {
-        departmentState.GeneralDepartmentClick();
-    }
-    private void DepartmentClick()
-    {
-        departmentState.DepartmentClick();
-    }
-    private void BranchClick()
-    {
 
-    }
+    // Genereal Department /Department/Branch Navigation Click
+    private void GeneralClick() => allState.GeneralDepartmentClick();
+    private void DepartmentClick() => allState.DepartmentClick();
+    private void BranchClick() => allState.BranchClick();
+
+    // Country/City/Town Navigation Click
+    private void CountryClick() => allState.CountryClick();
+    private void CityClick() => allState.CityClick();
+    private void TownClick() => allState.TownClick();
+
+    // User / Employee Navigation Click
+    private void UserClick() => allState.UserClick();
+    private void EmployeeClick() => allState.EmployeeClick();
+
+    // Toggle function
     private string Toggel(string value1, string value2, string value3)
     {
         return value1 == value2 ? value3 : value2;

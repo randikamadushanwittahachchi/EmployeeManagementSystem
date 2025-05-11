@@ -12,8 +12,8 @@ using ServerLibrary.Data;
 namespace ServerLibrary.Data.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250421155141_First")]
-    partial class First
+    [Migration("20250510221444_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -119,10 +119,7 @@ namespace ServerLibrary.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("GeneralDeparmentId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("GeneralDepartmentId")
+                    b.Property<int>("GeneralDepartmentId")
                         .HasColumnType("int");
 
                     b.Property<string>("Name")
@@ -510,7 +507,9 @@ namespace ServerLibrary.Data.Migrations
                 {
                     b.HasOne("BaseLibrary.Entities.GeneralDepartment", "GeneralDepartment")
                         .WithMany("Departments")
-                        .HasForeignKey("GeneralDepartmentId");
+                        .HasForeignKey("GeneralDepartmentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("GeneralDepartment");
                 });

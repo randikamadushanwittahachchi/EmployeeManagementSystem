@@ -27,7 +27,7 @@ public class GenericServic<T> : IGenericServiceInterface<T> where T : class
     public async Task<List<T>> GetAll(string baseUrl)
     {
         var httpClient = await _getHttpClient.GetPrivateHttpClientAsync();
-        var reponse = await httpClient!.GetFromJsonAsync<List<T>>($"{baseUrl}");
+        var reponse = await httpClient!.GetFromJsonAsync<List<T>>(baseUrl);
 
         return reponse!;
     }
@@ -35,7 +35,7 @@ public class GenericServic<T> : IGenericServiceInterface<T> where T : class
     public async Task<T> GetById(string baseUrl)
     {
         var httpClient = await _getHttpClient.GetPrivateHttpClientAsync();
-        var reponse = await httpClient!.GetFromJsonAsync<T>($"{baseUrl}");
+        var reponse = await httpClient!.GetFromJsonAsync<T>(baseUrl);
         return reponse!;
 
     }
@@ -43,7 +43,7 @@ public class GenericServic<T> : IGenericServiceInterface<T> where T : class
     public async Task<GeneralResponse> Create(T model, string baseUrl)
     {
         var httpClient =await _getHttpClient.GetPrivateHttpClientAsync();
-        var reponse = await httpClient!.PostAsJsonAsync($"{baseUrl}", model);
+        var reponse = await httpClient!.PostAsJsonAsync(baseUrl, model);
         var result = await reponse.Content.ReadFromJsonAsync<GeneralResponse>();
         return result!;
     }
@@ -51,7 +51,7 @@ public class GenericServic<T> : IGenericServiceInterface<T> where T : class
     public async Task<GeneralResponse> Update(T model, string baseUrl)
     {
         var httpClient = await _getHttpClient.GetPrivateHttpClientAsync();
-        var response = await httpClient!.PutAsJsonAsync($"{baseUrl}", model);
+        var response = await httpClient!.PutAsJsonAsync(baseUrl, model);
         var result = await response.Content.ReadFromJsonAsync<GeneralResponse>();
         return result!;
     }
@@ -59,7 +59,7 @@ public class GenericServic<T> : IGenericServiceInterface<T> where T : class
     public async Task<GeneralResponse> DeleteById(string baseUrl)
     {
         var htttpClient = await _getHttpClient.GetPrivateHttpClientAsync();
-        var response = await htttpClient!.DeleteFromJsonAsync<GeneralResponse>($"{baseUrl}");
+        var response = await htttpClient!.DeleteFromJsonAsync<GeneralResponse>(baseUrl);
         return response!;
     }
 

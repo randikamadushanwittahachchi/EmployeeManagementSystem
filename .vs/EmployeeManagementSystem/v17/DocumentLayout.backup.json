@@ -3,40 +3,24 @@
   "WorkspaceRootPath": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{42247A8D-C308-43F6-ACBF-7BE9969F502E}|Client\\Client.csproj|c:\\randika\\project_app\\employeemanagementsystem\\client\\pages\\shared\\dropdwondialog.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{42247A8D-C308-43F6-ACBF-7BE9969F502E}|Client\\Client.csproj|solutionrelative:client\\pages\\shared\\dropdwondialog.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{42247A8D-C308-43F6-ACBF-7BE9969F502E}|Client\\Client.csproj|c:\\randika\\project_app\\employeemanagementsystem\\client\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{42247A8D-C308-43F6-ACBF-7BE9969F502E}|Client\\Client.csproj|solutionrelative:client\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{42247A8D-C308-43F6-ACBF-7BE9969F502E}|Client\\Client.csproj|c:\\randika\\project_app\\employeemanagementsystem\\client\\pages\\departmentpages\\generaldepartmentpage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{42247A8D-C308-43F6-ACBF-7BE9969F502E}|Client\\Client.csproj|solutionrelative:client\\pages\\departmentpages\\generaldepartmentpage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{42247A8D-C308-43F6-ACBF-7BE9969F502E}|Client\\Client.csproj|c:\\randika\\project_app\\employeemanagementsystem\\client\\pages\\shared\\inputdialog.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{42247A8D-C308-43F6-ACBF-7BE9969F502E}|Client\\Client.csproj|solutionrelative:client\\pages\\shared\\inputdialog.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{42247A8D-C308-43F6-ACBF-7BE9969F502E}|Client\\Client.csproj|c:\\randika\\project_app\\employeemanagementsystem\\client\\helper\\implementations\\modaldropdwondialog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{42247A8D-C308-43F6-ACBF-7BE9969F502E}|Client\\Client.csproj|solutionrelative:client\\helper\\implementations\\modaldropdwondialog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{42247A8D-C308-43F6-ACBF-7BE9969F502E}|Client\\Client.csproj|c:\\randika\\project_app\\employeemanagementsystem\\client\\helper\\constracts\\imodaldropdwondialog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{42247A8D-C308-43F6-ACBF-7BE9969F502E}|Client\\Client.csproj|solutionrelative:client\\helper\\constracts\\imodaldropdwondialog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{42247A8D-C308-43F6-ACBF-7BE9969F502E}|Client\\Client.csproj|c:\\randika\\project_app\\employeemanagementsystem\\client\\allstate\\allstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{42247A8D-C308-43F6-ACBF-7BE9969F502E}|Client\\Client.csproj|solutionrelative:client\\allstate\\allstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{42247A8D-C308-43F6-ACBF-7BE9969F502E}|Client\\Client.csproj|c:\\randika\\project_app\\employeemanagementsystem\\client\\pages\\departmentpages\\departmentpage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{42247A8D-C308-43F6-ACBF-7BE9969F502E}|Client\\Client.csproj|solutionrelative:client\\pages\\departmentpages\\departmentpage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{42247A8D-C308-43F6-ACBF-7BE9969F502E}|Client\\Client.csproj|c:\\randika\\project_app\\employeemanagementsystem\\client\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{42247A8D-C308-43F6-ACBF-7BE9969F502E}|Client\\Client.csproj|solutionrelative:client\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{42247A8D-C308-43F6-ACBF-7BE9969F502E}|Client\\Client.csproj|c:\\randika\\project_app\\employeemanagementsystem\\client\\pages\\shared\\dropdwondialog.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{42247A8D-C308-43F6-ACBF-7BE9969F502E}|Client\\Client.csproj|solutionrelative:client\\pages\\shared\\dropdwondialog.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{42247A8D-C308-43F6-ACBF-7BE9969F502E}|Client\\Client.csproj|c:\\randika\\project_app\\employeemanagementsystem\\client\\pages\\contentpages\\homepage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{42247A8D-C308-43F6-ACBF-7BE9969F502E}|Client\\Client.csproj|solutionrelative:client\\pages\\contentpages\\homepage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{42247A8D-C308-43F6-ACBF-7BE9969F502E}|Client\\Client.csproj|c:\\randika\\project_app\\employeemanagementsystem\\client\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{42247A8D-C308-43F6-ACBF-7BE9969F502E}|Client\\Client.csproj|solutionrelative:client\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{42247A8D-C308-43F6-ACBF-7BE9969F502E}|Client\\Client.csproj|c:\\randika\\project_app\\employeemanagementsystem\\client\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{42247A8D-C308-43F6-ACBF-7BE9969F502E}|Client\\Client.csproj|solutionrelative:client\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B3E1FD93-ECA8-48C1-87A0-DF65E64F3636}|BaseLibrary\\BaseLibrary.csproj|c:\\randika\\project_app\\employeemanagementsystem\\baselibrary\\entities\\department.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -47,12 +31,16 @@
       "RelativeMoniker": "D:0:0:{B3E1FD93-ECA8-48C1-87A0-DF65E64F3636}|BaseLibrary\\BaseLibrary.csproj|solutionrelative:baselibrary\\entities\\generaldepartment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{42247A8D-C308-43F6-ACBF-7BE9969F502E}|Client\\Client.csproj|c:\\randika\\project_app\\employeemanagementsystem\\client\\helper\\constracts\\imodalinputdialog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{42247A8D-C308-43F6-ACBF-7BE9969F502E}|Client\\Client.csproj|solutionrelative:client\\helper\\constracts\\imodalinputdialog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E3F8F5EC-B983-4CD9-A9AA-F4D0DC7B5481}|ServerLibrary\\ServerLibrary.csproj|c:\\randika\\project_app\\employeemanagementsystem\\serverlibrary\\repositores\\implementations\\deparmentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E3F8F5EC-B983-4CD9-A9AA-F4D0DC7B5481}|ServerLibrary\\ServerLibrary.csproj|solutionrelative:serverlibrary\\repositores\\implementations\\deparmentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{42247A8D-C308-43F6-ACBF-7BE9969F502E}|Client\\Client.csproj|c:\\randika\\project_app\\employeemanagementsystem\\client\\helper\\implementations\\modalinputdialog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{42247A8D-C308-43F6-ACBF-7BE9969F502E}|Client\\Client.csproj|solutionrelative:client\\helper\\implementations\\modalinputdialog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FB59BF71-674A-490D-8FD7-6CC6C4FE4AA6}|Server\\Server.csproj|c:\\randika\\project_app\\employeemanagementsystem\\server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FB59BF71-674A-490D-8FD7-6CC6C4FE4AA6}|Server\\Server.csproj|solutionrelative:server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3E1FD93-ECA8-48C1-87A0-DF65E64F3636}|BaseLibrary\\BaseLibrary.csproj|c:\\randika\\project_app\\employeemanagementsystem\\baselibrary\\entities\\overtime.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3E1FD93-ECA8-48C1-87A0-DF65E64F3636}|BaseLibrary\\BaseLibrary.csproj|solutionrelative:baselibrary\\entities\\overtime.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -62,141 +50,128 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "InputDialog.razor",
-              "DocumentMoniker": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\Pages\\Shared\\InputDialog.razor",
-              "RelativeDocumentMoniker": "Client\\Pages\\Shared\\InputDialog.razor",
-              "ToolTip": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\Pages\\Shared\\InputDialog.razor",
-              "RelativeToolTip": "Client\\Pages\\Shared\\InputDialog.razor",
-              "ViewState": "AgIAACQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-05T21:55:27.371Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ModalDropdwonDialog.cs",
-              "DocumentMoniker": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\Helper\\Implementations\\ModalDropdwonDialog.cs",
-              "RelativeDocumentMoniker": "Client\\Helper\\Implementations\\ModalDropdwonDialog.cs",
-              "ToolTip": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\Helper\\Implementations\\ModalDropdwonDialog.cs",
-              "RelativeToolTip": "Client\\Helper\\Implementations\\ModalDropdwonDialog.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAAB8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-05T19:17:06.787Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "GeneralDepartmentPage.razor",
-              "DocumentMoniker": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\Pages\\DepartmentPages\\GeneralDepartmentPage.razor",
-              "RelativeDocumentMoniker": "Client\\Pages\\DepartmentPages\\GeneralDepartmentPage.razor",
-              "ToolTip": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\Pages\\DepartmentPages\\GeneralDepartmentPage.razor",
-              "RelativeToolTip": "Client\\Pages\\DepartmentPages\\GeneralDepartmentPage.razor",
-              "ViewState": "AgIAAFQAAAAAAAAAAAAAAFkAAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-05T20:56:01.906Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "DropdwonDialog.razor",
-              "DocumentMoniker": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\Pages\\Shared\\DropdwonDialog.razor",
-              "RelativeDocumentMoniker": "Client\\Pages\\Shared\\DropdwonDialog.razor",
-              "ToolTip": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\Pages\\Shared\\DropdwonDialog.razor",
-              "RelativeToolTip": "Client\\Pages\\Shared\\DropdwonDialog.razor",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAAADkAAABNAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-05T19:29:06.392Z",
+              "Title": "AllState.cs",
+              "DocumentMoniker": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\AllState\\AllState.cs",
+              "RelativeDocumentMoniker": "Client\\AllState\\AllState.cs",
+              "ToolTip": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\AllState\\AllState.cs",
+              "RelativeToolTip": "Client\\AllState\\AllState.cs",
+              "ViewState": "AgIAAEQAAAAAAAAAAAAAAEsAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-11T13:40:29.447Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "IModalDropdwonDialog.cs",
-              "DocumentMoniker": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\Helper\\Constracts\\IModalDropdwonDialog.cs",
-              "RelativeDocumentMoniker": "Client\\Helper\\Constracts\\IModalDropdwonDialog.cs",
-              "ToolTip": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\Helper\\Constracts\\IModalDropdwonDialog.cs",
-              "RelativeToolTip": "Client\\Helper\\Constracts\\IModalDropdwonDialog.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAQAAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-05T19:35:26.763Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "DepartmentPage.razor",
-              "DocumentMoniker": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\Pages\\DepartmentPages\\DepartmentPage.razor",
-              "RelativeDocumentMoniker": "Client\\Pages\\DepartmentPages\\DepartmentPage.razor",
-              "ToolTip": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\Pages\\DepartmentPages\\DepartmentPage.razor",
-              "RelativeToolTip": "Client\\Pages\\DepartmentPages\\DepartmentPage.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAcAAAAAAAAAA==",
+              "Title": "_Imports.razor",
+              "DocumentMoniker": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\_Imports.razor",
+              "RelativeDocumentMoniker": "Client\\_Imports.razor",
+              "ToolTip": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\_Imports.razor",
+              "RelativeToolTip": "Client\\_Imports.razor",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABoAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-05T21:00:05.607Z",
+              "WhenOpened": "2025-05-11T13:31:05.654Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 0,
               "Title": "NavMenu.razor",
               "DocumentMoniker": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\Layout\\NavMenu.razor",
               "RelativeDocumentMoniker": "Client\\Layout\\NavMenu.razor",
               "ToolTip": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\Layout\\NavMenu.razor",
               "RelativeToolTip": "Client\\Layout\\NavMenu.razor",
-              "ViewState": "AgIAAGoAAAAAAAAAAAArwHMAAAAqAAAAAAAAAA==",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAADoAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-05T20:56:53.839Z",
+              "WhenOpened": "2025-05-11T13:27:29.289Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Department.cs",
+              "DocumentMoniker": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\BaseLibrary\\Entities\\Department.cs",
+              "RelativeDocumentMoniker": "BaseLibrary\\Entities\\Department.cs",
+              "ToolTip": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\BaseLibrary\\Entities\\Department.cs",
+              "RelativeToolTip": "BaseLibrary\\Entities\\Department.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-11T12:55:58.099Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DropdwonDialog.razor",
+              "DocumentMoniker": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\Pages\\Shared\\DropdwonDialog.razor",
+              "RelativeDocumentMoniker": "Client\\Pages\\Shared\\DropdwonDialog.razor",
+              "ToolTip": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\Pages\\Shared\\DropdwonDialog.razor",
+              "RelativeToolTip": "Client\\Pages\\Shared\\DropdwonDialog.razor",
+              "ViewState": "AgIAABMAAAAAAAAAAAAAAB8AAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-10T22:22:16.032Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DepartmentPage.razor",
+              "DocumentMoniker": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\Pages\\DepartmentPages\\DepartmentPage.razor",
+              "RelativeDocumentMoniker": "Client\\Pages\\DepartmentPages\\DepartmentPage.razor",
+              "ToolTip": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\Pages\\DepartmentPages\\DepartmentPage.razor",
+              "RelativeToolTip": "Client\\Pages\\DepartmentPages\\DepartmentPage.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-10T22:18:31.446Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "HomePage.razor",
-              "DocumentMoniker": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\Pages\\ContentPages\\HomePage.razor",
-              "RelativeDocumentMoniker": "Client\\Pages\\ContentPages\\HomePage.razor",
-              "ToolTip": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\Pages\\ContentPages\\HomePage.razor",
-              "RelativeToolTip": "Client\\Pages\\ContentPages\\HomePage.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-05T20:59:41.378Z",
+              "Title": "DeparmentRepository.cs",
+              "DocumentMoniker": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\ServerLibrary\\Repositores\\Implementations\\DeparmentRepository.cs",
+              "RelativeDocumentMoniker": "ServerLibrary\\Repositores\\Implementations\\DeparmentRepository.cs",
+              "ToolTip": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\ServerLibrary\\Repositores\\Implementations\\DeparmentRepository.cs",
+              "RelativeToolTip": "ServerLibrary\\Repositores\\Implementations\\DeparmentRepository.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAQwBYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-11T10:19:58.078Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\Program.cs",
-              "RelativeDocumentMoniker": "Client\\Program.cs",
-              "ToolTip": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\Program.cs",
-              "RelativeToolTip": "Client\\Program.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAAACkAAABIAAAAAAAAAA==",
+              "DocumentMoniker": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Server\\Program.cs",
+              "RelativeDocumentMoniker": "Server\\Program.cs",
+              "ToolTip": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Server\\Program.cs",
+              "RelativeToolTip": "Server\\Program.cs",
+              "ViewState": "AgIAAEYAAAAAAAAAAAAcwFgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-05T20:55:29.634Z",
+              "WhenOpened": "2025-05-11T10:43:27.324Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
-              "Title": "Department.cs",
-              "DocumentMoniker": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\BaseLibrary\\Entities\\Department.cs",
-              "RelativeDocumentMoniker": "BaseLibrary\\Entities\\Department.cs",
-              "ToolTip": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\BaseLibrary\\Entities\\Department.cs",
-              "RelativeToolTip": "BaseLibrary\\Entities\\Department.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAYAAAA2AAAAAAAAAA==",
+              "Title": "OverTime.cs",
+              "DocumentMoniker": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\BaseLibrary\\Entities\\OverTime.cs",
+              "RelativeDocumentMoniker": "BaseLibrary\\Entities\\OverTime.cs",
+              "ToolTip": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\BaseLibrary\\Entities\\OverTime.cs",
+              "RelativeToolTip": "BaseLibrary\\Entities\\OverTime.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-05T19:26:10.619Z",
+              "WhenOpened": "2025-05-11T10:30:34.51Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 6,
               "Title": "GeneralDepartment.cs",
               "DocumentMoniker": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\BaseLibrary\\Entities\\GeneralDepartment.cs",
               "RelativeDocumentMoniker": "BaseLibrary\\Entities\\GeneralDepartment.cs",
@@ -204,33 +179,7 @@
               "RelativeToolTip": "BaseLibrary\\Entities\\GeneralDepartment.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-05T19:25:49.869Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "IModalInputDialog.cs",
-              "DocumentMoniker": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\Helper\\Constracts\\IModalInputDialog.cs",
-              "RelativeDocumentMoniker": "Client\\Helper\\Constracts\\IModalInputDialog.cs",
-              "ToolTip": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\Helper\\Constracts\\IModalInputDialog.cs",
-              "RelativeToolTip": "Client\\Helper\\Constracts\\IModalInputDialog.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAYAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-05T19:15:23.669Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "ModalInputDialog.cs",
-              "DocumentMoniker": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\Helper\\Implementations\\ModalInputDialog.cs",
-              "RelativeDocumentMoniker": "Client\\Helper\\Implementations\\ModalInputDialog.cs",
-              "ToolTip": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\Helper\\Implementations\\ModalInputDialog.cs",
-              "RelativeToolTip": "Client\\Helper\\Implementations\\ModalInputDialog.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-05T19:14:35.845Z",
+              "WhenOpened": "2025-05-10T22:31:42.502Z",
               "EditorCaption": ""
             }
           ]

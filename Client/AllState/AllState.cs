@@ -3,6 +3,8 @@
 public class AllState
 {
     public Action? Action { get; set; }
+    public bool ShowUser { get; set; }
+    public bool ShowEmployee { get; set; }
     public bool ShowGeneralDepartment { get; set; }
     public bool ShowDepartment { get; set; }
     public bool SHowBranch { get; set; }
@@ -55,6 +57,18 @@ public class AllState
     {
         ResetALlDepartments();
         ShowCountry = true;
+        Action?.Invoke();
+    }
+    // User
+    public void UserClick()
+    {
+        ShowUser = true;
+        Action?.Invoke();
+    }
+    // Employee
+    public void EmployeeClick()
+    {
+        ShowEmployee = true;
         Action?.Invoke();
     }
 

@@ -1522,7 +1522,7 @@
             "minLength": 1,
             "type": "string"
           },
-          "generalDeparmentId": {
+          "generalDepartmentId": {
             "type": "integer",
             "format": "int32"
           },

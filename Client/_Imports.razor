@@ -20,9 +20,11 @@
 @using Client.ApplicationState
 
 
+
 @inject AuthenticationStateProvider AuthStateProvider
 @inject IUserAccountService accountService
 @inject NavigationManager NavManager
+@inject AllState allState
 
 @* Inject GeneralDepartment/Department/Branch Service *@
 @inject IGenericServiceInterface<GeneralDepartment> generalDepartmentService

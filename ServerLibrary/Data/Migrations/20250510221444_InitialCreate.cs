@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace ServerLibrary.Data.Migrations
 {
     /// <inheritdoc />
-    public partial class First : Migration
+    public partial class InitialCreate : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -175,8 +175,7 @@ namespace ServerLibrary.Data.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    GeneralDeparmentId = table.Column<int>(type: "int", nullable: false),
-                    GeneralDepartmentId = table.Column<int>(type: "int", nullable: true),
+                    GeneralDepartmentId = table.Column<int>(type: "int", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
@@ -186,7 +185,8 @@ namespace ServerLibrary.Data.Migrations
                         name: "FK_Departments_GeneralDepartments_GeneralDepartmentId",
                         column: x => x.GeneralDepartmentId,
                         principalTable: "GeneralDepartments",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(

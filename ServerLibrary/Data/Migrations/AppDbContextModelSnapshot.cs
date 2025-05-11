@@ -116,10 +116,7 @@ namespace ServerLibrary.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("GeneralDeparmentId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("GeneralDepartmentId")
+                    b.Property<int>("GeneralDepartmentId")
                         .HasColumnType("int");
 
                     b.Property<string>("Name")
@@ -507,7 +504,9 @@ namespace ServerLibrary.Data.Migrations
                 {
                     b.HasOne("BaseLibrary.Entities.GeneralDepartment", "GeneralDepartment")
                         .WithMany("Departments")
-                        .HasForeignKey("GeneralDepartmentId");
+                        .HasForeignKey("GeneralDepartmentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("GeneralDepartment");
                 });
