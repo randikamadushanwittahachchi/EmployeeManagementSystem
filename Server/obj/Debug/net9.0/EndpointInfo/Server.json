@@ -1465,6 +1465,9 @@
           "departmentId": {
             "type": "integer",
             "format": "int32"
+          },
+          "department": {
+            "$ref": "#/components/schemas/Department"
           }
         },
         "additionalProperties": false
@@ -1482,6 +1485,9 @@
           "name": {
             "minLength": 1,
             "type": "string"
+          },
+          "country": {
+            "$ref": "#/components/schemas/Country"
           },
           "countryId": {
             "type": "integer",
@@ -1528,13 +1534,6 @@
           },
           "generalDepartment": {
             "$ref": "#/components/schemas/GeneralDepartment"
-          },
-          "branches": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Branch"
-            },
-            "nullable": true
           }
         },
         "additionalProperties": false
@@ -1552,13 +1551,6 @@
           "name": {
             "minLength": 1,
             "type": "string"
-          },
-          "departments": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Department"
-            },
-            "nullable": true
           }
         },
         "additionalProperties": false
@@ -1651,6 +1643,9 @@
           "name": {
             "minLength": 1,
             "type": "string"
+          },
+          "city": {
+            "$ref": "#/components/schemas/City"
           },
           "cityId": {
             "type": "integer",

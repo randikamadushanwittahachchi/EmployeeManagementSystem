@@ -59,7 +59,7 @@ public class GenericController<T> : ControllerBase where T : class
     {
         if (id <= 0) return BadRequestMessegae();
         var result = await _genericReposiroty.DeleteById(id);
-        return ResultResponseNotFoundOrSuccess(result);
+        return Ok(result);
     }
 
 

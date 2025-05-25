@@ -11,6 +11,7 @@ namespace ServerLibrary.Helpers
         public const string Success = "Process completed successfully.";
         public const string NotFound = " was not found.";
         public const string Exit = " already exists";
+        public const string HasChild = " cannot be deleted because it has associated records.";
 
     }
 }

@@ -1,0 +1,137 @@
+﻿@using BaseLibrary.Entities
+@using BaseLibrary.Responses
+@using Client.Helper.Constracts
+@using ClientLibrary.Constants
+@implements IDisposable
+@inject AllState allState
+@inject IGenericModal<Branch> BranchDialog
+@inject IDialogModal Dialog
+
+
+@if(allState.ShowBranch)
+{
+    <div class=" container mt-4">
+        <div class=" row">
+            <div class=" col-12">
+                <div class=" card">
+                    <div class=" card-header">
+                        <h4 class=" float-start fs-4 text-center m-0">Branch</h4>
+                        <button type="button" class=" btn  btn-out float-end " @onclick="Add"><i class=" fs-3 bi bi-plus-circle"></i></button>
+                    </div>
+                    <div class=" card-body">
+                        <table class=" table table-striped">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Branch</th>
+                                    <th scope="col">Department</th>
+                                    <th scope="col">Edit</th>
+                                    <th scope="col">Delete</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @if (!Branches.Any())
+                                {
+                                    <tr>
+                                        <td colspan="5" class="text-center">No data available</td>
+                                    </tr>
+                                }
+                                else
+                                {
+                                    @foreach (var item in Branches)
+                                    {
+                                        <tr>
+                                            <th scope="col">@item.Id</th>
+                                            <td>@item.Name</td>
+                                            <td>@(item.Department?.Name ?? "None")</td>
+                                            <td>
+                                                <a type="button" class="text-primary text-decoration-none " @onclick="()=>Edit(item)">
+                                                    <i class="bi bi-pencil-square"></i>
+                                                    <span>Edit</span>
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <button type="button" class=" border-0 m-0 p-0 btn btn-link " @onclick="()=>Delete(item)">
+                                                    <i class="bi bi-trash"></i>
+                                                    <span>Delete</span>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    }
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<style>
+    a.text-decoration-none:hover, a.text-decoration-none:focus {
+        text-decoration: underline;
+    }
+</style>
+
+@code {
+    public List<Branch> Branches { get; set; } = null!;
+
+    protected override async Task OnInitializedAsync()
+    {
+        allState.Action += StateHasChanged;
+
+        await GetAll();
+
+    }
+
+    // Get All branches
+    private async Task GetAll()
+    {
+        Branches = await branchService.GetAll(ContantsBaseUrl.BranchUrl);
+        allState.Action?.Invoke();
+    }
+
+    // Add branch
+    private void Add()
+    {
+        BranchDialog.ShowDialog(AddBranch, "Create", "Create");
+
+    }
+    private async Task AddBranch(Branch branch)
+    {
+        var response = await branchService.Create(branch, ContantsBaseUrl.BranchUrl);
+        if (response.Flag) await GetAll();
+        Dialog.ShowDialog(response.Flag ? "Success" : "Error", response.Message);
+    }
+
+    // Edit branch
+    private void Edit(Branch branch)
+    {
+        BranchDialog.ShowDialog(EditBranch, branch, "Edit", "Edit");
+    }
+    private async Task EditBranch(Branch branch)
+    {
+        var response = await branchService.Update(branch, $"{ContantsBaseUrl.BranchUrl}/{branch.Id}");
+        if (response.Flag) await GetAll();
+        Dialog.ShowDialog(response.Flag ? "Success" : "Error", response.Message);
+    }
+
+    // Delete branch
+    private void Delete(Branch branch)
+    {
+        Dialog.ShowDialog("Alert", $"Are you sure you want to delete {branch.Name} department?", async () => await DeleteBranch(branch));
+    }
+    private async Task DeleteBranch(Branch branch)
+    {
+        var response = await branchService.DeleteById($"{ContantsBaseUrl.BranchUrl}/{branch.Id}");
+        if (response.Flag) await GetAll();
+        Dialog.ShowDialog(response.Flag ? "Success" : "Error", response.Message);
+    }
+
+
+    public void Dispose()
+    {
+        allState.Action -= StateHasChanged;
+    }
+}

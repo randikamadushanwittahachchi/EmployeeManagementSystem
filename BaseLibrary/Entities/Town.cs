@@ -9,7 +9,6 @@ public class Town : BaseEntity
     public List<Employee>? Employees { get; set; }
 
     //Relationship : many to one
-    [JsonIgnore]
     public City? City { get; set; }
     public int? CityId { get; set; }
 

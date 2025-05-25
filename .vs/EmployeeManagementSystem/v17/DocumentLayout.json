@@ -7,40 +7,120 @@
       "RelativeMoniker": "D:0:0:{42247A8D-C308-43F6-ACBF-7BE9969F502E}|Client\\Client.csproj|solutionrelative:client\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{42247A8D-C308-43F6-ACBF-7BE9969F502E}|Client\\Client.csproj|c:\\randika\\project_app\\employeemanagementsystem\\client\\allstate\\allstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{42247A8D-C308-43F6-ACBF-7BE9969F502E}|Client\\Client.csproj|solutionrelative:client\\allstate\\allstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{42247A8D-C308-43F6-ACBF-7BE9969F502E}|Client\\Client.csproj|c:\\randika\\project_app\\employeemanagementsystem\\client\\pages\\departmentpages\\departmentpage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{42247A8D-C308-43F6-ACBF-7BE9969F502E}|Client\\Client.csproj|solutionrelative:client\\pages\\departmentpages\\departmentpage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{42247A8D-C308-43F6-ACBF-7BE9969F502E}|Client\\Client.csproj|c:\\randika\\project_app\\employeemanagementsystem\\client\\pages\\shared\\dropdwondialog.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{42247A8D-C308-43F6-ACBF-7BE9969F502E}|Client\\Client.csproj|solutionrelative:client\\pages\\shared\\dropdwondialog.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{42247A8D-C308-43F6-ACBF-7BE9969F502E}|Client\\Client.csproj|c:\\randika\\project_app\\employeemanagementsystem\\client\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{42247A8D-C308-43F6-ACBF-7BE9969F502E}|Client\\Client.csproj|solutionrelative:client\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B3E1FD93-ECA8-48C1-87A0-DF65E64F3636}|BaseLibrary\\BaseLibrary.csproj|c:\\randika\\project_app\\employeemanagementsystem\\baselibrary\\entities\\department.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B3E1FD93-ECA8-48C1-87A0-DF65E64F3636}|BaseLibrary\\BaseLibrary.csproj|solutionrelative:baselibrary\\entities\\department.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B3E1FD93-ECA8-48C1-87A0-DF65E64F3636}|BaseLibrary\\BaseLibrary.csproj|c:\\randika\\project_app\\employeemanagementsystem\\baselibrary\\entities\\generaldepartment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B3E1FD93-ECA8-48C1-87A0-DF65E64F3636}|BaseLibrary\\BaseLibrary.csproj|solutionrelative:baselibrary\\entities\\generaldepartment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{42247A8D-C308-43F6-ACBF-7BE9969F502E}|Client\\Client.csproj|c:\\randika\\project_app\\employeemanagementsystem\\client\\pages\\contentpages\\homepage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{42247A8D-C308-43F6-ACBF-7BE9969F502E}|Client\\Client.csproj|solutionrelative:client\\pages\\contentpages\\homepage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E3F8F5EC-B983-4CD9-A9AA-F4D0DC7B5481}|ServerLibrary\\ServerLibrary.csproj|c:\\randika\\project_app\\employeemanagementsystem\\serverlibrary\\repositores\\implementations\\deparmentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E3F8F5EC-B983-4CD9-A9AA-F4D0DC7B5481}|ServerLibrary\\ServerLibrary.csproj|solutionrelative:serverlibrary\\repositores\\implementations\\deparmentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FB59BF71-674A-490D-8FD7-6CC6C4FE4AA6}|Server\\Server.csproj|c:\\randika\\project_app\\employeemanagementsystem\\server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FB59BF71-674A-490D-8FD7-6CC6C4FE4AA6}|Server\\Server.csproj|solutionrelative:server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E3F8F5EC-B983-4CD9-A9AA-F4D0DC7B5481}|ServerLibrary\\ServerLibrary.csproj|c:\\randika\\project_app\\employeemanagementsystem\\serverlibrary\\repositores\\implementations\\generaldepartmentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E3F8F5EC-B983-4CD9-A9AA-F4D0DC7B5481}|ServerLibrary\\ServerLibrary.csproj|solutionrelative:serverlibrary\\repositores\\implementations\\generaldepartmentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B3E1FD93-ECA8-48C1-87A0-DF65E64F3636}|BaseLibrary\\BaseLibrary.csproj|c:\\randika\\project_app\\employeemanagementsystem\\baselibrary\\entities\\overtime.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B3E1FD93-ECA8-48C1-87A0-DF65E64F3636}|BaseLibrary\\BaseLibrary.csproj|solutionrelative:baselibrary\\entities\\overtime.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E3F8F5EC-B983-4CD9-A9AA-F4D0DC7B5481}|ServerLibrary\\ServerLibrary.csproj|c:\\randika\\project_app\\employeemanagementsystem\\serverlibrary\\repositores\\implementations\\cityrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E3F8F5EC-B983-4CD9-A9AA-F4D0DC7B5481}|ServerLibrary\\ServerLibrary.csproj|solutionrelative:serverlibrary\\repositores\\implementations\\cityrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E3F8F5EC-B983-4CD9-A9AA-F4D0DC7B5481}|ServerLibrary\\ServerLibrary.csproj|c:\\randika\\project_app\\employeemanagementsystem\\serverlibrary\\repositores\\implementations\\countryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E3F8F5EC-B983-4CD9-A9AA-F4D0DC7B5481}|ServerLibrary\\ServerLibrary.csproj|solutionrelative:serverlibrary\\repositores\\implementations\\countryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E3F8F5EC-B983-4CD9-A9AA-F4D0DC7B5481}|ServerLibrary\\ServerLibrary.csproj|c:\\randika\\project_app\\employeemanagementsystem\\serverlibrary\\repositores\\implementations\\branchrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E3F8F5EC-B983-4CD9-A9AA-F4D0DC7B5481}|ServerLibrary\\ServerLibrary.csproj|solutionrelative:serverlibrary\\repositores\\implementations\\branchrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42247A8D-C308-43F6-ACBF-7BE9969F502E}|Client\\Client.csproj|c:\\randika\\project_app\\employeemanagementsystem\\client\\pages\\departmentpages\\branchpage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{42247A8D-C308-43F6-ACBF-7BE9969F502E}|Client\\Client.csproj|solutionrelative:client\\pages\\departmentpages\\branchpage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42247A8D-C308-43F6-ACBF-7BE9969F502E}|Client\\Client.csproj|c:\\randika\\project_app\\employeemanagementsystem\\client\\pages\\authenticationpage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{42247A8D-C308-43F6-ACBF-7BE9969F502E}|Client\\Client.csproj|solutionrelative:client\\pages\\authenticationpage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42247A8D-C308-43F6-ACBF-7BE9969F502E}|Client\\Client.csproj|c:\\randika\\project_app\\employeemanagementsystem\\client\\pages\\tablepages\\tablebanner.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{42247A8D-C308-43F6-ACBF-7BE9969F502E}|Client\\Client.csproj|solutionrelative:client\\pages\\tablepages\\tablebanner.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42247A8D-C308-43F6-ACBF-7BE9969F502E}|Client\\Client.csproj|c:\\randika\\project_app\\employeemanagementsystem\\client\\pages\\shared\\towndialog.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{42247A8D-C308-43F6-ACBF-7BE9969F502E}|Client\\Client.csproj|solutionrelative:client\\pages\\shared\\towndialog.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42247A8D-C308-43F6-ACBF-7BE9969F502E}|Client\\Client.csproj|c:\\randika\\project_app\\employeemanagementsystem\\client\\pages\\shared\\generaldepartmentdialog.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{42247A8D-C308-43F6-ACBF-7BE9969F502E}|Client\\Client.csproj|solutionrelative:client\\pages\\shared\\generaldepartmentdialog.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42247A8D-C308-43F6-ACBF-7BE9969F502E}|Client\\Client.csproj|c:\\randika\\project_app\\employeemanagementsystem\\client\\pages\\shared\\dialog.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{42247A8D-C308-43F6-ACBF-7BE9969F502E}|Client\\Client.csproj|solutionrelative:client\\pages\\shared\\dialog.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42247A8D-C308-43F6-ACBF-7BE9969F502E}|Client\\Client.csproj|c:\\randika\\project_app\\employeemanagementsystem\\client\\pages\\shared\\departmentdialog.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{42247A8D-C308-43F6-ACBF-7BE9969F502E}|Client\\Client.csproj|solutionrelative:client\\pages\\shared\\departmentdialog.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42247A8D-C308-43F6-ACBF-7BE9969F502E}|Client\\Client.csproj|c:\\randika\\project_app\\employeemanagementsystem\\client\\pages\\shared\\countrydialog.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{42247A8D-C308-43F6-ACBF-7BE9969F502E}|Client\\Client.csproj|solutionrelative:client\\pages\\shared\\countrydialog.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42247A8D-C308-43F6-ACBF-7BE9969F502E}|Client\\Client.csproj|c:\\randika\\project_app\\employeemanagementsystem\\client\\pages\\shared\\citydialog.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{42247A8D-C308-43F6-ACBF-7BE9969F502E}|Client\\Client.csproj|solutionrelative:client\\pages\\shared\\citydialog.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42247A8D-C308-43F6-ACBF-7BE9969F502E}|Client\\Client.csproj|c:\\randika\\project_app\\employeemanagementsystem\\client\\pages\\shared\\branchdialog.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{42247A8D-C308-43F6-ACBF-7BE9969F502E}|Client\\Client.csproj|solutionrelative:client\\pages\\shared\\branchdialog.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42247A8D-C308-43F6-ACBF-7BE9969F502E}|Client\\Client.csproj|c:\\randika\\project_app\\employeemanagementsystem\\client\\pages\\departmentpages\\townpage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{42247A8D-C308-43F6-ACBF-7BE9969F502E}|Client\\Client.csproj|solutionrelative:client\\pages\\departmentpages\\townpage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42247A8D-C308-43F6-ACBF-7BE9969F502E}|Client\\Client.csproj|c:\\randika\\project_app\\employeemanagementsystem\\client\\pages\\departmentpages\\generaldepartmentpage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{42247A8D-C308-43F6-ACBF-7BE9969F502E}|Client\\Client.csproj|solutionrelative:client\\pages\\departmentpages\\generaldepartmentpage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42247A8D-C308-43F6-ACBF-7BE9969F502E}|Client\\Client.csproj|c:\\randika\\project_app\\employeemanagementsystem\\client\\pages\\departmentpages\\departmentpage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{42247A8D-C308-43F6-ACBF-7BE9969F502E}|Client\\Client.csproj|solutionrelative:client\\pages\\departmentpages\\departmentpage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42247A8D-C308-43F6-ACBF-7BE9969F502E}|Client\\Client.csproj|c:\\randika\\project_app\\employeemanagementsystem\\client\\pages\\departmentpages\\citypage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{42247A8D-C308-43F6-ACBF-7BE9969F502E}|Client\\Client.csproj|solutionrelative:client\\pages\\departmentpages\\citypage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42247A8D-C308-43F6-ACBF-7BE9969F502E}|Client\\Client.csproj|c:\\randika\\project_app\\employeemanagementsystem\\client\\pages\\departmentpages\\countrypage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{42247A8D-C308-43F6-ACBF-7BE9969F502E}|Client\\Client.csproj|solutionrelative:client\\pages\\departmentpages\\countrypage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB59BF71-674A-490D-8FD7-6CC6C4FE4AA6}|Server\\Server.csproj|c:\\randika\\project_app\\employeemanagementsystem\\server\\controllers\\generaldeparmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FB59BF71-674A-490D-8FD7-6CC6C4FE4AA6}|Server\\Server.csproj|solutionrelative:server\\controllers\\generaldeparmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB59BF71-674A-490D-8FD7-6CC6C4FE4AA6}|Server\\Server.csproj|c:\\randika\\project_app\\employeemanagementsystem\\server\\controllers\\towncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FB59BF71-674A-490D-8FD7-6CC6C4FE4AA6}|Server\\Server.csproj|solutionrelative:server\\controllers\\towncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB59BF71-674A-490D-8FD7-6CC6C4FE4AA6}|Server\\Server.csproj|c:\\randika\\project_app\\employeemanagementsystem\\server\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FB59BF71-674A-490D-8FD7-6CC6C4FE4AA6}|Server\\Server.csproj|solutionrelative:server\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB59BF71-674A-490D-8FD7-6CC6C4FE4AA6}|Server\\Server.csproj|c:\\randika\\project_app\\employeemanagementsystem\\server\\controllers\\genericcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FB59BF71-674A-490D-8FD7-6CC6C4FE4AA6}|Server\\Server.csproj|solutionrelative:server\\controllers\\genericcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB59BF71-674A-490D-8FD7-6CC6C4FE4AA6}|Server\\Server.csproj|c:\\randika\\project_app\\employeemanagementsystem\\server\\controllers\\departmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FB59BF71-674A-490D-8FD7-6CC6C4FE4AA6}|Server\\Server.csproj|solutionrelative:server\\controllers\\departmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D12F2A7D-5F47-46FA-AFAC-0667AC8BC7ED}|ClientLibrary\\ClientLibrary.csproj|c:\\randika\\project_app\\employeemanagementsystem\\clientlibrary\\services\\implementations\\genericservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D12F2A7D-5F47-46FA-AFAC-0667AC8BC7ED}|ClientLibrary\\ClientLibrary.csproj|solutionrelative:clientlibrary\\services\\implementations\\genericservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E3F8F5EC-B983-4CD9-A9AA-F4D0DC7B5481}|ServerLibrary\\ServerLibrary.csproj|c:\\randika\\project_app\\employeemanagementsystem\\serverlibrary\\repositores\\implementations\\townrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E3F8F5EC-B983-4CD9-A9AA-F4D0DC7B5481}|ServerLibrary\\ServerLibrary.csproj|solutionrelative:serverlibrary\\repositores\\implementations\\townrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB59BF71-674A-490D-8FD7-6CC6C4FE4AA6}|Server\\Server.csproj|c:\\randika\\project_app\\employeemanagementsystem\\server\\controllers\\countrycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FB59BF71-674A-490D-8FD7-6CC6C4FE4AA6}|Server\\Server.csproj|solutionrelative:server\\controllers\\countrycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,32 +130,58 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AllState.cs",
-              "DocumentMoniker": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\AllState\\AllState.cs",
-              "RelativeDocumentMoniker": "Client\\AllState\\AllState.cs",
-              "ToolTip": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\AllState\\AllState.cs",
-              "RelativeToolTip": "Client\\AllState\\AllState.cs",
-              "ViewState": "AgIAAEQAAAAAAAAAAAAAAEsAAAAlAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "DeparmentRepository.cs",
+              "DocumentMoniker": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\ServerLibrary\\Repositores\\Implementations\\DeparmentRepository.cs",
+              "RelativeDocumentMoniker": "ServerLibrary\\Repositores\\Implementations\\DeparmentRepository.cs",
+              "ToolTip": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\ServerLibrary\\Repositores\\Implementations\\DeparmentRepository.cs",
+              "RelativeToolTip": "ServerLibrary\\Repositores\\Implementations\\DeparmentRepository.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAuwCwAAABBAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-11T13:40:29.447Z",
+              "WhenOpened": "2025-05-25T19:05:32.245Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "_Imports.razor",
-              "DocumentMoniker": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\_Imports.razor",
-              "RelativeDocumentMoniker": "Client\\_Imports.razor",
-              "ToolTip": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\_Imports.razor",
-              "RelativeToolTip": "Client\\_Imports.razor",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAABoAAAAZAAAAAAAAAA==",
+              "Title": "CityRepository.cs",
+              "DocumentMoniker": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\ServerLibrary\\Repositores\\Implementations\\CityRepository.cs",
+              "RelativeDocumentMoniker": "ServerLibrary\\Repositores\\Implementations\\CityRepository.cs",
+              "ToolTip": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\ServerLibrary\\Repositores\\Implementations\\CityRepository.cs",
+              "RelativeToolTip": "ServerLibrary\\Repositores\\Implementations\\CityRepository.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAAACoAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T16:51:29.081Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "GeneralDepartmentRepository.cs",
+              "DocumentMoniker": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\ServerLibrary\\Repositores\\Implementations\\GeneralDepartmentRepository.cs",
+              "RelativeDocumentMoniker": "ServerLibrary\\Repositores\\Implementations\\GeneralDepartmentRepository.cs",
+              "ToolTip": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\ServerLibrary\\Repositores\\Implementations\\GeneralDepartmentRepository.cs",
+              "RelativeToolTip": "ServerLibrary\\Repositores\\Implementations\\GeneralDepartmentRepository.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAqwCYAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T16:50:47.19Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "HomePage.razor",
+              "DocumentMoniker": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\Pages\\ContentPages\\HomePage.razor",
+              "RelativeDocumentMoniker": "Client\\Pages\\ContentPages\\HomePage.razor",
+              "ToolTip": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\Pages\\ContentPages\\HomePage.razor",
+              "RelativeToolTip": "Client\\Pages\\ContentPages\\HomePage.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-11T13:31:05.654Z",
+              "WhenOpened": "2025-05-25T20:11:26.956Z",
               "EditorCaption": ""
             },
             {
@@ -86,100 +192,334 @@
               "RelativeDocumentMoniker": "Client\\Layout\\NavMenu.razor",
               "ToolTip": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\Layout\\NavMenu.razor",
               "RelativeToolTip": "Client\\Layout\\NavMenu.razor",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAADoAAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAAEEAAAAAAAAAAAAAAEsAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-11T13:27:29.289Z",
+              "WhenOpened": "2025-05-25T20:11:37.235Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "Department.cs",
-              "DocumentMoniker": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\BaseLibrary\\Entities\\Department.cs",
-              "RelativeDocumentMoniker": "BaseLibrary\\Entities\\Department.cs",
-              "ToolTip": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\BaseLibrary\\Entities\\Department.cs",
-              "RelativeToolTip": "BaseLibrary\\Entities\\Department.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAQAAAAAAAAAA==",
+              "Title": "CountryRepository.cs",
+              "DocumentMoniker": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\ServerLibrary\\Repositores\\Implementations\\CountryRepository.cs",
+              "RelativeDocumentMoniker": "ServerLibrary\\Repositores\\Implementations\\CountryRepository.cs",
+              "ToolTip": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\ServerLibrary\\Repositores\\Implementations\\CountryRepository.cs",
+              "RelativeToolTip": "ServerLibrary\\Repositores\\Implementations\\CountryRepository.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAAuwCUAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-11T12:55:58.099Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "DropdwonDialog.razor",
-              "DocumentMoniker": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\Pages\\Shared\\DropdwonDialog.razor",
-              "RelativeDocumentMoniker": "Client\\Pages\\Shared\\DropdwonDialog.razor",
-              "ToolTip": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\Pages\\Shared\\DropdwonDialog.razor",
-              "RelativeToolTip": "Client\\Pages\\Shared\\DropdwonDialog.razor",
-              "ViewState": "AgIAABMAAAAAAAAAAAAAAB8AAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-10T22:22:16.032Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "DepartmentPage.razor",
-              "DocumentMoniker": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\Pages\\DepartmentPages\\DepartmentPage.razor",
-              "RelativeDocumentMoniker": "Client\\Pages\\DepartmentPages\\DepartmentPage.razor",
-              "ToolTip": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\Pages\\DepartmentPages\\DepartmentPage.razor",
-              "RelativeToolTip": "Client\\Pages\\DepartmentPages\\DepartmentPage.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-10T22:18:31.446Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "DeparmentRepository.cs",
-              "DocumentMoniker": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\ServerLibrary\\Repositores\\Implementations\\DeparmentRepository.cs",
-              "RelativeDocumentMoniker": "ServerLibrary\\Repositores\\Implementations\\DeparmentRepository.cs",
-              "ToolTip": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\ServerLibrary\\Repositores\\Implementations\\DeparmentRepository.cs",
-              "RelativeToolTip": "ServerLibrary\\Repositores\\Implementations\\DeparmentRepository.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAQwBYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-11T10:19:58.078Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Server\\Program.cs",
-              "RelativeDocumentMoniker": "Server\\Program.cs",
-              "ToolTip": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Server\\Program.cs",
-              "RelativeToolTip": "Server\\Program.cs",
-              "ViewState": "AgIAAEYAAAAAAAAAAAAcwFgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-11T10:43:27.324Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "OverTime.cs",
-              "DocumentMoniker": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\BaseLibrary\\Entities\\OverTime.cs",
-              "RelativeDocumentMoniker": "BaseLibrary\\Entities\\OverTime.cs",
-              "ToolTip": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\BaseLibrary\\Entities\\OverTime.cs",
-              "RelativeToolTip": "BaseLibrary\\Entities\\OverTime.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-11T10:30:34.51Z",
+              "WhenOpened": "2025-05-25T15:55:29.151Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "GeneralDepartment.cs",
-              "DocumentMoniker": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\BaseLibrary\\Entities\\GeneralDepartment.cs",
-              "RelativeDocumentMoniker": "BaseLibrary\\Entities\\GeneralDepartment.cs",
-              "ToolTip": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\BaseLibrary\\Entities\\GeneralDepartment.cs",
-              "RelativeToolTip": "BaseLibrary\\Entities\\GeneralDepartment.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAQAAAAAAAAAA==",
+              "Title": "BranchRepository.cs",
+              "DocumentMoniker": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\ServerLibrary\\Repositores\\Implementations\\BranchRepository.cs",
+              "RelativeDocumentMoniker": "ServerLibrary\\Repositores\\Implementations\\BranchRepository.cs",
+              "ToolTip": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\ServerLibrary\\Repositores\\Implementations\\BranchRepository.cs",
+              "RelativeToolTip": "ServerLibrary\\Repositores\\Implementations\\BranchRepository.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAkwCkAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-10T22:31:42.502Z",
+              "WhenOpened": "2025-05-25T20:20:49.245Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "GeneralDepartmentDialog.razor",
+              "DocumentMoniker": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\Pages\\Shared\\GeneralDepartmentDialog.razor",
+              "RelativeDocumentMoniker": "Client\\Pages\\Shared\\GeneralDepartmentDialog.razor",
+              "ToolTip": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\Pages\\Shared\\GeneralDepartmentDialog.razor",
+              "RelativeToolTip": "Client\\Pages\\Shared\\GeneralDepartmentDialog.razor",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-25T19:52:33.652Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "TableBanner.razor",
+              "DocumentMoniker": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\Pages\\TablePages\\TableBanner.razor",
+              "RelativeDocumentMoniker": "Client\\Pages\\TablePages\\TableBanner.razor",
+              "ToolTip": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\Pages\\TablePages\\TableBanner.razor",
+              "RelativeToolTip": "Client\\Pages\\TablePages\\TableBanner.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-25T19:53:02.711Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "AuthenticationPage.razor",
+              "DocumentMoniker": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\Pages\\AuthenticationPage.razor",
+              "RelativeDocumentMoniker": "Client\\Pages\\AuthenticationPage.razor",
+              "ToolTip": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\Pages\\AuthenticationPage.razor",
+              "RelativeToolTip": "Client\\Pages\\AuthenticationPage.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-25T19:53:07.831Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Dialog.razor",
+              "DocumentMoniker": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\Pages\\Shared\\Dialog.razor",
+              "RelativeDocumentMoniker": "Client\\Pages\\Shared\\Dialog.razor",
+              "ToolTip": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\Pages\\Shared\\Dialog.razor",
+              "RelativeToolTip": "Client\\Pages\\Shared\\Dialog.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-25T19:52:28.149Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "BranchPage.razor",
+              "DocumentMoniker": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\Pages\\DepartmentPages\\BranchPage.razor",
+              "RelativeDocumentMoniker": "Client\\Pages\\DepartmentPages\\BranchPage.razor",
+              "ToolTip": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\Pages\\DepartmentPages\\BranchPage.razor",
+              "RelativeToolTip": "Client\\Pages\\DepartmentPages\\BranchPage.razor",
+              "ViewState": "AgIAADkAAAAAAAAAAAAAAB0AAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-25T19:49:00.344Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "BranchDialog.razor",
+              "DocumentMoniker": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\Pages\\Shared\\BranchDialog.razor",
+              "RelativeDocumentMoniker": "Client\\Pages\\Shared\\BranchDialog.razor",
+              "ToolTip": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\Pages\\Shared\\BranchDialog.razor",
+              "RelativeToolTip": "Client\\Pages\\Shared\\BranchDialog.razor",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAABwAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-25T17:19:12.272Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "CityDialog.razor",
+              "DocumentMoniker": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\Pages\\Shared\\CityDialog.razor",
+              "RelativeDocumentMoniker": "Client\\Pages\\Shared\\CityDialog.razor",
+              "ToolTip": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\Pages\\Shared\\CityDialog.razor",
+              "RelativeToolTip": "Client\\Pages\\Shared\\CityDialog.razor",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAABsAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-25T17:19:21.869Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "TownDialog.razor",
+              "DocumentMoniker": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\Pages\\Shared\\TownDialog.razor",
+              "RelativeDocumentMoniker": "Client\\Pages\\Shared\\TownDialog.razor",
+              "ToolTip": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\Pages\\Shared\\TownDialog.razor",
+              "RelativeToolTip": "Client\\Pages\\Shared\\TownDialog.razor",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAAB0AAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-25T17:19:38.521Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "TownPage.razor",
+              "DocumentMoniker": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\Pages\\DepartmentPages\\TownPage.razor",
+              "RelativeDocumentMoniker": "Client\\Pages\\DepartmentPages\\TownPage.razor",
+              "ToolTip": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\Pages\\DepartmentPages\\TownPage.razor",
+              "RelativeToolTip": "Client\\Pages\\DepartmentPages\\TownPage.razor",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAAB8AAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-25T19:51:10.041Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "CountryDialog.razor",
+              "DocumentMoniker": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\Pages\\Shared\\CountryDialog.razor",
+              "RelativeDocumentMoniker": "Client\\Pages\\Shared\\CountryDialog.razor",
+              "ToolTip": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\Pages\\Shared\\CountryDialog.razor",
+              "RelativeToolTip": "Client\\Pages\\Shared\\CountryDialog.razor",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-25T15:57:34.878Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "DepartmentDialog.razor",
+              "DocumentMoniker": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\Pages\\Shared\\DepartmentDialog.razor",
+              "RelativeDocumentMoniker": "Client\\Pages\\Shared\\DepartmentDialog.razor",
+              "ToolTip": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\Pages\\Shared\\DepartmentDialog.razor",
+              "RelativeToolTip": "Client\\Pages\\Shared\\DepartmentDialog.razor",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAABsAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-25T17:17:20.029Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "GeneralDepartmentPage.razor",
+              "DocumentMoniker": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\Pages\\DepartmentPages\\GeneralDepartmentPage.razor",
+              "RelativeDocumentMoniker": "Client\\Pages\\DepartmentPages\\GeneralDepartmentPage.razor",
+              "ToolTip": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\Pages\\DepartmentPages\\GeneralDepartmentPage.razor",
+              "RelativeToolTip": "Client\\Pages\\DepartmentPages\\GeneralDepartmentPage.razor",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAAB4AAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-25T19:50:55.632Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "CityPage.razor",
+              "DocumentMoniker": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\Pages\\DepartmentPages\\CityPage.razor",
+              "RelativeDocumentMoniker": "Client\\Pages\\DepartmentPages\\CityPage.razor",
+              "ToolTip": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\Pages\\DepartmentPages\\CityPage.razor",
+              "RelativeToolTip": "Client\\Pages\\DepartmentPages\\CityPage.razor",
+              "ViewState": "AgIAADAAAAAAAAAAAAAAAB8AAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-25T19:47:36.193Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "CountryPage.razor",
+              "DocumentMoniker": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\Pages\\DepartmentPages\\CountryPage.razor",
+              "RelativeDocumentMoniker": "Client\\Pages\\DepartmentPages\\CountryPage.razor",
+              "ToolTip": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\Pages\\DepartmentPages\\CountryPage.razor",
+              "RelativeToolTip": "Client\\Pages\\DepartmentPages\\CountryPage.razor",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAAB4AAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-25T15:58:16.771Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "DepartmentPage.razor",
+              "DocumentMoniker": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\Pages\\DepartmentPages\\DepartmentPage.razor",
+              "RelativeDocumentMoniker": "Client\\Pages\\DepartmentPages\\DepartmentPage.razor",
+              "ToolTip": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\Pages\\DepartmentPages\\DepartmentPage.razor",
+              "RelativeToolTip": "Client\\Pages\\DepartmentPages\\DepartmentPage.razor",
+              "ViewState": "AgIAABoAAAAAAAAAAAAAAB8AAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-25T16:24:35.509Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "GeneralDeparmentController.cs",
+              "DocumentMoniker": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Server\\Controllers\\GeneralDeparmentController.cs",
+              "RelativeDocumentMoniker": "Server\\Controllers\\GeneralDeparmentController.cs",
+              "ToolTip": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Server\\Controllers\\GeneralDeparmentController.cs",
+              "RelativeToolTip": "Server\\Controllers\\GeneralDeparmentController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T19:47:06.524Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "TownController.cs",
+              "DocumentMoniker": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Server\\Controllers\\TownController.cs",
+              "RelativeDocumentMoniker": "Server\\Controllers\\TownController.cs",
+              "ToolTip": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Server\\Controllers\\TownController.cs",
+              "RelativeToolTip": "Server\\Controllers\\TownController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T19:47:04.264Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "WeatherForecastController.cs",
+              "DocumentMoniker": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Server\\Controllers\\WeatherForecastController.cs",
+              "RelativeDocumentMoniker": "Server\\Controllers\\WeatherForecastController.cs",
+              "ToolTip": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Server\\Controllers\\WeatherForecastController.cs",
+              "RelativeToolTip": "Server\\Controllers\\WeatherForecastController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T19:46:52.671Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "DepartmentController.cs",
+              "DocumentMoniker": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Server\\Controllers\\DepartmentController.cs",
+              "RelativeDocumentMoniker": "Server\\Controllers\\DepartmentController.cs",
+              "ToolTip": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Server\\Controllers\\DepartmentController.cs",
+              "RelativeToolTip": "Server\\Controllers\\DepartmentController.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T16:01:36.738Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "GenericController.cs",
+              "DocumentMoniker": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Server\\Controllers\\GenericController.cs",
+              "RelativeDocumentMoniker": "Server\\Controllers\\GenericController.cs",
+              "ToolTip": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Server\\Controllers\\GenericController.cs",
+              "RelativeToolTip": "Server\\Controllers\\GenericController.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAAD4AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T16:03:39.39Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "GenericService.cs",
+              "DocumentMoniker": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\ClientLibrary\\Services\\Implementations\\GenericService.cs",
+              "RelativeDocumentMoniker": "ClientLibrary\\Services\\Implementations\\GenericService.cs",
+              "ToolTip": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\ClientLibrary\\Services\\Implementations\\GenericService.cs",
+              "RelativeToolTip": "ClientLibrary\\Services\\Implementations\\GenericService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD4AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T19:01:46.923Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "TownRepository.cs",
+              "DocumentMoniker": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\ServerLibrary\\Repositores\\Implementations\\TownRepository.cs",
+              "RelativeDocumentMoniker": "ServerLibrary\\Repositores\\Implementations\\TownRepository.cs",
+              "ToolTip": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\ServerLibrary\\Repositores\\Implementations\\TownRepository.cs",
+              "RelativeToolTip": "ServerLibrary\\Repositores\\Implementations\\TownRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T16:50:45.32Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "CountryController.cs",
+              "DocumentMoniker": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Server\\Controllers\\CountryController.cs",
+              "RelativeDocumentMoniker": "Server\\Controllers\\CountryController.cs",
+              "ToolTip": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Server\\Controllers\\CountryController.cs",
+              "RelativeToolTip": "Server\\Controllers\\CountryController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T16:01:27.358Z",
               "EditorCaption": ""
             }
           ]

@@ -30,7 +30,7 @@ namespace ServerLibrary.Repositores.Implementations
 
         public async Task<GeneralResponse> Create(Department model)
         {
-            if (await CheckName(model.Name)) return new GeneralResponse(false, nameof(Department) + ConstantsResponse.Exit);
+            if (await CheckName(model.Name)) return Exited();
             _context.Departments.Add(model);
             await Commite();
             return Success();
@@ -40,14 +40,17 @@ namespace ServerLibrary.Repositores.Implementations
         {
             var item = await FindById(model.Id);
             if (item is null ) return NotFound();
+            if (item.Name != model.Name && await CheckName(model.Name)) return Exited();
             item.Name = model.Name;
+            item.GeneralDepartmentId = model.GeneralDepartmentId;
             await Commite();
             return Success();
         }
         public async Task<GeneralResponse> DeleteById(int id)
         {
-            var item = await FindById(id);
+            var item = await FindByIdWithChild(id);
             if (item is null) return NotFound();
+            if (item.Branches is not null && item.Branches.Any()) return HasChild();
             _context.Departments.Remove(item);
             await Commite();
             return Success();
@@ -56,8 +59,11 @@ namespace ServerLibrary.Repositores.Implementations
 
         // reuseble propety and methode
         private  async Task<Department?> FindById(int id) => await _context.Departments.FindAsync(id);
+        private async Task<Department?> FindByIdWithChild(int id) => await _context.Departments.Include(d => d.Branches).FirstOrDefaultAsync(d => d.Id == id);
         private static GeneralResponse Success() => new GeneralResponse(true, ConstantsResponse.Success);
         private static GeneralResponse NotFound() => new GeneralResponse(false, nameof(Department) + ConstantsResponse.NotFound);
+        private static GeneralResponse Exited() => new GeneralResponse(false, nameof(Department) + ConstantsResponse.Exit);
+        private static GeneralResponse HasChild() => new GeneralResponse(false, nameof(Department) + ConstantsResponse.HasChild + "of Branch");
         private async Task Commite() => await _context.SaveChangesAsync();
         private async Task<bool> CheckName(string name)
         {

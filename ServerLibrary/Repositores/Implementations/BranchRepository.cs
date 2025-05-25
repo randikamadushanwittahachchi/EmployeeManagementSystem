@@ -18,13 +18,16 @@ public class BranchRepository : IGenericRepositoryInterface<Branch>
 
 
     // crud operation
-    public async Task<List<Branch>> GetAll() => await _context.Branches.ToListAsync();
+    public async Task<List<Branch>> GetAll() => await _context.Branches
+        .AsNoTracking()
+        .Include(b=> b.Department)
+        .ToListAsync();
 
     public async Task<Branch?> GetById(int id) => await FindByIdAsync(id);
 
     public async Task<GeneralResponse> Create(Branch model)
     {
-        if (!await CheckName(model.Name)) return new GeneralResponse(false, nameof(Branch) + ConstantsResponse.Exit);
+        if (await CheckName(model.Name)) return Exited();
         _context.Add(model);
         await Commit();
         return Success();
@@ -34,7 +37,9 @@ public class BranchRepository : IGenericRepositoryInterface<Branch>
     {
         var item = await FindByIdAsync(model.Id);
         if(item == null) return NotFound();
+        if (item.Name != model.Name && await CheckName(model.Name)) return Exited();
         item.Name = model.Name;
+        item.DepartmentId = model.DepartmentId;
         await Commit();
         return Success();
     }
@@ -49,6 +54,7 @@ public class BranchRepository : IGenericRepositoryInterface<Branch>
 
     // reusable propety and methode
     private GeneralResponse NotFound() => new GeneralResponse(false, nameof(City) + ConstantsResponse.NotFound);
+    private GeneralResponse Exited() => new GeneralResponse(false, nameof(Branch) + ConstantsResponse.Exit);
     private GeneralResponse Success() => new GeneralResponse(true, ConstantsResponse.Success);
     private async Task Commit() => await _context.SaveChangesAsync();
     private async Task<Branch?> FindByIdAsync(int id) => await _context.Branches.FindAsync(id);

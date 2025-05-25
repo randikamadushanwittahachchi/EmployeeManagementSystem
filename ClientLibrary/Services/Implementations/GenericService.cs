@@ -60,6 +60,7 @@ public class GenericServic<T> : IGenericServiceInterface<T> where T : class
     {
         var htttpClient = await _getHttpClient.GetPrivateHttpClientAsync();
         var response = await htttpClient!.DeleteFromJsonAsync<GeneralResponse>(baseUrl);
+        Console.WriteLine("mndm");
         return response!;
     }
 

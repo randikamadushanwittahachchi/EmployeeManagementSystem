@@ -22,12 +22,15 @@ public class TownRepository : IGenericRepositoryInterface<Town>
     }
 
     // CRUD Operations
-    public async Task<List<Town>> GetAll() => await _context.Towns.ToListAsync();
+    public async Task<List<Town>> GetAll() => await _context.Towns
+        .AsNoTracking()
+        .Include(t => t.City)
+        .ToListAsync();
 
     public async Task<Town?> GetById(int id) => await FindByIdAsync(id);
     public async Task<GeneralResponse> Create(Town model)
     {
-        if(!await CheckName(model.Name)) return new GeneralResponse(false, nameof(Town) + ConstantsResponse.Exit);
+        if(await CheckName(model.Name)) return Exited();
         _context.Towns.Add(model);
         await Commit();
         return Success();
@@ -37,6 +40,7 @@ public class TownRepository : IGenericRepositoryInterface<Town>
     {
         var item = await FindByIdAsync(model.Id);
         if (item is null) return NotFound();
+        if (await CheckName(model.Name)) return Exited();
         item.Name = model.Name;
         await Commit();
         return Success();
@@ -54,12 +58,13 @@ public class TownRepository : IGenericRepositoryInterface<Town>
     // reusable methods and propety
     private GeneralResponse Success() => new GeneralResponse(true, ConstantsResponse.Success);
     private GeneralResponse NotFound() => new GeneralResponse(false, nameof(Town) + ConstantsResponse.NotFound);
+    private GeneralResponse Exited() => new GeneralResponse(false, nameof(Town) + ConstantsResponse.Exit);
     private async Task Commit() => await _context.SaveChangesAsync();
     private async Task<Town?> FindByIdAsync(int id) => await _context.Towns.FindAsync(id);
     private async Task<bool> CheckName(string name)
     {
         var item = await _context.Towns.FirstOrDefaultAsync(_ => _.Name.ToLower() == name.ToLower());
-        return item is null ? false : true;
+        return item is null ? false :true;
     }
 
 

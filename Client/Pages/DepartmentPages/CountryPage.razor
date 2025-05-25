@@ -1,0 +1,137 @@
+﻿@using BaseLibrary.Entities
+@using BaseLibrary.Responses
+@using Client.Helper.Constracts
+@using ClientLibrary.Constants
+@inject AllState allState
+@inject IGenericModal<Country> CountryDialog
+@inject IDialogModal Dialog
+@implements IDisposable
+
+@if (allState.ShowCountry)
+{
+    <div class=" container mt-4">
+        <div class=" row">
+            <div class=" col-12">
+                <div class=" card">
+                    <div class=" card-header">
+                        <h4 class=" float-start fs-4 text-center m-0">Country</h4>
+                        <button type="button" class=" btn  btn-out float-end " @onclick="Add"><i class=" fs-3 bi bi-plus-circle"></i></button>
+                    </div>
+                    <div class=" card-body" style=" overflow-x:hidden; overflow-y:scroll; max-height:390px">
+                        <table class=" table table-striped">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Country</th>
+                                    <th scope="col">Edit</th>
+                                    <th scope="col">Delete</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @if (!Countries.Any())
+                                {
+                                    <tr>
+                                        <td colspan="4" class="text-center">No data available</td>
+                                    </tr>
+                                }
+                                else
+                                {
+                                    @foreach (var item in Countries)
+                                    {
+                                        <tr>
+                                            <th scope="col">@item.Id</th>
+                                            <td>@item.Name</td>
+                                            <td>
+                                                <a type="button" class="text-primary text-decoration-none " @onclick="()=>Edit(item)">
+                                                    <i class="bi bi-pencil-square"></i>
+                                                    <span>Edit</span>
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <button type="button" class=" border-0 m-0 p-0 btn btn-link " @onclick="()=>Delete(item)">
+                                                    <i class="bi bi-trash"></i>
+                                                    <span>Delete</span>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    }
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        
+    </div>
+}
+
+<style>
+    a.text-decoration-none:hover, a.text-decoration-none:focus {
+        text-decoration: underline;
+    }
+</style>
+
+@code {
+    public List<Country> Countries { get; set; } = null!;
+
+    protected override async Task OnInitializedAsync()
+    {
+        allState.Action += StateHasChanged;
+
+        await GetAll();
+
+    }
+
+    // Get All countries
+    private async Task GetAll()
+    {
+        Countries = await countryService.GetAll(ContantsBaseUrl.CountryUrl);
+        allState.Action?.Invoke();
+    }
+
+    // Add Country
+    private void Add()
+    {
+        CountryDialog.ShowDialog(AddCountry, "Create", "Create");
+
+    }
+    private async Task AddCountry(Country country)
+    {
+        var response = await countryService.Create(country, ContantsBaseUrl.CountryUrl);
+        if (response.Flag) await GetAll();
+        Dialog.ShowDialog(response.Flag ? "Success":"Error", response.Message);
+    }
+
+    // Edit Country
+    private void Edit(Country country)
+    {
+        CountryDialog.ShowDialog(EditCountry, country, "Edit", "Edit");
+    }
+    private async Task EditCountry(Country country)
+    {
+        var response = await countryService.Update(country, $"{ContantsBaseUrl.CountryUrl}/{country.Id}");
+        if (response.Flag) await GetAll();
+        Dialog.ShowDialog(response.Flag ? "Success" : "Error", response.Message);
+    }
+
+    // Delete Country
+    private void Delete(Country country)
+    {
+        Dialog.ShowDialog("Alert", $"Are you sure you want to delete {country.Name} ?",async () => await DeleteCountry(country));
+    }
+    private async Task DeleteCountry(Country country)
+    {
+        var response = await countryService.DeleteById($"{ContantsBaseUrl.CountryUrl}/{country.Id}");
+        if (response.Flag) await GetAll();
+        Dialog.ShowDialog(response.Flag ? "Success" : "Error", response.Message);
+    }
+
+
+    public void Dispose()
+    {
+        allState.Action -= StateHasChanged;
+    }
+}

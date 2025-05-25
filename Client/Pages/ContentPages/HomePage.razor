@@ -7,10 +7,14 @@
 <TableBanner/>
 <GeneralDepartmentPage/>
 <DepartmentPage />
+<BranchPage />
+<CountryPage />
+<CityPage />
+<TownPage/>
 
 @code{
 
-    [CascadingParameter] public Task<AuthenticationState> AuthenticationState { get; set; }
+    [CascadingParameter] public Task<AuthenticationState> AuthenticationState { get; set; } 
     private string Element { get; set; } = string.Empty;
 
     protected async override Task OnInitializedAsync()

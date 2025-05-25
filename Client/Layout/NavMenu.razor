@@ -1,4 +1,4 @@
-﻿@using Client.ApplicationState
+﻿@using Client.State
 @using Microsoft.AspNetCore.Components.Authorization
 
 <AuthorizeView>
@@ -53,7 +53,7 @@
                                 <a class=" nav-link p-2" @onclick="GeneralClick">
                                     <div class=" hstack text-wrap">
                                         <span class=" bi bi-building fs-5 text-center" style="margin-top:-2rem;" aria-hidden="true"></span>
-                                        <span class=" fs-6">General Department</span>
+                                        <span class=" fs-6 text-truncate">General Department</span>
                                     </div>
                                 </a>
                             </li>
@@ -73,6 +73,7 @@
                                     </div>
                                 </a>
                             </li>
+                            <hr />
                             <li style=" list-style:none" class="cursor-pointer">
                                 <a class=" nav-link p-2" @onclick="CountryClick">
                                     <div class=" text-wrap hstack">

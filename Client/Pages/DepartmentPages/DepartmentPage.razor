@@ -4,8 +4,8 @@
 @using ClientLibrary.Constants
 @implements IDisposable
 @inject AllState allState
-@inject IModalDropdwonDialog DropdwonDialog
-@inject IModalDialog Dialog
+@inject IGenericModal<Department> DepartmentDialog
+@inject IDialogModal Dialog
 
 @if (allState.ShowDepartment)
 {
@@ -17,7 +17,7 @@
                         <h4 class=" float-start fs-4 text-center m-0">Department</h4>
                         <button type="button" class=" btn  btn-out float-end " @onclick="Add"><i class=" fs-3 bi bi-plus-circle"></i></button>
                     </div>
-                    <div class=" card-body " style=" max-height:500px; overflow-x:hidden; overflow-y:scroll; max-height:390px">
+                    <div class=" card-body " style="overflow-x:hidden; overflow-y:scroll; max-height:390px">
                         <table class=" table table-striped">
                             <thead>
                                 <tr>
@@ -29,7 +29,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @if (Departments.Count == 0)
+                                @if (!Departments.Any())
                                 {
                                     <tr>
                                         <td colspan="4" class="text-center">No data available</td>
@@ -97,7 +97,7 @@
     // Add department
     private void Add()
     {
-        DropdwonDialog.ShowDialog(AddDepartment, "Add");
+        DepartmentDialog.ShowDialog(AddDepartment, "Create", "Create");
 
     }
     private async Task AddDepartment(Department department)
@@ -110,7 +110,7 @@
     // Edit department
     private void Edit(Department department)
     {
-        DropdwonDialog.ShowDialog(EditDepartment, department, "Edit");
+        DepartmentDialog.ShowDialog(EditDepartment, department, "Edit","Edit");
     }
     private async Task EditDepartment(Department department)
     {
