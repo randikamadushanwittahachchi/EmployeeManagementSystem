@@ -32,10 +32,10 @@ public class GenericServic<T> : IGenericServiceInterface<T> where T : class
         return reponse!;
     }
 
-    public async Task<T> GetById(string baseUrl)
+    public async Task<ResultResponse<T>> GetById(string baseUrl)
     {
         var httpClient = await _getHttpClient.GetPrivateHttpClientAsync();
-        var reponse = await httpClient!.GetFromJsonAsync<T>(baseUrl);
+        var reponse = await httpClient!.GetFromJsonAsync<ResultResponse<T>>(baseUrl);
         return reponse!;
 
     }
@@ -60,7 +60,6 @@ public class GenericServic<T> : IGenericServiceInterface<T> where T : class
     {
         var htttpClient = await _getHttpClient.GetPrivateHttpClientAsync();
         var response = await htttpClient!.DeleteFromJsonAsync<GeneralResponse>(baseUrl);
-        Console.WriteLine("mndm");
         return response!;
     }
 

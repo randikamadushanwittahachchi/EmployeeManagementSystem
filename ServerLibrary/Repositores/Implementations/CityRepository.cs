@@ -24,10 +24,15 @@ public class CityRepository : IGenericRepositoryInterface<City>
         .Include(c => c.Country)
         .ToListAsync();
 
-    public async Task<City?> GetById(int id) => await FindByIdAsync(id);
+    public async Task<ResultResponse<City>> GetById(int id) 
+    {
+        var result = await FindById(id);
+        return result is null ? ResultResponse<City>.Failure(ConstantsResponse.ErrorInputData) : ResultResponse<City>.Success(result);
+    }
 
     public async Task<GeneralResponse> Create(City model)
     {
+        if (model.Name is null) return InputDataNotValidGeneral();
         if (await CheckName(model.Name)) return Exited();
         await _context.Cities.AddAsync(model);
         await Commit();
@@ -36,9 +41,10 @@ public class CityRepository : IGenericRepositoryInterface<City>
 
     public async Task<GeneralResponse> Update(City model)
     {
-        var item = await FindByIdAsync(model.Id);
+        if (model.Id < 0 || model.Name is null) InputDataNotValidGeneral();
+        var item = await FindById(model.Id);
         if (item == null) return NotFound();
-        if (item.Name != model.Name && await CheckName(model.Name)) return Exited();
+        if (item.Name != model.Name && await CheckName(model.Name!)) return Exited();
         item.Name = model.Name;
         item.CountryId = model.CountryId;
         await Commit();
@@ -47,7 +53,7 @@ public class CityRepository : IGenericRepositoryInterface<City>
 
     public async Task<GeneralResponse> DeleteById(int id)
     {
-        var item = await FindByIdAsyncWithChild(id);
+        var item = await FindByIdWithChild(id);
         if (item == null) return NotFound();
         if (item.Towns is not null && item.Towns.Any()) return HasChild();
         _context.Cities.Remove(item);
@@ -61,12 +67,13 @@ public class CityRepository : IGenericRepositoryInterface<City>
     private GeneralResponse NotFound() => new GeneralResponse(false, nameof(City) + ConstantsResponse.NotFound);
     private GeneralResponse HasChild() => new GeneralResponse(false, nameof(City) + ConstantsResponse.HasChild + "of Branch");
     private GeneralResponse Exited() => new GeneralResponse(false, nameof(City) + ConstantsResponse.Exit);
+    private GeneralResponse InputDataNotValidGeneral() => new GeneralResponse(false, ConstantsResponse.ErrorInputData);
     private async Task Commit() => await _context.SaveChangesAsync();
-    private async Task<City?> FindByIdAsync(int id) => await _context.Cities.FindAsync(id);
-    private async Task<City?> FindByIdAsyncWithChild(int id) => await _context.Cities.Include(c => c.Towns).FirstOrDefaultAsync(c => c.Id == id);
+    private async Task<City?> FindById(int id) => await _context.Cities.FindAsync(id);
+    private async Task<City?> FindByIdWithChild(int id) => await _context.Cities.Include(c => c.Towns).FirstOrDefaultAsync(c => c.Id == id);
     private async Task<bool> CheckName(string name) 
     {
-        var item = await _context.Cities.FirstOrDefaultAsync(_ => _.Name.ToLower() == name.ToLower());
+        var item = await _context.Cities.FirstOrDefaultAsync(_ => _.Name!.ToLower() == name.ToLower());
         return item is null ? false : true;
     }
 }

@@ -74,8 +74,14 @@
 
     private async Task SubmitDepartment()
     {
-        if (string.IsNullOrWhiteSpace(City.Name)) { await BlazoredModal.CloseAsync(); Dialog.ShowDialog("Error", "Please enter a valid City name."); }
-        else { await BlazoredModal.CloseAsync(); await FunCity!.Invoke(City); }
+        if (string.IsNullOrWhiteSpace(City.Name)) 
+        { 
+            await BlazoredModal.CloseAsync(); Dialog.ShowDialog("Error", "Please enter a valid City name."); 
+        }
+        else 
+        { 
+            await BlazoredModal.CloseAsync(); await FunCity!.Invoke(City); 
+        }
 
     }
 

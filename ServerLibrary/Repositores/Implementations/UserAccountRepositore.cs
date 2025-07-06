@@ -1,90 +1,96 @@
 ﻿using BaseLibrary.DTOs;
 using BaseLibrary.Entities;
 using BaseLibrary.Responses;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using ServerLibrary.Authentication;
+using ServerLibrary.Data;
 using ServerLibrary.Helpers;
 using ServerLibrary.Repositores.Contracts;
-using ServerLibrary.Services.Contracts;
 
 namespace ServerLibrary.Repositores.Implementations;
 
-public class UserAccountRepositore : IUserAccount
+public class UserAccountRepositore
 {
-    private readonly IUserAccountService _context;
-    private readonly ISystemRoleService _systemRoleContext;
-    private readonly IAccountService _dbContext;
-    private readonly IUserRoleService _userRoleContext;
+    private readonly AppDbContext _context;
+    private readonly SystemRoleRepository _systemRoleRepository;
+    private readonly UserRoleRepository _userRoleRepository;
     private readonly TokenService _tokenService;
-    private readonly IRefreshTokenInfoService _refreshTokenInfoContext;
-    public UserAccountRepositore(IUserAccountService context,ISystemRoleService systemRoleContext,IUserRoleService userRoleContext, IAccountService dbContext,TokenService tokenService, IRefreshTokenInfoService refreshTokenInfoService)
+    private readonly RefreshTokenInfoRepository _refreshTokenInfoRepository;
+    public UserAccountRepositore(AppDbContext context, SystemRoleRepository systemRoleRepository, UserRoleRepository userRoleRepository,TokenService tokenService, RefreshTokenInfoRepository refreshTokenInfoRepository)
     {
         _context = context;
-        _systemRoleContext = systemRoleContext;
-        _userRoleContext = userRoleContext;
-        _dbContext = dbContext;
+        _systemRoleRepository = systemRoleRepository;
+        _userRoleRepository = userRoleRepository;
         _tokenService = tokenService;
-        _refreshTokenInfoContext = refreshTokenInfoService;
+        _refreshTokenInfoRepository = refreshTokenInfoRepository;
     }
     public async Task<GeneralResponse> CreateAsync(Register user)
     {
-        if (user is null) return new GeneralResponse(false, "Model is Empty");
-        var checkUser = await _context.FindUserByEmail(user.Email!);
+        if (string.IsNullOrEmpty(user.Email) || string.IsNullOrEmpty(user.FullName) || string.IsNullOrEmpty(user.Password) || string.IsNullOrEmpty(user.ConfimPassword)) return new GeneralResponse(false, "Input details are empty");
+        if (string.Equals(user.Password.Trim(), user.ConfimPassword.Trim(), StringComparison.OrdinalIgnoreCase)) return new GeneralResponse(false, "ConfimPassword shoud match with password");
+        var checkUser = await GetByEmail(user.Email);
         if (checkUser is not null) return new GeneralResponse(false,"User Register Alredy");
 
         //save in data base
         var appUser = new AppUser
         {
-            Email = user.Email,
-            FullName = user.FullName,
-            Password = BCrypt.Net.BCrypt.HashPassword(user.Password),
+            Email = user.Email.Trim().ToLower(),
+            FullName = user.FullName.Trim().ToLower(),
+            Password = BCrypt.Net.BCrypt.HashPassword(user.Password.Trim()),
         };
 
-        var appUserNew = await _dbContext.AddToDatabase(appUser);
-        if (appUserNew is null) return new GeneralResponse(false, "User Registration is fail");
+        var appUserResponse = await Create(appUser);
+        if (!appUserResponse.Flag) return appUserResponse;
 
-        var checkAdminSystemRole = await _systemRoleContext.FindByName(Constants.Admin);
+        var appUserNew = await GetByEmail(appUser.Email);
+        if(appUserNew is null) return new GeneralResponse(false, "User Registration is failed");
+
+        var checkAdminSystemRole = await _systemRoleRepository.GetByName(Constants.Admin);
         if(checkAdminSystemRole is null)
         {
-            var newSystemRole =await _dbContext.AddToDatabase(new SystemRole { Name=Constants.Admin});
-            if (newSystemRole is null) return new GeneralResponse(false, "Role Registration is fail");
+            var systemRoleResponse =await _systemRoleRepository.Create(new SystemRole { Name=Constants.Admin});
+            if (!systemRoleResponse.Flag) return systemRoleResponse;
 
-            var adminUserRole = await _dbContext.AddToDatabase(new UserRole{ UserId=appUserNew.Id,RoleId=newSystemRole.Id});
-            if (adminUserRole is null) return new GeneralResponse(false, "Role Registration is fail");
-            return new GeneralResponse(true, "Registration is Success");
+            var newSystemRole = await _systemRoleRepository.GetByName(Constants.Admin);
+            if(newSystemRole is null) return new GeneralResponse(false, "User Registration is fail");
+
+            var userRoleResponse = await _userRoleRepository.Create(new UserRole{ UserId=appUserNew.Id,RoleId=newSystemRole.Id});
+            return userRoleResponse;
         }
 
-        var checkUserSystemRole = await _systemRoleContext.FindByName(Constants.User);
+        var checkUserSystemRole = await _systemRoleRepository.GetByName(Constants.User);
         if (checkUserSystemRole is null)
         {
-            var newSystemRole = await _dbContext.AddToDatabase(new SystemRole { Name = Constants.User });
-            if (newSystemRole is null) return new GeneralResponse(false, "Role Registration is fail");
+            var systemRoleResponse = await _systemRoleRepository.Create(new SystemRole { Name = Constants.User });
+            if (!systemRoleResponse.Flag) return systemRoleResponse;
 
-            var userUserRole = await _dbContext.AddToDatabase(new UserRole { UserId = appUserNew.Id, RoleId = newSystemRole.Id });
-            if (userUserRole is null) return new GeneralResponse(false, "Role Registration is fail");
-            return new GeneralResponse(true, "Registration is Success");
+            var newSystemRole = await _systemRoleRepository.GetByName(Constants.User);
+            if (newSystemRole is null) return new GeneralResponse(false, "User Registration is fail");
+
+            var response = await _userRoleRepository.Create(new UserRole { UserId = appUserNew.Id, RoleId = newSystemRole.Id });
+            return response;
         }
         else
         {
-            var userUserRole = await _dbContext.AddToDatabase(new UserRole { UserId = appUserNew.Id, RoleId = checkUserSystemRole.Id });
-            if (userUserRole is null) return new GeneralResponse(false, "Role Registration is fail");
-            return new GeneralResponse(true, "Registration is Success");
+            var response = await _userRoleRepository.Create(new UserRole { UserId = appUserNew.Id, RoleId = checkUserSystemRole.Id });
+            return response;
         }
     }
 
     public async Task<LoginResponse> SigninAsync(Login user)
     {
-        if (user is null) return new LoginResponse(false,"Empty user Model");
+        if (user is null || user.Email is null) return new LoginResponse(false,"Empty user Model");
 
-        var appUser = await _context.FindUserByEmail(user.Email);
+        var appUser = await GetByEmail(user.Email);
         if (appUser is null) return new LoginResponse(false,"User not found");
 
         if (!BCrypt.Net.BCrypt.Verify(user.Password, appUser.Password)) return new LoginResponse(false, "Email/Password not valid");
 
-        var userRole = await _userRoleContext.FindByUserId(appUser.Id);
+        var userRole = await _userRoleRepository.FindByUserId(appUser.Id);
         if (userRole is null) return new LoginResponse(false, "Role is not found");
 
-        var roleName = await _systemRoleContext.FindById(userRole.RoleId);
+        var roleName = await _systemRoleRepository.GetById(userRole.RoleId);
         if (roleName is null) return new LoginResponse(false, "Role is not valid");
 
         string jwtToken = _tokenService.GetToken(appUser, roleName.Name!);
@@ -92,7 +98,7 @@ public class UserAccountRepositore : IUserAccount
 
         string refreshToken = RefreshTokenService.GetToken();
 
-        var refreshTokenInfo = _dbContext.AddToDatabase(new RefreshTokenInfo
+        var refreshTokenInfo = _refreshTokenInfoRepository.Add(new RefreshTokenInfo
         {
             UserId = appUser.Id,
             Token = refreshToken,
@@ -106,16 +112,16 @@ public class UserAccountRepositore : IUserAccount
     {
         if (refreshToken == null) return new LoginResponse(false, "Token is empty");
 
-        var checkToken = await _refreshTokenInfoContext.FindByToken(refreshToken.Token!);
-        if (checkToken == null) return new LoginResponse(false,"Invalid Token");
+        var checkToken = await _refreshTokenInfoRepository.FindByToken(refreshToken.Token!);
+        if (checkToken == null || checkToken.UserId == null) return new LoginResponse(false,"Invalid Token");
 
-        var appUser = await _context.FindUserById(checkToken.UserId!);
+        var appUser = await FindById(checkToken.UserId.Value);
         if (appUser is null) return new LoginResponse(false, "Invalid user");
 
-        var userRole = await _userRoleContext.FindByUserId(appUser.Id);
+        var userRole = await _userRoleRepository.FindByUserId(appUser.Id);
         if (userRole is null) return new LoginResponse(false, "Invalid role");
 
-        var role = await _systemRoleContext.FindById(userRole.RoleId);
+        var role = await _systemRoleRepository.GetById(userRole.RoleId);
         if (role is null) return new LoginResponse(false, "Invalid role");
 
         string jwtToken = _tokenService.GetToken(appUser,role.Name!);
@@ -125,8 +131,51 @@ public class UserAccountRepositore : IUserAccount
 
         checkToken.Token = newRefreshToken;
 
-        await _refreshTokenInfoContext.Update(checkToken);
+        await _refreshTokenInfoRepository.Update(checkToken);
 
         return new LoginResponse(true,"success",jwtToken,newRefreshToken);
     }
+
+    public async Task<List<AppUser>> GetAll() => await _context.AppUsers.ToListAsync();
+
+    public async Task<AppUser?> GetById(int id) => await FindById(id);
+
+    public async Task<AppUser?> GetByEmail(string email) => await FindByEmail(email);
+    public async Task<GeneralResponse>Create(AppUser appUser)
+    {
+        var item = await FindByEmail(appUser.Email);
+        if (item is not null) return Exited();
+        var result = _context.AppUsers.Add(appUser);
+        await Commit();
+        return Success();
+    }
+    public async Task<GeneralResponse>Update(AppUser appUser)
+    {
+        var user = await GetById(appUser.Id);
+        if (user is null) return NotFound();
+
+        user.Autherize = appUser.Autherize;
+
+        await Commit();
+        return Success();
+    }
+    public async Task<GeneralResponse>DeleteById(int id)
+    {
+        var appUser = await _context.AppUsers.FindAsync(id);
+        if (appUser is null) return NotFound();
+
+        _context.AppUsers.Remove(appUser);
+        await Commit();
+
+        return Success();
+    }
+
+    private async Task Commit() => await _context.SaveChangesAsync();
+    private GeneralResponse Unsuccess() => new GeneralResponse(false, nameof(AppUser) + ConstantsResponse.Unsuccess);
+    private GeneralResponse Success() => new GeneralResponse(true, ConstantsResponse.Success);
+    private static GeneralResponse Exited() => new GeneralResponse(false, nameof(AppUser) + ConstantsResponse.Exit);
+    private async Task<AppUser?> FindById(int id) => await _context.AppUsers.FindAsync(id);
+    private async Task<AppUser?> FindByEmail(string email) => await _context.AppUsers.FirstOrDefaultAsync(_ => _.Email!.Trim().ToLower() == email!.Trim().ToLower());
+    private GeneralResponse NotFound() => new GeneralResponse(false, ConstantsResponse.NotFound);
+
 }

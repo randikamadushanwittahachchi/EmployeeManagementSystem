@@ -95,7 +95,7 @@
   },
   {
     "ContainingType": "Server.Controllers.GenericController\u00601[[BaseLibrary.Entities.Branch, BaseLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-    "Method": "Get",
+    "Method": "GetById",
     "RelativePath": "api/Branch/{id}",
     "HttpMethod": "GET",
     "IsController": true,
@@ -109,7 +109,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "BaseLibrary.Entities.Branch",
+        "Type": "BaseLibrary.Responses.ResultResponse\u00601[[BaseLibrary.Entities.Branch, BaseLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -152,7 +152,7 @@
   },
   {
     "ContainingType": "Server.Controllers.GenericController\u00601[[BaseLibrary.Entities.Branch, BaseLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-    "Method": "Delete",
+    "Method": "DeleteById",
     "RelativePath": "api/Branch/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
@@ -224,7 +224,7 @@
   },
   {
     "ContainingType": "Server.Controllers.GenericController\u00601[[BaseLibrary.Entities.City, BaseLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-    "Method": "Get",
+    "Method": "GetById",
     "RelativePath": "api/City/{id}",
     "HttpMethod": "GET",
     "IsController": true,
@@ -238,7 +238,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "BaseLibrary.Entities.City",
+        "Type": "BaseLibrary.Responses.ResultResponse\u00601[[BaseLibrary.Entities.City, BaseLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -281,7 +281,7 @@
   },
   {
     "ContainingType": "Server.Controllers.GenericController\u00601[[BaseLibrary.Entities.City, BaseLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-    "Method": "Delete",
+    "Method": "DeleteById",
     "RelativePath": "api/City/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
@@ -353,7 +353,7 @@
   },
   {
     "ContainingType": "Server.Controllers.GenericController\u00601[[BaseLibrary.Entities.Country, BaseLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-    "Method": "Get",
+    "Method": "GetById",
     "RelativePath": "api/Country/{id}",
     "HttpMethod": "GET",
     "IsController": true,
@@ -367,7 +367,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "BaseLibrary.Entities.Country",
+        "Type": "BaseLibrary.Responses.ResultResponse\u00601[[BaseLibrary.Entities.Country, BaseLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -410,7 +410,7 @@
   },
   {
     "ContainingType": "Server.Controllers.GenericController\u00601[[BaseLibrary.Entities.Country, BaseLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-    "Method": "Delete",
+    "Method": "DeleteById",
     "RelativePath": "api/Country/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
@@ -482,7 +482,7 @@
   },
   {
     "ContainingType": "Server.Controllers.GenericController\u00601[[BaseLibrary.Entities.Department, BaseLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-    "Method": "Get",
+    "Method": "GetById",
     "RelativePath": "api/Department/{id}",
     "HttpMethod": "GET",
     "IsController": true,
@@ -496,7 +496,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "BaseLibrary.Entities.Department",
+        "Type": "BaseLibrary.Responses.ResultResponse\u00601[[BaseLibrary.Entities.Department, BaseLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -539,7 +539,7 @@
   },
   {
     "ContainingType": "Server.Controllers.GenericController\u00601[[BaseLibrary.Entities.Department, BaseLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-    "Method": "Delete",
+    "Method": "DeleteById",
     "RelativePath": "api/Department/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
@@ -611,7 +611,7 @@
   },
   {
     "ContainingType": "Server.Controllers.GenericController\u00601[[BaseLibrary.Entities.GeneralDepartment, BaseLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-    "Method": "Get",
+    "Method": "GetById",
     "RelativePath": "api/GeneralDeparment/{id}",
     "HttpMethod": "GET",
     "IsController": true,
@@ -625,7 +625,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "BaseLibrary.Entities.GeneralDepartment",
+        "Type": "BaseLibrary.Responses.ResultResponse\u00601[[BaseLibrary.Entities.GeneralDepartment, BaseLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -668,8 +668,111 @@
   },
   {
     "ContainingType": "Server.Controllers.GenericController\u00601[[BaseLibrary.Entities.GeneralDepartment, BaseLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-    "Method": "Delete",
+    "Method": "DeleteById",
     "RelativePath": "api/GeneralDeparment/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "BaseLibrary.Responses.GeneralResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Server.Controllers.ManageUserController",
+    "Method": "GetAll",
+    "RelativePath": "api/ManageUser",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[BaseLibrary.DTOs.ManageUser, BaseLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Server.Controllers.ManageUserController",
+    "Method": "GetById",
+    "RelativePath": "api/ManageUser/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "BaseLibrary.Responses.ResultResponse\u00601[[BaseLibrary.DTOs.ManageUser, BaseLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Server.Controllers.ManageUserController",
+    "Method": "Update",
+    "RelativePath": "api/ManageUser/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "manageUser",
+        "Type": "BaseLibrary.DTOs.ManageUser",
+        "IsRequired": true
+      },
+      {
+        "Name": "id",
+        "Type": "",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "BaseLibrary.Responses.GeneralResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Server.Controllers.ManageUserController",
+    "Method": "DeleteById",
+    "RelativePath": "api/ManageUser/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -740,7 +843,7 @@
   },
   {
     "ContainingType": "Server.Controllers.GenericController\u00601[[BaseLibrary.Entities.Town, BaseLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-    "Method": "Get",
+    "Method": "GetById",
     "RelativePath": "api/Town/{id}",
     "HttpMethod": "GET",
     "IsController": true,
@@ -754,7 +857,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "BaseLibrary.Entities.Town",
+        "Type": "BaseLibrary.Responses.ResultResponse\u00601[[BaseLibrary.Entities.Town, BaseLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -797,7 +900,7 @@
   },
   {
     "ContainingType": "Server.Controllers.GenericController\u00601[[BaseLibrary.Entities.Town, BaseLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-    "Method": "Delete",
+    "Method": "DeleteById",
     "RelativePath": "api/Town/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,

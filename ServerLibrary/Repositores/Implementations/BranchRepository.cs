@@ -23,11 +23,16 @@ public class BranchRepository : IGenericRepositoryInterface<Branch>
         .Include(b=> b.Department)
         .ToListAsync();
 
-    public async Task<Branch?> GetById(int id) => await FindByIdAsync(id);
+    public async Task<ResultResponse<Branch>> GetById(int id)
+    {
+        var result = await FindById(id);
+        return result is null ? ResultResponse<Branch>.Failure(ConstantsResponse.ErrorInputData) : ResultResponse<Branch>.Success(result);
+    }
 
     public async Task<GeneralResponse> Create(Branch model)
     {
-        if (await CheckName(model.Name)) return Exited();
+        if (model.Name is null) return InputDataNotValidGeneral();
+        if (await CheckName(model.Name!)) return Exited();
         _context.Add(model);
         await Commit();
         return Success();
@@ -35,8 +40,9 @@ public class BranchRepository : IGenericRepositoryInterface<Branch>
 
     public async Task<GeneralResponse> Update(Branch model)
     {
-        var item = await FindByIdAsync(model.Id);
-        if(item == null) return NotFound();
+        if (model.Id < 0 || model.Name is null) return InputDataNotValidGeneral();
+        var item = await FindById(model.Id);
+        if(item is null) return NotFound();
         if (item.Name != model.Name && await CheckName(model.Name)) return Exited();
         item.Name = model.Name;
         item.DepartmentId = model.DepartmentId;
@@ -45,7 +51,7 @@ public class BranchRepository : IGenericRepositoryInterface<Branch>
     }
     public async Task<GeneralResponse> DeleteById(int id)
     {
-        var item = await FindByIdAsync(id);
+        var item = await FindById(id);
         if (item == null) return NotFound();
         _context.Remove(item);
         await Commit();
@@ -56,11 +62,13 @@ public class BranchRepository : IGenericRepositoryInterface<Branch>
     private GeneralResponse NotFound() => new GeneralResponse(false, nameof(City) + ConstantsResponse.NotFound);
     private GeneralResponse Exited() => new GeneralResponse(false, nameof(Branch) + ConstantsResponse.Exit);
     private GeneralResponse Success() => new GeneralResponse(true, ConstantsResponse.Success);
+    private GeneralResponse InputDataNotValidGeneral() => new GeneralResponse(false, ConstantsResponse.ErrorInputData);
+
     private async Task Commit() => await _context.SaveChangesAsync();
-    private async Task<Branch?> FindByIdAsync(int id) => await _context.Branches.FindAsync(id);
+    private async Task<Branch?> FindById(int id) => await _context.Branches.FindAsync(id);
     private async Task<bool> CheckName(string name)
     {
-        var item = await _context.Branches.FirstOrDefaultAsync(_ => _.Name.ToLower() == name.ToLower());
+        var item = await _context.Branches.FirstOrDefaultAsync(_ => _.Name!.ToLower() == name.ToLower());
         return item is null? false:true;
     }
 }

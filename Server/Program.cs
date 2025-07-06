@@ -7,7 +7,6 @@ using ServerLibrary.Data;
 using ServerLibrary.Helpers;
 using ServerLibrary.Repositores.Contracts;
 using ServerLibrary.Repositores.Implementations;
-using ServerLibrary.Services.Contracts;
 using ServerLibrary.Services.Implementations;
 using System.Text;
 
@@ -52,31 +51,31 @@ builder.Services.AddControllers();
 
 //Configer
 builder.Services.Configure<JWTSection>(builder.Configuration.GetSection("JWTSection"));
-//Service 
-builder.Services.AddScoped<IAccountService,AccountService>();
 
-// Serive Fro Account
-builder.Services.AddScoped<IUserAccountService,UserAccountService>();
-builder.Services.AddScoped<ISystemRoleService,SystemRoleService>();
-builder.Services.AddScoped<IUserRoleService,UserRoleService>();
-builder.Services.AddScoped<IRefreshTokenInfoService , RefreshTokenInfoService>();
 
 // Repositories 
+                //  Country/ City/ Twon
 builder.Services.AddScoped<IGenericRepositoryInterface<Country>, CountryRepository>();
 builder.Services.AddScoped<IGenericRepositoryInterface<City>, CityRepository>();
 builder.Services.AddScoped<IGenericRepositoryInterface<Town>, TownRepository>();
-
+                //  GeneralDepartment/ Department/ Branch
 builder.Services.AddScoped<IGenericRepositoryInterface<GeneralDepartment>, GeneralDepartmentRepository>();
 builder.Services.AddScoped<IGenericRepositoryInterface<Department>, DepartmentRepository>();
 builder.Services.AddScoped<IGenericRepositoryInterface<Branch>, BranchRepository>();
+                // SystemRole/ UseraRole/ RefreshTokenInfo
+builder.Services.AddScoped<SystemRoleRepository>();
+builder.Services.AddScoped<UserRoleRepository>();
+builder.Services.AddScoped<RefreshTokenInfoRepository>();
 
 
 //Authentication
 builder.Services.AddScoped<TokenService>();
 
 //Repositores
-builder.Services.AddScoped<IUserAccount, UserAccountRepositore>();
+builder.Services.AddScoped<UserAccountRepositore>();
 
+//Service 
+builder.Services.AddScoped<ManageUserService>();
 // 
 builder.Services.AddCors(option => {
     option.AddPolicy("AllowBlazorWasm", builder => builder.WithOrigins("http://localhost:5089","https://localhost:7230")

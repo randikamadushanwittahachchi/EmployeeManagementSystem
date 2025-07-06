@@ -26,6 +26,11 @@
                         <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> About
                     </NavLink>
                 </div>
+                <div class="nav-item px-3" >
+                    <NavLink class="nav-link" @onclick="UserClick">
+                        <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> User
+                    </NavLink>
+                </div>
                 <div class=" nav-item px-3">
                     <NavLink class=" nav-link cursor-pointer" href="administration" @onclick="ShowAdminMenuContainer">
                         <div class=" hstack gap-1">
@@ -103,6 +108,7 @@
                     </div>
 
                 </div>
+
             </nav>
         </div>
     </Authorized>

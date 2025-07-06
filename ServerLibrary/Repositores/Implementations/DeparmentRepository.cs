@@ -26,11 +26,16 @@ namespace ServerLibrary.Repositores.Implementations
             .Include(d=>d.GeneralDepartment)
             .ToListAsync();
 
-        public async Task<Department?> GetById(int id) => await FindById(id);
+        public async Task<ResultResponse<Department>> GetById(int id) 
+        {
+            var result = await FindById(id);
+            return result is null ? ResultResponse<Department>.Failure(ConstantsResponse.ErrorInputData): ResultResponse<Department>.Success(result);
+        }
 
         public async Task<GeneralResponse> Create(Department model)
         {
-            if (await CheckName(model.Name)) return Exited();
+            if (model.Name is null) return InputDataNotValidGeneral();
+            if (await CheckName(model.Name!)) return Exited();
             _context.Departments.Add(model);
             await Commite();
             return Success();
@@ -38,6 +43,7 @@ namespace ServerLibrary.Repositores.Implementations
 
         public async Task<GeneralResponse> Update(Department model)
         {
+            if (model.Id < 0 || model.Name is null) return InputDataNotValidGeneral();
             var item = await FindById(model.Id);
             if (item is null ) return NotFound();
             if (item.Name != model.Name && await CheckName(model.Name)) return Exited();
@@ -58,16 +64,18 @@ namespace ServerLibrary.Repositores.Implementations
 
 
         // reuseble propety and methode
+
         private  async Task<Department?> FindById(int id) => await _context.Departments.FindAsync(id);
         private async Task<Department?> FindByIdWithChild(int id) => await _context.Departments.Include(d => d.Branches).FirstOrDefaultAsync(d => d.Id == id);
         private static GeneralResponse Success() => new GeneralResponse(true, ConstantsResponse.Success);
         private static GeneralResponse NotFound() => new GeneralResponse(false, nameof(Department) + ConstantsResponse.NotFound);
         private static GeneralResponse Exited() => new GeneralResponse(false, nameof(Department) + ConstantsResponse.Exit);
+        private GeneralResponse InputDataNotValidGeneral() => new GeneralResponse(false, ConstantsResponse.ErrorInputData);
         private static GeneralResponse HasChild() => new GeneralResponse(false, nameof(Department) + ConstantsResponse.HasChild + "of Branch");
         private async Task Commite() => await _context.SaveChangesAsync();
         private async Task<bool> CheckName(string name)
         {
-            var item = await _context.Departments.FirstOrDefaultAsync(_ => _.Name.ToLower() == name.ToLower());
+            var item = await _context.Departments.FirstOrDefaultAsync(_ => _.Name!.ToLower() == name.ToLower());
             return item is null ? false : true;
         }
 

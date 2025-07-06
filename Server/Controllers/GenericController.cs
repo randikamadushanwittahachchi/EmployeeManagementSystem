@@ -24,15 +24,15 @@ public class GenericController<T> : ControllerBase where T : class
     public async Task<ActionResult<List<T>>> GetAll()
     {
         var result = await _genericReposiroty.GetAll();
-        return Ok(result ?? new List<T>());
+        return Ok(result);
     }
 
     [HttpGet("{id}")]
-    public async Task<ActionResult<T>> Get(int id)
+    public async Task<ActionResult<ResultResponse<T>>> GetById(int id)
     {
-        if(id <= 0) return BadRequestMessegae();
+        if (id <= 0) return BadRequest(ResultResponse<T>.Failure("Invalid data provided"));
         var result = await _genericReposiroty.GetById(id);
-        return result == null ? NotFound(new GeneralResponse(false, "No recode found with the given ID")) : Ok(result);
+        return Ok(result);
 
     }
 
@@ -55,7 +55,7 @@ public class GenericController<T> : ControllerBase where T : class
 
 
     [HttpDelete("{id}")]
-    public async Task<ActionResult<GeneralResponse>> Delete(int id)
+    public async Task<ActionResult<GeneralResponse>> DeleteById(int id)
     {
         if (id <= 0) return BadRequestMessegae();
         var result = await _genericReposiroty.DeleteById(id);
@@ -64,7 +64,7 @@ public class GenericController<T> : ControllerBase where T : class
 
 
     // reusable propety and methode
-    private BadRequestObjectResult BadRequestMessegae() => BadRequest(new GeneralResponse(false, "Invalid data provided"));
+    private ActionResult<GeneralResponse> BadRequestMessegae() => BadRequest(new GeneralResponse(false, "Invalid data provided"));
     private ActionResult<GeneralResponse> ResultResponseNotFoundOrSuccess(GeneralResponse result) => !result.Flag ? NotFound(result) : Ok(result);
     private ActionResult<GeneralResponse> ResultResponseConflict(GeneralResponse result) => !result.Flag ? Conflict(result) : Ok(result);
 

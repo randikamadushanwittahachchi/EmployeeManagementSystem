@@ -27,9 +27,14 @@ public class TownRepository : IGenericRepositoryInterface<Town>
         .Include(t => t.City)
         .ToListAsync();
 
-    public async Task<Town?> GetById(int id) => await FindByIdAsync(id);
+    public async Task<ResultResponse<Town>> GetById(int id)
+    {
+        var result = await FindById(id);
+        return result is null ? ResultResponse<Town>.Failure(ConstantsResponse.ErrorInputData) : ResultResponse<Town>.Success(result);
+    }
     public async Task<GeneralResponse> Create(Town model)
     {
+        if (model.Name is null) return InputDataNotValidGeneral();
         if(await CheckName(model.Name)) return Exited();
         _context.Towns.Add(model);
         await Commit();
@@ -38,7 +43,8 @@ public class TownRepository : IGenericRepositoryInterface<Town>
 
     public async Task<GeneralResponse> Update(Town model)
     {
-        var item = await FindByIdAsync(model.Id);
+        if (model.Id < 0 || model.Name is null) return InputDataNotValidGeneral();
+        var item = await FindById(model.Id);
         if (item is null) return NotFound();
         if (await CheckName(model.Name)) return Exited();
         item.Name = model.Name;
@@ -48,7 +54,7 @@ public class TownRepository : IGenericRepositoryInterface<Town>
 
     public async Task<GeneralResponse> DeleteById(int id)
     {
-        var item = await FindByIdAsync(id);
+        var item = await FindById(id);
         if (item is null) return NotFound();
         _context.Towns.Remove(item);
         await Commit();
@@ -59,11 +65,12 @@ public class TownRepository : IGenericRepositoryInterface<Town>
     private GeneralResponse Success() => new GeneralResponse(true, ConstantsResponse.Success);
     private GeneralResponse NotFound() => new GeneralResponse(false, nameof(Town) + ConstantsResponse.NotFound);
     private GeneralResponse Exited() => new GeneralResponse(false, nameof(Town) + ConstantsResponse.Exit);
+    private GeneralResponse InputDataNotValidGeneral() => new GeneralResponse(false, ConstantsResponse.ErrorInputData);
     private async Task Commit() => await _context.SaveChangesAsync();
-    private async Task<Town?> FindByIdAsync(int id) => await _context.Towns.FindAsync(id);
+    private async Task<Town?> FindById(int id) => await _context.Towns.FindAsync(id);
     private async Task<bool> CheckName(string name)
     {
-        var item = await _context.Towns.FirstOrDefaultAsync(_ => _.Name.ToLower() == name.ToLower());
+        var item = await _context.Towns.FirstOrDefaultAsync(_ => _.Name!.ToLower() == name.ToLower());
         return item is null ? false :true;
     }
 

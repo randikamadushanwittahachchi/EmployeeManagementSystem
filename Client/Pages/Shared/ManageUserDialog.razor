@@ -1,0 +1,131 @@
+﻿@using BaseLibrary.Responses
+@using Blazored.Modal
+@using Blazored.Modal.Services
+@using BaseLibrary.Entities
+@using Client.Helper.Constracts
+@using ClientLibrary.Constants
+@inject IDialogModal Dialog
+
+<div class=" modal fade show d-block" tabindex="-1" role="dialog">
+    <div class="modal-backdrop fade show"></div>
+    <!-- Pop it above the backdrop -->
+    <div class="  modal-dialog " style="margin-top:6rem;z-index: 1050">
+        <EditForm Model="ManageUser" Enhance OnSubmit="SubmitManageUser">
+            <DataAnnotationsValidator />
+            <div class=" modal-content">
+                <div class=" modal-header py-4">
+                    <div class=" modal-title"> @Titel Authorize User</div>
+                    <button @onclick="CancelClick" type="button" class="btn btn-close close-btn fs-6 "></button>
+                </div>
+                <div class="modal-body">
+
+                    @if (ShowEditEmail)
+                    {
+                        <div class=" form-group">
+                            <label class=" form-label"> UnAuthorize User </label>
+                            <select class=" form-select" @onchange="OnUserSelected">
+                                @if (!ManageUsers.Any())
+                                {
+                                    <option value="">No Users available</option>
+                                }
+                                else
+                                {
+                                    <option value="">None</option>
+                                    @foreach (var manageUser in ManageUsers)
+                                    {
+                                        @if (!manageUser.Autherize)
+                                        {
+                                            <option value="@manageUser.UserId">@manageUser.Email</option>
+                                        }
+                                    }
+                                }
+                            </select>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class=" form-group ">
+                            <label class=" form-label">Email</label>
+                            <input type="text" readonly class=" form-control" @bind="ManageUser.Email" />
+                        </div>
+                        
+                    }
+                    <div class=" form-group ">
+                        <label class=" form-label">Name</label>
+                        <input type="text"  readonly class=" form-control" @bind="ManageUser.UserName" />
+                    </div>
+                    <div class=" form-group ">
+                        <label class=" form-label">Role</label>
+                        <select class="form-control" @bind="ManageUser.Role" >
+                            <option value=" ">--- select role ---</option>
+                            <option value="User"> User </option>
+                            <option value="Admin"> Admin</option>
+                        </select>
+                    </div>
+                    <div class=" form-check">
+                        <input type="checkbox" class="form-check-input" id="authorizeCheckbox" @bind="ManageUser.Autherize" />
+                        <label class=" form-check-label" for="authorizeCheckbox">Authorized user</label>
+                    </div>
+
+                </div>
+                <div class=" modal-footer py-1">
+                    <div class=" form-group ">
+                        <div class=" d-flex gap-2 ">
+                            <button type="button" class="  btn btn-secondary " @onclick="CancelClick">Cancel</button>
+                            <button type="submit" class=" btn btn-primary">@Button</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </EditForm>
+    </div>
+</div>
+
+@code {
+    [CascadingParameter] BlazoredModalInstance BlazoredModal { get; set; } = default!;
+    [Parameter] public Func<ManageUser, Task>? FunManageUser { get; set; }
+
+    [Parameter] public string Titel { get; set; } = string.Empty;
+    [Parameter] public string Button { get; set; } = string.Empty;
+    [Parameter]public bool ShowEditEmail { get; set; } = false;
+    [Parameter]public ManageUser ManageUser { get; set; } = new();
+
+    public List<ManageUser> ManageUsers { get; set; } = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        allState.Action += StateHasChanged;
+        await GetAll();
+    }
+
+    //Get all
+    public async Task GetAll()
+    {
+        ManageUsers = await manageUserService.GetAll(ContantsBaseUrl.ManageUserUrl);
+    }
+
+    private async Task OnUserSelected(ChangeEventArgs e)
+    {
+        var selectedUserId = e.Value?.ToString();
+
+        var response = await manageUserService.GetById(ContantsBaseUrl.ManageUserUrl + selectedUserId);
+        if (response.Flag) ManageUser = response.Data!;
+        allState.Action?.Invoke();
+    }
+
+    private async Task CancelClick()
+    {
+        await BlazoredModal.CloseAsync(ModalResult.Ok(true));
+    }
+
+    private async Task SubmitManageUser()
+    {
+        await BlazoredModal.CloseAsync();
+        await FunManageUser!.Invoke(ManageUser);
+    }
+    public void Dispose()
+    {
+        allState.Action -= StateHasChanged;
+    }
+
+}

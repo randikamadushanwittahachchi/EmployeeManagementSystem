@@ -14,6 +14,7 @@ using Client.State;
 using Client.Helper.Constracts;
 using Client.Helper.Implementations;
 using BaseLibrary.Entities;
+using BaseLibrary.DTOs;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 
@@ -33,10 +34,13 @@ builder.Services.AddScoped<IGenericServiceInterface<Branch>, GenericServic<Branc
 builder.Services.AddScoped<IGenericServiceInterface<Country>, GenericServic<Country>>();
 builder.Services.AddScoped<IGenericServiceInterface<City>, GenericServic<City>>();
 builder.Services.AddScoped<IGenericServiceInterface<Town>, GenericServic<Town>>();
+builder.Services.AddScoped<IGenericServiceInterface<ManageUser>, GenericServic<ManageUser>>();
+
 
 builder.Services.AddScoped<AllState>();
 
 builder.Services.AddBlazoredModal();
+builder.Services.AddScoped<ManageUserModal>();
 builder.Services.AddScoped<IDialogModal, DialogModal>();
 builder.Services.AddScoped<IGenericModal<GeneralDepartment>, GeneralDeparmentModal>();
 builder.Services.AddScoped<IGenericModal<Department>, DepartmentModal>();

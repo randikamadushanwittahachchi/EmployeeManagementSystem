@@ -10,5 +10,6 @@ namespace ClientLibrary.Constants
         public const string TownUrl = "api/Town";
         public const string CityUrl = "api/City";
         public const string CountryUrl = "api/Country";
+        public const string ManageUserUrl = "api/ManageUser";
     }
 }

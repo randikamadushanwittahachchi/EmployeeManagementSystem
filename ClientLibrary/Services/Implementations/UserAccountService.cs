@@ -35,5 +35,4 @@ public class UserAccounmService(IGetHttpClient getHttpClient) : IUserAccountServ
 
         return await result.Content.ReadFromJsonAsync<LoginResponse>();
     }
-
 }

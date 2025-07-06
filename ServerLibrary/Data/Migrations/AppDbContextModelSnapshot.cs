@@ -30,6 +30,9 @@ namespace ServerLibrary.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<bool>("Autherize")
+                        .HasColumnType("bit");
+
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -494,7 +497,7 @@ namespace ServerLibrary.Data.Migrations
             modelBuilder.Entity("BaseLibrary.Entities.City", b =>
                 {
                     b.HasOne("BaseLibrary.Entities.Country", "Country")
-                        .WithMany("Citys")
+                        .WithMany("Cities")
                         .HasForeignKey("CountryId");
 
                     b.Navigation("Country");
@@ -580,7 +583,7 @@ namespace ServerLibrary.Data.Migrations
 
             modelBuilder.Entity("BaseLibrary.Entities.Country", b =>
                 {
-                    b.Navigation("Citys");
+                    b.Navigation("Cities");
                 });
 
             modelBuilder.Entity("BaseLibrary.Entities.Department", b =>

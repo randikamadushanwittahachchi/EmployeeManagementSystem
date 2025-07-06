@@ -23,10 +23,15 @@ namespace ServerLibrary.Repositores.Implementations
         // CRUD Operations
 
         public async Task<List<GeneralDepartment>> GetAll() => await _context.GeneralDepartments.ToListAsync();
-        public async Task<GeneralDepartment?> GetById(int id) => await FindById(id);
+        public async Task<ResultResponse<GeneralDepartment>> GetById(int id)
+        {
+            var result = await FindById(id);
+            return result is null ? ResultResponse<GeneralDepartment>.Failure(ConstantsResponse.ErrorInputData) : ResultResponse<GeneralDepartment>.Success(result);
+        }
 
         public async Task<GeneralResponse> Create(GeneralDepartment model)
         {
+            if (model.Name is null) return InputDataNotValidGeneral();
             if (await CheckName(model.Name)) return Exited();
             _context.GeneralDepartments.Add(model);
             await Commit();
@@ -34,6 +39,7 @@ namespace ServerLibrary.Repositores.Implementations
         }
         public async Task<GeneralResponse> Update(GeneralDepartment model)
         {
+            if (model.Id < 0 || model.Name is null) return InputDataNotValidGeneral();
             var item = await FindById(model.Id);
             if (item is null) return NotFound();
             if (item.Name != model.Name && await CheckName(model.Name)) return Exited();
@@ -60,6 +66,7 @@ namespace ServerLibrary.Repositores.Implementations
         private async Task<GeneralDepartment?> FindByIdWithChild(int id) => await _context.GeneralDepartments.Include(gd => gd.Departments).FirstOrDefaultAsync(gd => gd.Id == id);
         private static GeneralResponse NotFound() => new GeneralResponse(false, nameof(GeneralDepartment)+ConstantsResponse.NotFound);
         private static GeneralResponse Exited() => new GeneralResponse(false, nameof(GeneralDepartment) + ConstantsResponse.Exit);
+        private GeneralResponse InputDataNotValidGeneral() => new GeneralResponse(false, ConstantsResponse.ErrorInputData);
         private static GeneralResponse HasChild() => new GeneralResponse(false, nameof(GeneralDepartment) + ConstantsResponse.HasChild + "of Branch");
         private static GeneralResponse Success()=> new GeneralResponse(true , ConstantsResponse.Success);
 

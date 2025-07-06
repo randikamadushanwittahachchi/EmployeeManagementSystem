@@ -62,12 +62,14 @@ public class AllState
     // User
     public void UserClick()
     {
+        ResetALlDepartments();
         ShowUser = true;
         Action?.Invoke();
     }
     // Employee
     public void EmployeeClick()
     {
+        ResetALlDepartments();
         ShowEmployee = true;
         Action?.Invoke();
     }
@@ -81,6 +83,8 @@ public class AllState
         ShowTown = false;
         ShowCity = false;
         ShowCountry = false;
+        ShowUser = false;
+        ShowEmployee = false;
     }
 
 }

@@ -1,0 +1,127 @@
+﻿@using Client.Helper.Implementations
+@using Client.Helper.Constracts
+@using ClientLibrary.Constants
+@implements IDisposable
+@inject AllState allState
+@inject ManageUserModal UserDialog
+@inject IDialogModal Dialog
+
+@if(allState.ShowUser){
+    <div class=" container mt-4">
+        <div class=" row">
+            <div class=" col-12">
+                <div class=" card">
+                    <div class=" card-header">
+                        <h4 class=" float-start text-center m-0 fs-4"> Users Information Details</h4>
+                        <button type="button" class=" btn  btn-out float-end " @onclick="Add"><i class=" fs-3 bi bi-plus-circle"></i></button>
+                    </div>
+                    <div class=" card-body " style=" overflow-x:hidden; overflow-y:scroll; max-height:390px  ">
+                        <table class=" table table-striped ">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Role</th>
+                                    <th scope="col">Edit</th>
+                                    <th scope="col">Delete</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @if (!ManageUsers.Any())
+                                {
+                                    <tr>
+                                        <td colspan="4" class="text-center">No data available</td>
+                                    </tr>
+                                }
+                                else
+                                {
+                                    @foreach(var manageUser in ManageUsers)
+                                    {
+                                        @if (manageUser.Autherize)
+                                        {
+                                            <tr>
+                                                <td>@manageUser.UserName</td>
+                                                <td>@manageUser.Email</td>
+                                                <td>@manageUser.Role</td>
+                                                <td>
+                                                    <a type="button" class="text-primary text-decoration-none" @onclick="() => Edit(manageUser)">
+                                                        <i class="bi bi-pencil-square"></i>
+                                                        <span>Edit</span>
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <button type="button" class="border-0 m-0 p-0 btn btn-link" @onclick="() => Delete(manageUser)">
+                                                        <i class="bi bi-trash"></i>
+                                                        <span>Delete</span>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        }
+                                    }
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+@code{
+
+    public List<ManageUser> ManageUsers { get; set; } = null!;
+
+    protected override async Task OnInitializedAsync()
+    {
+        allState.Action += StateHasChanged;
+        await GetAll();
+    }
+
+    // Get All ManageUsers
+    public async Task GetAll()
+    {
+        ManageUsers = await manageUserService.GetAll(ContantsBaseUrl.ManageUserUrl);
+        allState.Action?.Invoke();
+    }
+
+    // Add ManageUser
+    public  void Add()
+    {
+        UserDialog.ShowDialog(AddManageUser, "Authorize User", "Authorize", true);
+    }
+    private async Task AddManageUser(ManageUser manageUser)
+    {
+        var respons = await manageUserService.Update(manageUser, $"{ContantsBaseUrl.ManageUserUrl}/{manageUser.UserId}");
+        if(respons.Flag) await GetAll();
+        Dialog.ShowDialog(respons.Flag ? "success" : "error", respons.Message);
+    }
+
+    // Update ManageUser
+    public void Edit(ManageUser manageUser)
+    {
+        UserDialog.ShowDialog(UpdateManageUser, manageUser, "Update", "Update");
+    }
+    private async Task UpdateManageUser(ManageUser manageUser)
+    {
+        var response = await manageUserService.Update(manageUser, $"{ContantsBaseUrl.ManageUserUrl}/{manageUser.UserId}");
+        if (response.Flag) await GetAll();
+        Dialog.ShowDialog(response.Flag ? "Success" : "Error", response.Message);
+    }
+
+    // Delete ManageUser
+    public void Delete(ManageUser manageUser)
+    {
+        Dialog.ShowDialog("Alert", $"are you sure you want delete {manageUser}", () => DeleteManageUser(manageUser));
+    }
+    private async Task DeleteManageUser(ManageUser manageUser)
+    {
+        var response = await manageUserService.DeleteById($"{ContantsBaseUrl.ManageUserUrl}/{manageUser.UserId}");
+        if (response.Flag) await GetAll();
+        Dialog.ShowDialog(response.Flag ? "Success" : "Error", response.Message);
+    }
+    public void Dispose()
+    {
+        allState.Action -= StateHasChanged;
+    }
+}
