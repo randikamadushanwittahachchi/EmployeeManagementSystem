@@ -1,0 +1,76 @@
+﻿@using ClientLibrary.Constants
+@if (allState.ShowEmployee)
+{
+    <div class=" container mt-4">
+        <div class="row">
+            <div class=" col-12">
+                <div class=" card">
+                    <div class=" card-header">
+                        <h4 class=" float-start fs-4 text-center m-0 ">Employee</h4>
+                        <button type="button" class=" btn btn-out float-end" @onclick="Add"><i class="bi bi-person-add"></i></button>
+                    </div>
+                    <div class=" card-body" style=" overflow-x:hidden; overflow-y:scroll; max-height:390px ">
+                        <table class=" table table-striped">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Image</th>
+                                    <th scope="col">Civil Id</th>
+                                    <th scope="col">File Name</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Telephone</th>
+                                    <th scope="col">Job Name</th>
+                                    <th scope="col">Branch</th>
+                                    <th scope="col">Town</th>
+                                    <th scope="col">Menu</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @if (!Employees.Any())
+                                {
+                                    <tr>
+                                        <td> No data is aviable </td>
+                                    </tr>
+                                }
+                                else
+                                {
+                                    @foreach(var employee in Employees)
+                                    {
+                                        <tr>
+                                            <td> <img src="@employee.Photo" /></td>
+                                            <td> @employee.CivilId</td>
+                                        </tr>
+                                    }
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+@code {
+    public List<Employee> Employees { get; set; } = null!;
+
+    protected override async Task OnInitializedAsync()
+    {
+        allState.Action += StateHasChanged;
+        await GetAll();
+    }
+
+    // Get All Employees
+    private async Task GetAll()
+    {
+        Employees = await employeeService.GetAll(ContantsBaseUrl.EmployeeUrl);
+        allState.Action?.Invoke();
+    }
+
+    // Creat New Employee
+
+    private void Add()
+    {
+        
+    }
+
+}

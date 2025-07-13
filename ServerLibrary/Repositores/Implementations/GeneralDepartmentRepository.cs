@@ -42,7 +42,7 @@ namespace ServerLibrary.Repositores.Implementations
             if (model.Id < 0 || model.Name is null) return InputDataNotValidGeneral();
             var item = await FindById(model.Id);
             if (item is null) return NotFound();
-            if (item.Name != model.Name && await CheckName(model.Name)) return Exited();
+            if (!string.Equals(model.Name,item.Name,StringComparison.OrdinalIgnoreCase) && await CheckName(model.Name)) return Exited();
             item.Name = model.Name;
             await Commit();
             return Success();
@@ -72,7 +72,7 @@ namespace ServerLibrary.Repositores.Implementations
 
         private async Task<bool> CheckName(string name)
         {
-            var item = await _context.GeneralDepartments.FirstOrDefaultAsync(_ => _.Name.ToLower() == name.ToLower());
+            var item = await _context.GeneralDepartments.FirstOrDefaultAsync(_ => _.Name!.Trim().ToLower() == name.Trim().ToLower());
             return item is null ? false:  true;
         }
 

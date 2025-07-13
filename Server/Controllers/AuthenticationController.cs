@@ -2,14 +2,14 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using ServerLibrary.Repositores.Contracts;
+using ServerLibrary.Repositores.Implementations;
 
 namespace Server.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
 [AllowAnonymous]
-public class AuthenticationController(IUserAccount userAccountInterface) : ControllerBase
+public class AuthenticationController(UserAccountRepositore userAccountInterface) : ControllerBase
 {
     [HttpPost("register")]
     public async Task<IActionResult> CreateAsync(Register user)

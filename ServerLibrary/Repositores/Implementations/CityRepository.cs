@@ -44,7 +44,7 @@ public class CityRepository : IGenericRepositoryInterface<City>
         if (model.Id < 0 || model.Name is null) InputDataNotValidGeneral();
         var item = await FindById(model.Id);
         if (item == null) return NotFound();
-        if (item.Name != model.Name && await CheckName(model.Name!)) return Exited();
+        if (!string.Equals(model.Name,item.Name,StringComparison.OrdinalIgnoreCase) && await CheckName(model.Name!)) return Exited();
         item.Name = model.Name;
         item.CountryId = model.CountryId;
         await Commit();
@@ -63,17 +63,17 @@ public class CityRepository : IGenericRepositoryInterface<City>
 
     // reusable methods and propety
 
-    private GeneralResponse Success() => new GeneralResponse(true,ConstantsResponse.Success);
-    private GeneralResponse NotFound() => new GeneralResponse(false, nameof(City) + ConstantsResponse.NotFound);
-    private GeneralResponse HasChild() => new GeneralResponse(false, nameof(City) + ConstantsResponse.HasChild + "of Branch");
-    private GeneralResponse Exited() => new GeneralResponse(false, nameof(City) + ConstantsResponse.Exit);
-    private GeneralResponse InputDataNotValidGeneral() => new GeneralResponse(false, ConstantsResponse.ErrorInputData);
+    private static GeneralResponse Success() => new GeneralResponse(true,ConstantsResponse.Success);
+    private static GeneralResponse NotFound() => new GeneralResponse(false, nameof(City) + ConstantsResponse.NotFound);
+    private static GeneralResponse HasChild() => new GeneralResponse(false, nameof(City) + ConstantsResponse.HasChild + "of Branch");
+    private static GeneralResponse Exited() => new GeneralResponse(false, nameof(City) + ConstantsResponse.Exit);
+    private static GeneralResponse InputDataNotValidGeneral() => new GeneralResponse(false, ConstantsResponse.ErrorInputData);
     private async Task Commit() => await _context.SaveChangesAsync();
     private async Task<City?> FindById(int id) => await _context.Cities.FindAsync(id);
     private async Task<City?> FindByIdWithChild(int id) => await _context.Cities.Include(c => c.Towns).FirstOrDefaultAsync(c => c.Id == id);
     private async Task<bool> CheckName(string name) 
     {
-        var item = await _context.Cities.FirstOrDefaultAsync(_ => _.Name!.ToLower() == name.ToLower());
+        var item = await _context.Cities.FirstOrDefaultAsync(_ => _.Name!.Trim().ToLower() == name.Trim().ToLower());
         return item is null ? false : true;
     }
 }

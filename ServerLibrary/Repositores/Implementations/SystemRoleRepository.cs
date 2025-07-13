@@ -42,9 +42,9 @@ public class SystemRoleRepository
         return Success();
         
     }
-    private GeneralResponse Success() => new GeneralResponse(true, ConstantsResponse.Success);
+    private static GeneralResponse Success() => new GeneralResponse(true, ConstantsResponse.Success);
     private async Task Commit() => await _context.SaveChangesAsync();
-    private GeneralResponse Unsuccess() => new GeneralResponse(false, nameof(SystemRole) + ConstantsResponse.Unsuccess);
+    private static GeneralResponse Unsuccess() => new GeneralResponse(false, nameof(SystemRole) + ConstantsResponse.Unsuccess);
     private async Task<SystemRole?>FindById(int id) => await _context.SystemRoles.FindAsync(id);
-    private async Task<SystemRole?>FindByName(string name) => await _context.SystemRoles.FirstOrDefaultAsync(_ => _.Name!.ToLower() == name!.ToLower());
+    private async Task<SystemRole?>FindByName(string name) => await _context.SystemRoles.FirstOrDefaultAsync(_ => _.Name!.Trim().ToLower() == name!.Trim().ToLower());
 }

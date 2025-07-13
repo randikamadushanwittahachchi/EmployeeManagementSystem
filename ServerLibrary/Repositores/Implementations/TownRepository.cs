@@ -46,7 +46,7 @@ public class TownRepository : IGenericRepositoryInterface<Town>
         if (model.Id < 0 || model.Name is null) return InputDataNotValidGeneral();
         var item = await FindById(model.Id);
         if (item is null) return NotFound();
-        if (await CheckName(model.Name)) return Exited();
+        if (!string.Equals(model.Name,item.Name,StringComparison.OrdinalIgnoreCase) && await CheckName(model.Name)) return Exited();
         item.Name = model.Name;
         await Commit();
         return Success();
@@ -62,15 +62,15 @@ public class TownRepository : IGenericRepositoryInterface<Town>
     }
 
     // reusable methods and propety
-    private GeneralResponse Success() => new GeneralResponse(true, ConstantsResponse.Success);
-    private GeneralResponse NotFound() => new GeneralResponse(false, nameof(Town) + ConstantsResponse.NotFound);
-    private GeneralResponse Exited() => new GeneralResponse(false, nameof(Town) + ConstantsResponse.Exit);
-    private GeneralResponse InputDataNotValidGeneral() => new GeneralResponse(false, ConstantsResponse.ErrorInputData);
+    private static GeneralResponse Success() => new GeneralResponse(true, ConstantsResponse.Success);
+    private static GeneralResponse NotFound() => new GeneralResponse(false, nameof(Town) + ConstantsResponse.NotFound);
+    private static GeneralResponse Exited() => new GeneralResponse(false, nameof(Town) + ConstantsResponse.Exit);
+    private static GeneralResponse InputDataNotValidGeneral() => new GeneralResponse(false, ConstantsResponse.ErrorInputData);
     private async Task Commit() => await _context.SaveChangesAsync();
     private async Task<Town?> FindById(int id) => await _context.Towns.FindAsync(id);
     private async Task<bool> CheckName(string name)
     {
-        var item = await _context.Towns.FirstOrDefaultAsync(_ => _.Name!.ToLower() == name.ToLower());
+        var item = await _context.Towns.FirstOrDefaultAsync(_ => _.Name!.Trim().ToLower() == name.Trim().ToLower());
         return item is null ? false :true;
     }
 

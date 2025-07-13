@@ -13,10 +13,11 @@ public class UserAccounmService(IGetHttpClient getHttpClient) : IUserAccountServ
     public async Task<GeneralResponse?> CreateAsync(Register user)
     {
         var httpClient = _getHttpClient.GetPublicHttpClient();
-        var result = await httpClient.PostAsJsonAsync($"{AuthUrl}/register", user);
-        if (!result.IsSuccessStatusCode) return new GeneralResponse(false, "Error Occured");
+        var response = await httpClient.PostAsJsonAsync($"{AuthUrl}/register", user);
+        var result = await response.Content.ReadFromJsonAsync<GeneralResponse>();
+        if (!response.IsSuccessStatusCode) return result;
+        return result;
 
-        return await result.Content.ReadFromJsonAsync<GeneralResponse>();
     }
     public async Task<LoginResponse?> SignInAsync(Login user)
     {

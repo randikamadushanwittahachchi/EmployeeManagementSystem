@@ -3,7 +3,7 @@
 public class AllState
 {
     public Action? Action { get; set; }
-    public bool ShowUser { get; set; }
+    public bool ShowManageUser { get; set; }
     public bool ShowEmployee { get; set; }
     public bool ShowGeneralDepartment { get; set; }
     public bool ShowDepartment { get; set; }
@@ -60,10 +60,10 @@ public class AllState
         Action?.Invoke();
     }
     // User
-    public void UserClick()
+    public void ManageUserClick()
     {
         ResetALlDepartments();
-        ShowUser = true;
+        ShowManageUser = true;
         Action?.Invoke();
     }
     // Employee
@@ -83,7 +83,7 @@ public class AllState
         ShowTown = false;
         ShowCity = false;
         ShowCountry = false;
-        ShowUser = false;
+        ShowManageUser = false;
         ShowEmployee = false;
     }
 

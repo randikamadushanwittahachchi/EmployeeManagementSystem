@@ -43,7 +43,7 @@ public class BranchRepository : IGenericRepositoryInterface<Branch>
         if (model.Id < 0 || model.Name is null) return InputDataNotValidGeneral();
         var item = await FindById(model.Id);
         if(item is null) return NotFound();
-        if (item.Name != model.Name && await CheckName(model.Name)) return Exited();
+        if (!string.Equals(model.Name,item.Name,StringComparison.OrdinalIgnoreCase) && await CheckName(model.Name)) return Exited();
         item.Name = model.Name;
         item.DepartmentId = model.DepartmentId;
         await Commit();
@@ -59,10 +59,10 @@ public class BranchRepository : IGenericRepositoryInterface<Branch>
     }
 
     // reusable propety and methode
-    private GeneralResponse NotFound() => new GeneralResponse(false, nameof(City) + ConstantsResponse.NotFound);
-    private GeneralResponse Exited() => new GeneralResponse(false, nameof(Branch) + ConstantsResponse.Exit);
-    private GeneralResponse Success() => new GeneralResponse(true, ConstantsResponse.Success);
-    private GeneralResponse InputDataNotValidGeneral() => new GeneralResponse(false, ConstantsResponse.ErrorInputData);
+    private static GeneralResponse NotFound() => new GeneralResponse(false, nameof(City) + ConstantsResponse.NotFound);
+    private static GeneralResponse Exited() => new GeneralResponse(false, nameof(Branch) + ConstantsResponse.Exit);
+    private static GeneralResponse Success() => new GeneralResponse(true, ConstantsResponse.Success);
+    private static GeneralResponse InputDataNotValidGeneral() => new GeneralResponse(false, ConstantsResponse.ErrorInputData);
 
     private async Task Commit() => await _context.SaveChangesAsync();
     private async Task<Branch?> FindById(int id) => await _context.Branches.FindAsync(id);

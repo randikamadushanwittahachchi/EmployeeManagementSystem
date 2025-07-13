@@ -1,5 +1,6 @@
 using BaseLibrary.Entities;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using ServerLibrary.Authentication;
@@ -62,6 +63,8 @@ builder.Services.AddScoped<IGenericRepositoryInterface<Town>, TownRepository>();
 builder.Services.AddScoped<IGenericRepositoryInterface<GeneralDepartment>, GeneralDepartmentRepository>();
 builder.Services.AddScoped<IGenericRepositoryInterface<Department>, DepartmentRepository>();
 builder.Services.AddScoped<IGenericRepositoryInterface<Branch>, BranchRepository>();
+                //Employee
+builder.Services.AddScoped<IGenericRepositoryInterface<Employee>, EmployeeRepository>();
                 // SystemRole/ UseraRole/ RefreshTokenInfo
 builder.Services.AddScoped<SystemRoleRepository>();
 builder.Services.AddScoped<UserRoleRepository>();

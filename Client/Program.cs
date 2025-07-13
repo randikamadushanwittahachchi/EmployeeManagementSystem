@@ -35,6 +35,7 @@ builder.Services.AddScoped<IGenericServiceInterface<Country>, GenericServic<Coun
 builder.Services.AddScoped<IGenericServiceInterface<City>, GenericServic<City>>();
 builder.Services.AddScoped<IGenericServiceInterface<Town>, GenericServic<Town>>();
 builder.Services.AddScoped<IGenericServiceInterface<ManageUser>, GenericServic<ManageUser>>();
+builder.Services.AddScoped<IGenericServiceInterface<Employee>, GenericServic<Employee>>();
 
 
 builder.Services.AddScoped<AllState>();

@@ -53,7 +53,7 @@ public class UserRoleRepository
 
     private async Task<UserRole?> FindById(int id) =>await _context.UserRoles.FindAsync(id);
     private async Task Commit() => await _context.SaveChangesAsync();
-    private GeneralResponse Unsuccess() => new GeneralResponse(false, nameof(UserRole) + ConstantsResponse.Unsuccess);
-    private GeneralResponse Success() => new GeneralResponse(true, ConstantsResponse.Success);
-    private GeneralResponse NotFound() => new GeneralResponse(false, ConstantsResponse.NotFound);
+    private static GeneralResponse Unsuccess() => new GeneralResponse(false, nameof(UserRole) + ConstantsResponse.Unsuccess);
+    private static GeneralResponse Success() => new GeneralResponse(true, ConstantsResponse.Success);
+    private static GeneralResponse NotFound() => new GeneralResponse(false, ConstantsResponse.NotFound);
 }

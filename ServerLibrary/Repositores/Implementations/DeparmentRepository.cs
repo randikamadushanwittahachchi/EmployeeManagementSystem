@@ -46,7 +46,7 @@ namespace ServerLibrary.Repositores.Implementations
             if (model.Id < 0 || model.Name is null) return InputDataNotValidGeneral();
             var item = await FindById(model.Id);
             if (item is null ) return NotFound();
-            if (item.Name != model.Name && await CheckName(model.Name)) return Exited();
+            if (!string.Equals(model.Name, item.Name, StringComparison.OrdinalIgnoreCase) && await CheckName(model.Name)) return Exited();
             item.Name = model.Name;
             item.GeneralDepartmentId = model.GeneralDepartmentId;
             await Commite();
@@ -70,12 +70,12 @@ namespace ServerLibrary.Repositores.Implementations
         private static GeneralResponse Success() => new GeneralResponse(true, ConstantsResponse.Success);
         private static GeneralResponse NotFound() => new GeneralResponse(false, nameof(Department) + ConstantsResponse.NotFound);
         private static GeneralResponse Exited() => new GeneralResponse(false, nameof(Department) + ConstantsResponse.Exit);
-        private GeneralResponse InputDataNotValidGeneral() => new GeneralResponse(false, ConstantsResponse.ErrorInputData);
+        private static GeneralResponse InputDataNotValidGeneral() => new GeneralResponse(false, ConstantsResponse.ErrorInputData);
         private static GeneralResponse HasChild() => new GeneralResponse(false, nameof(Department) + ConstantsResponse.HasChild + "of Branch");
         private async Task Commite() => await _context.SaveChangesAsync();
         private async Task<bool> CheckName(string name)
         {
-            var item = await _context.Departments.FirstOrDefaultAsync(_ => _.Name!.ToLower() == name.ToLower());
+            var item = await _context.Departments.FirstOrDefaultAsync(_ => _.Name!.Trim().ToLower() == name.Trim().ToLower());
             return item is null ? false : true;
         }
 

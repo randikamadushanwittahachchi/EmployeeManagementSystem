@@ -108,7 +108,7 @@
     {
         var selectedUserId = e.Value?.ToString();
 
-        var response = await manageUserService.GetById(ContantsBaseUrl.ManageUserUrl + selectedUserId);
+        var response = await manageUserService.GetById($"{ContantsBaseUrl.ManageUserUrl}/{selectedUserId}");
         if (response.Flag) ManageUser = response.Data!;
         allState.Action?.Invoke();
     }

@@ -112,6 +112,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2lkZUJhck5hdmlnYXRpb25QYWdlc1xEZXBhcnRtZW50UGFnZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Randika/Project_App/EmployeeManagementSystem/Client/Pages/SideBarNavigationPages/EmployeePage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2lkZUJhck5hdmlnYXRpb25QYWdlc1xFbXBsb3llZVBhZ2UucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Randika/Project_App/EmployeeManagementSystem/Client/Pages/SideBarNavigationPages/GeneralDepartmentPage.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2lkZUJhck5hdmlnYXRpb25QYWdlc1xHZW5lcmFsRGVwYXJ0bWVudFBhZ2UucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 

@@ -27,8 +27,12 @@ public class UserAccountRepositore
     }
     public async Task<GeneralResponse> CreateAsync(Register user)
     {
-        if (string.IsNullOrEmpty(user.Email) || string.IsNullOrEmpty(user.FullName) || string.IsNullOrEmpty(user.Password) || string.IsNullOrEmpty(user.ConfimPassword)) return new GeneralResponse(false, "Input details are empty");
-        if (string.Equals(user.Password.Trim(), user.ConfimPassword.Trim(), StringComparison.OrdinalIgnoreCase)) return new GeneralResponse(false, "ConfimPassword shoud match with password");
+        var errorMessage = Validation.ValidateModel<Register>(user);
+        if (errorMessage.Any())
+        {
+            return new GeneralResponse(false, string.Join(" ", errorMessage));
+        }
+       
         var checkUser = await GetByEmail(user.Email);
         if (checkUser is not null) return new GeneralResponse(false,"User Register Alredy");
 
@@ -36,7 +40,7 @@ public class UserAccountRepositore
         var appUser = new AppUser
         {
             Email = user.Email.Trim().ToLower(),
-            FullName = user.FullName.Trim().ToLower(),
+            FullName = user.FullName.Trim(),
             Password = BCrypt.Net.BCrypt.HashPassword(user.Password.Trim()),
         };
 
@@ -46,36 +50,10 @@ public class UserAccountRepositore
         var appUserNew = await GetByEmail(appUser.Email);
         if(appUserNew is null) return new GeneralResponse(false, "User Registration is failed");
 
-        var checkAdminSystemRole = await _systemRoleRepository.GetByName(Constants.Admin);
-        if(checkAdminSystemRole is null)
-        {
-            var systemRoleResponse =await _systemRoleRepository.Create(new SystemRole { Name=Constants.Admin});
-            if (!systemRoleResponse.Flag) return systemRoleResponse;
-
-            var newSystemRole = await _systemRoleRepository.GetByName(Constants.Admin);
-            if(newSystemRole is null) return new GeneralResponse(false, "User Registration is fail");
-
-            var userRoleResponse = await _userRoleRepository.Create(new UserRole{ UserId=appUserNew.Id,RoleId=newSystemRole.Id});
-            return userRoleResponse;
-        }
-
         var checkUserSystemRole = await _systemRoleRepository.GetByName(Constants.User);
-        if (checkUserSystemRole is null)
-        {
-            var systemRoleResponse = await _systemRoleRepository.Create(new SystemRole { Name = Constants.User });
-            if (!systemRoleResponse.Flag) return systemRoleResponse;
-
-            var newSystemRole = await _systemRoleRepository.GetByName(Constants.User);
-            if (newSystemRole is null) return new GeneralResponse(false, "User Registration is fail");
-
-            var response = await _userRoleRepository.Create(new UserRole { UserId = appUserNew.Id, RoleId = newSystemRole.Id });
-            return response;
-        }
-        else
-        {
-            var response = await _userRoleRepository.Create(new UserRole { UserId = appUserNew.Id, RoleId = checkUserSystemRole.Id });
-            return response;
-        }
+        if (checkUserSystemRole is null) return new GeneralResponse(false, "Fails to Create System-Role");
+        var response = await _userRoleRepository.Create(new UserRole { UserId = appUserNew.Id, RoleId = checkUserSystemRole.Id });
+        return response;
     }
 
     public async Task<LoginResponse> SigninAsync(Login user)
@@ -171,11 +149,11 @@ public class UserAccountRepositore
     }
 
     private async Task Commit() => await _context.SaveChangesAsync();
-    private GeneralResponse Unsuccess() => new GeneralResponse(false, nameof(AppUser) + ConstantsResponse.Unsuccess);
-    private GeneralResponse Success() => new GeneralResponse(true, ConstantsResponse.Success);
+    private static GeneralResponse Unsuccess() => new GeneralResponse(false, nameof(AppUser) + ConstantsResponse.Unsuccess);
+    private static GeneralResponse Success() => new GeneralResponse(true, ConstantsResponse.Success);
     private static GeneralResponse Exited() => new GeneralResponse(false, nameof(AppUser) + ConstantsResponse.Exit);
     private async Task<AppUser?> FindById(int id) => await _context.AppUsers.FindAsync(id);
     private async Task<AppUser?> FindByEmail(string email) => await _context.AppUsers.FirstOrDefaultAsync(_ => _.Email!.Trim().ToLower() == email!.Trim().ToLower());
-    private GeneralResponse NotFound() => new GeneralResponse(false, ConstantsResponse.NotFound);
+    private static GeneralResponse NotFound() => new GeneralResponse(false, ConstantsResponse.NotFound);
 
 }
