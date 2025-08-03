@@ -14,7 +14,7 @@
             <div class=" modal-content">
                 <div class=" modal-header py-4">
                     <div class=" modal-title"> @Titel Country</div>
-                    <button @onclick="CancelClick" type="button" class="btn btn-close close-btn fs-6 "></button>
+                    <button @onclick="CancelClick" type="button" class="btn btn-close fs-6 "></button>
                 </div>
                 <div class="modal-body">
                     <div class=" form-group ">
@@ -37,7 +37,7 @@
 
 @code {
     [CascadingParameter] BlazoredModalInstance BlazoredModal { get; set; } = default!;
-    [Parameter] public Func<Country, Task>? FunCountry { get; set; }
+    [Parameter] public Func<Country, Task> FunCountry { get; set; } = null!;
     [Parameter] public Country Country { get; set; } = new();
     [Parameter] public string Titel { get; set; } = string.Empty;
     [Parameter] public string Button { get; set; } = string.Empty;
@@ -50,7 +50,7 @@
     private async Task SubmitDepartment()
     {
         if (string.IsNullOrWhiteSpace(Country.Name)) { await BlazoredModal.CloseAsync(); Dialog.ShowDialog("Error", "Please enter a valid Country name."); }
-        else { await BlazoredModal.CloseAsync(); await FunCountry!.Invoke(Country); }
+        else { await BlazoredModal.CloseAsync(); await FunCountry.Invoke(Country); }
 
     }
 

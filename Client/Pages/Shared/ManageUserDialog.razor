@@ -90,7 +90,7 @@
     [Parameter]public bool ShowEditEmail { get; set; } = false;
     [Parameter]public ManageUser ManageUser { get; set; } = new();
 
-    public List<ManageUser> ManageUsers { get; set; } = new();
+    private List<ManageUser> ManageUsers { get; set; } = new();
 
     protected override async Task OnInitializedAsync()
     {
@@ -99,7 +99,7 @@
     }
 
     //Get all
-    public async Task GetAll()
+    private async Task GetAll()
     {
         ManageUsers = await manageUserService.GetAll(ContantsBaseUrl.ManageUserUrl);
     }
@@ -123,7 +123,7 @@
         await BlazoredModal.CloseAsync();
         await FunManageUser!.Invoke(ManageUser);
     }
-    public void Dispose()
+    private void Dispose()
     {
         allState.Action -= StateHasChanged;
     }

@@ -1,4 +1,8 @@
-﻿@using ClientLibrary.Constants
+﻿@using Client.Helper.Constracts
+@using Client.Helper.Implementations
+@using ClientLibrary.Constants
+@inject EmployeeModal employeeDialog
+@inject IDialogModal dialog
 @if (allState.ShowEmployee)
 {
     <div class=" container mt-4">
@@ -36,8 +40,19 @@
                                     @foreach(var employee in Employees)
                                     {
                                         <tr>
-                                            <td> <img src="@employee.Photo" /></td>
+                                            <td> <img src="@employee.Photo" style="height:20px;width:20px"/> </td>
                                             <td> @employee.CivilId</td>
+                                            <td> @employee.Name</td>
+                                            <td> @employee.TelephoneNumber</td>
+                                            <td> @employee.JobName</td>
+                                            <td> @employee.Branch</td>
+                                            <td> @employee.Town</td>
+                                            <td> 
+                                                <button type="button" class=" btn btn-link p-0 m-0 border-0 text-primary text-decoration-none " @onclick="() => Menu(employee)">
+                                                    <i class="bi bi-list"></i>
+                                                    <span>menu</span>
+                                                </button>
+                                            </td>
                                         </tr>
                                     }
                                 }
@@ -66,11 +81,35 @@
         allState.Action?.Invoke();
     }
 
-    // Creat New Employee
+    // Menu Employee
+    private void Menu(Employee employee)
+    {
+        // menuDialog.ShowDialog(employee);
+    }
 
+    // Creat New Employee
     private void Add()
     {
-        
+        employeeDialog.ShowDialog(AddEmployee, "Add", "Create");
+    }
+    private async Task AddEmployee(Employee employee)
+    {
+        var response = await employeeService.Create(employee, ContantsBaseUrl.EmployeeUrl);
+        if (response.Flag) await GetAll();
+        dialog.ShowDialog(response.Flag ? "Success" : "Error", response.Message);
+    }
+
+    // Edit eEmployee
+    private void Edit(Employee employee)
+    {
+        employeeDialog.ShowDialog(EditEmployee, employee, "Edit", "Edit");
+    }
+    private async Task EditEmployee(Employee employee)
+    {
+        var response = await employeeService.Update(employee, ContantsBaseUrl.EmployeeUrl);
+        if (response.Flag) await GetAll();
+        dialog.ShowDialog(response.Flag ? "Success" : "Error", response.Message);
+
     }
 
 }

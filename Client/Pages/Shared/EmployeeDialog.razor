@@ -1,0 +1,396 @@
+﻿@using Blazored.Modal
+@using Blazored.Modal.Services
+@using Client.Helper.Constracts
+@using ClientLibrary.Constants
+
+@inject IDialogModal Dialog
+@inject AllState allState
+
+<div class=" modal fade show d-block " tabindex="-1" role="dialog">
+    <div class=" modal-backdrop fade show"></div>
+    <div class=" modal-dialog" style="margin-top:6rem;z-index:1050" ></div>
+    <EditForm EditContext="@editContext" Enhance OnValidSubmit="SubmitEmployee">
+        <div class=" modal-content">
+            <div class=" modal-header py-4 ">
+                <h2 class=" modal-title "> @Titel Employee</h2>
+                <button @onclick="CancelClick" type="button" class=" btn btn-close fs-6"></button>
+            </div>
+            <div class=" modal-body ">
+                @if(step == 1)
+                {
+                    <div class=" form-group">
+                        <label class=" form-label ">Name</label>
+                        <InputText class=" form-control" @bind-value="Employee!.Name" />
+                        <ValidationMessage For="@(()=>Employee.Name)" class=" text-danger"/>
+                    </div>
+                    <div class=" form-group">
+                        <label class=" form-label">Civil Id</label>
+                        <InputText class=" form-control" @bind-value="Employee.CivilId" />
+                        <ValidationMessage For="@(()=>Employee.CivilId)" class=" text-danger" />
+                    </div>
+                    <div class=" form-group">
+                        <label class=" form-label">Job</label>
+                        <InputText class=" form-control" @bind-Value="Employee.JobName" />
+                        <ValidationMessage For="@(() => Employee.JobName)" class=" text-danger" />
+                    </div>
+                    <div class=" form-group">
+                        <label class=" form-label"> Addrese</label>
+                        <InputText class=" form-control" @bind-Value="Employee.Addrese"/>
+                        <ValidationMessage For="@(()=>Employee.Addrese)" class=" text-danger"/>
+                    </div>
+                    <div class=" form-group">
+                        <label class=" form-label">Telephone Number</label>
+                        <InputText class=" form-control" @bind-Value="Employee.TelephoneNumber"/>
+                        <ValidationMessage For="@(() => Employee.TelephoneNumber)" class=" text-danger" />
+                    </div>
+                    <div class=" form-group">
+                        <label class=" form-label"> File Name</label>
+                        <InputText class=" form-control" @bind-Value="Employee.FileName"/>
+                        <ValidationMessage For="@(() => Employee.FileName)" class=" text-danger" />
+                    </div>
+                    <div class=" form-group">
+                        <label class=" form-label">Others</label>
+                        <InputText class=" form-control" @bind-Value="Employee.Others"/>
+                        <ValidationMessage For="@(() => Employee.Others)" class=" text-danger" />
+                    </div>
+                }
+                else if (step == 2)
+                {
+                    <div class=" form-group">
+                        <label class=" form-label"> Upload Picture</label>
+                        <InputFile class=" form-control" OnChange="OnUpLoadImageChange" />
+                        @if (!string.IsNullOrEmpty(Employee!.Photo))
+                        {
+                            <img src="@Employee.Photo" width="100" class=" rounded-circle border shadow"/>
+                        }
+                        <ValidationMessage For="@(()=>Employee!.Photo)"  class=" text-danger"/>
+                        @if (!string.IsNullOrEmpty(ImageUploadMessage))
+                        {
+                            <div class=" alert alert-info mt-1">@ImageUploadMessage</div>
+                        }
+                    </div>
+                    <div class="container-fluid">
+                        <div class=" row">
+                            <div class=" col-6 form-group">
+                                <label class=" form-label"> Select General Department</label>
+                                <select class=" form-select" @onchange="OnChangeSelectedGeneraldepartment">
+                                    @if (!DefaultGeneralDepartments.Any())
+                                    {
+                                        <option value=""> General Departmet Data Not Availble</option>
+                                    }
+                                    else
+                                    {
+                                        @foreach(var defaultGeneralDepartment in DefaultGeneralDepartments!)
+                                        {
+                                            <option value="generalDepartment.Id">@defaultGeneralDepartment.Name</option>
+                                        }
+                                    }
+
+                                </select>
+                            </div>
+                            <div class=" col-6 form-group">
+                                <label class=" form-label"> Select County</label>
+                                <select class=" form-select" @onchange="OnChangeCounty">
+                                    @if (!DefaultCountries.Any())
+                                    {
+                                        <option value="">County Data is not avaible</option>
+                                    }
+                                    else
+                                    {
+                                        @foreach (var defaultCountry in DefaultCountries)
+                                        {
+                                            <option value="country.Id"> @defaultCountry.Name</option>
+                                        }
+                                    }
+                                </select>
+                            </div>
+                        </div>
+                        <div class=" row">
+                            <div class=" col-6 form-group">
+                                <label class=" form-label"> Select Department</label>
+                                <select class=" form-select" @onchange="OnChangeDepartment">
+                                    @if (!SelectedDepartments.Any())
+                                    {
+                                        <option value=""> Department Data is avaible</option>
+                                    }
+                                    else
+                                    {
+                                        @foreach(var selectedDepartment in SelectedDepartments)
+                                        {
+                                            <option value="department.Id">@selectedDepartment.Name</option>
+                                        }
+                                    }
+                                </select>
+                            </div>
+                            <div class=" col-6  form-group">
+                                <label class=" form-label"> Select City</label>
+                                <select class=" form-select" @onchange="OnChangeCity">
+                                    @if (!SelectedCities.Any())
+                                    {
+                                        <option value=""> City Data is not avaible</option>
+                                    }
+                                    else
+                                    {
+                                        @foreach(var selectedCity in SelectedCities)
+                                        {
+                                            <option value="selectedCity.Id"> @selectedCity.Name </option>
+                                        }
+                                    }
+                                </select>
+                            </div>
+                        </div>
+                        <div class=" row">
+                            <div class=" col-6 form-group">
+                                <label class=" form-label"> Select branch</label>
+                                <select class=" form-select" @bind="Employee!.BranchId">
+                                    @if (!SelectedBranchs.Any())
+                                    {
+                                        <option>Branch data is not avaible here</option>
+                                    }
+                                    else
+                                    {
+                                        @foreach(var selectedBranch in SelectedBranchs)
+                                        {
+                                            <option value="selectedBranch.Id">@selectedBranch.Name</option>
+                                        }
+                                    }
+                                </select>
+                            </div>
+                            <div class=" col-6 form-group">
+                                <label class=" form-label">Select Town</label>
+                                <select class=" form-select">
+                                    @if (!SelectedCities.Any())
+                                    {
+                                        <option value=""> Branch data is not avaible</option>
+                                    }
+                                    else
+                                    {
+                                        @foreach(var selectedTown in SelectedTwons)
+                                        {
+                                            <option value="selectedTown.Id">@selectedTown.Name</option>
+                                        }
+                                    }
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+            <div class=" modal-footer py-1">
+                <div class=" form-group">
+                    <div class=" d-flex gap-3">
+                        <button type="button" class="btn btn-secondary" onclick=" CancelClick"> Cancel</button>
+                        @if(step == 1)
+                        {
+                            <button type="button" @onclick="OnClickNext" class=" btn btn-primary">Next</button>
+                        }
+                        else if(step == 2)
+                        {
+                            <button type="button" @onclick="OnClickPrevise" class=" btn btn-primary">Previse </button>
+                        }
+                        @if(step == 2)
+                        {
+                            <button type="submit" class=" btn btn-primary">@ButtonTitel</button>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+        </EditForm>
+
+</div>
+
+@code {
+    [CascadingParameter] BlazoredModalInstance BlazoredModal { get; set; } = default!;
+
+    [Parameter] public Employee? Employee { get; set; }
+
+    [Parameter] public String? Titel { get; set; }
+    [Parameter] public String? ButtonTitel { get; set; }
+    [Parameter] public Func<Employee, Task> FunEmployee { get; set; } = null!;
+
+    // Default GeneralDeparment / Department / Branch / Country / City / Town
+    private List<GeneralDepartment> DefaultGeneralDepartments { get; set; } = new();
+    private List<Department> DefaultDepartments { get; set; } = new();
+    private List<Branch> DefaultBranchs { get; set; } = new();
+    private List<Country> DefaultCountries { get; set; } = new();
+    private List<City> DefaultCities { get; set; } = new();
+    private List<Town> DefaultTwons { get; set; } = new();
+
+    // Selected Department / Branch / Cities / Town
+    private List<Department> SelectedDepartments { get; set; } = new();
+    private List<Branch> SelectedBranchs { get; set; } = new();
+    private List<City> SelectedCities { get; set; } = new();
+    private List<Town> SelectedTwons { get; set; } = new();
+
+    // Selected Id  GeneralDepartment / Department / Counrty / City
+    private int selectedGeneralDepartmentId;
+    private int selectedDepartmentId;
+    private int selectedCountryId;
+    private int selectedCityId;
+
+    private int step = 1;
+    private int totalStep = 3;
+    private bool isStep1Valid = false;
+    private bool isStep2Valid = false;
+    private string[] step1Field = new [] { nameof(Employee.Name), nameof(Employee.CivilId), nameof(Employee.Addrese), nameof(Employee.Town), nameof(Employee.FileName), nameof(Employee.TelephoneNumber) };
+    private string[] step2Field = new[] { nameof(selectedGeneralDepartmentId), nameof(selectedDepartmentId), nameof(Employee.BranchId), nameof(selectedCountryId), nameof(selectedCityId), nameof(Employee.TownId) };
+    private EditContext? editContext;
+
+    private string? ImageUploadMessage{ get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        allState.Action += StateHasChanged;
+        editContext = new EditContext(Employee!);
+        await DefaultLoad();
+    }
+
+    // Next Click Button
+    private void OnClickNext()
+    {
+        foreach(var fieldName in step1Field)
+        {
+            var fieldIdentifier = new FieldIdentifier(Employee!, fieldName);
+            editContext!.NotifyFieldChanged(fieldIdentifier);
+
+            isStep1Valid = editContext.GetValidationMessages(fieldIdentifier).Any() ? false : true;
+        }
+        if (isStep1Valid) 
+        { 
+            step++;
+            isStep1Valid = false;
+            allState.Action!.Invoke();
+        }
+    }
+
+    // Previse Click Button
+    private void OnClickPrevise()
+    {
+        step--;
+        allState.Action!.Invoke();
+    }
+
+    // Submit Click Button
+    private async Task SubmitEmployee()
+    {
+        foreach(var fieldName in step2Field)
+        {
+            var fieldIdentifier = new FieldIdentifier(Employee!, fieldName);
+            editContext!.NotifyFieldChanged(fieldIdentifier);
+
+            isStep2Valid = editContext.GetValidationMessages(fieldIdentifier).Any() ? false : true;
+        }
+        if (isStep2Valid)
+        {
+            if(Employee is null)
+            {
+                await BlazoredModal.CloseAsync(); 
+                Dialog.ShowDialog("Error", "Please Enter Valid Details"); 
+            }
+            else
+            { 
+                await BlazoredModal.CloseAsync(); 
+                await FunEmployee.Invoke(Employee); 
+            }
+            isStep2Valid = false;
+        }
+    }
+
+    // Cancel Click Button
+    private async Task CancelClick()
+    {
+        await BlazoredModal.CloseAsync();
+    }
+
+    // Image Upload Button
+    private async Task OnUpLoadImageChange(InputFileChangeEventArgs e)
+    {
+        var file = e.File;
+        var extention = Path.GetExtension(file.Name).ToLowerInvariant();
+        var validExtention = new[] { ".png" };
+
+        if (file is null)
+        {
+            ImageUploadMessage = "Upload Currect Image File";
+            isStep2Valid = false;
+        }
+        else if (!validExtention.Contains(extention))
+        {
+            ImageUploadMessage = "Please Upload Correct Document Type";
+            isStep2Valid = false;
+        }
+        else if (file.Size > 1024 * 1024 * 5)
+        {
+            ImageUploadMessage = "Document Max Size 5mb";
+            isStep2Valid = false;
+        }
+        else
+        {
+            var format = "image/png";
+            var resizeImage = await e.File.RequestImageFileAsync(format, 300, 300);
+            var buffer = new byte[resizeImage.Size];
+            await resizeImage.OpenReadStream().ReadAsync(buffer);
+            var imageData = $"data:{format};base64,{Convert.ToBase64String(buffer)}";
+            ImageUploadMessage = "";
+            Employee!.Photo = imageData;
+            imageData = "";
+            isStep2Valid = true;
+        }
+    }
+
+    // General Department Selection
+    private void OnChangeSelectedGeneraldepartment(ChangeEventArgs e)
+    {
+        if (int.TryParse(e.Value?.ToString() ,out selectedGeneralDepartmentId))
+            SelectedDepartments = DefaultDepartments.Where(d => d.GeneralDepartmentId == selectedGeneralDepartmentId).ToList();
+
+        allState.Action!.Invoke();
+    }
+
+    // County Selection
+    private void OnChangeCounty(ChangeEventArgs e)
+    {
+        if(int.TryParse(e.Value?.ToString(), out selectedCountryId))
+            SelectedCities = DefaultCities.Where(c => c.CountryId == selectedCountryId).ToList();
+
+        allState.Action!.Invoke();
+    }
+
+    // Department Selecion
+    private void OnChangeDepartment(ChangeEventArgs e)
+    {
+        if(int.TryParse(e.Value?.ToString(), out selectedDepartmentId))
+            SelectedBranchs = DefaultBranchs.Where(b => b.DepartmentId == selectedDepartmentId).ToList();
+
+        allState.Action!.Invoke();
+    }
+
+    // City Selection
+    private void OnChangeCity(ChangeEventArgs e)
+    {
+        if(int.TryParse(e.Value?.ToString(), out selectedCityId))
+            SelectedTwons = DefaultTwons.Where(t => t.CityId == selectedCityId).ToList();
+
+        allState.Action!.Invoke();
+    }
+
+    // Load General Department/ Department / Branch / County / City / Town
+    private async Task DefaultLoad()
+    {
+        DefaultGeneralDepartments = await generalDepartmentService.GetAll(ContantsBaseUrl.GeneralDepartmentUrl);
+        DefaultDepartments = await departmentService.GetAll(ContantsBaseUrl.DepartmentUrl);
+        DefaultBranchs = await branchService.GetAll(ContantsBaseUrl.BranchUrl);
+        DefaultCountries = await countryService.GetAll(ContantsBaseUrl.CountryUrl);
+        DefaultCities = await cityService.GetAll(ContantsBaseUrl.CityUrl);
+        DefaultTwons = await townService.GetAll(ContantsBaseUrl.TownUrl);
+        allState.Action!.Invoke();
+
+    }
+
+    private void Diposal()
+    {
+        allState.Action -= StateHasChanged;
+    }
+
+}

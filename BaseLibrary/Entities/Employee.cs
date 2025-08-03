@@ -5,17 +5,17 @@ namespace BaseLibrary.Entities;
 
 public class Employee:BaseEntity
 {
-    [Required]
+    [Required(ErrorMessage = "Civil Id is required.")]
     public string CivilId { get; set; } = null!;
-    [Required]
+    [Required(ErrorMessage ="File Name is required.")]
     public string FileName { get; set; } = null!;
-    [Required]
+    [Required(ErrorMessage ="Job is required.")]
     public string JobName { get; set; } = null!;
-    [Required]
+    [Required(ErrorMessage ="Addrese is required.")]
     public string Addrese { get; set; } = null!;
-    [Required]
+    [Required(ErrorMessage ="Image is required")]
     public string Photo { get; set; } = null!;
-    [Required,DataType(DataType.PhoneNumber)]
+    [Required(ErrorMessage = "Telephone Number is required."),DataType(DataType.PhoneNumber)]
     public string TelephoneNumber { get; set; } = null!;
     public string? Others { get; set; }
 

@@ -49,6 +49,7 @@ builder.Services.AddScoped<IGenericModal<Branch>, BranchModal>();
 builder.Services.AddScoped<IGenericModal<Country>, CountryModal>();
 builder.Services.AddScoped<IGenericModal<City>, CityModal>();
 builder.Services.AddScoped<IGenericModal<Town>, TownModal>();
+builder.Services.AddScoped<EmployeeModal>();
 
 //Add Herlper to Service
 builder.Services.AddTransient<ISerialization, Serialization>();
