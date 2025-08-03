@@ -1,0 +1,123 @@
+﻿@using Blazored.Modal
+@using ClientLibrary.Constants
+<div class=" modal fade show d-block " tabindex="-1" role="dialog">
+    <div class=" modal-backdrop fade show "></div>
+    <div class=" modal-dialog" style=" margin-top:6rem;z-index:1050">
+        <div class=" modal-content">
+            <div class=" modal-header">
+                <h5 class=" modal-title ">@Employee.Name Employee Details</h5>
+            </div>
+            <div class=" modal-body">
+                <div class=" container">
+                    <div class=" row">
+                        @*  column one *@ 
+                        <div class=" col">
+                            @* Persanel Information *@
+                            <h5 class=" mb-3">Personal Information</h5>
+                            <div class=" row mb-2">
+                                <img class=" border rounded-circle shadow " src="@Employee.Photo" width="100"/>
+                            </div>
+                            <div class=" row mb-2">
+                                <div class=" col text-start fw-normal">Name</div>
+                                <div class=" col text-center">@Employee.Name</div>
+                            </div>
+                            <div class=" row mb-2">
+                                <div class=" col text-start fw-normal">Job Titel</div>
+                                <div class=" col text-center">@Employee.JobName</div>
+                            </div>
+                            <div class=" row mb-2">
+                                <div class=" col text-start fw-normal">Telephone</div>
+                                <div class=" col text-center">@Employee.TelephoneNumber</div>
+                            </div>
+                        </div>
+
+                        @* column two *@
+                        <div class=" col ">
+                            @* Department Information*@
+                            <h5 class="mb-3">Department Infermation</h5>
+                            <div class=" row mb-2">
+                                <div class=" col text-start fw-normal">General Department</div>
+                                <div class=" col text-center">@GeneralDepartment.Name</div>
+                            </div>
+                            <div class=" row mb-2">
+                                <div class=" col text-start fw-normal">Department</div>
+                                <div class=" col text-center">@Department.Name</div>
+                            </div>
+                            <div class=" row mb-2">
+                                <div class=" col text-start fw-normal">Branch</div>
+                                <div class=" col text-center">@Branch.Name</div>
+                            </div>
+                        </div>
+
+                        @* column three*@
+                        <div class=" col">
+                            @* Location Information*@
+                            <h5 class=" mb-3" >Location Information</h5>
+                            <div class=" row mb-2">
+                                <div class=" col text-start fw-normal">Country</div>
+                                <div class=" col text-center">@Country.Name</div>
+                            </div>
+                            <div class=" row mb-2">
+                                <div class=" col text-start fw-normal">City</div>
+                                <div class=" col text-center">@City.Name</div>
+                            </div>
+                            <div class=" row mb-2">
+                                <div class=" col text-start fw-normal">Town</div>
+                                <div class=" col text-center">@Town.Name</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class=" modal-footer">
+                <button @onclick="@OnClickCancel" type="button" class=" btn btn-close ">Ok</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    [Parameter] public Employee Employee { get; set; } = null!;
+    [CascadingParameter] BlazoredModalInstance BlazoredModal { get; set; } = default!;
+
+
+    // Department Loaded
+    private Branch Branch { get; set; } = null!;
+    private Department Department { get; set; } = null!;
+    private GeneralDepartment GeneralDepartment { get; set; } = null!;
+
+    //Location Loaded
+    private Town Town { get; set; } = null!;
+    private City City { get; set; } = null!;
+    private Country Country { get; set; } = null!;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadData();
+    }
+
+    private async Task OnClickCancel()
+    {
+        await BlazoredModal.CancelAsync();
+    }
+
+    private async Task LoadData()
+    {
+        // Load Branch / Department / GeneralDepartment
+        var branchResponse = await branchService.GetById($"{ContantsBaseUrl.BranchUrl + Employee.BranchId}");
+        if (branchResponse.Flag) Branch = branchResponse.Data!;
+        var departmentResponse = await departmentService.GetById($"{ContantsBaseUrl.DepartmentUrl + Branch.DepartmentId}");
+        if (departmentResponse.Flag) Department = departmentResponse.Data!;
+        GeneralDepartment = Department.GeneralDepartment!;
+
+        //Load Town / City / Country
+        var townResponse = await townService.GetById($"{ContantsBaseUrl.TownUrl + Employee.TownId}");
+        if (townResponse.Flag) Town = townResponse.Data!;
+        var cityResponse = await cityService.GetById($"{ContantsBaseUrl.CityUrl + Town.CityId}");
+        if (cityResponse.Flag) City = cityResponse.Data!;
+        Country = City.Country!;
+    }
+
+
+}

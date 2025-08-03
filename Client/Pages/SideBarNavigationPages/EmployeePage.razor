@@ -2,6 +2,7 @@
 @using Client.Helper.Implementations
 @using ClientLibrary.Constants
 @inject EmployeeModal employeeDialog
+@inject MenuModal menuDialog
 @inject IDialogModal dialog
 @if (allState.ShowEmployee)
 {
@@ -84,7 +85,7 @@
     // Menu Employee
     private void Menu(Employee employee)
     {
-        // menuDialog.ShowDialog(employee);
+        menuDialog.ShowDialog(employee);
     }
 
     // Creat New Employee
@@ -99,17 +100,6 @@
         dialog.ShowDialog(response.Flag ? "Success" : "Error", response.Message);
     }
 
-    // Edit eEmployee
-    private void Edit(Employee employee)
-    {
-        employeeDialog.ShowDialog(EditEmployee, employee, "Edit", "Edit");
-    }
-    private async Task EditEmployee(Employee employee)
-    {
-        var response = await employeeService.Update(employee, ContantsBaseUrl.EmployeeUrl);
-        if (response.Flag) await GetAll();
-        dialog.ShowDialog(response.Flag ? "Success" : "Error", response.Message);
 
-    }
 
 }
