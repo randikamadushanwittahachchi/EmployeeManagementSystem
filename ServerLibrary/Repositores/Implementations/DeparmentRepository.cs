@@ -65,7 +65,7 @@ namespace ServerLibrary.Repositores.Implementations
 
         // reuseble propety and methode
 
-        private  async Task<Department?> FindById(int id) => await _context.Departments.FindAsync(id);
+        private async Task<Department?> FindById(int id) => await _context.Departments.AsNoTracking().Include(_ => _.GeneralDepartment).FirstOrDefaultAsync(_ => _.Id == id);
         private async Task<Department?> FindByIdWithChild(int id) => await _context.Departments.Include(d => d.Branches).FirstOrDefaultAsync(d => d.Id == id);
         private static GeneralResponse Success() => new GeneralResponse(true, ConstantsResponse.Success);
         private static GeneralResponse NotFound() => new GeneralResponse(false, nameof(Department) + ConstantsResponse.NotFound);

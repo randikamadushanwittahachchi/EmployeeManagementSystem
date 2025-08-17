@@ -41,7 +41,7 @@ public class GenericController<T> : ControllerBase where T : class
     {
         if(model is null) return BadRequestMessegae();
         var result = await _genericReposiroty.Create(model);
-        return ResultResponseConflict(result);
+        return Ok(result);
 
     }
 
@@ -50,7 +50,7 @@ public class GenericController<T> : ControllerBase where T : class
     {
         if (model is null) return BadRequestMessegae();
         var result = await _genericReposiroty.Update(model);
-        return ResultResponseNotFoundOrSuccess(result);
+        return Ok(result);
     }
 
 
@@ -65,7 +65,4 @@ public class GenericController<T> : ControllerBase where T : class
 
     // reusable propety and methode
     private ActionResult<GeneralResponse> BadRequestMessegae() => BadRequest(new GeneralResponse(false, "Invalid data provided"));
-    private ActionResult<GeneralResponse> ResultResponseNotFoundOrSuccess(GeneralResponse result) => !result.Flag ? NotFound(result) : Ok(result);
-    private ActionResult<GeneralResponse> ResultResponseConflict(GeneralResponse result) => !result.Flag ? Conflict(result) : Ok(result);
-
 }

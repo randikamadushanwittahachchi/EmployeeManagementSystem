@@ -20,19 +20,36 @@
                 <div class="modal-body">
                     <div class=" form-group ">
                         <label class=" form-label">Name</label>
-                        <input type="text" class=" form-control" @bind="Town.Name" />
+                        <input type="text" class="bg-light form-control" @bind="Town.Name" />
+                    </div>
+                    <div class=" form-group">
+                        <label class=" form-label"> Country</label>
+                        <select class="bg-light form-select" onchange="@OnChangeCounrty">
+                            @if (!DefaultCounrtys.Any())
+                            {
+                                <option value="@none"> Country Data not available</option>
+                            }
+                            else
+                            {
+                                <option value="@none"> None</option>
+                                @foreach (var defaultCountry in DefaultCounrtys)
+                                {
+                                    <option value="@defaultCountry.Id">@defaultCountry.Name</option>
+                                }
+                            }
+                        </select>
                     </div>
                     <div class=" form-group">
                         <label class=" form-label"> City </label>
-                        <select class=" form-select" @bind="Town.CityId">
-                            @if (!Citys.Any())
+                        <select class="bg-light form-select" @bind="Town.CityId">
+                            @if (!SelectedCitys.Any())
                             {
                                 <option value="">No Cities available</option>
                             }
                             else
                             {
                                 <option value="">None</option>
-                                @foreach (var item in Citys)
+                                @foreach (var item in SelectedCitys)
                                 {
                                     <option value="@item.Id">@item.Name</option>
                                 }
@@ -56,15 +73,31 @@
 @code {
     [CascadingParameter] BlazoredModalInstance BlazoredModal { get; set; } = default!;
     [Parameter] public Func<Town, Task>? FunTown { get; set; }
-    [Parameter] public Town Town { get; set; } = new();
-    [Parameter] public List<City> Citys { get; set; } = new();
     [Parameter] public string Titel { get; set; } = string.Empty;
     [Parameter] public string Button { get; set; } = string.Empty;
+    [Parameter] public Town Town { get; set; } = new();
+
+    private List<Country> DefaultCounrtys { get; set; } = new();
+    private List<City> DefaultCitys { get; set; } = new();
+    private List<City> SelectedCitys { get; set; } = new();
+
+    private int selecedCountryId;
+    private int none = -1;
 
 
     protected override async Task OnInitializedAsync()
     {
-        Citys = await cityService.GetAll(ContantsBaseUrl.CityUrl);
+        DefaultCounrtys = await countryService.GetAll(ContantsBaseUrl.CountryUrl);
+        DefaultCitys = await cityService.GetAll(ContantsBaseUrl.CityUrl);
+    }
+
+    private void OnChangeCounrty(ChangeEventArgs e)
+    {
+        if(int.TryParse(e.Value!.ToString() , out selecedCountryId))
+        {
+            SelectedCitys = DefaultCitys.Where(c => c.CountryId == selecedCountryId).ToList();
+        }
+        allState.Action!.Invoke();
     }
 
     private async Task CancelClick()

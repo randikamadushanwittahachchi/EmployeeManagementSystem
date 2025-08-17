@@ -21,11 +21,11 @@
                 <div class="modal-body">
                     <div class=" form-group ">
                         <label class=" form-label">Name</label>
-                        <input type="text" class=" form-control" @bind="City.Name" />
+                        <input type="text" class="bg-light form-control" @bind="City.Name" />
                     </div>
                     <div class=" form-group">
                         <label class=" form-label"> Country </label>
-                        <select class=" form-select" @bind="City.CountryId">
+                        <select class="form-select bg-light" @bind="City.CountryId">
                             @if (!Countries.Any())
                             {
                                 <option value="">No Countries available</option>
@@ -70,7 +70,7 @@
 
     private async Task CancelClick()
     {
-        await BlazoredModal.CloseAsync(ModalResult.Ok(true));
+        await BlazoredModal.CloseAsync();
     }
 
     private async Task SubmitDepartment()

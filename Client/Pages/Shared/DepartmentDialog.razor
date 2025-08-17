@@ -21,11 +21,11 @@
                 <div class="modal-body">
                     <div class=" form-group ">
                         <label class=" form-label">Name</label>
-                        <input type="text" class=" form-control" @bind="Department.Name" />
+                        <input type="text" class=" bg-light form-control" @bind="Department.Name" />
                     </div>
                     <div class=" form-group">
                         <label class=" form-label">General Department</label>
-                        <select class=" form-select" @bind="Department.GeneralDepartmentId">
+                        <select class="form-select bg-light" @bind="Department.GeneralDepartmentId">
                             @if (!GeneralDepartments.Any())
                             {
                                 <option value="">No General Departments available</option>

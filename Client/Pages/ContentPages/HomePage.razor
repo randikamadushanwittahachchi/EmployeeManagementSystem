@@ -12,10 +12,10 @@
 <CityPage />
 <TownPage/>
 <ManageUserPage/>
+<EmployeePage/>
 
 @code{
-
-    [CascadingParameter] public Task<AuthenticationState> AuthenticationState { get; set; } 
+    [CascadingParameter] public Task<AuthenticationState> AuthenticationState { get; set; } = null!;
     private string Element { get; set; } = string.Empty;
 
     protected async override Task OnInitializedAsync()

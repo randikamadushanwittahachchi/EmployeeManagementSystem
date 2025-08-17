@@ -65,7 +65,7 @@ public class BranchRepository : IGenericRepositoryInterface<Branch>
     private static GeneralResponse InputDataNotValidGeneral() => new GeneralResponse(false, ConstantsResponse.ErrorInputData);
 
     private async Task Commit() => await _context.SaveChangesAsync();
-    private async Task<Branch?> FindById(int id) => await _context.Branches.FindAsync(id);
+    private async Task<Branch?> FindById(int id) => await _context.Branches.AsNoTracking().Include(b => b.Department).FirstOrDefaultAsync(_ => _.Id == id);
     private async Task<bool> CheckName(string name)
     {
         var item = await _context.Branches.FirstOrDefaultAsync(_ => _.Name!.ToLower() == name.ToLower());

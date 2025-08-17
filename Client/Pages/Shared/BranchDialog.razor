@@ -22,19 +22,36 @@
                 <div class="modal-body">
                     <div class=" form-group ">
                         <label class=" form-label">Name</label>
-                        <input type="text" class=" form-control" @bind="Branch.Name" />
+                        <input type="text" class="bg-light form-control" @bind="Branch.Name" />
                     </div>
                     <div class=" form-group">
-                        <label class=" form-label">Departments</label>
-                        <select class=" form-select" @bind="Branch.DepartmentId">
-                            @if (!Departments.Any())
+                        <label class=" form-label">General Department</label>
+                        <select class="bg-light form-select" @onchange="OnGeneralDepartmentChnage">
+                            @if (!DefaultGeneralDepartments.Any())
                             {
-                                <option value="">No Departments available</option>
+                                <option value="@noneValue">No Data is avaible</option>
                             }
                             else
                             {
-                                <option value="">None</option>
-                                @foreach (var item in Departments)
+                                <option value="@noneValue">None</option>
+                                @foreach (var generalDepartment in DefaultGeneralDepartments)
+                                {
+                                    <option value="@generalDepartment.Id">@generalDepartment.Name</option>
+                                }
+                            }
+                        </select>
+                    </div>
+                    <div class=" form-group">
+                        <label class=" form-label">Departments</label>
+                        <select class="bg-light form-select" @bind="Branch.DepartmentId">
+                            @if (!SelectedDepartments.Any())
+                            {
+                                <option value="@noneValue">No Departments available</option>
+                            }
+                            else
+                            {
+                                <option value="@noneValue">None</option>
+                                @foreach (var item in SelectedDepartments)
                                 {
                                     <option value="@item.Id">@item.Name</option>
                                 }
@@ -59,14 +76,28 @@
 @code {
     [CascadingParameter] BlazoredModalInstance BlazoredModal { get; set; } = default!;
     [Parameter] public Func<Branch, Task>? FunBranch { get; set; }
-    [Parameter] public Branch Branch { get; set; } = new();
-    [Parameter] public List<Department> Departments { get; set; } = new();
     [Parameter] public string Titel { get; set; } = string.Empty;
     [Parameter] public string Button { get; set; } = string.Empty;
+    [Parameter] public Branch Branch { get; set; } = new();
+
+    private List<Department> SelectedDepartments { get; set; } = new();
+    private List<GeneralDepartment> DefaultGeneralDepartments { get; set; } = new();
+    private List<Department> DefaultDepartment = new();
+    private int defaultGeneralDepartmentId;
+    private int noneValue = -1;
 
     protected override async Task OnInitializedAsync()
     {
-        Departments = await departmentService.GetAll(ContantsBaseUrl.DepartmentUrl);
+        DefaultGeneralDepartments = await generalDepartmentService.GetAll(ContantsBaseUrl.GeneralDepartmentUrl);
+        DefaultDepartment = await departmentService.GetAll(ContantsBaseUrl.DepartmentUrl);
+    }
+    private void OnGeneralDepartmentChnage(ChangeEventArgs e)
+    {
+        if(int.TryParse(e.Value!.ToString(), out defaultGeneralDepartmentId))
+        {
+            SelectedDepartments = DefaultDepartment.Where(d => d.GeneralDepartmentId == defaultGeneralDepartmentId).ToList();
+        }
+        allState.Action!.Invoke();
     }
 
     private async Task CancelClick()
@@ -78,6 +109,5 @@
     {
         if (string.IsNullOrWhiteSpace(Branch.Name)) { await BlazoredModal.CloseAsync(); Dialog.ShowDialog("Error", "Please enter a valid Branch name."); }
         else { await BlazoredModal.CloseAsync(); await FunBranch!.Invoke(Branch); }
-
     }
 }

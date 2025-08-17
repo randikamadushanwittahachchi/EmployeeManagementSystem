@@ -23,7 +23,7 @@
                     {
                         <div class=" form-group">
                             <label class=" form-label"> UnAuthorize User </label>
-                            <select class=" form-select" @onchange="OnUserSelected">
+                            <select class="bg-light form-select" @onchange="OnUserSelected">
                                 @if (!ManageUsers.Any())
                                 {
                                     <option value="">No Users available</option>
@@ -46,24 +46,24 @@
                     {
                         <div class=" form-group ">
                             <label class=" form-label">Email</label>
-                            <input type="text" readonly class=" form-control" @bind="ManageUser.Email" />
+                            <input type="text" readonly class="bg-light form-control" @bind="ManageUser.Email" />
                         </div>
                         
                     }
                     <div class=" form-group ">
                         <label class=" form-label">Name</label>
-                        <input type="text"  readonly class=" form-control" @bind="ManageUser.UserName" />
+                        <input type="text"  readonly class="bg-light form-control" @bind="ManageUser.UserName" />
                     </div>
                     <div class=" form-group ">
                         <label class=" form-label">Role</label>
-                        <select class="form-control" @bind="ManageUser.Role" >
+                        <select class="bg-light form-control" @bind="ManageUser.Role" >
                             <option value=" ">--- select role ---</option>
                             <option value="User"> User </option>
                             <option value="Admin"> Admin</option>
                         </select>
                     </div>
                     <div class=" form-check">
-                        <input type="checkbox" class="form-check-input" id="authorizeCheckbox" @bind="ManageUser.Autherize" />
+                        <input type="checkbox" class="bg-light form-check-input" id="authorizeCheckbox" @bind="ManageUser.Autherize" />
                         <label class=" form-check-label" for="authorizeCheckbox">Authorized user</label>
                     </div>
 

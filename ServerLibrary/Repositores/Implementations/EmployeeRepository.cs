@@ -43,7 +43,7 @@ public class EmployeeRepository : IGenericRepositoryInterface<Employee>
     public async Task<GeneralResponse> Create(Employee model)
     {
         var errorMessage = Validation.ValidateModel<Employee>(model);
-        if (errorMessage.Any()) return InputDataNotValidGeneral();
+        if (errorMessage.Any()) return InputDataNotValidGeneral(); 
         if (await checkedCivilId(model.CivilId)) return Exited();
         _context.Employees.Add(model);
         await Commited();
@@ -53,7 +53,7 @@ public class EmployeeRepository : IGenericRepositoryInterface<Employee>
     public async Task<GeneralResponse> Update(Employee model)
     {
         var errorMessage = Validation.ValidateModel<Employee>(model);
-        if (errorMessage.Any() || model.Id < 0  || model.BranchId < 0 || model.TownId < 0) return InputDataNotValidGeneral();
+        if (errorMessage.Any() || model.Id < 0 ) return InputDataNotValidGeneral();
         var employee = await FindById(model.Id);
         if (employee is null) return NotFound();
         if ( employee.CivilId != model.CivilId && await checkedCivilId(model.CivilId)) return Exited();
@@ -93,6 +93,6 @@ public class EmployeeRepository : IGenericRepositoryInterface<Employee>
     private static GeneralResponse NotFound() => new GeneralResponse(false, ConstantsResponse.NotFound);
     private static GeneralResponse Success() => new GeneralResponse(true, ConstantsResponse.Success);
     private static GeneralResponse InputDataNotValidGeneral() => new GeneralResponse(false, ConstantsResponse.ErrorInputData);
-    private static GeneralResponse Exited() => new GeneralResponse(false, nameof(Employee) + ConstantsResponse.Exit);
+    private static GeneralResponse Exited() => new GeneralResponse(false, ConstantsResponse.Exit);
     private async Task Commited() => await _context.SaveChangesAsync();
 }

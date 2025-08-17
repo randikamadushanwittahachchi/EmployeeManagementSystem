@@ -67,7 +67,7 @@ public class TownRepository : IGenericRepositoryInterface<Town>
     private static GeneralResponse Exited() => new GeneralResponse(false, nameof(Town) + ConstantsResponse.Exit);
     private static GeneralResponse InputDataNotValidGeneral() => new GeneralResponse(false, ConstantsResponse.ErrorInputData);
     private async Task Commit() => await _context.SaveChangesAsync();
-    private async Task<Town?> FindById(int id) => await _context.Towns.FindAsync(id);
+    private async Task<Town?> FindById(int id) => await _context.Towns.AsNoTracking().Include(_ => _.City).FirstOrDefaultAsync(_ => _.Id == id);
     private async Task<bool> CheckName(string name)
     {
         var item = await _context.Towns.FirstOrDefaultAsync(_ => _.Name!.Trim().ToLower() == name.Trim().ToLower());

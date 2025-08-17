@@ -43,11 +43,12 @@
                                         <tr>
                                             <td> <img src="@employee.Photo" style="height:20px;width:20px"/> </td>
                                             <td> @employee.CivilId</td>
+                                            <td> @employee.FileName</td>
                                             <td> @employee.Name</td>
                                             <td> @employee.TelephoneNumber</td>
                                             <td> @employee.JobName</td>
-                                            <td> @employee.Branch</td>
-                                            <td> @employee.Town</td>
+                                            <td> @employee.Branch!.Name</td>
+                                            <td> @employee.Town!.Name</td>
                                             <td> 
                                                 <button type="button" class=" btn btn-link p-0 m-0 border-0 text-primary text-decoration-none " @onclick="() => Menu(employee)">
                                                     <i class="bi bi-list"></i>

@@ -8,202 +8,212 @@
 
 <div class=" modal fade show d-block " tabindex="-1" role="dialog">
     <div class=" modal-backdrop fade show"></div>
-    <div class=" modal-dialog" style="margin-top:6rem;z-index:1050" ></div>
-    <EditForm EditContext="@editContext" Enhance OnValidSubmit="SubmitEmployee">
-        <div class=" modal-content">
-            <div class=" modal-header py-4 ">
-                <h2 class=" modal-title "> @Titel Employee</h2>
-                <button @onclick="CancelClick" type="button" class=" btn btn-close fs-6"></button>
-            </div>
-            <div class=" modal-body ">
-                @if(step == 1)
-                {
-                    <div class=" form-group">
-                        <label class=" form-label ">Name</label>
-                        <InputText class=" form-control" @bind-value="Employee!.Name" />
-                        <ValidationMessage For="@(()=>Employee.Name)" class=" text-danger"/>
-                    </div>
-                    <div class=" form-group">
-                        <label class=" form-label">Civil Id</label>
-                        <InputText class=" form-control" @bind-value="Employee.CivilId" />
-                        <ValidationMessage For="@(()=>Employee.CivilId)" class=" text-danger" />
-                    </div>
-                    <div class=" form-group">
-                        <label class=" form-label">Job</label>
-                        <InputText class=" form-control" @bind-Value="Employee.JobName" />
-                        <ValidationMessage For="@(() => Employee.JobName)" class=" text-danger" />
-                    </div>
-                    <div class=" form-group">
-                        <label class=" form-label"> Addrese</label>
-                        <InputText class=" form-control" @bind-Value="Employee.Addrese"/>
-                        <ValidationMessage For="@(()=>Employee.Addrese)" class=" text-danger"/>
-                    </div>
-                    <div class=" form-group">
-                        <label class=" form-label">Telephone Number</label>
-                        <InputText class=" form-control" @bind-Value="Employee.TelephoneNumber"/>
-                        <ValidationMessage For="@(() => Employee.TelephoneNumber)" class=" text-danger" />
-                    </div>
-                    <div class=" form-group">
-                        <label class=" form-label"> File Name</label>
-                        <InputText class=" form-control" @bind-Value="Employee.FileName"/>
-                        <ValidationMessage For="@(() => Employee.FileName)" class=" text-danger" />
-                    </div>
-                    <div class=" form-group">
-                        <label class=" form-label">Others</label>
-                        <InputText class=" form-control" @bind-Value="Employee.Others"/>
-                        <ValidationMessage For="@(() => Employee.Others)" class=" text-danger" />
-                    </div>
-                }
-                else if (step == 2)
-                {
-                    <div class=" form-group">
-                        <label class=" form-label"> Upload Picture</label>
-                        <InputFile class=" form-control" OnChange="OnUpLoadImageChange" />
-                        @if (!string.IsNullOrEmpty(Employee!.Photo))
-                        {
-                            <img src="@Employee.Photo" width="100" class=" rounded-circle border shadow"/>
-                        }
-                        <ValidationMessage For="@(()=>Employee!.Photo)"  class=" text-danger"/>
-                        @if (!string.IsNullOrEmpty(ImageUploadMessage))
-                        {
-                            <div class=" alert alert-info mt-1">@ImageUploadMessage</div>
-                        }
-                    </div>
-                    <div class="container-fluid">
-                        <div class=" row">
-                            <div class=" col-6 form-group">
-                                <label class=" form-label"> Select General Department</label>
-                                <select class=" form-select" @onchange="OnChangeSelectedGeneraldepartment">
-                                    @if (!DefaultGeneralDepartments.Any())
-                                    {
-                                        <option value=""> General Departmet Data Not Availble</option>
-                                    }
-                                    else
-                                    {
-                                        @foreach(var defaultGeneralDepartment in DefaultGeneralDepartments!)
+    <div class=" modal-dialog" style="margin-top:6rem;z-index:1050" >
+        <EditForm EditContext="@editContext" Enhance OnValidSubmit="SubmitEmployee">
+            <div class=" modal-content">
+                <div class=" modal-header py-4 ">
+                    <h2 class=" modal-title "> @Titel Employee</h2>
+                    <button @onclick="CancelClick" type="button" class=" btn btn-close fs-6"></button>
+                </div>
+                <div class=" modal-body ">
+                    @if (step == 1)
+                    {
+                        <div class=" form-group">
+                            <label class=" form-label ">Name</label>
+                            <InputText class=" bg-light form-control" @bind-value="Employee!.Name" />
+                            <ValidationMessage For="@(() => Employee.Name)" class=" text-danger" />
+                        </div>
+                        <div class=" form-group">
+                            <label class=" form-label">Civil Id</label>
+                            <InputText class=" bg-light form-control" @bind-value="Employee.CivilId" />
+                            <ValidationMessage For="@(() => Employee.CivilId)" class=" text-danger" />
+                        </div>
+                        <div class=" form-group">
+                            <label class=" form-label">Job</label>
+                            <InputText class=" bg-light form-control" @bind-Value="Employee.JobName" />
+                            <ValidationMessage For="@(() => Employee.JobName)" class=" text-danger" />
+                        </div>
+                        <div class=" form-group">
+                            <label class=" form-label"> Addrese</label>
+                            <InputText class=" bg-light form-control" @bind-Value="Employee.Addrese" />
+                            <ValidationMessage For="@(() => Employee.Addrese)" class=" text-danger" />
+                        </div>
+                        <div class=" form-group">
+                            <label class=" form-label">Telephone Number</label>
+                            <InputText class=" bg-light form-control" @bind-Value="Employee.TelephoneNumber" />
+                            <ValidationMessage For="@(() => Employee.TelephoneNumber)" class=" text-danger" />
+                        </div>
+                        <div class=" form-group">
+                            <label class=" form-label"> File Name</label>
+                            <InputText class=" bg-light form-control" @bind-Value="Employee.FileName" />
+                            <ValidationMessage For="@(() => Employee.FileName)" class=" text-danger" />
+                        </div>
+                        <div class=" form-group">
+                            <label class=" form-label">Others</label>
+                            <InputText class=" bg-light form-control" @bind-Value="Employee.Others" />
+                            <ValidationMessage For="@(() => Employee.Others)" class=" text-danger" />
+                        </div>
+                    }
+                    else if (step == 2)
+                    {
+                        <div class=" form-group">
+                            <label class=" form-label"> Upload Picture</label>
+                            <InputFile class=" bg-light form-control " OnChange="OnUpLoadImageChange" />
+                            @if (!string.IsNullOrEmpty(Employee!.Photo))
+                            {
+                                <div class="mt-4 d-flex justify-content-center">
+                                    <img src="@Employee.Photo" width="100" class="   rounded-circle border shadow" />
+                                </div>
+                            }
+                            <ValidationMessage For="@(() => Employee!.Photo)" class=" text-danger" />
+                            @if (!string.IsNullOrEmpty(ImageUploadMessage))
+                            {
+                                <div class=" alert alert-info mt-1">@ImageUploadMessage</div>
+                            }
+                        </div>
+                        <div class="container-fluid">
+                            <div class=" row">
+                                <div class=" col-6 form-group">
+                                    <label class=" form-label"> Select General Department</label>
+                                    <select class=" bg-light form-select" @onchange="OnChangeSelectedGeneraldepartment">
+                                        @if (!DefaultGeneralDepartments.Any())
                                         {
-                                            <option value="generalDepartment.Id">@defaultGeneralDepartment.Name</option>
+                                            <option value="-1"> General Departmet Data Not Availble</option>
                                         }
-                                    }
+                                        else
+                                        {
+                                            <option value="-1" >None</option>
+                                            @foreach (var defaultGeneralDepartment in DefaultGeneralDepartments!)
+                                            {
+                                                <option value="@defaultGeneralDepartment.Id">@defaultGeneralDepartment.Name</option>
+                                            }
+                                        }
 
-                                </select>
-                            </div>
-                            <div class=" col-6 form-group">
-                                <label class=" form-label"> Select County</label>
-                                <select class=" form-select" @onchange="OnChangeCounty">
-                                    @if (!DefaultCountries.Any())
-                                    {
-                                        <option value="">County Data is not avaible</option>
-                                    }
-                                    else
-                                    {
-                                        @foreach (var defaultCountry in DefaultCountries)
+                                    </select>
+                                </div>
+                                <div class=" col-6 form-group">
+                                    <label class=" form-label"> Select County</label>
+                                    <select class=" bg-light form-select" @onchange="OnChangeCounty">
+                                        @if (!DefaultCountries.Any())
                                         {
-                                            <option value="country.Id"> @defaultCountry.Name</option>
+                                            <option value="-1">County Data is not avaible</option>
                                         }
-                                    }
-                                </select>
+                                        else
+                                        {
+                                            <option value="-1">None</option>
+                                            @foreach (var defaultCountry in DefaultCountries)
+                                            {
+                                                <option value="@defaultCountry.Id"> @defaultCountry.Name</option>
+                                            }
+                                        }
+                                    </select>
+                                </div>
+                            </div>
+                            <div class=" row">
+                                <div class=" col-6 form-group">
+                                    <label class=" form-label"> Select Department</label>
+                                    <select class=" bg-light form-select" @onchange="OnChangeDepartment">
+                                        @if (!SelectedDepartments.Any())
+                                        {
+                                            <option value="-1"> Department Data is avaible</option>
+                                        }
+                                        else
+                                        {
+                                            <option value="-1">None</option>
+                                            @foreach (var selectedDepartment in SelectedDepartments)
+                                            {
+                                                <option value="@selectedDepartment.Id">@selectedDepartment.Name</option>
+                                            }
+                                        }
+                                    </select>
+                                </div>
+                                <div class=" col-6  form-group">
+                                    <label class=" form-label"> Select City</label>
+                                    <select class=" bg-light form-select" @onchange="OnChangeCity">
+                                        @if (!SelectedCities.Any())
+                                        {
+                                            <option value="-1"> City Data is not avaible</option>
+                                        }
+                                        else
+                                        {
+                                            <option value="-1">None</option>
+                                            @foreach (var selectedCity in SelectedCities)
+                                            {
+                                                <option value="@selectedCity.Id"> @selectedCity.Name </option>
+                                            }
+                                        }
+                                    </select>
+                                </div>
+                            </div>
+                            <div class=" row">
+                                <div class=" col-6 form-group">
+                                    <label class=" form-label"> Select branch</label>
+                                    <select class=" bg-light form-select" @bind="Employee!.BranchId">
+                                        @if (!SelectedBranchs.Any())
+                                        {
+                                            <option value="-1">Branch data is not avaible here</option>
+                                        }
+                                        else
+                                        {
+                                            <option value="-1">None</option>
+                                            @foreach (var selectedBranch in SelectedBranchs)
+                                            {
+                                                <option value="@selectedBranch.Id">@selectedBranch.Name</option>
+                                            }
+                                        }
+                                    </select>
+                                </div>
+                                <div class=" col-6 form-group">
+                                    <label class=" form-label">Select Town</label>
+                                    <select class=" bg-light form-select" @bind="Employee.TownId">
+                                        @if (!SelectedCities.Any())
+                                        {
+                                            <option value="-1"> Branch data is not avaible</option>
+                                        }
+                                        else
+                                        {
+                                            <option value="-1">None</option>
+                                            @foreach (var selectedTown in SelectedTwons)
+                                            {
+                                                <option value="@selectedTown.Id">@selectedTown.Name</option>
+                                            }
+                                        }
+                                    </select>
+                                </div>
                             </div>
                         </div>
-                        <div class=" row">
-                            <div class=" col-6 form-group">
-                                <label class=" form-label"> Select Department</label>
-                                <select class=" form-select" @onchange="OnChangeDepartment">
-                                    @if (!SelectedDepartments.Any())
-                                    {
-                                        <option value=""> Department Data is avaible</option>
-                                    }
-                                    else
-                                    {
-                                        @foreach(var selectedDepartment in SelectedDepartments)
-                                        {
-                                            <option value="department.Id">@selectedDepartment.Name</option>
-                                        }
-                                    }
-                                </select>
-                            </div>
-                            <div class=" col-6  form-group">
-                                <label class=" form-label"> Select City</label>
-                                <select class=" form-select" @onchange="OnChangeCity">
-                                    @if (!SelectedCities.Any())
-                                    {
-                                        <option value=""> City Data is not avaible</option>
-                                    }
-                                    else
-                                    {
-                                        @foreach(var selectedCity in SelectedCities)
-                                        {
-                                            <option value="selectedCity.Id"> @selectedCity.Name </option>
-                                        }
-                                    }
-                                </select>
-                            </div>
+                    }
+                </div>
+                <div class=" modal-footer py-1">
+                    <div class=" form-group">
+                        <div class=" d-flex gap-3">
+                            <button type="button" class="btn btn-secondary" onclick="@CancelClick"> Cancel</button>
+                            @if (step == 1)
+                            {
+                                <button type="button" @onclick="OnClickNext" class=" btn btn-primary">Next</button>
+                            }
+                            else if (step == 2)
+                            {
+                                <button type="button" @onclick="OnClickPrevise" class=" btn btn-primary">Previse </button>
+                            }
+                            @if (step == 2)
+                            {
+                                <button type="submit" class=" btn btn-primary">@ButtonTitel</button>
+                            }
                         </div>
-                        <div class=" row">
-                            <div class=" col-6 form-group">
-                                <label class=" form-label"> Select branch</label>
-                                <select class=" form-select" @bind="Employee!.BranchId">
-                                    @if (!SelectedBranchs.Any())
-                                    {
-                                        <option>Branch data is not avaible here</option>
-                                    }
-                                    else
-                                    {
-                                        @foreach(var selectedBranch in SelectedBranchs)
-                                        {
-                                            <option value="selectedBranch.Id">@selectedBranch.Name</option>
-                                        }
-                                    }
-                                </select>
-                            </div>
-                            <div class=" col-6 form-group">
-                                <label class=" form-label">Select Town</label>
-                                <select class=" form-select">
-                                    @if (!SelectedCities.Any())
-                                    {
-                                        <option value=""> Branch data is not avaible</option>
-                                    }
-                                    else
-                                    {
-                                        @foreach(var selectedTown in SelectedTwons)
-                                        {
-                                            <option value="selectedTown.Id">@selectedTown.Name</option>
-                                        }
-                                    }
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                }
-            </div>
-            <div class=" modal-footer py-1">
-                <div class=" form-group">
-                    <div class=" d-flex gap-3">
-                        <button type="button" class="btn btn-secondary" onclick=" CancelClick"> Cancel</button>
-                        @if(step == 1)
-                        {
-                            <button type="button" @onclick="OnClickNext" class=" btn btn-primary">Next</button>
-                        }
-                        else if(step == 2)
-                        {
-                            <button type="button" @onclick="OnClickPrevise" class=" btn btn-primary">Previse </button>
-                        }
-                        @if(step == 2)
-                        {
-                            <button type="submit" class=" btn btn-primary">@ButtonTitel</button>
-                        }
                     </div>
                 </div>
             </div>
-        </div>
         </EditForm>
+
+    </div>
 
 </div>
 
 @code {
-    [CascadingParameter] BlazoredModalInstance BlazoredModal { get; set; } = default!;
+    [CascadingParameter] public BlazoredModalInstance BlazoredModal { get; set; } = default!;
 
-    [Parameter] public Employee? Employee { get; set; }
+    [Parameter] public Employee Employee { get; set; } = new();
 
     [Parameter] public String? Titel { get; set; }
     [Parameter] public String? ButtonTitel { get; set; }
@@ -230,7 +240,6 @@
     private int selectedCityId;
 
     private int step = 1;
-    private int totalStep = 3;
     private bool isStep1Valid = false;
     private bool isStep2Valid = false;
     private string[] step1Field = new [] { nameof(Employee.Name), nameof(Employee.CivilId), nameof(Employee.Addrese), nameof(Employee.Town), nameof(Employee.FileName), nameof(Employee.TelephoneNumber) };
@@ -283,7 +292,7 @@
         }
         if (isStep2Valid)
         {
-            if(Employee is null)
+            if(Employee is null || Employee!.BranchId < 0 || Employee.TownId < 0)
             {
                 await BlazoredModal.CloseAsync(); 
                 Dialog.ShowDialog("Error", "Please Enter Valid Details"); 

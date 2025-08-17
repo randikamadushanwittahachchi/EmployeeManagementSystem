@@ -21,14 +21,9 @@
                         <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span> Home
                     </NavLink>
                 </div>
-                <div class="nav-item px-3">
+                @* <div class="nav-item px-3">
                     <NavLink class="nav-link" href="about">
                         <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> About
-                    </NavLink>
-                </div>
-                <div class="nav-item px-3" >
-                    <NavLink class="nav-link" @onclick="UserClick">
-                        <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> User
                     </NavLink>
                 </div>
                 <div class=" nav-item px-3">
@@ -38,88 +33,99 @@
                             <span>Administration</span>
                         </div>
                     </NavLink>
-                    <a class=" nav-link text-white p-2 " style=" margin-left:5rem; visibility:@CssAdminVisibility;">
-                        <div class=" hstack">
-                            <span class=" bi bi-people fs-5 text-center " aria-hidden="true" style="margin-top:-2rem;"></span>
-                            <span>User</span>
-                        </div>
-                    </a>
+                    @if (CssAdminVisibility is "visible")
+                    {
+                        <a class=" nav-link text-white p-2 " style=" margin-left:5rem">
+                            <div class=" hstack">
+                                <span class=" bi bi-people fs-5 text-center " aria-hidden="true" style="margin-top:-2rem;"></span>
+                                <span>User</span>
+                            </div>
+                        </a>
+                    }
+                </div>  *@
+                <div class="nav-item px-3">
+                    <NavLink class="nav-link" @onclick="EmployeeClick">
+                        <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Employee
+                    </NavLink>
                 </div>
-                <div class=" nav-item px-3" style=" margin-top:@CssDepatmentMargin">
+                <div class=" nav-item px-3">
                     <NavLink class=" nav-link cursor-pointer" @onclick="ShowDepartmentMenuContainer">
                         <div class=" hstack gap-1">
                             <span class=" bi bi-buildings-fill fs-5 text-center" aria-hidden="true" style="margin-top:-2rem"></span>
                             <span class=" fs-6">Deparment</span>
                         </div>
                     </NavLink>
-                    <div class=" nav-link p-2 text-white" style=" margin-left:5rem; visibility:@CssDeparmentVisibility;">
-                        <ul class="list-group" style="list-style:none;" >
-                            <li style=" list-style:none"  class=" cursor-pointer" >
-                                <a class=" nav-link p-2" @onclick="GeneralClick">
-                                    <div class=" hstack text-wrap">
-                                        <span class=" bi bi-building fs-5 text-center" style="margin-top:-2rem;" aria-hidden="true"></span>
-                                        <span class=" fs-6 text-truncate">General Department</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li style="list-style:none" class=" cursor-pointer ">
-                                <a class=" nav-link p-2" @onclick="DepartmentClick">
-                                    <div class=" hstack text-wrap">
-                                        <span class="bi bi-house-door fs-5 text-center" style=" margin-top:-2rem" aria-hidden="true"></span>
-                                        <span class=" fs-6">Department</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li style=" list-style:none" class="cursor-pointer">
-                                <a class=" nav-link p-2" @onclick="BranchClick">
-                                    <div class=" text-wrap hstack">
-                                        <span class="bi bi-door-closed fs-5 text-center "  style=" margin-top:-2rem;" aria-hidden="true"></span>
-                                        <span class=" fs-6 ">Branch</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <hr />
-                            <li style=" list-style:none" class="cursor-pointer">
-                                <a class=" nav-link p-2" @onclick="CountryClick">
-                                    <div class=" text-wrap hstack">
-                                        <span class="bi bi-door-closed fs-5 text-center " style=" margin-top:-2rem;" aria-hidden="true"></span>
-                                        <span class=" fs-6 ">County</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li style=" list-style:none" class="cursor-pointer">
-                                <a class=" nav-link p-2" @onclick="CityClick">
-                                    <div class=" text-wrap hstack">
-                                        <span class="bi bi-door-closed fs-5 text-center " style=" margin-top:-2rem;" aria-hidden="true"></span>
-                                        <span class=" fs-6 ">City</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li style=" list-style:none" class="cursor-pointer">
-                                <a class=" nav-link p-2" @onclick="TownClick">
-                                    <div class=" text-wrap hstack">
-                                        <span class="bi bi-door-closed fs-5 text-center " style=" margin-top:-2rem;" aria-hidden="true"></span>
-                                        <span class=" fs-6 ">Town</span>
-                                    </div>
-                                </a>
-                            </li>
+                    @if (CssDeparmentVisibility is "visible")
+                    {
+                        <div class=" nav-link p-2 text-white" style=" margin-left:5rem">
+                            <ul class="list-group" style="list-style:none;">
+                                <li style=" list-style:none" class=" cursor-pointer">
+                                    <a class=" nav-link p-2" @onclick="GeneralClick">
+                                        <div class=" hstack text-wrap">
+                                            <span class=" bi bi-building fs-5 text-center" style="margin-top:-2rem;" aria-hidden="true"></span>
+                                            <span class=" fs-6 text-truncate">General Department</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li style="list-style:none" class=" cursor-pointer ">
+                                    <a class=" nav-link p-2" @onclick="DepartmentClick">
+                                        <div class=" hstack text-wrap">
+                                            <span class="bi bi-house-door fs-5 text-center" style=" margin-top:-2rem" aria-hidden="true"></span>
+                                            <span class=" fs-6">Department</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li style=" list-style:none" class="cursor-pointer">
+                                    <a class=" nav-link p-2" @onclick="BranchClick">
+                                        <div class=" text-wrap hstack">
+                                            <span class="bi bi-door-closed fs-5 text-center " style=" margin-top:-2rem;" aria-hidden="true"></span>
+                                            <span class=" fs-6 ">Branch</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <hr />
+                                <li style=" list-style:none" class="cursor-pointer">
+                                    <a class=" nav-link p-2" @onclick="CountryClick">
+                                        <div class=" text-wrap hstack">
+                                            <span class="bi bi-door-closed fs-5 text-center " style=" margin-top:-2rem;" aria-hidden="true"></span>
+                                            <span class=" fs-6 ">County</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li style=" list-style:none" class="cursor-pointer">
+                                    <a class=" nav-link p-2" @onclick="CityClick">
+                                        <div class=" text-wrap hstack">
+                                            <span class="bi bi-door-closed fs-5 text-center " style=" margin-top:-2rem;" aria-hidden="true"></span>
+                                            <span class=" fs-6 ">City</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li style=" list-style:none" class="cursor-pointer">
+                                    <a class=" nav-link p-2" @onclick="TownClick">
+                                        <div class=" text-wrap hstack">
+                                            <span class="bi bi-door-closed fs-5 text-center " style=" margin-top:-2rem;" aria-hidden="true"></span>
+                                            <span class=" fs-6 ">Town</span>
+                                        </div>
+                                    </a>
+                                </li>
 
-                        </ul>
-                    </div>
+                            </ul>
+                        </div>
 
+                    }
                 </div>
-
             </nav>
         </div>
     </Authorized>
 </AuthorizeView>
 
+ 
 @code {
 
     private bool collapseNavMenu = true;
     private string CssAdminVisibility{ get; set; } = "hidden";
-    private string CssDeparmentVisibility{ get; set; } = "hidden";
-    private string CssDepatmentMargin{ get; set; } = "-3.5rem";
+    private string CssDeparmentVisibility { get; set; } = "hidden";
+    // private string CssDepatmentMargin{ get; set; } = "-3.5rem";
 
 
     private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
@@ -131,7 +137,7 @@
     private void ShowAdminMenuContainer()
     {
         CssAdminVisibility = Toggel(CssAdminVisibility, "hidden", "visible");
-        CssDepatmentMargin = Toggel(CssDepatmentMargin, "-3.5rem", "0rem");
+        // CssDepatmentMargin = Toggel(CssDepatmentMargin, "-3.5rem", "0rem");
 
     }
     private void ShowDepartmentMenuContainer()
@@ -150,7 +156,7 @@
     private void TownClick() => allState.TownClick();
 
     // User / Employee Navigation Click
-    private void UserClick() => allState.UserClick();
+    private void UserClick() => allState.ManageUserClick();
     private void EmployeeClick() => allState.EmployeeClick();
 
     // Toggle function

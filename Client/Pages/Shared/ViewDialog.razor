@@ -11,59 +11,59 @@
                 <div class=" container">
                     <div class=" row">
                         @*  column one *@ 
-                        <div class=" col">
+                        <div class=" col me-3">
                             @* Persanel Information *@
                             <h5 class=" mb-3">Personal Information</h5>
                             <div class=" row mb-2">
                                 <img class=" border rounded-circle shadow " src="@Employee.Photo" width="100"/>
                             </div>
                             <div class=" row mb-2">
-                                <div class=" col text-start fw-normal">Name</div>
-                                <div class=" col text-center">@Employee.Name</div>
+                                <div class=" col fw-normal">Name</div>
+                                <div class=" col ">@Employee.Name</div>
                             </div>
                             <div class=" row mb-2">
-                                <div class=" col text-start fw-normal">Job Titel</div>
-                                <div class=" col text-center">@Employee.JobName</div>
+                                <div class=" col fw-normal">Job Titel</div>
+                                <div class=" col ">@Employee.JobName</div>
                             </div>
                             <div class=" row mb-2">
-                                <div class=" col text-start fw-normal">Telephone</div>
-                                <div class=" col text-center">@Employee.TelephoneNumber</div>
+                                <div class=" col fw-normal">Telephone</div>
+                                <div class=" col">@Employee.TelephoneNumber</div>
                             </div>
                         </div>
 
                         @* column two *@
-                        <div class=" col ">
+                        <div class=" col me-3 ">
                             @* Department Information*@
                             <h5 class="mb-3">Department Infermation</h5>
                             <div class=" row mb-2">
-                                <div class=" col text-start fw-normal">General Department</div>
-                                <div class=" col text-center">@GeneralDepartment.Name</div>
+                                <div class=" col  fw-normal">General Department</div>
+                                <div class=" col ">@GeneralDepartment.Name</div>
                             </div>
                             <div class=" row mb-2">
-                                <div class=" col text-start fw-normal">Department</div>
-                                <div class=" col text-center">@Department.Name</div>
+                                <div class=" col  fw-normal">Department</div>
+                                <div class=" col">@Department.Name</div>
                             </div>
                             <div class=" row mb-2">
-                                <div class=" col text-start fw-normal">Branch</div>
-                                <div class=" col text-center">@Branch.Name</div>
+                                <div class=" col  fw-normal">Branch</div>
+                                <div class=" col ">@Branch.Name</div>
                             </div>
                         </div>
 
                         @* column three*@
-                        <div class=" col">
+                        <div class=" col me-3">
                             @* Location Information*@
                             <h5 class=" mb-3" >Location Information</h5>
                             <div class=" row mb-2">
-                                <div class=" col text-start fw-normal">Country</div>
-                                <div class=" col text-center">@Country.Name</div>
+                                <div class=" col  fw-normal">Country</div>
+                                <div class=" col ">@Country.Name</div>
                             </div>
                             <div class=" row mb-2">
-                                <div class=" col text-start fw-normal">City</div>
-                                <div class=" col text-center">@City.Name</div>
+                                <div class=" col  fw-normal">City</div>
+                                <div class=" col ">@City.Name</div>
                             </div>
                             <div class=" row mb-2">
-                                <div class=" col text-start fw-normal">Town</div>
-                                <div class=" col text-center">@Town.Name</div>
+                                <div class=" col  fw-normal">Town</div>
+                                <div class=" col ">@Town.Name</div>
                             </div>
                         </div>
                     </div>
@@ -78,19 +78,19 @@
 </div>
 
 @code {
-    [Parameter] public Employee Employee { get; set; } = null!;
+    [Parameter] public Employee Employee { get; set; } = new();
     [CascadingParameter] BlazoredModalInstance BlazoredModal { get; set; } = default!;
 
 
     // Department Loaded
-    private Branch Branch { get; set; } = null!;
-    private Department Department { get; set; } = null!;
-    private GeneralDepartment GeneralDepartment { get; set; } = null!;
+    private Branch Branch { get; set; } = new();
+    private Department Department { get; set; } = new();
+    private GeneralDepartment GeneralDepartment { get; set; } = new();
 
     //Location Loaded
-    private Town Town { get; set; } = null!;
-    private City City { get; set; } = null!;
-    private Country Country { get; set; } = null!;
+    private Town Town { get; set; } = new();
+    private City City { get; set; } = new();
+    private Country Country { get; set; } = new();
 
     protected override async Task OnInitializedAsync()
     {
@@ -105,16 +105,16 @@
     private async Task LoadData()
     {
         // Load Branch / Department / GeneralDepartment
-        var branchResponse = await branchService.GetById($"{ContantsBaseUrl.BranchUrl + Employee.BranchId}");
+        var branchResponse = await branchService.GetById($"{ContantsBaseUrl.BranchUrl}/{Employee.BranchId}");
         if (branchResponse.Flag) Branch = branchResponse.Data!;
-        var departmentResponse = await departmentService.GetById($"{ContantsBaseUrl.DepartmentUrl + Branch.DepartmentId}");
+        var departmentResponse = await departmentService.GetById($"{ContantsBaseUrl.DepartmentUrl}/{Branch.DepartmentId}");
         if (departmentResponse.Flag) Department = departmentResponse.Data!;
         GeneralDepartment = Department.GeneralDepartment!;
 
         //Load Town / City / Country
-        var townResponse = await townService.GetById($"{ContantsBaseUrl.TownUrl + Employee.TownId}");
+        var townResponse = await townService.GetById($"{ContantsBaseUrl.TownUrl}/{Employee.TownId}");
         if (townResponse.Flag) Town = townResponse.Data!;
-        var cityResponse = await cityService.GetById($"{ContantsBaseUrl.CityUrl + Town.CityId}");
+        var cityResponse = await cityService.GetById($"{ContantsBaseUrl.CityUrl}/{Town.CityId}");
         if (cityResponse.Flag) City = cityResponse.Data!;
         Country = City.Country!;
     }
