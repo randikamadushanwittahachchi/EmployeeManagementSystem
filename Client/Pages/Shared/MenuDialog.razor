@@ -12,7 +12,7 @@
         <div class=" modal-content">
             <div class=" modal-header">
                 <h5 class=" modal-title">Menu</h5>
-                <button class=" btn btn-close fs-6" type="button" @onclick="@CancelClick">Cancel</button>
+                <button class="btn btn-close fs-6" type="button" @onclick="@CancelClick"></button>
             </div>
             <div class=" modal-body">
                 <div class=" container">
@@ -31,7 +31,9 @@
                     </div>
                 </div>
             </div>
-            <div class=" modal-footer"></div>
+            <div class=" modal-footer">
+                <button type="button" class="btn btn-success" @onclick="CancelClick">ok</button>
+            </div>
         </div>
 
     </div>
@@ -70,7 +72,7 @@
     }
     private async Task DeleteEmployee()
     {
-        var response = await employeeService.DeleteById($"{ContantsBaseUrl.EmployeeUrl + Employee.Id}");
+        var response = await employeeService.DeleteById($"{ContantsBaseUrl.EmployeeUrl}/{Employee.Id}");
         dialog.ShowDialog(response.Flag ? "Success" : "Error", response.Message);
     }
 

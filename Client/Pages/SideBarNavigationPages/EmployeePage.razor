@@ -41,7 +41,7 @@
                                     @foreach(var employee in Employees)
                                     {
                                         <tr>
-                                            <td> <img src="@employee.Photo" style="height:20px;width:20px"/> </td>
+                                            <td> <img src="@employee.Photo" class=" border rounded-circle" style="height:30px;width:30px;object-fit:cover"/> </td>
                                             <td> @employee.CivilId</td>
                                             <td> @employee.FileName</td>
                                             <td> @employee.Name</td>
@@ -68,7 +68,7 @@
 }
 
 @code {
-    public List<Employee> Employees { get; set; } = null!;
+    public List<Employee> Employees { get; set; } = new();
 
     protected override async Task OnInitializedAsync()
     {
@@ -87,18 +87,25 @@
     private void Menu(Employee employee)
     {
         menuDialog.ShowDialog(employee);
+        allState.Action?.Invoke();
     }
 
     // Creat New Employee
     private void Add()
     {
         employeeDialog.ShowDialog(AddEmployee, "Add", "Create");
+        allState.Action?.Invoke();
     }
     private async Task AddEmployee(Employee employee)
     {
         var response = await employeeService.Create(employee, ContantsBaseUrl.EmployeeUrl);
         if (response.Flag) await GetAll();
         dialog.ShowDialog(response.Flag ? "Success" : "Error", response.Message);
+    }
+
+    private void Dispose()
+    {
+        allState.Action -= StateHasChanged;
     }
 
 

@@ -2,66 +2,69 @@
 @using ClientLibrary.Constants
 <div class=" modal fade show d-block " tabindex="-1" role="dialog">
     <div class=" modal-backdrop fade show "></div>
-    <div class=" modal-dialog" style=" margin-top:6rem;z-index:1050">
+    <div class=" modal-dialog modal-lg" style="margin-top:6rem;z-index:1050">
         <div class=" modal-content">
-            <div class=" modal-header">
-                <h5 class=" modal-title ">@Employee.Name Employee Details</h5>
+            <div  class=" modal-header">
+                <h5  class="  modal-title ">@Employee.Name Employee Details</h5>
+                <button @onclick="@OnClickCancel" type="button" class=" btn btn-close"></button>
             </div>
-            <div class=" modal-body">
-                <div class=" container">
+            <div style=" background-color:aliceblue"  class=" modal-body">
+                <div  class=" container">
                     <div class=" row">
                         @*  column one *@ 
-                        <div class=" col me-3">
+                        <div class=" col-4" >
                             @* Persanel Information *@
-                            <h5 class=" mb-3">Personal Information</h5>
-                            <div class=" row mb-2">
-                                <img class=" border rounded-circle shadow " src="@Employee.Photo" width="100"/>
+                            <h5  class=" row mb-4">Personal Information</h5>
+                            <div class="row  mb-2">
+                                <div class="  col-12">
+                                    <img class=" border rounded-circle " style="width:100px;height:100px;object-fit:cover" src="@Employee.Photo" />
+                                </div>
                             </div>
-                            <div class=" row mb-2">
-                                <div class=" col fw-normal">Name</div>
-                                <div class=" col ">@Employee.Name</div>
+                            <div class="border-bottom border-2 pb-1 row mb-2">
+                                <div class=" col-6 fw-normal">Name</div>
+                                <div class=" col-6 ">@Employee.Name</div>
                             </div>
-                            <div class=" row mb-2">
-                                <div class=" col fw-normal">Job Titel</div>
-                                <div class=" col ">@Employee.JobName</div>
+                            <div class="border-bottom border-2 pb-1 row mb-2">
+                                <div class=" col-6 fw-normal">Job Titel</div>
+                                <div class=" col-6 ">@Employee.JobName</div>
                             </div>
-                            <div class=" row mb-2">
-                                <div class=" col fw-normal">Telephone</div>
-                                <div class=" col">@Employee.TelephoneNumber</div>
+                            <div class="border-bottom border-2 pb-1 row mb-2">
+                                <div class=" col-6 fw-normal">Telephone</div>
+                                <div class=" col-6">@Employee.TelephoneNumber</div>
                             </div>
                         </div>
 
                         @* column two *@
-                        <div class=" col me-3 ">
+                        <div class=" col-4 ">
                             @* Department Information*@
-                            <h5 class="mb-3">Department Infermation</h5>
-                            <div class=" row mb-2">
-                                <div class=" col  fw-normal">General Department</div>
-                                <div class=" col ">@GeneralDepartment.Name</div>
+                            <h5 class="row mb-4">Department Infermation</h5>
+                            <div class=" border-bottom border-2 pb-1 row mb-2">
+                                <div class=" text-truncate col-6  fw-normal">General Department</div>
+                                <div class=" col-6 ">@GeneralDepartment.Name</div>
                             </div>
-                            <div class=" row mb-2">
-                                <div class=" col  fw-normal">Department</div>
-                                <div class=" col">@Department.Name</div>
+                            <div class=" border-bottom border-2 pb-1 row mb-2">
+                                <div class=" col-6  fw-normal">Department</div>
+                                <div class=" col-6">@Department.Name</div>
                             </div>
-                            <div class=" row mb-2">
-                                <div class=" col  fw-normal">Branch</div>
-                                <div class=" col ">@Branch.Name</div>
+                            <div class=" border-bottom border-2 pb-1 row mb-2">
+                                <div class=" col-6  fw-normal">Branch</div>
+                                <div class=" col-6 ">@Branch.Name</div>
                             </div>
                         </div>
 
                         @* column three*@
-                        <div class=" col me-3">
+                        <div class=" col-4 ">
                             @* Location Information*@
-                            <h5 class=" mb-3" >Location Information</h5>
-                            <div class=" row mb-2">
+                            <h5 class="row mb-4" >Location Information</h5>
+                            <div class=" border-bottom border-2 pb-1 row mb-2">
                                 <div class=" col  fw-normal">Country</div>
                                 <div class=" col ">@Country.Name</div>
                             </div>
-                            <div class=" row mb-2">
+                            <div class=" border-bottom border-2 pb-1 row mb-2">
                                 <div class=" col  fw-normal">City</div>
                                 <div class=" col ">@City.Name</div>
                             </div>
-                            <div class=" row mb-2">
+                            <div class=" border-bottom border-2 pb-1 row mb-2">
                                 <div class=" col  fw-normal">Town</div>
                                 <div class=" col ">@Town.Name</div>
                             </div>
@@ -71,7 +74,7 @@
                 </div>
             </div>
             <div class=" modal-footer">
-                <button @onclick="@OnClickCancel" type="button" class=" btn btn-close ">Ok</button>
+                <button @onclick="@OnClickCancel" class=" btn btn-success text-end" type="button">Ok</button>
             </div>
         </div>
     </div>

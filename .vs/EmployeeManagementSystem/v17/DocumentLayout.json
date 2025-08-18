@@ -1,12 +1,167 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{42247A8D-C308-43F6-ACBF-7BE9969F502E}|Client\\Client.csproj|c:\\randika\\project_app\\employeemanagementsystem\\client\\pages\\shared\\employeedialog.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{42247A8D-C308-43F6-ACBF-7BE9969F502E}|Client\\Client.csproj|solutionrelative:client\\pages\\shared\\employeedialog.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3E1FD93-ECA8-48C1-87A0-DF65E64F3636}|BaseLibrary\\BaseLibrary.csproj|c:\\randika\\project_app\\employeemanagementsystem\\baselibrary\\entities\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3E1FD93-ECA8-48C1-87A0-DF65E64F3636}|BaseLibrary\\BaseLibrary.csproj|solutionrelative:baselibrary\\entities\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42247A8D-C308-43F6-ACBF-7BE9969F502E}|Client\\Client.csproj|c:\\randika\\project_app\\employeemanagementsystem\\client\\pages\\sidebarnavigationpages\\employeepage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{42247A8D-C308-43F6-ACBF-7BE9969F502E}|Client\\Client.csproj|solutionrelative:client\\pages\\sidebarnavigationpages\\employeepage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42247A8D-C308-43F6-ACBF-7BE9969F502E}|Client\\Client.csproj|c:\\randika\\project_app\\employeemanagementsystem\\client\\pages\\sidebarnavigationpages\\manageuserpage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{42247A8D-C308-43F6-ACBF-7BE9969F502E}|Client\\Client.csproj|solutionrelative:client\\pages\\sidebarnavigationpages\\manageuserpage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42247A8D-C308-43F6-ACBF-7BE9969F502E}|Client\\Client.csproj|c:\\randika\\project_app\\employeemanagementsystem\\client\\pages\\sidebarnavigationpages\\townpage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{42247A8D-C308-43F6-ACBF-7BE9969F502E}|Client\\Client.csproj|solutionrelative:client\\pages\\sidebarnavigationpages\\townpage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42247A8D-C308-43F6-ACBF-7BE9969F502E}|Client\\Client.csproj|c:\\randika\\project_app\\employeemanagementsystem\\client\\pages\\shared\\menudialog.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{42247A8D-C308-43F6-ACBF-7BE9969F502E}|Client\\Client.csproj|solutionrelative:client\\pages\\shared\\menudialog.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42247A8D-C308-43F6-ACBF-7BE9969F502E}|Client\\Client.csproj|c:\\randika\\project_app\\employeemanagementsystem\\client\\pages\\shared\\viewdialog.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{42247A8D-C308-43F6-ACBF-7BE9969F502E}|Client\\Client.csproj|solutionrelative:client\\pages\\shared\\viewdialog.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42247A8D-C308-43F6-ACBF-7BE9969F502E}|Client\\Client.csproj|c:\\randika\\project_app\\employeemanagementsystem\\client\\layout\\navmenu.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{42247A8D-C308-43F6-ACBF-7BE9969F502E}|Client\\Client.csproj|solutionrelative:client\\layout\\navmenu.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42247A8D-C308-43F6-ACBF-7BE9969F502E}|Client\\Client.csproj|c:\\randika\\project_app\\employeemanagementsystem\\client\\layout\\mainlayout.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{42247A8D-C308-43F6-ACBF-7BE9969F502E}|Client\\Client.csproj|solutionrelative:client\\layout\\mainlayout.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Employee.cs",
+              "DocumentMoniker": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\BaseLibrary\\Entities\\Employee.cs",
+              "RelativeDocumentMoniker": "BaseLibrary\\Entities\\Employee.cs",
+              "ToolTip": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\BaseLibrary\\Entities\\Employee.cs",
+              "RelativeToolTip": "BaseLibrary\\Entities\\Employee.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-18T19:52:42.317Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "EmployeeDialog.razor",
+              "DocumentMoniker": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\Pages\\Shared\\EmployeeDialog.razor",
+              "RelativeDocumentMoniker": "Client\\Pages\\Shared\\EmployeeDialog.razor",
+              "ToolTip": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\Pages\\Shared\\EmployeeDialog.razor",
+              "RelativeToolTip": "Client\\Pages\\Shared\\EmployeeDialog.razor",
+              "ViewState": "AgIAAOgAAAAAAAAAAIAwwPYAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-18T19:36:35.462Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "TownPage.razor",
+              "DocumentMoniker": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\Pages\\SideBarNavigationPages\\TownPage.razor",
+              "RelativeDocumentMoniker": "Client\\Pages\\SideBarNavigationPages\\TownPage.razor",
+              "ToolTip": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\Pages\\SideBarNavigationPages\\TownPage.razor",
+              "RelativeToolTip": "Client\\Pages\\SideBarNavigationPages\\TownPage.razor",
+              "ViewState": "AgIAAHUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-17T22:05:12.79Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ManageUserPage.razor",
+              "DocumentMoniker": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\Pages\\SideBarNavigationPages\\ManageUserPage.razor",
+              "RelativeDocumentMoniker": "Client\\Pages\\SideBarNavigationPages\\ManageUserPage.razor",
+              "ToolTip": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\Pages\\SideBarNavigationPages\\ManageUserPage.razor",
+              "RelativeToolTip": "Client\\Pages\\SideBarNavigationPages\\ManageUserPage.razor",
+              "ViewState": "AgIAAG8AAAAAAAAAAAAAAHoAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-17T22:04:35.767Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "NavMenu.razor.css",
+              "DocumentMoniker": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\Layout\\NavMenu.razor.css",
+              "RelativeDocumentMoniker": "Client\\Layout\\NavMenu.razor.css",
+              "ToolTip": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\Layout\\NavMenu.razor.css",
+              "RelativeToolTip": "Client\\Layout\\NavMenu.razor.css",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-08-17T21:03:02.189Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "MainLayout.razor.css",
+              "DocumentMoniker": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\Layout\\MainLayout.razor.css",
+              "RelativeDocumentMoniker": "Client\\Layout\\MainLayout.razor.css",
+              "ToolTip": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\Layout\\MainLayout.razor.css",
+              "RelativeToolTip": "Client\\Layout\\MainLayout.razor.css",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-08-17T21:02:57.551Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MenuDialog.razor",
+              "DocumentMoniker": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\Pages\\Shared\\MenuDialog.razor",
+              "RelativeDocumentMoniker": "Client\\Pages\\Shared\\MenuDialog.razor",
+              "ToolTip": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\Pages\\Shared\\MenuDialog.razor",
+              "RelativeToolTip": "Client\\Pages\\Shared\\MenuDialog.razor",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAAAEwAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-17T18:30:10.476Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "EmployeePage.razor",
+              "DocumentMoniker": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\Pages\\SideBarNavigationPages\\EmployeePage.razor",
+              "RelativeDocumentMoniker": "Client\\Pages\\SideBarNavigationPages\\EmployeePage.razor",
+              "ToolTip": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\Pages\\SideBarNavigationPages\\EmployeePage.razor",
+              "RelativeToolTip": "Client\\Pages\\SideBarNavigationPages\\EmployeePage.razor",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAAFkAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-17T18:19:25.474Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ViewDialog.razor",
+              "DocumentMoniker": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\Pages\\Shared\\ViewDialog.razor",
+              "RelativeDocumentMoniker": "Client\\Pages\\Shared\\ViewDialog.razor",
+              "ToolTip": "C:\\Randika\\Project_App\\EmployeeManagementSystem\\Client\\Pages\\Shared\\ViewDialog.razor",
+              "RelativeToolTip": "Client\\Pages\\Shared\\ViewDialog.razor",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAACkAAABfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-17T18:14:19.308Z"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

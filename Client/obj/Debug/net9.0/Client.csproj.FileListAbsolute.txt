@@ -3254,10 +3254,10 @@ C:\Randika\Project_App\EmployeeManagementSystem\Client\obj\Debug\net9.0\compress
 C:\Randika\Project_App\EmployeeManagementSystem\Client\obj\Debug\net9.0\compressed\5mo0pmb9ag-6lxua79a5j.gz
 C:\Randika\Project_App\EmployeeManagementSystem\Client\obj\Debug\net9.0\compressed\ui8zywzy6c-802y5utmcz.gz
 C:\Randika\Project_App\EmployeeManagementSystem\Client\obj\Debug\net9.0\compressed\d1ot6fvecq-g4mdbuz6dx.gz
-C:\Randika\Project_App\EmployeeManagementSystem\Client\bin\Debug\net9.0\wwwroot\_framework\Client.451hb42ahg.pdb
-C:\Randika\Project_App\EmployeeManagementSystem\Client\bin\Debug\net9.0\wwwroot\_framework\Client.0xwdm4zult.wasm
-C:\Randika\Project_App\EmployeeManagementSystem\Client\bin\Debug\net9.0\wwwroot\_framework\Client.0xwdm4zult.wasm.gz
-C:\Randika\Project_App\EmployeeManagementSystem\Client\bin\Debug\net9.0\wwwroot\_framework\Client.451hb42ahg.pdb.gz
-C:\Randika\Project_App\EmployeeManagementSystem\Client\obj\Debug\net9.0\compressed\cpjbyt2peh-0xwdm4zult.gz
-C:\Randika\Project_App\EmployeeManagementSystem\Client\obj\Debug\net9.0\compressed\xbmipl6i3z-451hb42ahg.gz
-C:\Randika\Project_App\EmployeeManagementSystem\Client\obj\Debug\net9.0\compressed\0kih5qk3hm-50id4uszgf.gz
+C:\Randika\Project_App\EmployeeManagementSystem\Client\bin\Debug\net9.0\wwwroot\_framework\Client.uir5pfft9b.pdb
+C:\Randika\Project_App\EmployeeManagementSystem\Client\bin\Debug\net9.0\wwwroot\_framework\Client.55hs2skg8p.wasm
+C:\Randika\Project_App\EmployeeManagementSystem\Client\bin\Debug\net9.0\wwwroot\_framework\Client.55hs2skg8p.wasm.gz
+C:\Randika\Project_App\EmployeeManagementSystem\Client\bin\Debug\net9.0\wwwroot\_framework\Client.uir5pfft9b.pdb.gz
+C:\Randika\Project_App\EmployeeManagementSystem\Client\obj\Debug\net9.0\compressed\cpjbyt2peh-55hs2skg8p.gz
+C:\Randika\Project_App\EmployeeManagementSystem\Client\obj\Debug\net9.0\compressed\xbmipl6i3z-uir5pfft9b.gz
+C:\Randika\Project_App\EmployeeManagementSystem\Client\obj\Debug\net9.0\compressed\0kih5qk3hm-1hgrwhhsms.gz

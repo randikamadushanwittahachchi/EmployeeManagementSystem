@@ -10,6 +10,7 @@
     <div class=" modal-backdrop fade show"></div>
     <div class=" modal-dialog" style="margin-top:6rem;z-index:1050" >
         <EditForm EditContext="@editContext" Enhance OnValidSubmit="SubmitEmployee">
+            <DataAnnotationsValidator/>
             <div class=" modal-content">
                 <div class=" modal-header py-4 ">
                     <h2 class=" modal-title "> @Titel Employee</h2>
@@ -240,10 +241,10 @@
     private int selectedCityId;
 
     private int step = 1;
-    private bool isStep1Valid = false;
-    private bool isStep2Valid = false;
-    private string[] step1Field = new [] { nameof(Employee.Name), nameof(Employee.CivilId), nameof(Employee.Addrese), nameof(Employee.Town), nameof(Employee.FileName), nameof(Employee.TelephoneNumber) };
-    private string[] step2Field = new[] { nameof(selectedGeneralDepartmentId), nameof(selectedDepartmentId), nameof(Employee.BranchId), nameof(selectedCountryId), nameof(selectedCityId), nameof(Employee.TownId) };
+    private bool isStep1Valid = true;
+    private bool isStep2Valid = true;
+    private string[] step1Field = new [] { nameof(Employee.Name), nameof(Employee.CivilId), nameof(Employee.JobName), nameof(Employee.Addrese), nameof(Employee.Town), nameof(Employee.FileName), nameof(Employee.TelephoneNumber) };
+    private string[] step2Field = new[] { nameof(Employee.Photo), nameof(Employee.BranchId), nameof(Employee.TownId) };
     private EditContext? editContext;
 
     private string? ImageUploadMessage{ get; set; }
@@ -263,12 +264,11 @@
             var fieldIdentifier = new FieldIdentifier(Employee!, fieldName);
             editContext!.NotifyFieldChanged(fieldIdentifier);
 
-            isStep1Valid = editContext.GetValidationMessages(fieldIdentifier).Any() ? false : true;
+            if (editContext.GetValidationMessages(fieldIdentifier).Any()) { isStep1Valid = false; }
         }
         if (isStep1Valid) 
         { 
             step++;
-            isStep1Valid = false;
             allState.Action!.Invoke();
         }
     }
@@ -288,21 +288,12 @@
             var fieldIdentifier = new FieldIdentifier(Employee!, fieldName);
             editContext!.NotifyFieldChanged(fieldIdentifier);
 
-            isStep2Valid = editContext.GetValidationMessages(fieldIdentifier).Any() ? false : true;
+            if (editContext.GetValidationMessages(fieldIdentifier).Any()) isStep2Valid = false;
         }
         if (isStep2Valid)
         {
-            if(Employee is null || Employee!.BranchId < 0 || Employee.TownId < 0)
-            {
-                await BlazoredModal.CloseAsync(); 
-                Dialog.ShowDialog("Error", "Please Enter Valid Details"); 
-            }
-            else
-            { 
-                await BlazoredModal.CloseAsync(); 
-                await FunEmployee.Invoke(Employee); 
-            }
-            isStep2Valid = false;
+            await BlazoredModal.CloseAsync(); 
+            await FunEmployee.Invoke(Employee); 
         }
     }
 
