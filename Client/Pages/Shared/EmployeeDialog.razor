@@ -63,7 +63,7 @@
                             @if (!string.IsNullOrEmpty(Employee!.Photo))
                             {
                                 <div class="mt-4 d-flex justify-content-center">
-                                    <img src="@Employee.Photo" width="100" class="   rounded-circle border shadow" />
+                                    <img src="@Employee.Photo" style="height:100px;width:100px;object-fit:cover" class="rounded-circle border" />
                                 </div>
                             }
                             <ValidationMessage For="@(() => Employee!.Photo)" class=" text-danger" />
@@ -344,7 +344,7 @@
     {
         if (int.TryParse(e.Value?.ToString() ,out selectedGeneralDepartmentId))
             SelectedDepartments = DefaultDepartments.Where(d => d.GeneralDepartmentId == selectedGeneralDepartmentId).ToList();
-
+        SelectedBranchs = new();
         allState.Action!.Invoke();
     }
 
@@ -353,7 +353,7 @@
     {
         if(int.TryParse(e.Value?.ToString(), out selectedCountryId))
             SelectedCities = DefaultCities.Where(c => c.CountryId == selectedCountryId).ToList();
-
+        SelectedTwons = new();
         allState.Action!.Invoke();
     }
 

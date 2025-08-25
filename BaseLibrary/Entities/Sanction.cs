@@ -5,17 +5,17 @@ namespace BaseLibrary.Entities;
 
 public class Sanction:OtherBaseEntity
 {
-    [Required]
+    [Required(ErrorMessage = "Enter Valid Date")]
     public DateTime Date { get; set; }
-    [Required]
+    [Required(ErrorMessage = "Enter Valid Sanction Name")]
     public string SanctionName { get; set; } = string.Empty;
-    [Required]
+    [Required(ErrorMessage = "Enter Valid Sanction Date")]
     public DateTime SanctionDate { get; set; }
 
     //Relationship: many to one
-    [JsonIgnore]
     public SanctionType? SanctionType { get; set; }
     [Required]
+    [Range(1 , int.MaxValue, ErrorMessage = "Enter Valid Saction Type")]
     public int SanctionTypeId { get; set; }
 
 }

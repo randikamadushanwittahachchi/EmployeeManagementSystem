@@ -4,6 +4,6 @@ namespace BaseLibrary.Entities;
 public class BaseEntity
 {
     public int Id { get; set; }
-    [Required(ErrorMessage = "Name is required.")]
+    [Required(ErrorMessage = "Enter Valid Name")]
     public string? Name { get; set; }
 }

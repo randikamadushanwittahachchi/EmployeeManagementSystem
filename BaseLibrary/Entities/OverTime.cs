@@ -11,10 +11,10 @@ public class OverTime:OtherBaseEntity
     public int Days => (StartDate - EndDate).Days;
 
     //Realationship:Many to One
-    [JsonIgnore]
     public OverTimeType? OverTimeType { get; set; }
     [Required]
-    public int? OverTimeTypeId { get; set; }
+    [Range(1, int.MaxValue, ErrorMessage = "Enter Vaid Over time type")]
+    public int OverTimeTypeId { get; set; }
 
 
 }

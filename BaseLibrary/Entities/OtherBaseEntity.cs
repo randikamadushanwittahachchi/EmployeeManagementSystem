@@ -5,10 +5,8 @@ namespace BaseLibrary.Entities;
 public class OtherBaseEntity
 {
     public int Id { get; set; }
+
     [Required]
-    public string CivilId { get; set; } = string.Empty;
-    [Required]
-    public string FileNumber { get; set; } = string.Empty;
-    [Required]
-    public string? Others { get; set; }
+    [Range(1 , int.MaxValue, ErrorMessage = "Enter Valid Employee Id Value")]
+    public int EmployeeId { get; set; }
 }

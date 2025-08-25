@@ -55,20 +55,34 @@ builder.Services.Configure<JWTSection>(builder.Configuration.GetSection("JWTSect
 
 
 // Repositories 
-                //  Country/ City/ Twon
+        // Country / City / Twon
 builder.Services.AddScoped<IGenericRepositoryInterface<Country>, CountryRepository>();
 builder.Services.AddScoped<IGenericRepositoryInterface<City>, CityRepository>();
 builder.Services.AddScoped<IGenericRepositoryInterface<Town>, TownRepository>();
-                //  GeneralDepartment/ Department/ Branch
+
+        // GeneralDepartment / Department / Branch
 builder.Services.AddScoped<IGenericRepositoryInterface<GeneralDepartment>, GeneralDepartmentRepository>();
 builder.Services.AddScoped<IGenericRepositoryInterface<Department>, DepartmentRepository>();
 builder.Services.AddScoped<IGenericRepositoryInterface<Branch>, BranchRepository>();
-                //Employee
+
+        // Employee
 builder.Services.AddScoped<IGenericRepositoryInterface<Employee>, EmployeeRepository>();
-                // SystemRole/ UseraRole/ RefreshTokenInfo
+
+        // SystemRole / UseraRole / RefreshTokenInfo
 builder.Services.AddScoped<SystemRoleRepository>();
 builder.Services.AddScoped<UserRoleRepository>();
 builder.Services.AddScoped<RefreshTokenInfoRepository>();
+
+        // Doctor / OverTime / OverTimeType / Vacation / VacationType / Sanction / SanctionType
+builder.Services.AddScoped<IGenericRepositoryInterface<Doctor>, DoctorRepository>();
+builder.Services.AddScoped<IGenericRepositoryInterface<OverTime>, OverTimeRepository>();
+builder.Services.AddScoped<IGenericRepositoryInterface<OverTimeType>, OverTimeTypeRepository>();
+builder.Services.AddScoped<IGenericRepositoryInterface<Sanction>, SanctionRepository>();
+builder.Services.AddScoped<IGenericRepositoryInterface<SanctionType>, SanctionTypeRepository>();
+builder.Services.AddScoped<IGenericRepositoryInterface<Vacation>, VacationRepository>();
+builder.Services.AddScoped<IGenericRepositoryInterface<VacationType>, VacationTypeRepository>();
+
+        
 
 
 //Authentication
