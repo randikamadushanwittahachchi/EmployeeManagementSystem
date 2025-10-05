@@ -20,7 +20,8 @@
                 <div class="modal-body">
                     <div class=" form-group ">
                         <label class=" form-label">Name</label>
-                        <input type="text" class="bg-light form-control" @bind="Town.Name" />
+                        <InputText type="text" class="bg-light form-control" @bind-Value="Town.Name" />
+                        <ValidationMessage For="@(()=>Town.Name)"/>
                     </div>
                     <div class=" form-group">
                         <label class=" form-label"> Country</label>
@@ -55,6 +56,7 @@
                                 }
                             }
                         </select>
+                        <ValidationMessage For="@(()=>Town.CityId)"/>
                     </div>
                 </div>
                 <div class=" modal-footer py-1">
@@ -85,11 +87,7 @@
     private int none = -1;
 
 
-    protected override async Task OnInitializedAsync()
-    {
-        DefaultCounrtys = await countryService.GetAll(ContantsBaseUrl.CountryUrl);
-        DefaultCitys = await cityService.GetAll(ContantsBaseUrl.CityUrl);
-    }
+    protected override async Task OnInitializedAsync() => await GetAll();
 
     private void OnChangeCounrty(ChangeEventArgs e)
     {
@@ -100,16 +98,20 @@
         allState.Action!.Invoke();
     }
 
-    private async Task CancelClick()
+    // Cancel Button
+    private async Task CancelClick() => await BlazoredModal.CloseAsync();
+
+    // Sumbit Button
+    private async Task SubmitDepartment(EditContext context)
     {
-        await BlazoredModal.CloseAsync(ModalResult.Ok(true));
+        if (context.Validate()) { await BlazoredModal.CloseAsync(); await FunTown!.Invoke(Town); }
     }
 
-    private async Task SubmitDepartment()
+    // Load Data
+    private async Task GetAll()
     {
-        if (string.IsNullOrWhiteSpace(Town.Name)) { await BlazoredModal.CloseAsync(); Dialog.ShowDialog("Error", "Please enter a valid Town name."); }
-        else { await BlazoredModal.CloseAsync(); await FunTown!.Invoke(Town); }
-
+        DefaultCounrtys = await countryService.GetAll(ContantsBaseUrl.CountryUrl);
+        DefaultCitys = await cityService.GetAll(ContantsBaseUrl.CityUrl);
     }
 
 }

@@ -18,7 +18,7 @@ public class DoctorRepository : IGenericRepositoryInterface<Doctor>
     }
 
     // CRUD Operation
-    public async Task<List<Doctor>> GetAll() => await _context.Doctors.ToListAsync();
+    public async Task<List<Doctor>> GetAll() => await _context.Doctors.Include(d=>d.Employee).Include(d=>d.DoctorType).ToListAsync();
 
     public async Task<ResultResponse<Doctor>> GetById(int id)
     {
@@ -42,6 +42,7 @@ public class DoctorRepository : IGenericRepositoryInterface<Doctor>
         if (errorMessage.Any() || model.Id < 0) InputDataNotValid();
         var doctor = await FindById(model.Id);
         if (doctor is null) return NotFound();
+        doctor.DoctorTypeId = model.DoctorTypeId;
         doctor.Date = model.Date;
         doctor.MedicalDiagnose = model.MedicalDiagnose;
         doctor.MedicalRecommndation = model.MedicalRecommndation;

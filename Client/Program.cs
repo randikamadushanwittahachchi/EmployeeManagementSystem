@@ -15,6 +15,11 @@ using Client.Helper.Constracts;
 using Client.Helper.Implementations;
 using BaseLibrary.Entities;
 using BaseLibrary.DTOs;
+using Client.Helper.Implementations.DoctorModal;
+using Client.Helper.Implementations.OverTime;
+using Client.Helper.Implementations.OverTimeModal;
+using Client.Helper.Implementations.SanctionModal;
+using Client.Helper.Implementations.VacationModals;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 
@@ -34,8 +39,20 @@ builder.Services.AddScoped<IGenericServiceInterface<Branch>, GenericServic<Branc
 builder.Services.AddScoped<IGenericServiceInterface<Country>, GenericServic<Country>>();
 builder.Services.AddScoped<IGenericServiceInterface<City>, GenericServic<City>>();
 builder.Services.AddScoped<IGenericServiceInterface<Town>, GenericServic<Town>>();
+
 builder.Services.AddScoped<IGenericServiceInterface<ManageUser>, GenericServic<ManageUser>>();
 builder.Services.AddScoped<IGenericServiceInterface<Employee>, GenericServic<Employee>>();
+
+// Doctor / Vacation / VacationType / OverTime / OverTimeType / Saction / SanctionType
+builder.Services.AddScoped<IGenericServiceInterface<Doctor>, GenericServic<Doctor>>();
+builder.Services.AddScoped<IGenericServiceInterface<DoctorType>, GenericServic<DoctorType>>();
+builder.Services.AddScoped<IGenericServiceInterface<Vacation>, GenericServic<Vacation>>();
+builder.Services.AddScoped<IGenericServiceInterface<VacationType>, GenericServic<VacationType>>();
+builder.Services.AddScoped<IGenericServiceInterface<OverTime>, GenericServic<OverTime>>();
+builder.Services.AddScoped<IGenericServiceInterface<OverTimeType>, GenericServic<OverTimeType>>();
+builder.Services.AddScoped<IGenericServiceInterface<Sanction>, GenericServic<Sanction>>();
+builder.Services.AddScoped<IGenericServiceInterface<SanctionType>, GenericServic<SanctionType>>();
+
 
 
 builder.Services.AddScoped<AllState>();
@@ -52,6 +69,14 @@ builder.Services.AddScoped<IGenericModal<Town>, TownModal>();
 builder.Services.AddScoped<EmployeeModal>();
 builder.Services.AddScoped<MenuModal>();
 builder.Services.AddScoped<ViewModal>();
+builder.Services.AddScoped<DoctorModal>();
+builder.Services.AddScoped<DoctorTypeModal>();
+builder.Services.AddScoped<OverTimeModal>();
+builder.Services.AddScoped<OverTimeTypeModal>();
+builder.Services.AddScoped<SanctionModal>();
+builder.Services.AddScoped<SanctionTypeModal>();
+builder.Services.AddScoped<VacationModal>();
+builder.Services.AddScoped<VacationTypeModal>();
 
 //Add Herlper to Service
 builder.Services.AddTransient<ISerialization, Serialization>();

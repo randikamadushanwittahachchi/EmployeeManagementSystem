@@ -33,7 +33,7 @@
                                 @if (!Employees.Any())
                                 {
                                     <tr>
-                                        <td> No data is aviable </td>
+                                        <td colspan="9" class=" text-center"> No data is aviable </td>
                                     </tr>
                                 }
                                 else
@@ -49,8 +49,8 @@
                                             <td> @employee.JobName</td>
                                             <td> @employee.Branch!.Name</td>
                                             <td> @employee.Town!.Name</td>
-                                            <td> 
-                                                <button type="button" class=" btn btn-link p-0 m-0 border-0 text-primary text-decoration-none " @onclick="() => Menu(employee)">
+                                            <td>
+                                                <button type="button" class=" btn btn-primary" @onclick="() => Menu(employee)">
                                                     <i class="bi bi-list"></i>
                                                     <span>menu</span>
                                                 </button>
@@ -86,15 +86,13 @@
     // Menu Employee
     private void Menu(Employee employee)
     {
-        menuDialog.ShowDialog(employee);
-        allState.Action?.Invoke();
+        menuDialog.ShowDialog(employee, GetAll);
     }
 
     // Creat New Employee
     private void Add()
     {
         employeeDialog.ShowDialog(AddEmployee, "Add", "Create");
-        allState.Action?.Invoke();
     }
     private async Task AddEmployee(Employee employee)
     {

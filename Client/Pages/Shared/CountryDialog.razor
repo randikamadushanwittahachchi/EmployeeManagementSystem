@@ -19,7 +19,8 @@
                 <div class="modal-body">
                     <div class=" form-group ">
                         <label class=" form-label">Name</label>
-                        <input type="text" class="bg-light form-control" @bind="Country.Name" />
+                        <InputText type="text" class="bg-light form-control" @bind-Value="Country.Name" />
+                        <ValidationMessage For="@(()=>Country.Name)"/>
                     </div>
                 </div>
                 <div class=" modal-footer py-1">
@@ -42,16 +43,19 @@
     [Parameter] public string Titel { get; set; } = string.Empty;
     [Parameter] public string Button { get; set; } = string.Empty;
 
+    // Cancel Button
     private async Task CancelClick()
     {
-        await BlazoredModal.CloseAsync(ModalResult.Ok(true));
+        await BlazoredModal.CloseAsync();
     }
 
-    private async Task SubmitDepartment()
+    // Submit Button
+    private async Task SubmitDepartment(EditContext context)
     {
-        if (string.IsNullOrWhiteSpace(Country.Name)) { await BlazoredModal.CloseAsync(); Dialog.ShowDialog("Error", "Please enter a valid Country name."); }
-        else { await BlazoredModal.CloseAsync(); await FunCountry.Invoke(Country); }
-
+        if (context.Validate())
+        {
+            await BlazoredModal.CloseAsync();
+            await FunCountry.Invoke(Country);
+        }
     }
-
 }

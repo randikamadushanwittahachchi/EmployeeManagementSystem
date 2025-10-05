@@ -45,7 +45,7 @@ public class CityRepository : IGenericRepositoryInterface<City>
         var item = await FindById(model.Id);
         if (item == null) return NotFound();
         if (!string.Equals(model.Name,item.Name,StringComparison.OrdinalIgnoreCase) && await CheckName(model.Name!)) return Exited();
-        item.Name = model.Name;
+        item.Name = model.Name!;
         item.CountryId = model.CountryId;
         await Commit();
         return Success();

@@ -1,0 +1,111 @@
+﻿@using Client.Helper.Constracts
+@using Client.Helper.Implementations.SanctionModal
+@using ClientLibrary.Constants
+@inject SanctionModal sanctionDialog
+@inject IDialogModal dialog
+@implements IDisposable
+@if (allState.ShowSanction)
+{
+    <div class=" container mt-4">
+    <div class=" row">
+        <div class=" col-12">
+            <div class=" card">
+                <div class=" card-header hstack justify-content-between">
+                    <div class=" card-title fs-4 align-self-start">Sanction</div>
+                </div>
+                <div class=" card-body">
+                    <table class=" table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Employee Name</th>
+                                <th scope="col">Sanction Type</th>
+                                <th scope="col">Sanction Name</th>
+                                <th scope="col">Sanction Date</th>
+                                <th scope="col">Edit</th>
+                                <th scope="col">Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (!Sanctions.Any())
+                            {
+                                <tr>
+                                    <td class="text-center" colspan="7">Data is Not Avaible now</td>
+                                </tr>
+                            }
+                            else
+                            {
+                                var i = 0;
+                                foreach(var sanction in Sanctions)
+                                {
+                                    <tr>
+                                        <th scope="col">@(++i)</th>
+                                        <td>@sanction?.Employee?.Name</td>
+                                        <td>@sanction?.SanctionType!.Name</td>
+                                        <td>@sanction?.SanctionDate</td>
+                                        <td>@sanction?.Date</td>
+                                        <td>
+                                           <button type="button" class=" btn btn-primary" @onclick="()=>Edit(sanction)">
+                                               Edit
+                                                <i class=" bi bi-pencil-square"></i>
+                                           </button>
+                                        </td>
+                                        <td >
+                                            <button type="button" class=" btn btn-primary" @onclick="()=>Delete(sanction)">
+                                                Delete
+                                                <i class="bi bi-trash"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                }
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+}
+
+@code {
+    private List<Sanction> Sanctions { get; set; } = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        allState.Action += StateHasChanged;
+        await GetAll();
+    }
+    //Get All
+    private async Task GetAll()
+    {
+        Sanctions = await sanctionService.GetAll(ContantsBaseUrl.SanctionUrl);
+        allState.Action!.Invoke();
+    }
+    // Edit
+    private void Edit(Sanction sanction)
+    {
+        sanctionDialog.Show(EditSanction, sanction, "Edit", "Edit");
+    }
+    private async Task EditSanction(Sanction sanction)
+    {
+        var response = await sanctionService.Update(sanction, $"{ContantsBaseUrl.SanctionUrl}/{sanction.Id}");
+        if (response.Flag) await GetAll();
+        dialog.ShowDialog(response.Flag ? "Success" : "Error", response.Message);
+    }
+    // Delete
+    private void Delete(Sanction sanction)
+    {
+        dialog.ShowDialog("Alert", "Are You want to Delete Sanction", ()=>DeleteSaction(sanction));
+    }
+    private async Task DeleteSaction(Sanction sanction)
+    {
+        var response = await sanctionService.DeleteById($"{ContantsBaseUrl.SanctionUrl}/{sanction.Id}");
+        if (response.Flag) await GetAll();
+        dialog.ShowDialog(response.Flag ? "Success" : "Error", response.Message);
+    }
+    // Dipose
+    public void Dispose() => allState.Action -= StateHasChanged;
+
+
+}

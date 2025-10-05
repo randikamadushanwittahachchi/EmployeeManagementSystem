@@ -1,0 +1,120 @@
+﻿@using Client.Helper.Constracts
+@using Client.Helper.Implementations.DoctorModal
+@using ClientLibrary.Constants
+@inject DoctorTypeModal doctorTypeDialog
+@inject IDialogModal dialog
+@implements IDisposable
+@if (allState.ShowDoctorType)
+{
+    <div class=" container mt-4">
+        <div class=" row">
+            <div class=" col-12">
+                <div class=" card">
+                    <div class=" card-header hstack justify-content-between">
+                        <div class="align-self-start fs-4 card-title">Doctor Type</div>
+                        <button type="button" class=" btn" @onclick="Add"><i class=" fs-3 bi bi-plus-circle"></i></button>
+                    </div>
+                    <div class=" card-body">
+                        <table class=" table table-striped">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Edit</th>
+                                    <th scope="col">Delete</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @if (!DoctorTypes.Any())
+                                {
+                                    <tr>
+                                        <td class=" text-center" colspan="4">Data is not avaible now</td>
+                                    </tr>
+                                }
+                                else
+                                {
+                                    var i = 0;
+                                    foreach(var doctorType in DoctorTypes)
+                                    {
+                                        <tr>
+                                            <th scope="col">@(++i)</th>
+                                            <td>@doctorType.Name</td>
+                                            <td>
+                                                <button type="button" class=" btn btn-primary" @onclick="()=>Edit(doctorType)">
+                                                    <i class="bi bi-pencil-square"></i>
+                                                    Edit
+                                                </button>
+                                            </td>
+                                            <td>
+                                                <button type="button" class=" btn btn-primary" @onclick="() => Delete(doctorType)">
+                                                    <i class="bi bi-trash"></i>
+                                                    Delete
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        
+                                    }
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+@code {
+    private List<DoctorType> DoctorTypes { get; set; } = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        allState.Action += StateHasChanged;
+        await GetAll();
+    }
+
+    // Get All
+    private async Task GetAll()
+    {
+        DoctorTypes = await doctorTypeService.GetAll(ContantsBaseUrl.DoctorTypeUrl);
+        allState.Action!.Invoke();
+    }
+    // Add
+    private void Add()
+    {
+        doctorTypeDialog.Show(AddDoctorType, "Create", "Create");
+    }
+    private async Task AddDoctorType(DoctorType doctorType)
+    {
+        var response = await doctorTypeService.Create(doctorType,ContantsBaseUrl.DoctorTypeUrl);
+        if (response.Flag) await GetAll();
+        dialog.ShowDialog(response.Flag ? "Success" : "Error", response.Message);
+    }
+    // Edit
+    private void Edit(DoctorType doctorType)
+    {
+        doctorTypeDialog.Show(EditDoctorType, doctorType, "Edit", "Edit");
+    }
+    private async Task EditDoctorType(DoctorType doctorType)
+    {
+        var response = await doctorTypeService.Update(doctorType, $"{ContantsBaseUrl.DoctorTypeUrl}/{doctorType.Id}");
+        if (response.Flag) await GetAll();
+        dialog.ShowDialog(response.Flag ? "Success" : "Error", response.Message);
+    }
+    // Delete
+    private void Delete(DoctorType doctorType)
+    {
+        dialog.ShowDialog("Alert", "Are You Want to delete this doctor-type", () => DeleteDoctorType(doctorType));
+    }
+    private async Task DeleteDoctorType(DoctorType doctorType)
+    {
+        var response = await doctorTypeService.DeleteById($"{ContantsBaseUrl.DoctorTypeUrl}/{doctorType.Id}");
+        if (response.Flag) await GetAll();
+        dialog.ShowDialog(response.Flag ? "Success" : "Error", response.Message);
+    }
+    public void Dispose()
+    {
+        allState.Action -= StateHasChanged;
+    }
+
+}

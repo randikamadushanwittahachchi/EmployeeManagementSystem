@@ -1,0 +1,119 @@
+﻿@using Client.Helper.Constracts
+@using Client.Helper.Implementations.SanctionModal
+@using ClientLibrary.Constants
+@implements IDisposable
+@inject SanctionTypeModal sanctionDialog
+@inject IDialogModal dialog
+@if (allState.ShowSanctionType)
+{
+    <div class=" container mt-4">
+    <div class=" row">
+        <div class=" col-12">
+            <div class=" card">
+                <div class=" card-header hstack justify-content-between">
+                    <div class=" card-title fs-4 align-self-start">Sanction-Type</div>
+                    <button type="button" class=" btn" @onclick="Add"><i class=" fs-3 bi bi-plus-circle"></i></button>
+                </div>
+                <div class=" card-body">
+                    <table class=" table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Edit</th>
+                                <th scope="col">Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (!SanctionTypes.Any())
+                            {
+                                <tr >
+                                    <td class=" text-center" colspan="4" >Data is not avaible now</td>
+                                </tr>
+                            }
+                            else
+                            {
+                                var i = 0;
+                                foreach(var sanctionType in SanctionTypes)
+                                {
+                                    <tr>
+                                        <th scope="col" >@(++i)</th>
+                                        <td>@sanctionType.Name</td>
+                                        <td>
+                                            <button type="button" class=" btn btn-primary" @onclick="()=>Edit(sanctionType)">
+                                                <i class=" bi bi-pencil-square"></i>
+                                                Edit
+                                            </button>
+                                        </td>
+                                        <td>
+                                            <button type="button" class=" btn btn-primary" @onclick="()=>Delete(sanctionType)">
+                                                <i class="bi bi-trash"></i>
+                                                Delete
+                                            </button>
+                                        </td>
+                                    </tr>
+                                }
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+}
+
+@code {
+
+    private List<SanctionType> SanctionTypes { get; set; } = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        allState.Action += StateHasChanged;
+        await GetAll();
+    }
+    // Get All
+    private async Task GetAll()
+    {
+        SanctionTypes = await sanctionTypeService.GetAll(ContantsBaseUrl.SanctionTypeUrl);
+        allState.Action!.Invoke();
+    }
+
+    // Add
+    private void Add()
+    {
+        sanctionDialog.Show(AddSanctionType, "Creat", "Cresat");
+    }
+    private async Task AddSanctionType(SanctionType sanctionType)
+    {
+        var response = await sanctionTypeService.Create(sanctionType, ContantsBaseUrl.SanctionTypeUrl);
+        if (response.Flag) await GetAll();
+        dialog.ShowDialog(response.Flag ? "Success" : "Error", response.Message);
+
+    }
+    // Edit
+    private void Edit(SanctionType sanctionType)
+    {
+        sanctionDialog.Show(EditSanctionType, sanctionType, "Edit", "Edit");
+    }
+    private async Task EditSanctionType(SanctionType sanctionType)
+    {
+        var response = await sanctionTypeService.Update(sanctionType, $"{ContantsBaseUrl.SanctionTypeUrl}/{sanctionType.Id}");
+        if (response.Flag) await GetAll();
+        dialog.ShowDialog(response.Flag ? "Success" : "Error", response.Message);
+    }
+    // Delete 
+    private void Delete(SanctionType sanctionType)
+    {
+        dialog.ShowDialog("Alert", "Are You Want Delete Sanction Type", () => DeleteSanctionType(sanctionType));
+    }
+    private async Task DeleteSanctionType(SanctionType sanctionType)
+    {
+        var response = await sanctionTypeService.DeleteById($"{ContantsBaseUrl.SanctionUrl}/{sanctionType.Id}");
+        if (response.Flag) await GetAll();
+        dialog.ShowDialog(response.Flag ? "Success" : "Error", response.Message);
+    }
+    // Disposal
+    public void Dispose() => allState.Action -= StateHasChanged;
+}

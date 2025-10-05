@@ -40,13 +40,15 @@
                                     }
                                 }
                             </select>
+                            <ValidationMessage For="@(()=>ManageUser.UserId)"/>
                         </div>
                     }
                     else
                     {
                         <div class=" form-group ">
                             <label class=" form-label">Email</label>
-                            <input type="text" readonly class="bg-light form-control" @bind="ManageUser.Email" />
+                            <InputText type="Email" readonly class="bg-light form-control" @bind-Value="ManageUser.Email" />
+                            <ValidationMessage For="@(()=>ManageUser.Email)"/>
                         </div>
                         
                     }

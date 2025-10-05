@@ -1,18 +1,41 @@
 ﻿@page "/home/dashboard"
+@using Client.Pages.SideBarNavigationPages.DoctorPages
+@using Client.Pages.SideBarNavigationPages.OverTimePages
+@using Client.Pages.SideBarNavigationPages.SanctionPages
+@using Client.Pages.SideBarNavigationPages.VacationPages
 @using Client.Pages.TablePages
 @using Client.Pages.SideBarNavigationPages
+@using ClientLibrary.Constants
 @inject NavigationManager NavManager
 
-
-<TableBanner/>
-<GeneralDepartmentPage/>
-<DepartmentPage />
-<BranchPage />
-<CountryPage />
-<CityPage />
-<TownPage/>
-<ManageUserPage/>
-<EmployeePage/>
+<AuthorizeView>
+    <Authorized Context="ctx">
+        @if (ctx.User.HasClaim(_ => _.Type == "IsAutherize" && _.Value == ConstantBool.True))
+        {
+            <TableBanner/>
+            <GeneralDepartmentPage/>
+            <DepartmentPage />
+            <BranchPage />
+            <CountryPage />
+            <CityPage />
+            <TownPage/>
+            <ManageUserPage/>
+            <EmployeePage/>
+            <Client.Pages.SideBarNavigationPages.DoctorPages.DoctorPage/>
+            <DoctorTypePage/>
+            <OverTimePage/>
+            <OverTimeTypePage/>
+            <SanctionPage/>
+            <SanctionTypePage/>
+            <VacationPage/>
+            <VacationTypePage/>
+        }
+        else
+        {
+            <p class="fs-5">I have restrictions. Please wait until authorized.</p>
+        }
+    </Authorized>
+</AuthorizeView>
 
 @code{
     [CascadingParameter] public Task<AuthenticationState> AuthenticationState { get; set; } = null!;

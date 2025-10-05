@@ -1,0 +1,111 @@
+﻿@using Client.Helper.Constracts
+@using Client.Helper.Implementations.VacationModals
+@using ClientLibrary.Constants
+@inject IDialogModal dialog
+@inject VacationModal vacationDialog
+@implements IDisposable
+@if (allState.ShowVacation)
+{
+    <div class=" container mt-4">
+    <div class=" row">
+        <div class=" col-12">
+            <div class=" card">
+                <div class=" card-header">
+                    <div class=" card-title fs-4 align-self-start">Vacation </div>
+                </div>
+                <div class=" card-body">
+                    <table class=" table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Employee Name</th>
+                                <th scope="col">Vacation Type</th>
+                                <th scope="col">Vacation Name</th>
+                                <th scope="col">Vacation Dates</th>
+                                <th scope="col">Edit</th>
+                                <th scope="col">Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (!Vacations.Any())
+                            {
+                                <tr>
+                                    <td colspan="7" class=" text-center">Data is not avable now</td>
+                                </tr>
+                            }
+                            else
+                            {
+                                var i = 0;
+                                foreach(var vacation in Vacations)
+                                {
+                                    <tr>
+                                        <th scope="col">@(++i)</th>
+                                        <td>@vacation.Employee?.Name</td>
+                                        <td>@vacation.VacationType!.Name</td>
+                                        <td>@vacation.VacationName</td>
+                                        <td>@vacation.Days</td>
+                                        <td>
+                                            <button type="button" class=" btn btn-primary" @onclick="() => Edit(vacation!)">
+                                                Edit
+                                                <i class=" bi bi-pencil-square"></i>
+                                            </button>
+                                        </td>
+                                        <td>
+                                            <button type="button" class=" btn btn-primary" @onclick="() => Delete(vacation!)">
+                                                Delete
+                                                <i class="bi bi-trash"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                }
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+}
+
+@code {
+    private List<Vacation> Vacations { get; set; } = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        allState.Action += StateHasChanged;
+        await GetAll();
+
+    }
+    // Get All
+    private async Task GetAll()
+    {
+        Vacations = await vacationService.GetAll(ContantsBaseUrl.VacationUrl);
+        allState.Action!.Invoke();
+    }
+    // Edit
+    private void Edit(Vacation vacation)
+    {
+        vacationDialog.Show(EditVacation, vacation, "Edit", "Edit");
+    }
+    private async Task EditVacation(Vacation vacation)
+    {
+        var response = await vacationService.Update(vacation, $"{ContantsBaseUrl.VacationUrl}/{vacation.Id}");
+        if (response.Flag) await GetAll();
+        dialog.ShowDialog(response.Flag ? "Success" : "Error", response.Message);
+    }
+    private void Delete(Vacation vacation)
+    {
+        dialog.ShowDialog("Alert", "Are You sure you want delete this vacation", () => DeleteVacation(vacation));
+    }
+    private async Task DeleteVacation(Vacation vacation)
+    {
+        var response = await vacationService.DeleteById($"{ContantsBaseUrl.VacationUrl}/{vacation.Id}");
+        if (response.Flag) await GetAll();
+        dialog.ShowDialog(response.Flag ? "Success" : "Error", response.Message);
+    }
+    public void Dispose()
+    {
+        allState.Action -= StateHasChanged;
+    }
+}

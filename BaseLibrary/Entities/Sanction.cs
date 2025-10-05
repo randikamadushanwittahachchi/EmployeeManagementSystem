@@ -7,8 +7,8 @@ public class Sanction:OtherBaseEntity
 {
     [Required(ErrorMessage = "Enter Valid Date")]
     public DateTime Date { get; set; }
-    [Required(ErrorMessage = "Enter Valid Sanction Name")]
-    public string SanctionName { get; set; } = string.Empty;
+    [Required(AllowEmptyStrings = false,ErrorMessage = "Enter Valid Sanction Name")]
+    public String SanctionName { get; set; } = String.Empty;
     [Required(ErrorMessage = "Enter Valid Sanction Date")]
     public DateTime SanctionDate { get; set; }
 

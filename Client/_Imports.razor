@@ -41,3 +41,13 @@
 
 @* Inject Employee Service *@
 @inject IGenericServiceInterface<Employee> employeeService
+
+@* Inject Doctor / Vacation / VacationType / OverTime / OverTimeType / Saction / SanctionType*@
+@inject IGenericServiceInterface<Doctor> doctorService
+@inject IGenericServiceInterface<DoctorType> doctorTypeService
+@inject IGenericServiceInterface<Vacation> vacationService
+@inject IGenericServiceInterface<VacationType> vacationTypeService
+@inject IGenericServiceInterface<OverTime> overTimeService
+@inject IGenericServiceInterface<OverTimeType> overTimeTypeService
+@inject IGenericServiceInterface<Sanction> sanctionService
+@inject IGenericServiceInterface<SanctionType> sanctionTypeService

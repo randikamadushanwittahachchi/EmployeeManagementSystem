@@ -20,5 +20,5 @@ public class ManageUser
     [DataType(DataType.Text)]
     public string? Role { get; set; }
     [Required]
-    public bool Autherize { get; set; } = false;
+    public bool IsAutherize { get; set; } = false;
 }

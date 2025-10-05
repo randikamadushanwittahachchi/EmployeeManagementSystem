@@ -1,0 +1,122 @@
+﻿@using Client.Helper.Constracts
+@using Client.Helper.Implementations.DoctorModal
+@using ClientLibrary.Constants
+@inject DoctorModal doctorDialog
+@inject IDialogModal dialog
+@implements IDisposable
+@if (allState.ShowDoctor)
+{
+    <div class=" container mt-4">
+        <div class=" row">
+            <div class=" col-12">
+                <div class=" card">
+                    <div class=" card-header">
+                        <div class=" card-title fs-4 align-self-start">Doctor</div>
+                    </div>
+                    <div class=" card-body">
+                        <table class=" table table-striped">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Employee Name</th>
+                                    <th scope="col">Date</th>
+                                    <th scope="col">Doctor Type</th>
+                                    <th scope="col">Doctor Name</th>
+                                    <th scope="col">MedicalDiagnose</th>
+                                    <th scope="col">MedicalRecommndation</th>
+                                    <th scope="col">Edit</th>
+                                    <th scope="col">Delete</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @if (!Doctors.Any())
+                                {
+                                    <tr>
+                                        <td class=" text-center" colspan="9">Data is not available now</td>
+                                    </tr>
+                                }
+                                else
+                                {
+                                    var i = 0;
+                                    foreach(var doctor in Doctors)
+                                    {
+                                        <tr>
+                                            <th scope="col">@(++i)</th>
+                                            <td>@doctor.Employee!.Name</td>
+                                            <td>@doctor.Date</td>
+                                            <td>@doctor.DoctorType!.Name</td>
+                                            <td>@doctor.DoctorName</td>
+                                            <td>@doctor.MedicalDiagnose</td>
+                                            <td>@doctor.MedicalRecommndation</td>
+                                            <td>
+                                                <button type="button" class=" btn btn-primary" @onclick="()=>Edit(doctor)" >
+                                                    Edit
+                                                    <i class=" bi bi-pencil-square"></i>
+                                                </button>
+                                            </td>
+                                            <td>
+                                                <button type="button" class=" btn btn-primary" @onclick="() => Delete(doctor)">
+                                                    Delete
+                                                    <i class="bi bi-trash"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    }
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+@code {
+    [Parameter] public List<Doctor> Doctors { get; set; } = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        allState.Action += UpdateDoctors;
+        await GetAll();
+    }
+    private void UpdateDoctors()
+    {
+        Doctors = allState.Doctors;
+        StateHasChanged();
+    }
+
+    public async Task GetAll()
+    {
+        Doctors = await doctorService.GetAll(ContantsBaseUrl.DoctorUrl);
+        StateHasChanged();
+    }
+    // Edit
+    private void Edit(Doctor doctor)
+    {
+        doctorDialog.ShowDialog(EditDoctor, doctor, "Edit", "Edit");
+    }
+    private async Task EditDoctor(Doctor doctor)
+    {
+        var response = await doctorService.Update(doctor, $"{ContantsBaseUrl.DoctorUrl}/{doctor.Id}");
+        if (response.Flag) await GetAll();
+        dialog.ShowDialog(response.Flag ? "Success" : "Error", response.Message);
+    }
+    // Delete
+    private void Delete(Doctor doctor)
+    {
+        dialog.ShowDialog("Alert", "Are You want delete this doctor", () => DeleteDoctor(doctor));
+    }
+    private async Task DeleteDoctor(Doctor doctor)
+    {
+        var response = await doctorService.DeleteById($"{ContantsBaseUrl.DoctorUrl}/{doctor.Id}");
+        if (response.Flag) await GetAll();
+        dialog.ShowDialog(response.Flag ? "Success" : "Error", response.Message);
+    }
+
+    public void Dispose()
+    {
+        allState.Action -= UpdateDoctors;
+    }
+
+}

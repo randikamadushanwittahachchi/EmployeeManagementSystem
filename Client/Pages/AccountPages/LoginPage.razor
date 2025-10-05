@@ -60,7 +60,7 @@
         await CheckUserAuthenticadAsync();
     }
 
-    async Task HadelLogin()
+    private async Task HadelLogin()
     {
         ButtonStates = true;
         var result = await accountService.SignInAsync(User);

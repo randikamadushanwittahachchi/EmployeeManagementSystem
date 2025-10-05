@@ -60,7 +60,8 @@ public class CustomAuthenticationStateProvider(ILocalStorage localStorage, ISeri
                 new Claim(ClaimTypes.NameIdentifier, claims.Id),
                 new Claim(ClaimTypes.Name, claims.Name),
                 new Claim(ClaimTypes.Email, claims.Email),
-                new Claim(ClaimTypes.Role, claims.Role)
+                new Claim(ClaimTypes.Role, claims.Role),
+                new Claim("IsAutherize", claims.IsAutherize)
             },"JwtAuth"));
     }
 
@@ -70,10 +71,11 @@ public class CustomAuthenticationStateProvider(ILocalStorage localStorage, ISeri
 
         var handler = new JwtSecurityTokenHandler();
         var token = handler.ReadJwtToken(jwtToken);
-        var userId = token.Claims.FirstOrDefault(_ => _.Type == ClaimTypes.NameIdentifier);
-        var userName = token.Claims.FirstOrDefault(_ => _.Type == ClaimTypes.Name);
-        var userEmail = token.Claims.FirstOrDefault(_ => _.Type == ClaimTypes.Email);
-        var userRole = token.Claims.FirstOrDefault(_ => _.Type == ClaimTypes.Role);
-        return new CustomUserClaims(userId!.Value!, userName!.Value!, userEmail!.Value!, userRole!.Value!);
+        var userId = token.Claims.FirstOrDefault(_ => _.Type == ClaimTypes.NameIdentifier)?.Value ?? "";
+        var userName = token.Claims.FirstOrDefault(_ => _.Type == ClaimTypes.Name)?.Value ?? "";
+        var userEmail = token.Claims.FirstOrDefault(_ => _.Type == ClaimTypes.Email)?.Value ?? "";
+        var userRole = token.Claims.FirstOrDefault(_ => _.Type == ClaimTypes.Role)?.Value ?? "";
+        var IsAutherize = token.Claims.FirstOrDefault(_ => _.Type == "IsAutherize")?.Value ?? "false";
+        return new CustomUserClaims(userId, userName, userEmail, userRole,IsAutherize);
     }
 }

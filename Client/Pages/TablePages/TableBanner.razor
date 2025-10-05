@@ -1,34 +1,52 @@
-﻿<div class="container">
-    <div class=" d-flex flex-column flex-xl-row flex-wrap gap-1 gap-xl-0">
-        <div class=" col-xl-2 table-header-width cursor-pointer">
-            <div class=" card border-primary" >
-                <div class=" card-header d-flex gap-2" ><i class=" bi bi-people text-primary "></i><span class ="d-none d-md-inline">Employee</span>  </div>
-            </div>
+﻿<div class="container ">
+    <div class=" row">
+        <div class="col cursor-pointer">
+            <button type="button" class=" btn btn-outline-secondary" @onclick="EmployeePageClick">
+                <div class=" hstack gap-2">
+                    <i class=" bi bi-people text-dark "></i>
+                    <span class ="d-none d-md-inline">Employee</span>  
+                </div>
+            </button>
         </div>
-        <div class="col-xl-2 table-header-width cursor-pointer ">
-            <div class=" card border-primary">
-                <div class=" card-header d-flex gap-2 "><i class=" bi bi-stopwatch text-primary "></i><span class="d-none d-md-inline">Vacation</span>  </div>
-            </div>
+        <div class="col cursor-pointer ">
+            <button type="button" class=" btn btn-outline-secondary" @onclick="VacationPageClick">
+                <div class=" hstack gap-2">
+                    <i class=" bi bi-stopwatch text-dark "></i>
+                    <span class="d-none d-md-inline">Vacation</span>
+                </div>
+            </button>
         </div>
-        <div class="col-xl-2 table-header-width cursor-pointer ">
-            <div class=" card border-primary">
-                <div class=" card-header d-flex gap-2"><i class=" bi bi-hospital text-primary "></i><span class=" d-none d-md-inline">OverTime</span></div>
-            </div>
+        <div class="col cursor-pointer ">
+            <button type="button" class=" btn btn-outline-secondary" @onclick="OverTimePageClick">
+                <div class=" hstack gap-2">
+                    <i class=" bi bi-hospital text-dark "></i>
+                    <span class=" d-none d-md-inline">OverTime</span>
+                </div>
+            </button>
         </div>
-        <div class="col-xl-2 table-header-width  cursor-pointer ">
-            <div class=" card border-primary">
-                <div class=" card-header d-flex gap-2"><i class=" bi bi-x-octagon text-primary "></i><span class=" d-none d-md-inline">Doctor</span></div>
-            </div>
+        <div class="col cursor-pointer ">
+            <button type="button" class=" btn btn-outline-secondary" @onclick="DoctorPageClick">
+                <div class=" hstack gap-2">
+                    <i class=" bi bi-hospital text-dark "></i>
+                    <span class=" d-none d-md-inline">Doctor</span>
+                </div>
+            </button>
         </div>
-        <div class="col-xl-2 table-header-width cursor-pointer ">
-            <div class=" card border-primary">
-                <div class=" card-header d-flex gap-2"><i class=" bi bi-crosshair text-primary "></i><span class=" d-none d-md-inline">Sanction</span> </div>
-            </div>
-        </div>
-        <div class="col-xl-2 table-header-width cursor-pointer ">
-            <div class=" card border-primary">
-                <div class=" card-header d-flex gap-2"><i class=" bi bi-building text-primary "></i> <span class=" d-none d-md-inline">Department</span></div>
-            </div>
+        <div class="col cursor-pointer ">
+            <button type="button" class=" btn btn-outline-secondary" @onclick="SanctionPageClick">
+                <div class=" hstack gap-2">
+                    <i class=" bi bi-crosshair text-dark "></i>
+                    <span class=" d-none d-md-inline">Sanction</span>
+                </div>
+            </button>
         </div>
     </div>
 </div>
+
+@code{
+    private void EmployeePageClick() => allState.EmployeeClick();
+    private void DoctorPageClick() => allState.DoctorClick();
+    private void VacationPageClick() => allState.VacationClick();
+    private void OverTimePageClick() => allState.OverTimeClick();
+    private void SanctionPageClick() => allState.SanctionClick();
+}

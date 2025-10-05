@@ -1,10 +1,18 @@
 ﻿@using Blazored.Modal
 @using Client.Helper.Constracts
 @using Client.Helper.Implementations
+@using Client.Helper.Implementations.DoctorModal
+@using Client.Helper.Implementations.OverTime
+@using Client.Helper.Implementations.SanctionModal
+@using Client.Helper.Implementations.VacationModals
 @using ClientLibrary.Constants
 @inject EmployeeModal employeeDialog
 @inject ViewModal viewDialog
 @inject IDialogModal dialog
+@inject DoctorModal doctorDialog
+@inject VacationModal vacationDialog
+@inject OverTimeModal overTimeDialog
+@inject SanctionModal sanctionDialog
 
 <div class=" modal fade show d-block" tabindex="-1" role="dialog">
     <div class=" modal-backdrop fade show"></div>
@@ -18,15 +26,30 @@
                 <div class=" container">
                     <div class=" row">
                         <div class=" col ps-2">
-                            <button type="button" @onclick="@ViewEmployee" class=" d-flex btn btn-link btn-light align-items-center mb-2">
+                            <button type="button" @onclick="ViewEmployee" class=" d-flex btn btn-link btn-light align-items-center mb-2">
                                 <i class="bi bi-eye me-2"></i> View
                             </button>
-                            <button type="button" @onclick="@Edit" class=" d-flex btn btn-link btn-light align-items-center mb-2">
+                            <button type="button" @onclick="Edit" class=" d-flex btn btn-link btn-light align-items-center mb-2">
                                 <i class="bi bi-pen me-2"></i> Edit
                             </button>
-                            <button type="button" @onclick="@Delete" class=" d-flex btn btn-link btn-light align-items-center mb-2">
+                            <button type="button" @onclick="Delete" class=" d-flex btn btn-link btn-light align-items-center mb-2">
                                 <i class="bi bi-trash3 me-2"></i> Delete
-                            </button> 
+                            </button>
+
+                            <hr class=" border border-1 border-dark" />
+
+                            <button type="button" @onclick="AddDoctor"  class=" d-flex btn btn-light btn-link align-items-center mb-2">
+                                <i class="bi bi-capsule me-2"></i> Add Doctor
+                            </button>
+                            <button type="button" @onclick="AddVacation" class=" d-flex btn btn-link btn-light align-items-center mb-2">
+                                <i class="bi bi-house-add me-2"></i> Add Vacation
+                            </button>
+                            <button type="button" @onclick="AddOverTime" class=" d-flex btn btn-link btn-light align-items-center mb-2">
+                                <i class="bi bi-alarm me-2"></i> Add Over Time
+                            </button>
+                            <button type="button" @onclick="AddSanction" class=" d-flex btn btn-link btn-light align-items-center mb-2">
+                                <i class="bi bi-clipboard2-x me-2"></i> Add Sanction
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -41,6 +64,7 @@
 
 @code {
     [CascadingParameter] BlazoredModalInstance BlazoredModal { get; set; } = default!;
+    [Parameter] public Func<Task> FuncGetAll { get; set; } = () => Task.CompletedTask;
     [Parameter] public Employee Employee { get; set; } = new();
 
     private async Task CancelClick()
@@ -62,6 +86,7 @@
     private async Task EditEmployee(Employee employee)
     {
         var response = await employeeService.Update(employee, ContantsBaseUrl.EmployeeUrl);
+        if (response.Flag) await FuncGetAll();
         dialog.ShowDialog(response.Flag ? "Success" : "Error", response.Message);
     }
     // Delete Employee
@@ -73,7 +98,60 @@
     private async Task DeleteEmployee()
     {
         var response = await employeeService.DeleteById($"{ContantsBaseUrl.EmployeeUrl}/{Employee.Id}");
+        if (response.Flag) await FuncGetAll();
         dialog.ShowDialog(response.Flag ? "Success" : "Error", response.Message);
+    }
+
+    // Add Doctor
+    private async Task AddDoctor()
+    {
+        await BlazoredModal.CloseAsync();
+        doctorDialog.ShowDialog(CreateDoctor, Employee, "Create","Create");
+    }
+    private async Task CreateDoctor(Doctor doctor)
+    {
+        var response = await doctorService.Create(doctor, ContantsBaseUrl.DoctorUrl);
+        if (response.Flag) allState.SetDoctor(await doctorService.GetAll(ContantsBaseUrl.DoctorUrl));
+        dialog.ShowDialog(response.Flag ? "Success" : "Error", response.Message);
+    }
+
+    // Add Vacation
+    private async Task AddVacation()
+    {
+        await BlazoredModal.CloseAsync();
+        vacationDialog.Show(CreateVacation, Employee, "Create", "Create");
+    }
+    private async Task CreateVacation(Vacation vacation)
+    {
+        var response = await vacationService.Create(vacation, ContantsBaseUrl.VacationUrl);
+        if (response.Flag) allState.SetVacation(await vacationService.GetAll(ContantsBaseUrl.VacationUrl));
+        dialog.ShowDialog(response.Flag ? "Success" : "Error", response.Message);
+    }
+    // Add Over Time
+    private async Task AddOverTime()
+    {
+        await BlazoredModal.CloseAsync();
+        overTimeDialog.Show(CreateOverTime, Employee, "Create", "Create");
+    }
+    private async Task CreateOverTime(OverTime overTime)
+    {
+        var response = await overTimeService.Create(overTime, ContantsBaseUrl.OverTimeUrl);
+        if (response.Flag) allState.SetOverTime(await overTimeService.GetAll(ContantsBaseUrl.OverTimeUrl));
+        dialog.ShowDialog(response.Flag ? "Success" : "Error", response.Message);
+    }
+
+    // add Sanction
+    private async Task AddSanction()
+    {
+        await BlazoredModal.CloseAsync();
+        sanctionDialog.Show(CreateSanction, Employee, "Create", "Create");
+    }
+    private async Task CreateSanction(Sanction sanction)
+    {
+        var response = await sanctionService.Create(sanction, ContantsBaseUrl.SanctionUrl);
+        if (response.Flag) allState.SetSanction(await sanctionService.GetAll(ContantsBaseUrl.SanctionUrl));
+        dialog.ShowDialog(response.Flag ? "Success" : "Error", response.Message);
+
     }
 
 }

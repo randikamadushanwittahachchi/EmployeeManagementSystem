@@ -37,7 +37,7 @@ public class DialogModal : IDialogModal
 
         var result = await modalRef.Result;
 
-        if(!result.Cancelled && taskCallBack != null && result.Data is bool ok && ok)
+        if(!result.Cancelled && taskCallBack != null)
         {
             await taskCallBack();
         }

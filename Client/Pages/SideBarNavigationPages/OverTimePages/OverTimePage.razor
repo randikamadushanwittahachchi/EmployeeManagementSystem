@@ -1,0 +1,112 @@
+﻿@using Client.Helper.Constracts
+@using Client.Helper.Implementations.OverTime
+@using ClientLibrary.Constants
+@inject OverTimeModal overTimeDialog
+@inject IDialogModal dialog
+@implements IDisposable
+@if (allState.ShowOverTime)
+{
+    <div class=" container mt-4">
+    <div class=" row">
+        <div class=" col-12">
+            <div class=" card">
+                <div class=" card-header">
+                    <div class=" card-title fs-4 align-self-start">Over-Time</div>
+                </div>
+                <div class=" card-body">
+                    <table class=" table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Employee Name</th>
+                                <th scope="col">Start Date</th>
+                                <th scope="col">End Date</th>
+                                <th scope="col">Over Time Type</th>
+                                <th scope="col"> Dayes</th>
+                                <th scope="col">Edit</th>
+                                <th scope="col">Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (!OverTimes.Any())
+                            {
+                                <tr>
+                                    <td class=" text-center" colspan="8">Over Time Data is not availabe</td>
+                                </tr>
+                            }
+                            else
+                            {
+                                var i = 0;
+                                @foreach(var overTime in OverTimes)
+                                {
+                                    <tr>
+                                        <td>@(++i)</td>
+                                        <td>@overTime.Employee!.Name</td>
+                                        <td>@overTime.StartDate</td>
+                                        <td>@overTime.EndDate</td>
+                                        <td>@overTime.OverTimeType!.Name</td>
+                                        <td>
+                                            <button type="button" @onclick="()=>Edit(overTime)" class=" btn btn-primary">
+                                                Edit
+                                                <i class=" bi bi-pencil-square"></i>
+                                            </button>
+                                        </td>
+                                        <td>
+                                            <button type="button" @onclick="()=>Delete(overTime)" class=" btn btn-primary">
+                                                Delete
+                                                <i class="bi bi-trash"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                }
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+}
+
+@code {
+    private List<OverTime> OverTimes { get; set; } = new();
+
+    protected override async Task OnInitializedAsync() 
+    {
+        allState.Action += StateHasChanged;
+        await GetAll();
+    }
+    // Get All
+    private async Task GetAll()
+    {
+        OverTimes = await overTimeService.GetAll(ContantsBaseUrl.OverTimeUrl);
+        allState.Action!.Invoke();
+    }
+    // Edit Over-Time
+    private void Edit(OverTime overTime)
+    {
+        overTimeDialog.Show(EditOverTime, overTime, "Edit", "Edit");
+    }
+    private async Task EditOverTime(OverTime overTime)
+    {
+        var response = await overTimeService.Update(overTime, $"{ContantsBaseUrl.OverTimeUrl}/{overTime.Id}");
+        if (response.Flag) await GetAll();
+        dialog.ShowDialog(response.Flag ? "Success" : "Error", response.Message);
+    }
+    //Delete Over-Time
+    private void Delete(OverTime overTime)
+    {
+        dialog.ShowDialog("Delete", $"Are You Sure You Want Delete {overTime.Employee!.Name} Employee Over", () => DeleteOverTime(overTime));
+    }
+    private async Task DeleteOverTime(OverTime overTime)
+    {
+        var response = await overTimeService.DeleteById($"{ContantsBaseUrl.OverTimeUrl}/{overTime.Id}");
+        if (response.Flag) await GetAll();
+        dialog.ShowDialog(response.Flag ? "Success" : "Error", response.Message);
+    }
+
+    // Action Dispose
+    public void Dispose() => allState.Action -= StateHasChanged;
+}

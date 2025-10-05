@@ -1,9 +1,11 @@
 ﻿using BaseLibrary.Responses;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Identity.Client;
 using ServerLibrary.Repositores.Contracts;
+using System.Reflection.Metadata;
 
 namespace Server.Controllers;
 
@@ -64,5 +66,6 @@ public class GenericController<T> : ControllerBase where T : class
 
 
     // reusable propety and methode
-    private ActionResult<GeneralResponse> BadRequestMessegae() => BadRequest(new GeneralResponse(false, "Invalid data provided"));
+    private ActionResult<GeneralResponse> 
+        BadRequestMessegae() => BadRequest(new GeneralResponse(false, "Invalid data provided"));
 }

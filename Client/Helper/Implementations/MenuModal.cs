@@ -19,10 +19,11 @@ public class MenuModal
         _option = option;
     }
 
-    public void ShowDialog(Employee employee)
+    public void ShowDialog(Employee employee,Func<Task> funcGetAll)
     {
         var parameter = new ModalParameters()
-            .Add(nameof(MenuDialog.Employee), employee);
+            .Add(nameof(MenuDialog.Employee), employee)
+            .Add(nameof(MenuDialog.FuncGetAll), funcGetAll);
         _modal.Show<MenuDialog>(parameter, _option);
     }
 }

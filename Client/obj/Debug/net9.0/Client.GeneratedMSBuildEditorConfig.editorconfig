@@ -84,6 +84,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXERpYWxvZy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Randika/Project_App/EmployeeManagementSystem/Client/Pages/Shared/DoctorDialog/DoctorDialog.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXERvY3RvckRpYWxvZ1xEb2N0b3JEaWFsb2cucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Randika/Project_App/EmployeeManagementSystem/Client/Pages/Shared/DoctorDialog/DoctorTypeDialog.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXERvY3RvckRpYWxvZ1xEb2N0b3JUeXBlRGlhbG9nLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Randika/Project_App/EmployeeManagementSystem/Client/Pages/Shared/EmployeeDialog.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXEVtcGxveWVlRGlhbG9nLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
@@ -100,8 +108,32 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXE1lbnVEaWFsb2cucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Randika/Project_App/EmployeeManagementSystem/Client/Pages/Shared/OverTimeDialog/OverTimeDialog.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXE92ZXJUaW1lRGlhbG9nXE92ZXJUaW1lRGlhbG9nLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Randika/Project_App/EmployeeManagementSystem/Client/Pages/Shared/OverTimeDialog/OverTimeTypeDialog.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXE92ZXJUaW1lRGlhbG9nXE92ZXJUaW1lVHlwZURpYWxvZy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Randika/Project_App/EmployeeManagementSystem/Client/Pages/Shared/SanctionDialog/SanctionDialog.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXFNhbmN0aW9uRGlhbG9nXFNhbmN0aW9uRGlhbG9nLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Randika/Project_App/EmployeeManagementSystem/Client/Pages/Shared/SanctionDialog/SanctionTypeDialog.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXFNhbmN0aW9uRGlhbG9nXFNhbmN0aW9uVHlwZURpYWxvZy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Randika/Project_App/EmployeeManagementSystem/Client/Pages/Shared/TownDialog.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXFRvd25EaWFsb2cucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Randika/Project_App/EmployeeManagementSystem/Client/Pages/Shared/VacationDialog/VacationDialog.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXFZhY2F0aW9uRGlhbG9nXFZhY2F0aW9uRGlhbG9nLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Randika/Project_App/EmployeeManagementSystem/Client/Pages/Shared/VacationDialog/VacationTypeDialog.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXFZhY2F0aW9uRGlhbG9nXFZhY2F0aW9uVHlwZURpYWxvZy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Randika/Project_App/EmployeeManagementSystem/Client/Pages/Shared/ViewDialog.razor]
@@ -124,6 +156,18 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2lkZUJhck5hdmlnYXRpb25QYWdlc1xEZXBhcnRtZW50UGFnZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Randika/Project_App/EmployeeManagementSystem/Client/Pages/SideBarNavigationPages/DoctorPage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2lkZUJhck5hdmlnYXRpb25QYWdlc1xEb2N0b3JQYWdlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Randika/Project_App/EmployeeManagementSystem/Client/Pages/SideBarNavigationPages/DoctorPages/DoctorPage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2lkZUJhck5hdmlnYXRpb25QYWdlc1xEb2N0b3JQYWdlc1xEb2N0b3JQYWdlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Randika/Project_App/EmployeeManagementSystem/Client/Pages/SideBarNavigationPages/DoctorPages/DoctorTypePage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2lkZUJhck5hdmlnYXRpb25QYWdlc1xEb2N0b3JQYWdlc1xEb2N0b3JUeXBlUGFnZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Randika/Project_App/EmployeeManagementSystem/Client/Pages/SideBarNavigationPages/EmployeePage.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2lkZUJhck5hdmlnYXRpb25QYWdlc1xFbXBsb3llZVBhZ2UucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
@@ -136,8 +180,32 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2lkZUJhck5hdmlnYXRpb25QYWdlc1xNYW5hZ2VVc2VyUGFnZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Randika/Project_App/EmployeeManagementSystem/Client/Pages/SideBarNavigationPages/OverTimePages/OverTimePage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2lkZUJhck5hdmlnYXRpb25QYWdlc1xPdmVyVGltZVBhZ2VzXE92ZXJUaW1lUGFnZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Randika/Project_App/EmployeeManagementSystem/Client/Pages/SideBarNavigationPages/OverTimePages/OverTimeTypePage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2lkZUJhck5hdmlnYXRpb25QYWdlc1xPdmVyVGltZVBhZ2VzXE92ZXJUaW1lVHlwZVBhZ2UucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Randika/Project_App/EmployeeManagementSystem/Client/Pages/SideBarNavigationPages/SanctionPages/SanctionPage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2lkZUJhck5hdmlnYXRpb25QYWdlc1xTYW5jdGlvblBhZ2VzXFNhbmN0aW9uUGFnZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Randika/Project_App/EmployeeManagementSystem/Client/Pages/SideBarNavigationPages/SanctionPages/SanctionTypePage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2lkZUJhck5hdmlnYXRpb25QYWdlc1xTYW5jdGlvblBhZ2VzXFNhbmN0aW9uVHlwZVBhZ2UucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Randika/Project_App/EmployeeManagementSystem/Client/Pages/SideBarNavigationPages/TownPage.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2lkZUJhck5hdmlnYXRpb25QYWdlc1xUb3duUGFnZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Randika/Project_App/EmployeeManagementSystem/Client/Pages/SideBarNavigationPages/VacationPages/VacationPage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2lkZUJhck5hdmlnYXRpb25QYWdlc1xWYWNhdGlvblBhZ2VzXFZhY2F0aW9uUGFnZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Randika/Project_App/EmployeeManagementSystem/Client/Pages/SideBarNavigationPages/VacationPages/VacationTypePage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2lkZUJhck5hdmlnYXRpb25QYWdlc1xWYWNhdGlvblBhZ2VzXFZhY2F0aW9uVHlwZVBhZ2UucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Randika/Project_App/EmployeeManagementSystem/Client/Pages/TablePages/TableBanner.razor]

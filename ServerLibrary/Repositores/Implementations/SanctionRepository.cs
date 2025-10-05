@@ -24,7 +24,7 @@ public class SanctionRepository : IGenericRepositoryInterface<Sanction>
 
     public async Task<ResultResponse<Sanction>> GetById(int id)
     {
-        var sanction = await _context.Sanctions.AsNoTracking().Include(_ => _.SanctionType).FirstOrDefaultAsync(_ => _.Id == id);
+        var sanction = await _context.Sanctions.AsNoTracking().Include(_ => _.SanctionType).Include(_=>_.Employee).FirstOrDefaultAsync(_ => _.Id == id);
         return sanction is null ? ResultResponse<Sanction>.Failure(ConstantsResponse.NotFound) : ResultResponse<Sanction>.Success(sanction);
     }
     public async Task<GeneralResponse> Create(Sanction model)

@@ -19,11 +19,11 @@ public class VacationRepository : IGenericRepositoryInterface<Vacation>
     {
         _context = context;
     }
-    public async Task<List<Vacation>> GetAll() => await _context.Vacations.AsNoTracking().Include(_ => _.VacationType).ToListAsync();
+    public async Task<List<Vacation>> GetAll() => await _context.Vacations.AsNoTracking().Include(_ => _.Employee).Include(_ => _.VacationType).ToListAsync();
 
     public async Task<ResultResponse<Vacation>> GetById(int id)
     {
-        var vacation = await _context.Vacations.AsNoTracking().Include(_ => _.VacationType).FirstOrDefaultAsync(_ => _.Id == id);
+        var vacation = await _context.Vacations.AsNoTracking().Include(_ => _.VacationType).Include(_=>_.Employee).FirstOrDefaultAsync(_ => _.Id == id);
         return vacation is null ? ResultResponse<Vacation>.Failure(ConstantsResponse.NotFound) : ResultResponse<Vacation>.Success(vacation);
     }
     public async Task<GeneralResponse> Create(Vacation model)

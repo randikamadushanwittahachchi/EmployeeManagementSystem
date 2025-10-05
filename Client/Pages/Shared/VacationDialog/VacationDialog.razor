@@ -1,0 +1,104 @@
+﻿@using Blazored.Modal
+@using ClientLibrary.Constants
+<div class=" modal fade show d-block" tabindex="-1" role="dialog">
+    <div class=" modal-backdrop fade show"></div>
+
+    <!-- Top Up Dialog-->
+    <div class=" modal-dialog" style="z-index:1050;margin-top:6rem">
+        <EditForm Model="Vacation" Enhance OnSubmit="SubmitVacation">
+            <DataAnnotationsValidator/>
+            <div class=" modal-content">
+                <div class=" modal-header py-2">
+                    <div class=" modal-title">@Titel Vacation</div>
+                    <button type="button" class=" btn btn-close"></button>
+                </div>
+                <div class=" modal-body">
+                    <div class=" form-group">
+                        <label class=" form-label">Date</label>
+                        <InputDate class=" form-control" @bind-Value="Vacation.StartDate" @bind-Value:format="dd/MM/yyyy" />
+                        <ValidationMessage For="@(() => Vacation.StartDate)" />
+                    </div>
+                    <div class=" form-group">
+                        <label class=" form-label">Date</label>
+                        <InputDate class=" form-control" @bind-Value="Vacation.EndDate" @bind-Value:format="dd/MM/yyyy" />
+                        <ValidationMessage For="@(() => Vacation.EndDate)" />
+                    </div>
+                    <div class=" form-group">
+                        <label class=" form-label">Employee Name</label>
+                        <input type="text" class=" form-control" Value="@( Vacation?.Employee?.Name??Employee.Name)" disabled />
+                    </div>
+                    <div class=" form-group">
+                        <label class=" form-label">Sanction Name</label>
+                        <InputText class=" form-control" @bind-Value="Vacation!.VacationName" />
+                        <ValidationMessage For="@(() => Vacation.VacationName)" />
+                    </div>
+                    <div class=" form-group">
+                        <label class=" form-label">Sanction Type</label>
+                        <InputSelect class=" form-select" @bind-Value="Vacation.VacationTypeId">
+                            @if (!VacationTypes.Any())
+                            {
+                                <option value="@None">Data is not avaible</option>
+                            }
+                            else
+                            {
+                                <option value="@None">None</option>
+                                @foreach (var vacationType in VacationTypes)
+                                {
+                                    <option value="@vacationType.Id">@vacationType.Name</option>
+                                }
+                            }
+                        </InputSelect>
+                        <ValidationMessage For="@(() => Vacation.VacationTypeId)" />
+                    </div>
+                </div>
+                <div class=" modal-footer py-1">
+                    <div class=" form-group">
+                        <div class=" d-flex gap-2">
+                            <button type="button" class=" btn btn-primary" @onclick="CancelButton"> Cancel</button>
+                            <button type="submit" class=" btn btn-success">@Button</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </EditForm>
+    </div>
+</div>
+
+@code {
+    [CascadingParameter] public BlazoredModalInstance BlazoredModal { get; set; } = default!;
+    [Parameter] public Func<Vacation, Task> FuncVacation { get; set; } = d => Task.CompletedTask;
+    [Parameter] public Vacation Vacation { get; set; } = new();
+    [Parameter] public Employee Employee { get; set; } = new();
+    [Parameter] public String Titel { get; set; } = string.Empty;
+    [Parameter] public String Button { get; set; } = string.Empty;
+
+    private List<VacationType> VacationTypes { get; set; } = new();
+    private int None { get; set; } = -1;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await GetAll();
+        if(Employee.Id != 0){ Vacation.EmployeeId = Employee.Id; }
+    }
+
+    // Get All
+    private async Task GetAll()
+    {
+        VacationTypes = await vacationTypeService.GetAll(ContantsBaseUrl.VacationTypeUrl);
+    }
+
+    // Submit
+    private async Task SubmitVacation(EditContext context)
+    {
+        if (context.Validate())
+        {
+            await BlazoredModal.CloseAsync();
+            await FuncVacation.Invoke(Vacation);
+        }
+    }
+
+    // Cancel 
+    private async Task CancelButton() => await BlazoredModal.CloseAsync();
+
+}

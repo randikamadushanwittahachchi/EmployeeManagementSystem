@@ -12,7 +12,6 @@
     <div class="  modal-dialog " style="margin-top:6rem;z-index: 1050">
         <EditForm Model="City" Enhance OnSubmit="SubmitDepartment">
             <DataAnnotationsValidator />
-            <ValidationSummary/>
             <div class=" modal-content">
                 <div class=" modal-header py-4">
                     <div class=" modal-title"> @Titel City</div>
@@ -21,7 +20,8 @@
                 <div class="modal-body">
                     <div class=" form-group ">
                         <label class=" form-label">Name</label>
-                        <input type="text" class="bg-light form-control" @bind="City.Name" />
+                        <InputText type="text" class="bg-light form-control" @bind-Value="City.Name" />
+                        <ValidationMessage For="@(()=>City.Name)"/>
                     </div>
                     <div class=" form-group">
                         <label class=" form-label"> Country </label>
@@ -39,6 +39,7 @@
                                 }
                             }
                         </select>
+                        <ValidationMessage For="@(()=>City.CountryId)"/>
                     </div>
                 </div>
                 <div class=" modal-footer py-1">
@@ -63,27 +64,19 @@
     [Parameter] public string Button { get; set; } = string.Empty;
 
 
-    protected override async Task OnInitializedAsync()
-    {
-        Countries = await countryService.GetAll(ContantsBaseUrl.CountryUrl);
-    }
+    protected override async Task OnInitializedAsync() => await GetAll();
 
-    private async Task CancelClick()
-    {
-        await BlazoredModal.CloseAsync();
-    }
+    // Cancel Button
+    private async Task CancelClick() => await BlazoredModal.CloseAsync();
 
-    private async Task SubmitDepartment()
+    // Sumbit Button
+    private async Task SubmitDepartment(EditContext context)
     {
-        if (string.IsNullOrWhiteSpace(City.Name)) 
-        { 
-            await BlazoredModal.CloseAsync(); Dialog.ShowDialog("Error", "Please enter a valid City name."); 
+        if (context.Validate()) 
+        {
+            await BlazoredModal.CloseAsync();
+            await FunCity!.Invoke(City);
         }
-        else 
-        { 
-            await BlazoredModal.CloseAsync(); await FunCity!.Invoke(City); 
-        }
-
     }
-
+    private async Task GetAll() => Countries = await countryService.GetAll(ContantsBaseUrl.CountryUrl);
 }

@@ -44,13 +44,13 @@
                                             <td>@item.Name</td>
                                             <td>@(item.Country?.Name ?? "None")</td>
                                             <td>
-                                                <a type="button" class="text-primary text-decoration-none" @onclick="()=>Edit(item)">
+                                                <button type="button" class=" btn btn-primary" @onclick="() => Edit(item)">
                                                     <i class="bi bi-pencil-square"></i>
                                                     <span>Edit</span>
-                                                </a>
+                                                </button>
                                             </td>
                                             <td>
-                                                <button type="button" class="border-0 m-0 p-0 btn btn-link" @onclick="()=>Delete(item)">
+                                                <button type="button" class=" btn btn-primary" @onclick="() => Delete(item)">
                                                     <i class="bi bi-trash"></i>
                                                     <span>Delete</span>
                                                 </button>
@@ -120,7 +120,7 @@
     // Delete City  
     private void Delete(City city)
     {
-        Dialog.ShowDialog("Alert", $"Are you sure you want to delete {city.Name} department?", async () => await DeleteCity(city));
+        Dialog.ShowDialog("Alert", $"Are you sure you want to delete {city.Name} department?", () => DeleteCity(city));
     }
     private async Task DeleteCity(City city)
     {

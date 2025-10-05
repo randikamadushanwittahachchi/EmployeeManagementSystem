@@ -1,0 +1,116 @@
+﻿@using Blazored.Modal
+@using Blazored.Modal.Services
+@using Client.Helper.Constracts
+@using ClientLibrary.Constants
+@inject IDialogModal dialog
+
+<div class=" modal fade show d-block" tabindex="-1" role="dialog">
+        <div class=" modal-backdrop fade show"></div>
+
+        <!-- pop up it above to back-drop-->
+        <div class=" modal-dialog " style="margin-top:6rem;z-index:1050">
+            <EditForm Model="Doctor" Enhance OnSubmit="SubmitDocor">
+                <DataAnnotationsValidator/>
+                <div class=" modal-content">
+                    <div class=" modal-header py-4">
+                        <div class=" modal-title"> @Titel Doctor</div>
+                        <button type="button" @onclick="CancelClick" class=" btn btn-close fs-6"></button>
+                    </div>
+                    <div class=" modal-body">
+                        <div class=" form-group">
+                            <label class=" form-label"> Employee Name</label>
+                            <input type="text" class=" form-control disabled" Value="@(Doctor?.Employee?.Name??Employee.Name)" disabled />
+                        </div>
+                        <div class=" form-group">
+                            <label class=" form-label"> Doctor Name </label>
+                            <InputText class=" form-control" @bind-Value="Doctor!.DoctorName" />
+                            <ValidationMessage For="@(() => Doctor.DoctorName)" />
+                        </div>
+                        <div class=" form-group">
+                            <label class=" form-label">Sanction Type</label>
+                            <InputSelect class=" form-select" @bind-Value="Doctor.DoctorTypeId">
+                                @if (!DoctorTypes.Any())
+                                {
+                                    <option value="@None">Data is not avaible</option>
+                                }
+                                else
+                                {
+                                    <option value="@None">None</option>
+                                    @foreach (var doctorType in DoctorTypes)
+                                    {
+                                        <option value="@doctorType.Id">@doctorType.Name</option>
+                                    }
+                                }
+                            </InputSelect>
+                            <ValidationMessage For="@(() => Doctor.DoctorTypeId)" />
+                        </div>
+                        <div class=" form-group">
+                            <label class=" form-label"> Medical Diagnose </label>
+                            <InputText class=" form-control" @bind-Value="Doctor!.MedicalDiagnose" />
+                            <ValidationMessage For="@(() => Doctor.MedicalDiagnose)"/>
+                        </div>
+
+                        <div class=" form-group">
+                            <label class=" form-label">Medical Recommndation</label>
+                            <InputText class=" form-control" @bind-Value="Doctor.MedicalRecommndation" />
+                            <ValidationMessage For="@(() => Doctor.MedicalRecommndation)"/>
+                        </div>
+                        <div class=" form-group" >
+                            <label class=" form-label"> Date</label>
+                            <InputDate class=" form-control" @bind-Value="Doctor.Date" />
+                            <ValidationMessage For="@(() => Doctor.Date)"/>
+                        </div>
+                    </div>
+                    <div class=" modal-footer py-1">
+                        <div class=" form-group ">
+                            <div class=" hstack gap-2">
+                                <button class=" btn btn-primary" type="button" @onclick="CancelClick">Cancel</button>
+                                <button type="submit" class=" btn btn-success" >@Button</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </EditForm>
+        </div>
+    </div>
+
+@code {
+    [CascadingParameter] BlazoredModalInstance BlazoredModal { get; set; } = default!;
+    [Parameter] public Doctor Doctor { get; set; } = new();
+    [Parameter] public Employee Employee { get; set; } = new();
+    [Parameter] public String Titel { get; set; } = String.Empty;
+    [Parameter] public Func<Doctor, Task> FuncDoctor { get; set; } = d => Task.CompletedTask;
+    [Parameter] public String Button { get; set; } = String.Empty;
+
+    private List<DoctorType> DoctorTypes { get; set; } = new();
+    private int None { get; set; } = -1;
+
+    // Initialized Dialog
+    protected override async Task OnInitializedAsync()
+    {
+        if (Employee.Id > 0)
+        {
+            Doctor.EmployeeId = Employee.Id;
+        }
+        await GetAll();
+    }
+
+    //Get All
+    private async Task GetAll()
+    {
+        DoctorTypes = await doctorTypeService.GetAll(ContantsBaseUrl.DoctorTypeUrl);
+    }
+
+    // Submit Doctor Dialog
+    private async Task SubmitDocor(EditContext context)
+    {
+        if (context.Validate())
+        {
+            await BlazoredModal.CloseAsync();
+            await FuncDoctor.Invoke(Doctor);
+        }
+    }
+
+    // CLoase Dialog
+    private async Task CancelClick() { await BlazoredModal.CloseAsync(); }
+}

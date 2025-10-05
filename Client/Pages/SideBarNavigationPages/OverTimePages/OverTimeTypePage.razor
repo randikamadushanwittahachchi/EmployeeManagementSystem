@@ -1,0 +1,127 @@
+﻿@using Client.Helper.Constracts
+@using Client.Helper.Implementations.OverTimeModal
+@using ClientLibrary.Constants
+@implements IDisposable
+@inject OverTimeTypeModal overTimeTypeDialog
+@inject IDialogModal dialog
+
+@if (allState.ShowOverTimeType)
+{
+    <div class=" container mt-4">
+        <div class=" row">
+            <div class=" col-12">
+                <div class=" card">
+                    <div class=" card">
+                        <div class=" card-header hstack justify-content-between">
+                            <div class="card-title fs-4 align-self-start "> Over Time Type</div>
+                            <button type="button" class="btn " @onclick="Add"><i class=" fs-3 bi bi-plus-circle"></i></button>
+                        </div>
+                        <div class=" card-body">
+                            <table class=" table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Edit</th>
+                                        <th scope="col">Delete</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @if (!OverTimeTypes.Any())
+                                    {
+                                        <tr>
+                                            <td colspan="4" class=" text-center"> Data is not avaible now </td>
+                                        </tr>
+                                    }
+                                    else
+                                    {
+                                        var i = 0;
+                                        @foreach(var overTimeType in OverTimeTypes)
+                                        {
+                                            
+                                            <tr>
+                                                <th scope="col">@(++i)</th>
+                                                <td>@overTimeType.Name</td>
+                                                <td>
+                                                    <button @onclick="() => Edit(overTimeType)" type="button" class=" btn btn-primary">
+                                                        Edit
+                                                        <i class=" bi bi-pencil-square"></i>
+                                                    </button>
+                                                </td>
+                                                <td>
+                                                    <button @onclick="() => Delete(overTimeType)" type="button" class=" btn btn-primary">
+                                                        Delete
+                                                        <i class="bi bi-trash"></i>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        }
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+@code {
+    private List<OverTimeType> OverTimeTypes { get; set; } = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        allState.Action += StateHasChanged;
+        await GetAll();
+    }
+
+    // Get All OverTimeType
+    private async Task GetAll()
+    {
+        OverTimeTypes = await overTimeTypeService.GetAll(ContantsBaseUrl.OverTimeTypeUrl);
+        allState.Action!.Invoke();
+
+    }
+
+    // Add OverTimeType
+    private void Add()
+    {
+        overTimeTypeDialog.ShowModal(AddOverTimeType, "Add", "Create");
+    }
+    private async Task AddOverTimeType(OverTimeType overTimeType)
+    {
+        var response = await overTimeTypeService.Create(overTimeType, ContantsBaseUrl.OverTimeTypeUrl);
+        if (response.Flag) await GetAll();
+        dialog.ShowDialog(response.Flag ? "Success" : "Error", response.Message);
+    }
+
+    // Edit OverTimeTypr
+    private void Edit(OverTimeType overTimeType)
+    {
+        overTimeTypeDialog.ShowModal(EditOverTimeType, overTimeType, "Edit", "Edit");
+    }
+    private async Task EditOverTimeType(OverTimeType overTimeType)
+    {
+        var response = await overTimeTypeService.Update(overTimeType, $"{ContantsBaseUrl.OverTimeTypeUrl}/{overTimeType.Id}");
+        if (response.Flag) await GetAll();
+        dialog.ShowDialog(response.Flag ? "Success" : "Error", response.Message);
+    }
+
+    // Delete OverTime
+    private void Delete(OverTimeType overTimeType)
+    {
+        dialog.ShowDialog("Delete", $"Are Sure You Want Delete {overTimeType.Name} Item",  () => DeleteOverTimeType(overTimeType.Id));
+    }
+    private async Task DeleteOverTimeType(int id)
+    {
+        var response = await overTimeTypeService.DeleteById($"{ContantsBaseUrl.OverTimeTypeUrl}/{id}");
+        if (response.Flag) await GetAll();
+        dialog.ShowDialog(response.Flag ? "Success" : "Error", response.Message);
+    }
+
+    public void Dispose()
+    {
+        allState.Action -= StateHasChanged;
+    }
+}

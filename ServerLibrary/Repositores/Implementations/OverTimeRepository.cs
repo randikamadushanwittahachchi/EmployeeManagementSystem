@@ -19,7 +19,11 @@ public class OverTimeRepository : IGenericRepositoryInterface<OverTime>
     {
         _context = context;
     }
-    public async Task<List<OverTime>> GetAll() => await _context.OverTimes.AsNoTracking().Include(_ => _.OverTimeType).ToListAsync();
+    public async Task<List<OverTime>> GetAll() => await _context.OverTimes
+        .AsNoTracking()
+        .Include(_ => _.OverTimeType)
+        .Include(_ => _.Employee)
+        .ToListAsync();
 
     public async Task<ResultResponse<OverTime>> GetById(int id)
     {

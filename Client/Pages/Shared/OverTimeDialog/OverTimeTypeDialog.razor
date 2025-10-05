@@ -1,0 +1,55 @@
+﻿    @using Blazored.Modal
+@using ClientLibrary.Constants
+<div class=" modal fade show d-block" tabindex="-1" role="dialog">
+    <div class=" modal-backdrop fade show"></div>
+
+    <!-- Pop up Modal dialog-->
+    <div class=" modal-dialog" style=" margin-top:6rem;z-index:1050;">
+        <EditForm Model="OverTimeType" Enhance OnSubmit="SubmitOverTime">
+            <DataAnnotationsValidator />
+
+            <div class=" modal-content">
+                <div class=" modal-header py-4">
+                    <div class=" modal-title">@Titel Over Time Type</div>
+                    <button type="button" class=" btn btn-close fs-6" @onclick="CancelButton"></button>
+                </div>
+                <div class=" modal-body">
+                    <div class=" form-group">
+                        <label class=" form-label"> Name</label>
+                        <InputText class=" form-control" @bind-Value="OverTimeType.Name" />
+                        <ValidationMessage For="@(() => OverTimeType.Name)" />
+                    </div>
+                </div>
+                <div class=" modal-footer py-1">
+                    <div class=" form-group">
+                        <div class=" d-flex gap-2">
+                            <button type="button" class=" btn btn-primary" @onclick="CancelButton"> Cancel</button>
+                            <button type="submit" class=" btn btn-success">@Button</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </EditForm>
+    </div>
+</div>
+
+@code {
+    [CascadingParameter] BlazoredModalInstance BlazoredModal { get; set; } = default!;
+    [Parameter] public String Titel { get; set; } = String.Empty;
+    [Parameter] public OverTimeType OverTimeType { get; set; } = new();
+    [Parameter] public Func<OverTimeType, Task> FuncOverTimeType { get; set; } = d => Task.CompletedTask;
+    [Parameter] public String Button { get; set; } = String.Empty;
+
+
+    // Sumit Button
+    private async Task SubmitOverTime(EditContext context)
+    {
+        if (context.Validate())
+        {
+            await BlazoredModal.CloseAsync();
+            await FuncOverTimeType.Invoke(OverTimeType);
+        }
+    }
+    // Cancel Buttom
+    private async Task CancelButton() => await BlazoredModal.CloseAsync();
+}

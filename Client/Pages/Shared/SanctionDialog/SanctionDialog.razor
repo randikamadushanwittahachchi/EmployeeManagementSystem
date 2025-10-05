@@ -1,0 +1,101 @@
+﻿@using Blazored.Modal
+@using ClientLibrary.Constants
+<div class=" modal fade show d-block" role="dialog" tabindex="-1">
+    <div class=" modal-backdrop fade show"></div>
+
+    <!-- Pop Up Modal -->
+    <div class=" modal-content" style=" margin-top:6rem;z-index:1050">
+        <EditForm Model="Sanction" Enhance Onsubmit="SubmitSanction">
+            <DataAnnotationsValidator/>
+
+            <div class=" modal-content">
+                <div class=" modal-header">
+                    <div class=" modal-title">@Titel Sanction</div>
+                    <button type="button" class=" btn btn-close fs-6" @onclick="CancelButton" ></button>
+                </div>
+                <div class=" modal-body">
+                    <div class=" form-group">
+                        <label class=" form-label">Date</label>
+                        <InputDate class=" form-control" @bind-Value="Sanction.Date" @bind-Value:format="dd/MM/yyyy" disabled />
+                        <ValidationMessage For="@(()=>Sanction.Date)"/>
+                    </div>
+                    <div class=" form-group">
+                        <label class=" form-label">Employee Name</label>
+                        <input  type="text" class=" form-control" Value="@( Sanction?.Employee?.Name??Employee.Name)" disabled />
+                    </div>
+                    <div class=" form-group">
+                        <label class=" form-label">Sanction Name</label>
+                        <InputText class=" form-control" @bind-Value="Sanction!.SanctionName"/>
+                        <ValidationMessage For="@(()=>Sanction.SanctionName)"/>
+                    </div>
+                    <div class=" form-group">
+                        <label class=" form-label"> Sanction-Date</label>
+                        <InputDate class=" form-control" @bind-Value="Sanction.SanctionDate"/>
+                        <ValidationMessage For="@(()=>Sanction.SanctionDate)"/>
+                    </div>
+                    <div class=" form-group">
+                        <label class=" form-label">Sanction Type</label>
+                        <InputSelect class=" form-select" @bind-Value="Sanction.SanctionTypeId">
+                            @if (!SanctionTypes.Any())
+                            {
+                                <option value="@None">Data is not avaible</option>
+                            }
+                            else
+                            {
+                                <option value="@None">None</option>
+                                @foreach (var sanctionType in SanctionTypes)
+                                {
+                                    <option value="@sanctionType.Id">@sanctionType.Name</option>
+                                }
+                            }
+                        </InputSelect>
+                        <ValidationMessage For="@(()=>Sanction.SanctionTypeId)"/>
+                    </div>
+                </div>
+                <div class=" modal-footer py-1">
+                    <div class=" form-group">
+                        <div class=" d-flex gap-2">
+                            <button type="button" class=" btn btn-primary" @onclick="CancelButton"> Cancel</button>
+                            <button type="submit" class=" btn btn-success">@Button</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </EditForm>
+    </div>
+</div>
+
+@code {
+    [CascadingParameter] BlazoredModalInstance BlazoredModal { get; set; } = default!;
+    [Parameter] public Func<Sanction,Task> FuncSanction { get; set; } = d => Task.CompletedTask;
+    [Parameter] public Sanction Sanction { get; set; } = new();
+    [Parameter] public Employee Employee { get; set; } = new();
+    [Parameter] public String Titel { get; set; } = String.Empty;
+    [Parameter] public String Button { get; set; } = String.Empty;
+
+    private List<SanctionType> SanctionTypes { get; set; } = new();
+    private int None { get; set; } = -1;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await GetAll();
+        if(Employee.Id != 0){ Sanction.EmployeeId = Employee.Id; }
+        Sanction.Date = new DateTime();
+    }
+    // Get All
+    private async Task GetAll()
+    {
+        SanctionTypes = await sanctionTypeService.GetAll(ContantsBaseUrl.SanctionTypeUrl);
+    }
+    // Submit Button
+    private async Task SubmitSanction(EditContext context)
+    {
+        if (context.Validate())
+        {
+            await BlazoredModal.CloseAsync();
+            await FuncSanction.Invoke(Sanction);
+        }
+    }
+    // Cancel Button
+    private async Task CancelButton() => await BlazoredModal.CloseAsync();
+}

@@ -42,4 +42,5 @@ public class AppDbContext : DbContext
     public DbSet<SanctionType> SanctionTypes { get; set; }
 
     public DbSet<Doctor> Doctors { get; set; }
+    public DbSet<DoctorType> DoctorTypes { get; set; }
 }

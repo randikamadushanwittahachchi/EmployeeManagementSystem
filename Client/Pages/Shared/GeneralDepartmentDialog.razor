@@ -19,7 +19,8 @@
                 <div class="modal-body">
                     <div class=" form-group ">
                         <label class=" form-label">Name</label>
-                        <input type="text" class="bg-light form-control" @bind="GeneralDepartment.Name" />
+                        <InputText type="text" class="bg-light form-control" @bind-Value="GeneralDepartment.Name" />
+                        <ValidationMessage For="@(()=>GeneralDepartment.Name)"/>
                     </div>
                 </div>
                 <div class=" modal-footer py-1">
@@ -42,16 +43,12 @@
     [Parameter] public string Titel { get; set; } = string.Empty;
     [Parameter] public string Button { get; set; } = string.Empty;
 
-    private async Task CancelClick()
+    // Cancel Button
+    private async Task CancelClick() => await BlazoredModal.CloseAsync();
+    // Sumbit Button
+    private async Task SubmitDepartment(EditContext context)
     {
-        await BlazoredModal.CloseAsync(ModalResult.Ok(true));
-    }
-
-    private async Task SubmitDepartment()
-    {
-        if (string.IsNullOrWhiteSpace(GeneralDepartment.Name)) { await BlazoredModal.CloseAsync(); Dialog.ShowDialog("Error", "Please enter a valid General Department name."); }
-        else { await BlazoredModal.CloseAsync(); await FuncGeneralDepartment!.Invoke(GeneralDepartment); }
-        
+        if (context.Validate()) { await BlazoredModal.CloseAsync(); await FuncGeneralDepartment!.Invoke(GeneralDepartment); }
     }
 
 }

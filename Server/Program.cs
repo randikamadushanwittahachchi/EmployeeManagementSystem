@@ -75,6 +75,7 @@ builder.Services.AddScoped<RefreshTokenInfoRepository>();
 
         // Doctor / OverTime / OverTimeType / Vacation / VacationType / Sanction / SanctionType
 builder.Services.AddScoped<IGenericRepositoryInterface<Doctor>, DoctorRepository>();
+builder.Services.AddScoped<IGenericRepositoryInterface<DoctorType>, DoctorTypeRepository>();
 builder.Services.AddScoped<IGenericRepositoryInterface<OverTime>, OverTimeRepository>();
 builder.Services.AddScoped<IGenericRepositoryInterface<OverTimeType>, OverTimeTypeRepository>();
 builder.Services.AddScoped<IGenericRepositoryInterface<Sanction>, SanctionRepository>();
@@ -102,6 +103,18 @@ builder.Services.AddCors(option => {
     
     );
 });
+
+// Add Policy
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("AuthorizedOnly", policy =>
+        policy.RequireAssertion(context =>
+        {
+            var isAuthorizedClaim = context.User.FindFirst("IsAutherize")?.Value;
+            return bool.TryParse(isAuthorizedClaim, out bool authorized) && authorized;
+        }));
+});
+
 
 var app = builder.Build();
 

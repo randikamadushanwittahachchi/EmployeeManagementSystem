@@ -1,19 +1,19 @@
 ﻿@using Client.State
+@using ClientLibrary.Constants
 @using Microsoft.AspNetCore.Components.Authorization
 
 <AuthorizeView>
-    <Authorized>
+    <Authorized Context="ctx">
         <div class="top-row ps-3 navbar navbar-dark">
             <div class="container-fluid">
                 <a class="navbar-brand" href="" >
-                    Welcome,@context.User.Identity!.Name
+                    Welcome,@ctx.User.Identity!.Name
                 </a>
                 <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
                     <span class="navbar-toggler-icon"></span>
                 </button>
             </div>
         </div>
-
         <div class="@NavMenuCssClass nav-scrollable" @onclick="ToggleNavMenu">
             <nav class="nav flex-column">
                 <div class="nav-item px-3">
@@ -21,34 +21,29 @@
                         <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span> Home
                     </NavLink>
                 </div>
-                @* <div class="nav-item px-3">
-                    <NavLink class="nav-link" href="about">
-                        <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> About
-                    </NavLink>
-                </div>
-                <div class=" nav-item px-3">
-                    <NavLink class=" nav-link cursor-pointer" href="administration" @onclick="ShowAdminMenuContainer">
-                        <div class=" hstack gap-1">
-                            <span class=" bi bi-people-fill fs-5 text-center" style=" margin-top:-2rem;" aria-hidden="true" ></span>
-                            <span>Administration</span>
-                        </div>
-                    </NavLink>
-                    @if (CssAdminVisibility is "visible")
-                    {
-                        <a class=" nav-link text-white p-2 " style=" margin-left:5rem">
-                            <div class=" hstack">
-                                <span class=" bi bi-people fs-5 text-center " aria-hidden="true" style="margin-top:-2rem;"></span>
-                                <span>User</span>
+                @if (ctx.User.IsInRole(ConstantRoles.Admin))
+                {
+                    <div class=" nav-item px-3">
+                        <NavLink class=" nav-link cursor-pointer" href="administration" @onclick="ShowAdminMenuContainer">
+                            <div class=" hstack gap-1">
+                                <span class=" bi bi-people-fill fs-5 text-center" style=" margin-top:-2rem;" aria-hidden="true" ></span>
+                                <span>Administration</span>
                             </div>
-                        </a>
-                    }
-                </div>  *@
-                <div class="nav-item px-3">
-                    <NavLink class="nav-link" @onclick="EmployeeClick">
-                        <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Employee
-                    </NavLink>
-                </div>
-                <div class=" nav-item px-3">
+                        </NavLink>
+                        @if (CssAdminVisibility is "visible")
+                        {
+                            <a class=" nav-link text-white p-2 " style=" margin-left:5rem">
+                                <div class=" hstack">
+                                    <span class=" bi bi-people fs-5 text-center " aria-hidden="true" style="margin-top:-2rem;"></span>
+                                    <span>User</span>
+                                </div>
+                            </a>
+                        }
+                    </div>
+                }
+                @if (ctx.User.HasClaim(_ => _.Type == "IsAutherize" && _.Value == ConstantBool.True))
+                {
+                    <div class=" nav-item px-3">
                     <NavLink class=" nav-link cursor-pointer" @onclick="ShowDepartmentMenuContainer">
                         <div class=" hstack gap-1">
                             <span class=" bi bi-buildings-fill fs-5 text-center" aria-hidden="true" style="margin-top:-2rem"></span>
@@ -59,6 +54,15 @@
                     {
                         <div class=" nav-link p-2 text-white" style=" margin-left:5rem">
                             <ul class="list-group" style="list-style:none;">
+                                <li style=" list-style:none" class=" cursor-pointer">
+                                    <a class=" nav-link p-2" @onclick="EmployeeClick">
+                                        <div class=" hstack text-wrap">
+                                            <span class=" bi bi-building fs-5 text-center" style="margin-top:-2rem;" aria-hidden="true"></span>
+                                            <span class=" fs-6 text-truncate">Employee</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <hr />
                                 <li style=" list-style:none" class=" cursor-pointer">
                                     <a class=" nav-link p-2" @onclick="GeneralClick">
                                         <div class=" hstack text-wrap">
@@ -108,12 +112,44 @@
                                         </div>
                                     </a>
                                 </li>
-
+                                <hr/>
+                                <li style=" list-style:none" class=" cursor-pointer">
+                                    <a class=" nav-link p-2" @onclick="DoctorTypeClick">
+                                        <div class=" text-wrap hstack">
+                                            <span class=" bi bi-door-closed fs-5 text-center" style=" margin-top:-2rem" aria-hidden="true"></span>
+                                            <span class=" fs-6">Doctor Type</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li style=" list-style:none" class=" cursor-pointer">
+                                    <a class=" nav-link p-2" @onclick="OverTimeTypeClick">
+                                        <div class=" text-wrap hstack">
+                                            <span class=" bi bi-door-closed fs-5 text-center" style=" margin-top:-2rem" aria-hidden="true"></span>
+                                            <span class=" fs-6">Over-Time Type</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li style=" list-style:none" class=" cursor-pointer">
+                                    <a class=" nav-link p-2" @onclick="SanctionTypeClick">
+                                        <div class=" text-wrap hstack">
+                                            <span class=" bi bi-door-closed fs-5 text-center" style=" margin-top:-2rem" aria-hidden="true"></span>
+                                            <span class=" fs-6">Sanction Type</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li style=" list-style:none" class=" cursor-pointer">
+                                    <a class=" nav-link p-2" @onclick="VacationTypeClick">
+                                        <div class=" text-wrap hstack">
+                                            <span class=" bi bi-door-closed fs-5 text-center" style=" margin-top:-2rem" aria-hidden="true"></span>
+                                            <span class=" fs-6">Vacation Type</span>
+                                        </div>
+                                    </a>
+                                </li>
                             </ul>
                         </div>
-
                     }
                 </div>
+                }
             </nav>
         </div>
     </Authorized>
@@ -154,6 +190,12 @@
     private void CountryClick() => allState.CountryClick();
     private void CityClick() => allState.CityClick();
     private void TownClick() => allState.TownClick();
+
+    // OverTimeType / VacationType / SanctionType
+    private void DoctorTypeClick() => allState.DoctorTypeClick();
+    private void OverTimeTypeClick() => allState.OverTimeTypeClick();
+    private void SanctionTypeClick() => allState.SanctionTypeClick();
+    private void VacationTypeClick() => allState.VacationTypeClick();
 
     // User / Employee Navigation Click
     private void UserClick() => allState.ManageUserClick();
