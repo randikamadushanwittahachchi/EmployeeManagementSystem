@@ -21,6 +21,7 @@ public class AllState
     public bool ShowOverTimeType { get; set; }
     public bool ShowSanction { get; set; }
     public bool ShowSanctionType { get; set; }
+    public bool ShowAdministration { get; set; }
 
     // Set Data
 
@@ -179,6 +180,14 @@ public class AllState
         Action!.Invoke();
     }
 
+    //AdministrationPage
+    public void AdministrationClick()
+    {
+        ResetALlDepartments();
+        ShowAdministration = true;
+        Action!.Invoke();
+    }
+
     // Reset all 
     public void ResetALlDepartments()
     {
@@ -198,6 +207,7 @@ public class AllState
         ShowOverTimeType = false;
         ShowSanction = false;
         ShowSanctionType = false;
+        ShowAdministration = false;
     }
 
 }

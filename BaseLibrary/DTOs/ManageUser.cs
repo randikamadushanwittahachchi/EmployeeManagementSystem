@@ -7,18 +7,22 @@ namespace BaseLibrary.DTOs;
 
 public class ManageUser
 {
-    [Required]
     public int UserId { get; set; }
-    [Required]
+
+    [Required(ErrorMessage = "Full Name is required.")]
     [DataType(DataType.Text)]
-    public string? UserName { get; set; }
-    [Required]
+    [MinLength(4)]
+    [MaxLength(100)]
+    public String UserName { get; set; } = String.Empty;
+
+    [Required(ErrorMessage = "Email is required.")]
     [DataType(DataType.EmailAddress)]
-    [EmailAddress]
-    public string? Email { get; set; }
-    [Required]
+    public String Email { get; set; } = String.Empty;
+
+    [Required(ErrorMessage = "Role is required.")]
     [DataType(DataType.Text)]
-    public string? Role { get; set; }
-    [Required]
+    public String Role { get; set; } = String.Empty;
+
+    [Required(ErrorMessage = "Required to Selection")]
     public bool IsAutherize { get; set; } = false;
 }

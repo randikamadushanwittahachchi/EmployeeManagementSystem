@@ -110,7 +110,7 @@
     }
     private async Task DeleteSanctionType(SanctionType sanctionType)
     {
-        var response = await sanctionTypeService.DeleteById($"{ContantsBaseUrl.SanctionUrl}/{sanctionType.Id}");
+        var response = await sanctionTypeService.DeleteById($"{ContantsBaseUrl.SanctionTypeUrl}/{sanctionType.Id}");
         if (response.Flag) await GetAll();
         dialog.ShowDialog(response.Flag ? "Success" : "Error", response.Message);
     }

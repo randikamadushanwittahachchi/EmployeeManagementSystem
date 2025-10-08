@@ -36,13 +36,15 @@
                                 }
                                 else
                                 {
+                                    var i = 0;
                                     @foreach (var item in GeneralDepartments)
                                     {
+
                                         <tr>
-                                            <th scope="col">@item.Id</th>
+                                            <th scope="col">@(++i)</th>
                                             <td>@item.Name</td>
                                             <td>
-                                                <button type="button" class="text-primary text-decoration-none " @onclick="()=>Edit(item)">
+                                                <button type="button" class="btn btn-primary " @onclick="() => Edit(item)">
                                                     <i class="bi bi-pencil-square"></i>
                                                     <span>Edit</span>
                                                 </button>

@@ -1,0 +1,98 @@
+﻿@using BaseLibrary.Entities
+@using BaseLibrary.Responses
+@using Client.Helper.Constracts
+@using Client.Helper.Implementations.AdministrationModal
+@using ClientLibrary.Constants
+@implements IDisposable
+@inject AdministrationModal administrationDialog
+@inject IDialogModal dialog
+
+
+@if (allState.ShowAdministration)
+{
+    <div class=" container mt-4">
+        <div class=" row">
+            <div class=" col-12">
+                <div class=" card">
+                    <div class=" card-header">
+                        <h4 class=" float-start fs-4 text-center m-0">User</h4>
+                    </div>
+                    <div class=" card-body">
+                        <table class=" table table-striped">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Full Name</th>
+                                    <th scope="col">Email Address</th>
+                                    <th scope="col">Role</th>
+                                    <th scope="col">Authorize</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @if (!ManageUsers.Any())
+                                {
+                                    <tr>
+                                        <td colspan="5" class="text-center">No data available</td>
+                                    </tr>
+                                }
+                                else
+                                {
+                                    @foreach (var manageUser in ManageUsers)
+                                    {
+                                        var i = 0;
+                                        <tr>
+                                            <th scope="col">@(++i)</th>
+                                            <td>@manageUser.UserName</td>
+                                            <td>@manageUser.Email</td>
+                                            <td>@manageUser.Role</td>
+                                            <td>
+                                                <button disabled="@(manageUser.Role == ConstantRoles.Admin ? true : false)" type="button" class="btn btn-primary " @onclick="() => Autherize(manageUser)">
+                                                    <span>@(manageUser.IsAutherize == true ? "Authorized" : "UnAuthorized")</span>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    }
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+@code {
+    public List<ManageUser> ManageUsers { get; set; } = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        allState.Action += StateHasChanged;
+        await GetAll();
+    }
+
+    // Get All branches
+    private async Task GetAll()
+    {
+        ManageUsers = await manageUserService.GetAll(ContantsBaseUrl.ManageUserUrl);
+        allState.Action?.Invoke();
+    }
+
+
+    // Edit branch
+    private void Autherize(ManageUser manageUser)
+    {
+        administrationDialog.ShowDialog(AutherizeManageUser, manageUser);
+    }
+    private async Task AutherizeManageUser(ManageUser manageUser)
+    {
+        var response = await manageUserService.Update(manageUser, $"{ContantsBaseUrl.ManageUserUrl}/{manageUser.UserId}");
+        if (response.Flag) await GetAll();
+        dialog.ShowDialog(response.Flag ? "Success" : "Error", response.Message);
+    }
+
+    public void Dispose()
+    {
+        allState.Action -= StateHasChanged;
+    }
+}

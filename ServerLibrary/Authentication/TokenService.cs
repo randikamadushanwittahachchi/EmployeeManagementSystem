@@ -24,13 +24,14 @@ public class TokenService
             new Claim(ClaimTypes.NameIdentifier, appUser.Id.ToString()),
             new Claim(ClaimTypes.Name, appUser.FullName),
             new Claim(ClaimTypes.Email, appUser.Email),
-            new Claim(ClaimTypes.Role, role)
+            new Claim(ClaimTypes.Role, role),
+            new Claim("IsAutherize", appUser.Autherize.ToString().Trim().ToLower())
         };
         var token = new JwtSecurityToken(
             issuer:_config.Value.Issuer,
             audience:_config.Value.Audience,
             claims: userClaims,
-            expires:DateTime.Now.AddMinutes(1),
+            expires:DateTime.Now.AddMinutes(15),
             signingCredentials:credential
             );
         return new JwtSecurityTokenHandler().WriteToken(token);

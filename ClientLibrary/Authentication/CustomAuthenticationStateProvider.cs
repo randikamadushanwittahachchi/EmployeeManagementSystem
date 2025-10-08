@@ -1,4 +1,5 @@
 ﻿using BaseLibrary.DTOs;
+using ClientLibrary.Constants;
 using ClientLibrary.Helper.Constracts;
 using Microsoft.AspNetCore.Components.Authorization;
 using System;
@@ -36,7 +37,7 @@ public class CustomAuthenticationStateProvider(ILocalStorage localStorage, ISeri
     public async Task UpdateAuthenticationStateAsync(UserSession userSession)
     {
         var claimsPrincipal = new ClaimsPrincipal();
-        if(userSession.Token != null || userSession.RefrshToken != null)
+        if (userSession.Token != null || userSession.RefrshToken != null)
         {
             var serializToken = _serialization.SerializeModelObject<UserSession>(userSession);
             await _localStorage.SetTokenAsync(serializToken!);
@@ -50,6 +51,7 @@ public class CustomAuthenticationStateProvider(ILocalStorage localStorage, ISeri
         NotifyAuthenticationStateChanged(Task.FromResult(new AuthenticationState(claimsPrincipal)));
     }
 
+
     private static ClaimsPrincipal SetClaimsPrincipal(CustomUserClaims? claims)
     {
         if (claims is null) return new ClaimsPrincipal();
@@ -58,9 +60,9 @@ public class CustomAuthenticationStateProvider(ILocalStorage localStorage, ISeri
             new List<Claim>
             {
                 new Claim(ClaimTypes.NameIdentifier, claims.Id),
-                new Claim(ClaimTypes.Name, claims.Name),
-                new Claim(ClaimTypes.Email, claims.Email),
-                new Claim(ClaimTypes.Role, claims.Role),
+                new Claim(ClaimTypes.Name, claims.Name ),
+                new Claim(ClaimTypes.Email, claims.Email ),
+                new Claim(ClaimTypes.Role, claims.Role ),
                 new Claim("IsAutherize", claims.IsAutherize)
             },"JwtAuth"));
     }
@@ -71,11 +73,11 @@ public class CustomAuthenticationStateProvider(ILocalStorage localStorage, ISeri
 
         var handler = new JwtSecurityTokenHandler();
         var token = handler.ReadJwtToken(jwtToken);
-        var userId = token.Claims.FirstOrDefault(_ => _.Type == ClaimTypes.NameIdentifier)?.Value ?? "";
-        var userName = token.Claims.FirstOrDefault(_ => _.Type == ClaimTypes.Name)?.Value ?? "";
-        var userEmail = token.Claims.FirstOrDefault(_ => _.Type == ClaimTypes.Email)?.Value ?? "";
-        var userRole = token.Claims.FirstOrDefault(_ => _.Type == ClaimTypes.Role)?.Value ?? "";
-        var IsAutherize = token.Claims.FirstOrDefault(_ => _.Type == "IsAutherize")?.Value ?? "false";
+        var userId = token.Claims.FirstOrDefault(_ => _.Type == ClaimTypes.NameIdentifier)?.Value ?? String.Empty;
+        var userName = token.Claims.FirstOrDefault(_ => _.Type == ClaimTypes.Name)?.Value ?? String.Empty;
+        var userEmail = token.Claims.FirstOrDefault(_ => _.Type == ClaimTypes.Email)?.Value ?? String.Empty;
+        var userRole = token.Claims.FirstOrDefault(_ => _.Type == ClaimTypes.Role)?.Value ?? String.Empty;
+        var IsAutherize = token.Claims.FirstOrDefault(_ => _.Type == "IsAutherize")?.Value ?? ConstantBool.False;
         return new CustomUserClaims(userId, userName, userEmail, userRole,IsAutherize);
     }
 }

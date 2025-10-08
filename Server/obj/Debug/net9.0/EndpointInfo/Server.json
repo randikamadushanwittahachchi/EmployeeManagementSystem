@@ -3540,7 +3540,7 @@
         }
       }
     },
-    "/WeatherForecast": {
+    "/api/WeatherForecast": {
       "get": {
         "tags": [
           "WeatherForecast"
@@ -3995,17 +3995,16 @@
           "password": {
             "minLength": 1,
             "type": "string",
-            "format": "email"
+            "format": "password"
           }
         },
         "additionalProperties": false
       },
       "ManageUser": {
         "required": [
-          "autherize",
           "email",
+          "isAutherize",
           "role",
-          "userId",
           "userName"
         ],
         "type": "object",
@@ -4015,7 +4014,8 @@
             "format": "int32"
           },
           "userName": {
-            "minLength": 1,
+            "maxLength": 100,
+            "minLength": 4,
             "type": "string",
             "format": "string"
           },
@@ -4029,7 +4029,7 @@
             "type": "string",
             "format": "string"
           },
-          "autherize": {
+          "isAutherize": {
             "type": "boolean"
           }
         },
@@ -4174,12 +4174,13 @@
           "password": {
             "minLength": 1,
             "type": "string",
-            "format": "email"
+            "format": "password"
           },
           "fullName": {
             "maxLength": 100,
             "minLength": 4,
-            "type": "string"
+            "type": "string",
+            "format": "string"
           },
           "confimPassword": {
             "minLength": 1,

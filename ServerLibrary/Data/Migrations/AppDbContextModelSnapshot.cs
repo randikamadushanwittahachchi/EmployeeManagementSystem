@@ -39,7 +39,8 @@ namespace ServerLibrary.Data.Migrations
 
                     b.Property<string>("FullName")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("Password")
                         .IsRequired()
@@ -440,9 +441,6 @@ namespace ServerLibrary.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int?>("DoctorTypeId")
-                        .HasColumnType("int");
-
                     b.Property<int>("EmployeeId")
                         .HasColumnType("int");
 
@@ -460,8 +458,6 @@ namespace ServerLibrary.Data.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("DoctorTypeId");
 
                     b.HasIndex("EmployeeId");
 
@@ -523,7 +519,7 @@ namespace ServerLibrary.Data.Migrations
             modelBuilder.Entity("BaseLibrary.Entities.Doctor", b =>
                 {
                     b.HasOne("BaseLibrary.Entities.DoctorType", "DoctorType")
-                        .WithMany()
+                        .WithMany("Doctors")
                         .HasForeignKey("DoctorTypeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -609,10 +605,6 @@ namespace ServerLibrary.Data.Migrations
 
             modelBuilder.Entity("BaseLibrary.Entities.Vacation", b =>
                 {
-                    b.HasOne("BaseLibrary.Entities.DoctorType", null)
-                        .WithMany("Vacations")
-                        .HasForeignKey("DoctorTypeId");
-
                     b.HasOne("BaseLibrary.Entities.Employee", "Employee")
                         .WithMany()
                         .HasForeignKey("EmployeeId")
@@ -652,7 +644,7 @@ namespace ServerLibrary.Data.Migrations
 
             modelBuilder.Entity("BaseLibrary.Entities.DoctorType", b =>
                 {
-                    b.Navigation("Vacations");
+                    b.Navigation("Doctors");
                 });
 
             modelBuilder.Entity("BaseLibrary.Entities.GeneralDepartment", b =>

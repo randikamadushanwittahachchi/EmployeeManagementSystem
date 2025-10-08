@@ -45,6 +45,7 @@
                                         <td>@overTime.StartDate</td>
                                         <td>@overTime.EndDate</td>
                                         <td>@overTime.OverTimeType!.Name</td>
+                                        <td>@overTime.Days</td>
                                         <td>
                                             <button type="button" @onclick="()=>Edit(overTime)" class=" btn btn-primary">
                                                 Edit
@@ -75,14 +76,19 @@
 
     protected override async Task OnInitializedAsync() 
     {
-        allState.Action += StateHasChanged;
+        allState.Action += UpdateOverTime;
         await GetAll();
+    }
+    private void UpdateOverTime()
+    {
+        if(allState.OverTimes.Any())OverTimes = allState.OverTimes;
+        StateHasChanged();
     }
     // Get All
     private async Task GetAll()
     {
         OverTimes = await overTimeService.GetAll(ContantsBaseUrl.OverTimeUrl);
-        allState.Action!.Invoke();
+        StateHasChanged();
     }
     // Edit Over-Time
     private void Edit(OverTime overTime)

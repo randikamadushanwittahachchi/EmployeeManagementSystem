@@ -1,25 +1,27 @@
-using Microsoft.AspNetCore.Components.Web;
-using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
-using Microsoft.AspNetCore.Components.Authorization;
-using Client;
-using ClientLibrary.Helper.Constracts;
-using ClientLibrary.Helper.Implementations;
+using BaseLibrary.DTOs;
+using BaseLibrary.Entities;
 using Blazored.LocalStorage;
-using Microsoft.IdentityModel.Tokens;
-using ClientLibrary.Authentication;
-using ClientLibrary.Services.Contracts;
-using ClientLibrary.Services.Implementations;
 using Blazored.Modal;
-using Client.State;
+using Client;
 using Client.Helper.Constracts;
 using Client.Helper.Implementations;
-using BaseLibrary.Entities;
-using BaseLibrary.DTOs;
+using Client.Helper.Implementations.AdministrationModal;
 using Client.Helper.Implementations.DoctorModal;
 using Client.Helper.Implementations.OverTime;
 using Client.Helper.Implementations.OverTimeModal;
+using Client.Helper.Implementations.ProfileModal;
 using Client.Helper.Implementations.SanctionModal;
 using Client.Helper.Implementations.VacationModals;
+using Client.State;
+using ClientLibrary.Authentication;
+using ClientLibrary.Helper.Constracts;
+using ClientLibrary.Helper.Implementations;
+using ClientLibrary.Services.Contracts;
+using ClientLibrary.Services.Implementations;
+using Microsoft.AspNetCore.Components.Authorization;
+using Microsoft.AspNetCore.Components.Web;
+using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
+using Microsoft.IdentityModel.Tokens;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 
@@ -58,7 +60,6 @@ builder.Services.AddScoped<IGenericServiceInterface<SanctionType>, GenericServic
 builder.Services.AddScoped<AllState>();
 
 builder.Services.AddBlazoredModal();
-builder.Services.AddScoped<ManageUserModal>();
 builder.Services.AddScoped<IDialogModal, DialogModal>();
 builder.Services.AddScoped<IGenericModal<GeneralDepartment>, GeneralDeparmentModal>();
 builder.Services.AddScoped<IGenericModal<Department>, DepartmentModal>();
@@ -67,6 +68,7 @@ builder.Services.AddScoped<IGenericModal<Country>, CountryModal>();
 builder.Services.AddScoped<IGenericModal<City>, CityModal>();
 builder.Services.AddScoped<IGenericModal<Town>, TownModal>();
 builder.Services.AddScoped<EmployeeModal>();
+builder.Services.AddScoped<AdministrationModal>();
 builder.Services.AddScoped<MenuModal>();
 builder.Services.AddScoped<ViewModal>();
 builder.Services.AddScoped<DoctorModal>();
@@ -77,6 +79,8 @@ builder.Services.AddScoped<SanctionModal>();
 builder.Services.AddScoped<SanctionTypeModal>();
 builder.Services.AddScoped<VacationModal>();
 builder.Services.AddScoped<VacationTypeModal>();
+builder.Services.AddScoped<ProfileEditModal>();
+builder.Services.AddScoped<ProfileModal>();
 
 //Add Herlper to Service
 builder.Services.AddTransient<ISerialization, Serialization>();

@@ -1,3 +1,4 @@
+using BaseLibrary.DTOs;
 using BaseLibrary.Entities;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Data.SqlClient;
@@ -8,7 +9,7 @@ using ServerLibrary.Data;
 using ServerLibrary.Helpers;
 using ServerLibrary.Repositores.Contracts;
 using ServerLibrary.Repositores.Implementations;
-using ServerLibrary.Services.Implementations;
+using ServerLibrary.Service;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -68,10 +69,12 @@ builder.Services.AddScoped<IGenericRepositoryInterface<Branch>, BranchRepository
         // Employee
 builder.Services.AddScoped<IGenericRepositoryInterface<Employee>, EmployeeRepository>();
 
-        // SystemRole / UseraRole / RefreshTokenInfo
+        // SystemRole / UseraRole / RefreshTokenInfo / UserAccount
 builder.Services.AddScoped<SystemRoleRepository>();
 builder.Services.AddScoped<UserRoleRepository>();
 builder.Services.AddScoped<RefreshTokenInfoRepository>();
+builder.Services.AddScoped<UserAccountRepositore>();
+builder.Services.AddScoped<ManageUserService>();
 
         // Doctor / OverTime / OverTimeType / Vacation / VacationType / Sanction / SanctionType
 builder.Services.AddScoped<IGenericRepositoryInterface<Doctor>, DoctorRepository>();
@@ -83,7 +86,10 @@ builder.Services.AddScoped<IGenericRepositoryInterface<SanctionType>, SanctionTy
 builder.Services.AddScoped<IGenericRepositoryInterface<Vacation>, VacationRepository>();
 builder.Services.AddScoped<IGenericRepositoryInterface<VacationType>, VacationTypeRepository>();
 
-        
+// Manage Use
+builder.Services.AddScoped<ManageUserService>();
+
+
 
 
 //Authentication
@@ -92,8 +98,6 @@ builder.Services.AddScoped<TokenService>();
 //Repositores
 builder.Services.AddScoped<UserAccountRepositore>();
 
-//Service 
-builder.Services.AddScoped<ManageUserService>();
 // 
 builder.Services.AddCors(option => {
     option.AddPolicy("AllowBlazorWasm", builder => builder.WithOrigins("http://localhost:5089","https://localhost:7230")

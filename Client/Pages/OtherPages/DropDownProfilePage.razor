@@ -1,14 +1,20 @@
 ﻿@using Client.Helper.Constracts
+@using Client.Helper.Implementations.ProfileModal
 @inject IDialogModal Dialog
+@inject ProfileModal profileModal
 
 <div class="dropdown">
-    <button class="dropdown-toggle p-0" type="button" data-bs-toggle="dropdown">
+    <button  class="dropdown-toggle p-0" type="button" data-bs-toggle="dropdown">
         <div class="image-div">
             <img src="@(string.IsNullOrEmpty(ProfileImage)? "../images/profile/profileImage.png":ProfileImage)" class="rounded-circle profile-image" width="40"/>
         </div>
     </button>
     <ul style="min-width:130px;width:130px" class=" dropdown-menu">
-        <li><a class=" cursor-pointer bi-people-fill text-primary text-decoration-none m-0 dropdown-item"><span style=" margin-left:10px">profile</span></a></li>
+        <li>
+            <a @onclick="ShowProfile" class=" cursor-pointer bi-people-fill text-primary text-decoration-none m-0 dropdown-item">
+                <span style=" margin-left:10px">profile</span>
+            </a>
+        </li>
         <li><a @onclick="LogOutClick" class=" cursor-pointer bi-lock text-danger text-decoration-none m-0 dropdown-item"><span style=" margin-left:10px">LogOut</span></a></li>
     </ul>
 </div>
@@ -28,5 +34,9 @@
         var customAuthStateProvider = (CustomAuthenticationStateProvider)AuthStateProvider;
         await customAuthStateProvider.UpdateAuthenticationStateAsync(userSesstion);
         NavManager.NavigateTo("/identity/account/login",replace:true ,forceLoad: true);
+    }
+    private void ShowProfile()
+    {
+        profileModal.Show();
     }
 }

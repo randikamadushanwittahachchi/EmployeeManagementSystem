@@ -1,13 +1,16 @@
 ﻿using BaseLibrary.DTOs;
 using BaseLibrary.Responses;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using ServerLibrary.Repositores.Contracts;
-using ServerLibrary.Services.Implementations;
+using ServerLibrary.Service;
 namespace Server.Controllers;
 
 
 [Route("api/[controller]")]
 [ApiController]
+[Authorize(Policy = "AuthorizedOnly")]
+[Authorize(Roles = "Admin")]
 public class ManageUserController : ControllerBase
 {
     private readonly ManageUserService _manageUserService;
@@ -25,7 +28,7 @@ public class ManageUserController : ControllerBase
         return Ok(result);
     }
     [HttpGet("{id}")]
-    public async Task<ActionResult<ResultResponse<ManageUser>>> GetById(int id) 
+    public async Task<ActionResult<ResultResponse<ManageUser>>> GetById(int id)
     {
         if (id < 0) return NotFound();
         var result = await _manageUserService.GetById(id);

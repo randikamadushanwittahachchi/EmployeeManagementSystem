@@ -11,6 +11,8 @@ namespace Server.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
+[Authorize(Policy = "AuthorizedOnly")]
+
 public class GenericController<T> : ControllerBase where T : class
 {
     // Injected IGeneric Repository

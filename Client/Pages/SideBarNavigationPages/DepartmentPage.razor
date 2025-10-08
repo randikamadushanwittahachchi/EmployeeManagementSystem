@@ -37,10 +37,11 @@
                                 }
                                 else
                                 {
+                                    var i = 0;
                                     @foreach (var item in Departments)
                                     {
                                         <tr>
-                                            <th scope="col">@item.Id</th>
+                                            <th scope="col">@(++i)</th>
                                             <td>@item.Name</td>
                                             <td>@(item.GeneralDepartment?.Name ?? "None")</td>
                                             <td>

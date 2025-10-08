@@ -77,12 +77,13 @@
 
     protected override async Task OnInitializedAsync()
     {
+
         allState.Action += UpdateDoctors;
         await GetAll();
     }
     private void UpdateDoctors()
     {
-        Doctors = allState.Doctors;
+        if (allState.Doctors.Any()) Doctors = allState.Doctors;
         StateHasChanged();
     }
 

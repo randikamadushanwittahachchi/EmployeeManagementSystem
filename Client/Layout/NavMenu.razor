@@ -24,7 +24,7 @@
                 @if (ctx.User.IsInRole(ConstantRoles.Admin))
                 {
                     <div class=" nav-item px-3">
-                        <NavLink class=" nav-link cursor-pointer" href="administration" @onclick="ShowAdminMenuContainer">
+                        <NavLink class=" nav-link cursor-pointer" @onclick="ShowAdminMenuContainer">
                             <div class=" hstack gap-1">
                                 <span class=" bi bi-people-fill fs-5 text-center" style=" margin-top:-2rem;" aria-hidden="true" ></span>
                                 <span>Administration</span>
@@ -32,7 +32,7 @@
                         </NavLink>
                         @if (CssAdminVisibility is "visible")
                         {
-                            <a class=" nav-link text-white p-2 " style=" margin-left:5rem">
+                            <a class=" cursor-pointer nav-link text-white p-2 " @onclick="AdministrationClick" style=" margin-left:5rem">
                                 <div class=" hstack">
                                     <span class=" bi bi-people fs-5 text-center " aria-hidden="true" style="margin-top:-2rem;"></span>
                                     <span>User</span>
@@ -197,8 +197,8 @@
     private void SanctionTypeClick() => allState.SanctionTypeClick();
     private void VacationTypeClick() => allState.VacationTypeClick();
 
-    // User / Employee Navigation Click
-    private void UserClick() => allState.ManageUserClick();
+    // Administration / Employee Navigation Click
+    private void AdministrationClick() => allState.AdministrationClick();
     private void EmployeeClick() => allState.EmployeeClick();
 
     // Toggle function

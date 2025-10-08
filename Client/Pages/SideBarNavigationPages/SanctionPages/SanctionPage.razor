@@ -73,14 +73,19 @@
 
     protected override async Task OnInitializedAsync()
     {
-        allState.Action += StateHasChanged;
+        allState.Action += UpdateSanction;
         await GetAll();
+    }
+    private void UpdateSanction()
+    {
+        if(allState.Sanctions.Any())Sanctions = allState.Sanctions;
+        StateHasChanged();
     }
     //Get All
     private async Task GetAll()
     {
         Sanctions = await sanctionService.GetAll(ContantsBaseUrl.SanctionUrl);
-        allState.Action!.Invoke();
+        StateHasChanged();
     }
     // Edit
     private void Edit(Sanction sanction)

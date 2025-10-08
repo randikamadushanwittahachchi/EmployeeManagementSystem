@@ -1,0 +1,94 @@
+﻿@using Blazored.Modal
+@using Client.Helper.Constracts
+@using Client.Helper.Implementations.ProfileModal
+@using ClientLibrary.Constants
+@using System.Security.Claims
+@inject IDialogModal dialog
+@inject ProfileEditModal manageUserDialog
+<div class=" modal fade show d-block " tabindex="-1" role="dialog">
+    <div class=" modal-backdrop fade show "></div>
+    <div class=" modal-dialog modal-lg " style="margin-top:6rem;z-index:1050">
+        <div class=" modal-content ">
+            <div class=" modal-header">
+                <h5 class="  modal-title ">@ManageUser.UserName User Details</h5>
+                <button @onclick="@OnClickCancel" type="button" class=" btn btn-close"></button>
+            </div>
+            <div style=" background-color:aliceblue" class=" modal-body">
+                <div class=" container">
+                    <div class=" row">
+                        <div class=" col">
+                            <div class="border-bottom border-2 pb-1 row mb-2">
+                                <div class=" col-6 fw-normal">Name</div>
+                                <div class=" col-6 ">@ManageUser.UserName</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" row">
+                        <div class=" col">
+                            <div class="border-bottom border-2 pb-1 row mb-2">
+                                <div class=" col-6 fw-normal">Email</div>
+                                <div class=" col-6 ">@ManageUser.Email</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" row">
+                        <div class=" col">
+                            <div class="border-bottom border-2 pb-1 row mb-2">
+                                <div class=" col-6 fw-normal">Role</div>
+                                <div class=" col-6 ">@ManageUser.Role</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class=" modal-footer">
+                <div class=" hstack gap-2">
+                    <button @onclick="@(() => Edit(ManageUser))"  class=" btn btn-primary text-end" type="button">Edit</button>
+                    <button @onclick="@OnClickCancel" class=" btn btn-success text-end" type="button">Ok</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    [CascadingParameter] BlazoredModalInstance BlazoredModal { get; set; } = default!;
+    [CascadingParameter] public Task<AuthenticationState>? AuthenticationState { get; set; }
+
+    [Parameter] public ManageUser ManageUser { get; set; } = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        await SetManageUser();
+    }
+
+    // Set ManageUser
+    private async Task SetManageUser()
+    {
+        var user = (await AuthenticationState!).User;
+        var userId = user.FindFirst(_ => _.Type == ClaimTypes.NameIdentifier)?.Value;
+        var response = await manageUserService.GetById($"{ContantsBaseUrl.ManageUserUrl}/{userId}");
+        if (response.Flag) ManageUser = response.Data!;
+    }
+
+    //Edit
+    private async Task Edit(ManageUser manageUser)
+    {
+        await BlazoredModal.CancelAsync();
+        manageUserDialog.Show(EditManageUser, manageUser, "Edit","Edit");
+    }
+    private async Task EditManageUser(ManageUser manageUser)
+    {
+        var response = await manageUserService.Update(manageUser, $"{ContantsBaseUrl.ManageUserUrl}/{manageUser.UserId}");
+        dialog.ShowDialog(response.Flag ? "Success" : "Alert", response.Message);
+    }
+
+    // Cancel Dialog
+    private async Task OnClickCancel()
+    {
+        await BlazoredModal.CancelAsync();
+    }
+
+
+}

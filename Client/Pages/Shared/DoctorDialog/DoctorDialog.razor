@@ -27,7 +27,7 @@
                             <ValidationMessage For="@(() => Doctor.DoctorName)" />
                         </div>
                         <div class=" form-group">
-                            <label class=" form-label">Sanction Type</label>
+                            <label class=" form-label">Doctor Type</label>
                             <InputSelect class=" form-select" @bind-Value="Doctor.DoctorTypeId">
                                 @if (!DoctorTypes.Any())
                                 {

@@ -73,15 +73,20 @@
 
     protected override async Task OnInitializedAsync()
     {
-        allState.Action += StateHasChanged;
+        allState.Action += UpdateVacation;
         await GetAll();
 
+    }
+    private void UpdateVacation()
+    {
+        if(allState.Vacations.Any())Vacations = allState.Vacations;
+        StateHasChanged();
     }
     // Get All
     private async Task GetAll()
     {
         Vacations = await vacationService.GetAll(ContantsBaseUrl.VacationUrl);
-        allState.Action!.Invoke();
+        StateHasChanged();
     }
     // Edit
     private void Edit(Vacation vacation)
